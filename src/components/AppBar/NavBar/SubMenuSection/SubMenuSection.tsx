@@ -1,0 +1,112 @@
+import { motion, AnimatePresence } from "framer-motion";
+import { SubMenuList, SubLink, SubMenuTitle } from "./SubMenuSection.styled";
+import { type Section } from "../../../../lib/types/nav.types";
+
+type SubMenuSectionProps = {
+  section: Section;
+  currentLang: string;
+  isOpen: boolean;
+  setOpen: (next: boolean) => void;
+  onSelect: () => void;
+  t: (key: string) => string;
+  pathname: string;
+};
+
+const listVariants = {
+  hidden: {
+    height: 0,
+    transition: {
+      when: "afterChildren",
+      staggerChildren: 0.01,
+      staggerDirection: -1,
+    },
+  },
+  visible: {
+    height: "auto",
+    transition: {
+      when: "beforeChildren",
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: -10 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.08,
+      duration: 0.18,
+    },
+  }),
+};
+
+const SubMenuSection = ({
+  section,
+  currentLang,
+  isOpen,
+  setOpen,
+  onSelect,
+  t,
+  pathname,
+}: SubMenuSectionProps) => {
+  const active = pathname.startsWith(`/${currentLang}${section.basePath}`);
+
+  const onKeyDown: React.KeyboardEventHandler = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      setOpen(!isOpen);
+    } else if (e.key === "Escape") {
+      setOpen(false);
+    }
+  };
+  return (
+    <li
+      role="listbox"
+      aria-expanded={isOpen}
+      aria-label={t(section.titleKey)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <SubMenuTitle
+        active={active}
+        width={section.width}
+        justify={section.justify}
+        onMouseEnter={() => setOpen(true)}
+        onClick={() => !isOpen && setOpen(true)}
+        onKeyDown={onKeyDown}
+      >
+        {t(section.titleKey)}
+        <motion.svg
+          width={9}
+          height={7}
+          aria-hidden
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.18 }}
+        >
+          <use href="/src/assets/icons/sprite.svg#icon-select-arrow" />
+        </motion.svg>
+      </SubMenuTitle>
+
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <SubMenuList
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={listVariants}
+          >
+            {section.items.map((it, idx) => (
+              <motion.li key={it.to} custom={idx} variants={itemVariants}>
+                <SubLink to={`/${currentLang}${it.to}`} onClick={onSelect}>
+                  {t(it.labelKey)}
+                </SubLink>
+              </motion.li>
+            ))}
+          </SubMenuList>
+        )}
+      </AnimatePresence>
+    </li>
+  );
+};
+
+export default SubMenuSection;
