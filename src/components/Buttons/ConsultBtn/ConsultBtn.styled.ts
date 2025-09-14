@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const ConsultBtnStyled = styled.a<{ variant: string }>`
+export const ConsultBtnStyled = styled.a<{ variant: string; maxWidth?: string }>`
   font-weight: 500;
   font-size: 14px;
   line-height: 107%;
@@ -9,6 +9,8 @@ export const ConsultBtnStyled = styled.a<{ variant: string }>`
   transition: all 0.2s ease;
   border: 2px solid;
   border-radius: 8px;
+  max-width: ${({ maxWidth }) => maxWidth || "100%"};
+  width: 100%;
 
   ${({ variant }) =>
     variant === "header" &&
@@ -19,8 +21,6 @@ export const ConsultBtnStyled = styled.a<{ variant: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 202px;
-  width: 100%;
   min-height: 40px;
   height: 100%;
   
@@ -49,8 +49,6 @@ export const ConsultBtnStyled = styled.a<{ variant: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 100%;
-  width: 100%;
   min-height: 45px;
   height: 100%;
   transition: all 0.2s ease;

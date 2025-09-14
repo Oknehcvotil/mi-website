@@ -1,5 +1,5 @@
 import { useMatch, useLocation } from "react-router-dom";
-import ConsultBtn from "../ConsultBtn/ConsultBtn";
+import ConsultBtn from "../../Buttons/ConsultBtn/ConsultBtn";
 import { NavCont, MainLink } from "./NavBar.styled";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";

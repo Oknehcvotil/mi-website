@@ -1,6 +1,6 @@
 import { type Dispatch, type SetStateAction, useState, useEffect } from "react";
 import { Header, HeaderWrapper } from "./AppBar.styles";
-import ConsultBtn from "./ConsultBtn/ConsultBtn";
+import ConsultBtn from "../Buttons/ConsultBtn/ConsultBtn";
 import LangSwitcher from "./LangSwitcher/LangSwitcher";
 
 type AppBarProps = {
@@ -35,7 +35,7 @@ function AppBar({ setMenuIsOpen }: AppBarProps) {
           </svg>
         </button>
         <LangSwitcher />
-        <ConsultBtn variant="header" />
+        <ConsultBtn variant="header" maxWidth="202px"/>
       </HeaderWrapper>
     </Header>
   );

@@ -1,5 +1,11 @@
+import HeroSection from "../../components/HomePage/HeroSection/HeroSection";
+
 function Home() {
-  return <div style={{ marginTop: "300px" }}>Home</div>;
+  return (
+    <>
+      <HeroSection />
+    </>
+  );
 }
 
 export default Home;
