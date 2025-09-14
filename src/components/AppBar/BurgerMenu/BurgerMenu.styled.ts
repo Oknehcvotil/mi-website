@@ -34,6 +34,6 @@ export const BurgerCont = styled(motion.aside)`
   touch-action: pan-y;
 
   @media (min-width: 768px) {
-    width: 384px;
+    width: 50%;
   }
 `;
