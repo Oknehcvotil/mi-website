@@ -2,10 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Suspense, useState, useEffect } from "react";
 import AppBar from "../components/AppBar/AppBar";
 import BurgerMenu from "../components/AppBar/BurgerMenu/BurgerMenu";
-
-function Loading() {
-  return <div style={{ padding: 24 }}>Loading…</div>;
-}
+import LoaderM from "../components/Loader/LoaderM";
 
 const Layout = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -32,8 +29,8 @@ const Layout = () => {
       <AppBar setMenuIsOpen={setMenuIsOpen} />
       <BurgerMenu isOpen={menuIsOpen} onClose={closeMenu} />
 
-      <Suspense fallback={<Loading />}>
-        <main style={{height:"100vh"}}>
+      <Suspense fallback={<LoaderM />}>
+        <main style={{ height: "100vh" }}>
           <Outlet />
         </main>
       </Suspense>
