@@ -18,7 +18,7 @@ export const TitleCont = styled.div<{ lang: string }>`
 
 export const Title = styled(motion.h2)<{ lang: string }>`
   font-weight: 800;
-  font-size: ${({ lang }) => (lang === "en" ? "81px" : "90px")};
+  font-size: ${({ lang }) => (lang === "en" ? "82px" : "90px")};
   line-height: 70%;
   text-decoration: uppercase;
   text-align: center;
