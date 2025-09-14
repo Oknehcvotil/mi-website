@@ -13,32 +13,25 @@ type SubMenuSectionProps = {
 };
 
 const listVariants = {
-  hidden: {
-    height: 0,
-    transition: {
-      when: "afterChildren",
-      staggerChildren: 0.01,
-      staggerDirection: -1,
-    },
+  closed: {
+    opacity: 0,
+    scaleY: 0.85,
+    transition: { when: "afterChildren", staggerDirection: -1 },
   },
-  visible: {
-    height: "auto",
+  open: {
+    opacity: 1,
+    scaleY: 1,
     transition: {
+      duration: 0.12,
       when: "beforeChildren",
+      staggerChildren: 0.03,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: -10 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.08,
-      duration: 0.18,
-    },
-  }),
+  closed: { opacity: 0, y: -6 },
+  open: { opacity: 1, y: 0, transition: { duration: 0.14 } },
 };
 
 const SubMenuSection = ({
