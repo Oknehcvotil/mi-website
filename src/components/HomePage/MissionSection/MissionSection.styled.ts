@@ -13,9 +13,11 @@ export const TitleCont = styled.div`
   margin: 0 auto;
   max-width: 265px;
   width: 100%;
+  overflow: hidden;
 `;
 
-export const Title = styled(motion.h2)`
+export const Title = styled(motion.p)`
+
   font-weight: 800;
   font-size: 90px;
   line-height: 70%;
