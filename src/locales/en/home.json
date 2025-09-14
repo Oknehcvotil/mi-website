@@ -1,4 +1,17 @@
 {
   "heroTitle": "The first WEB3<br/> <1>HR agency</1> in Ukraine",
-  "subtitle": "Effectively closing the most complex vacancies and business needs in IT, Gamedev and WEB 3.0."
+  "subtitle": "Effectively closing the most complex vacancies and business needs in IT, Gamedev and WEB 3.0.",
+  "competencies": {
+    "title": "OUR AREAS OF EXPERTISE:",
+    "list": [
+      "RECRUITMENT",
+      "HR CONSULTING",
+      "BUSINESS PSYCHOLOGY",
+      "CAREER CONSULTING"
+    ]
+  },
+  "companyNeeds": {
+    "title": "WE COVER THE NEEDS OF COMPANIES IN THE FOLLOWING AREAS:",
+    "list": ["IT", "WEB 3.0", "REAL ESTATE", "MARKETING"]
+  }
 }

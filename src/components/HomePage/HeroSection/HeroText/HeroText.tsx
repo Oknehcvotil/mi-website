@@ -1,6 +1,6 @@
 import { Trans, useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { textUp } from "../../../../lib/animations/home/animation";
+import { textUp } from "../../../../lib/animations/home/animation.hero";
 import { HeroTitle, TitleAccent, SubTitle } from "./HeroText.styled";
 import ConsultBtn from "../../../Buttons/ConsultBtn/ConsultBtn";
 

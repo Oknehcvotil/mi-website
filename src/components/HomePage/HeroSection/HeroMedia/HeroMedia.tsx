@@ -1,5 +1,4 @@
-
-import { imageIn } from "../../../../lib/animations/home/animation";
+import { imageIn } from "../../../../lib/animations/home/animation.hero";
 import { HeroPictCont, HeroImage } from "./HeroMedia.styled";
 
 type HeroMediaProps = {

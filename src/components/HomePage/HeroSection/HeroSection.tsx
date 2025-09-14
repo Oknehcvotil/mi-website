@@ -1,7 +1,7 @@
 import Container from "../../Container/Container";
 import { HeroSectionWrap } from "./HeroSection.styled";
 import { motion, useReducedMotion } from "framer-motion";
-import { container } from "../../../lib/animations/home/animation";
+import { container } from "../../../lib/animations/home/animation.hero";
 import HeroText from "./HeroText/HeroText";
 import HeroMedia from "./HeroMedia/HeroMedia";
 
