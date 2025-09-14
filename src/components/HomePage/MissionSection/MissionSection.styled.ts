@@ -5,21 +5,20 @@ export const Wrap = styled.section`
   padding-top: 20px;
 `;
 
-export const TitleCont = styled.div`
+export const TitleCont = styled.div<{ lang: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 265px;
+  max-width: ${({ lang }) => (lang === "en" ? "100%" : "265px")};
   width: 100%;
   overflow: hidden;
 `;
 
-export const Title = styled(motion.p)`
-
+export const Title = styled(motion.h2)<{ lang: string }>`
   font-weight: 800;
-  font-size: 90px;
+  font-size: ${({ lang }) => (lang === "en" ? "81px" : "90px")};
   line-height: 70%;
   text-decoration: uppercase;
   text-align: center;
