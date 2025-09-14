@@ -83,7 +83,7 @@ const SubMenuSection = ({
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.18 }}
         >
-          <use href="/src/assets/icons/sprite.svg#icon-select-arrow" />
+          <use href="/icons/sprite.svg#icon-select-arrow" />
         </motion.svg>
       </SubMenuTitle>
 

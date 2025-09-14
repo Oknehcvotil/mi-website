@@ -15,7 +15,7 @@ export const NAV_SECTIONS: Readonly<Section[]> = [
     id: "cases",
     titleKey: "cases",
     basePath: "/cases",
-    width: "220px",
+    width: "230px",
     justify: "flex-start",
     items: [
       { to: "/cases/recruitment", labelKey: "recruitment" },

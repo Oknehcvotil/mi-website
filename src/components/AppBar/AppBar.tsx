@@ -31,7 +31,7 @@ function AppBar({ setMenuIsOpen }: AppBarProps) {
           type="button"
         >
           <svg width={40} height={40}>
-            <use href="/src/assets/icons/sprite.svg#icon-menu"></use>
+            <use href="/icons/sprite.svg#icon-menu"></use>
           </svg>
         </button>
         <LangSwitcher />

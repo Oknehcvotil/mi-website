@@ -54,7 +54,7 @@ const LangSwitcher = () => {
               height={7}
               animate={{ rotate: open ? 180 : 0 }}
             >
-              <use href="/src/assets/icons/sprite.svg#icon-select-arrow"></use>
+              <use href="/icons/sprite.svg#icon-select-arrow"></use>
             </motion.svg>
           </button>
         </li>
