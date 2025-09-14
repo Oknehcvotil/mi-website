@@ -43,14 +43,12 @@ export default function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route path="/" element={<Navigate to={fallbackLangPath} replace />} />
+      <Route element={<Layout />}>
+        <Route index element={<Navigate to={fallbackLangPath} replace />} />
 
-        <Route path="/:lang" element={<LanguageGuard />}>
-          {/* Main */}
+        <Route path=":lang" element={<LanguageGuard />}>
           <Route index element={<Home />} />
 
-          {/* Services*/}
           <Route path="services" element={<Outlet />}>
             <Route index element={<Navigate to="for-clients" replace />} />
             <Route path="for-clients" element={<ForClients />} />
@@ -58,18 +56,17 @@ export default function App() {
             <Route path="phd-recruiting" element={<PhdRecruiting />} />
           </Route>
 
-          {/* Cases */}
           <Route path="cases" element={<Outlet />}>
-            <Route index element={<Navigate to="it" replace />} />
+            <Route index element={<Navigate to="recruitment" replace />} />
             <Route path="recruitment" element={<IT />} />
             <Route path="hr-consulting" element={<Web />} />
             <Route path="business-psychology" element={<Marketing />} />
             <Route path="for-candidates" element={<FinTech />} />
           </Route>
-
-          {/* 404 */}
-          <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
+
+        {/* catch-all */}
+        <Route path="*" element={<Navigate to={fallbackLangPath} replace />} />
       </Route>
     </Routes>
   );
