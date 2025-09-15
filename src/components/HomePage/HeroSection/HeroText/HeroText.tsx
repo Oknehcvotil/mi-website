@@ -3,7 +3,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import {
   container,
   textUp,
-} from "../../../../lib/animations/home/animation.hero";
+} from "../../../../lib/animations/home/animations.hero";
 import { Wrapper, HeroTitle, TitleAccent, SubTitle } from "./HeroText.styled";
 import ConsultBtn from "../../../Buttons/ConsultBtn/ConsultBtn";
 
