@@ -19,8 +19,8 @@ export const HeroPictCont = styled(motion.div)`
 `;
 
 export const HeroImage = styled.img`
-  width: "100%";
-  height: "auto";
-  display: "block";
-  object-fit: "contain";
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
 `;
