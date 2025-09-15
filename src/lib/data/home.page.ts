@@ -28,3 +28,22 @@ export const advantagesCards = [
     title: "advantages.titles.3",
   },
 ];
+
+export const statsCards = [
+  {
+    value: "2500+",
+    label: "stats.labels.0",
+  },
+  {
+    value: "70+",
+    label: "stats.labels.1",
+  },
+  {
+    value: "9+",
+    label: "stats.labels.2",
+  },
+  {
+    value: "10+",
+    label: "stats.labels.3",
+  },
+];
