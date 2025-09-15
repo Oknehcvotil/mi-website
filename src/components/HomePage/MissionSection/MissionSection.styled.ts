@@ -14,6 +14,7 @@ export const TitleCont = styled.div<{ lang: string }>`
   max-width: ${({ lang }) => (lang === "en" ? "100%" : "265px")};
   width: 100%;
   overflow: hidden;
+  margin-bottom: 16px;
 `;
 
 export const Title = styled(motion.h2)<{ lang: string }>`

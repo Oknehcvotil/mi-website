@@ -11,7 +11,8 @@ const MissionSection = () => {
         <TitleCont lang={lang}>
           <Title lang={lang}>{t("missionTitle")}</Title>
           <TitleText>{t("missionTitleText")}</TitleText>
-        </TitleCont>
+              </TitleCont>
+              
       </Container>
     </Wrap>
   );

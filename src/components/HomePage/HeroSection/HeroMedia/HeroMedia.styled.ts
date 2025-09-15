@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 
 export const HeroPictCont = styled(motion.div)`
   position: relative;
+  max-width: 390px;
+  margin: 0 auto;
 
   &::after {
     content: "";
