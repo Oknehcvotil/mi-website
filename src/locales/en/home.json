@@ -15,5 +15,13 @@
     "list": ["IT", "WEB 3.0", "REAL ESTATE", "MARKETING"]
   },
   "missionTitle": "MISSION",
-  "missionTitleText": "To become a reliable innovative HR partner for businesses around the world!"
+  "missionTitleText": "To become a reliable innovative HR partner for businesses around the world!",
+  "values": {
+    "title": "Values",
+    "cards": [
+      "The courage to change standards",
+      "We develop the innovative potential of business",
+      "Every interaction is WIN - WIN"
+    ]
+  }
 }

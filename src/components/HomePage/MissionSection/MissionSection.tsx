@@ -1,18 +1,20 @@
 import Container from "../../Container/Container";
+import { Wrap, SubTitle } from "./MissionSection.styled";
+import MissionMainTitle from "./MissionMainTitle/MissionMainTitle";
 import { useTranslation } from "react-i18next";
-import { Title, TitleCont, TitleText, Wrap } from "./MissionSection.styled";
+import ValuesGrid from "./ValuesGrid/ValuesGrid";
 
 const MissionSection = () => {
-  const { t, i18n } = useTranslation("home");
-  const lang = i18n.language;
+  const { t } = useTranslation("home");
+
   return (
     <Wrap>
       <Container>
-        <TitleCont lang={lang}>
-          <Title lang={lang}>{t("missionTitle")}</Title>
-          <TitleText>{t("missionTitleText")}</TitleText>
-              </TitleCont>
-              
+        <MissionMainTitle />
+        <div>
+          <SubTitle>{t("values.title")}</SubTitle>
+          <ValuesGrid />
+        </div>
       </Container>
     </Wrap>
   );
