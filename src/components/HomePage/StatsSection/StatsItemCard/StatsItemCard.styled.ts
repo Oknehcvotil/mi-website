@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 export const StatsItem = styled(motion.li)`
   position: relative;
 
-  &:nth-last-of-type {
-    margin-bottom: 13px;
+  &:not(:last-of-type) {
+    margin-bottom: 25px;
   }
 
   &:nth-of-type(3) {
-    margin-bottom: 34px;
+    margin-bottom: 38px;
   }
 `;
 
