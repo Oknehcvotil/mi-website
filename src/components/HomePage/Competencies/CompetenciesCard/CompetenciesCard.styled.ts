@@ -14,7 +14,7 @@ export const CardCont = styled.div`
 `;
 
 export const Title = styled.h3`
-  font-family: "Ubounded";
+  font-family: "Unbounded";
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
@@ -56,7 +56,7 @@ export const Item = styled.li`
 `;
 
 export const Text = styled.p`
-  font-family: "Ubounded";
+  font-family: "Unbounded";
   font-weight: 400;
   font-size: 20px;
   line-height: 130%;
