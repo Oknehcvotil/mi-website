@@ -105,3 +105,21 @@ export const CLIENT_ASSET: Partial<Record<CountryId, ClientAsset>> = {
   montenegro: { type: "webp", base: "/icons/clients/montenegro-client" },
   switzerland: { type: "svg", src: "/icons/clients/switzerland-client.svg" },
 };
+
+export const clientsLogos = [
+  "reelly",
+  "kitrum",
+  "forbes",
+  "whitebit",
+  "winner",
+  "kse",
+  "input",
+  "cbet",
+  "novaPoshta",
+  "neatpeak",
+  "husky",
+  "nauda",
+  "aroma",
+  "flint",
+  "crypto",
+];
