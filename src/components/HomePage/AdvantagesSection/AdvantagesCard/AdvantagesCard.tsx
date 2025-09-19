@@ -1,7 +1,6 @@
 import { type Variants } from "framer-motion";
 import { Trans, useTranslation } from "react-i18next";
 import { ListItem, AdvText } from "./AdvantagesCards.styled";
-import SVGIcon from "../../../SVGIcon/SVGIcon";
 
 type AdvantagesCardProps = {
   img: {
@@ -24,7 +23,15 @@ const AdvantagesCard = ({ img, title, variants }: AdvantagesCardProps) => {
       aria-label={title}
     >
       <div>
-        <SVGIcon width={130} height={130} iconId={img.mob} />
+        <img
+          src={`/images/mob/${img.mob}.webp`}
+          srcSet={`
+                  /images/mob/${img.mob}.webp 1x,
+                  /images/mob/${img.mob}@2x.webp 2x,
+                  /images/mob/${img.mob}@3x.webp 3x
+                `}
+          alt={img.alt}
+        />
       </div>
 
       <AdvText>

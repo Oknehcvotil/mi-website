@@ -4,28 +4,28 @@ import type { ClientAsset, CountryId } from "../types/home.types";
 export const advantagesCards = [
   {
     img: {
-      mob: "/icons/locks.svg",
+      mob: "lock",
       alt: "Експертиза",
     },
     title: "advantages.titles.0",
   },
   {
     img: {
-      mob: "/icons/chats.svg",
+      mob: "chat",
       alt: "Зіркові кандидати",
     },
     title: "advantages.titles.1",
   },
   {
     img: {
-      mob: "/icons/gears.svg",
+      mob: "setting",
       alt: "Формуємо цілі команди",
     },
     title: "advantages.titles.2",
   },
   {
     img: {
-      mob: "/icons/letters.svg",
+      mob: "home",
       alt: "HR-системи in-house",
     },
     title: "advantages.titles.3",
