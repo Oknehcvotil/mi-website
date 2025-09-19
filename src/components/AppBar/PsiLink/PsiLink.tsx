@@ -12,7 +12,7 @@ const PsiLink = ({ onCloseBurger }: PsiLinkProps) => {
       rel="noopener noreferrer"
       onClick={onCloseBurger}
     >
-      PSI MI
+      PSY MI
     </PsiCustomLink>
   );
 };

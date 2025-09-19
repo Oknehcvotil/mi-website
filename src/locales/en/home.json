@@ -39,5 +39,25 @@
       "years of expertise in recruiting and HR",
       "<1>clients from</1> countries"
     ]
+  },
+  "map": {
+    "title": "geography of <1>mi customers</1>",
+    "label": "Choose a country:",
+    "countries": [
+      "Ukraine",
+      "Britain",
+      "Canada",
+      "Latvia",
+      "UAE",
+      "Poland",
+      "Portugal",
+      "Turkey",
+      "USA",
+      "Hungary",
+      "Croatia",
+      "Czech Republic",
+      "Montenegro",
+      "Switzerland"
+    ]
   }
 }
