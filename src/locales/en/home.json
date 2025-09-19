@@ -60,5 +60,23 @@
       "Switzerland"
     ]
   },
-  "clientsTitle":"our <1>clients</1>"
+  "clientsTitle": "our <1>clients</1>",
+  "services": {
+    "title": "our <1>Services</1>",
+    "subTitiles": [
+      "Recruitment",
+      "HR consulting",
+      "business psychology",
+      "career counseling",
+      "PhD in recruiting coursez"
+    ],
+    "text": [
+      "Search, assessment and selection of specialists who have the necessary competencies and share the values ​​of the Company.",
+      "A package of services that optimize all HR processes of your Company.",
+      "A list of services that allows you to normalize the atmosphere and relationships in the team, and minimize the impact of this factor on business results",
+      "A package of services for successful employment and creating an impressive professional resume.",
+      "We teach modern recruiting: from basics to advanced tools. Ideal for both beginners and practicing professionals."
+    ],
+    "button": "learne more"
+  }
 }

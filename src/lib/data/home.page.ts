@@ -123,3 +123,11 @@ export const clientsLogos = [
   "flint",
   "crypto",
 ];
+
+export const servicesLinks = [
+  "/services/for-clients",
+  "/services/for-clients",
+  "/services/for-clients",
+  "/services/for-candidates",
+  "/services/phd-recruiting",
+];

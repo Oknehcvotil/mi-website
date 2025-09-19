@@ -5,6 +5,7 @@ import AdvantagesSection from "../../components/HomePage/AdvantagesSection/Advan
 import StatsSection from "../../components/HomePage/StatsSection/StatsSection";
 import GeographySection from "../../components/HomePage/GeographySection/GeographySection";
 import ClientsSection from "../../components/HomePage/ClientsSection/ClientsSection";
+import ServicesSection from "../../components/HomePage/ServicesSection/ServicesSection";
 
 function Home() {
   return (
@@ -15,7 +16,8 @@ function Home() {
       <AdvantagesSection />
       <StatsSection />
       <GeographySection />
-      <ClientsSection/>
+      <ClientsSection />
+      <ServicesSection />
     </>
   );
 }

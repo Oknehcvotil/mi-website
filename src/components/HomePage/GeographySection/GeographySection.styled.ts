@@ -7,7 +7,7 @@ export const Wrap = styled.section`
     display: block;
   }
 
-  padding: 40px 0 10px;
+  padding: 40px 0 0 0;
   background: #f8f8fb;
 `;
 
