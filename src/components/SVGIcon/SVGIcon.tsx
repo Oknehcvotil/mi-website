@@ -15,7 +15,7 @@ const SVGIcon: React.FC<SVGIconProps> = ({
 }) => {
   return (
     <svg width={width} height={height} className={className} aria-hidden="true">
-      <use href={`${iconId}`} />
+      <use xlinkHref={`${iconId}`}></use>
     </svg>
   );
 };
