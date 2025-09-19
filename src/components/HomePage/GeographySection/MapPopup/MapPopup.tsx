@@ -13,7 +13,6 @@ import {
   ClientPopup,
   PopupsWrapper,
 } from "./MapPopup.styled";
-import SVGIcon from "../../../SVGIcon/SVGIcon";
 
 type Country = { id: CountryId; label: string };
 
@@ -82,10 +81,11 @@ const MapPopup = memo(({ countries, selected, onSelect }: MapPopupProps) => {
 
                         if (asset.type === "svg") {
                           return (
-                            <SVGIcon
-                              iconId={asset.src}
-                              width={"100%"}
-                              height={"100%"}
+                            <img
+                              alt="clients"
+                              srcSet={asset.src}
+                              loading="lazy"
+                              decoding="async"
                             />
                           );
                         }
