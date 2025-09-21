@@ -1,31 +1,25 @@
 import { Wrap, GeographyTytle } from "./GeographySection.styled";
 import { useTranslation, Trans } from "react-i18next";
-import { COUNTRY_IDS } from "../../../lib/data/home.page";
-import type { CountryId } from "../../../lib/types/home.types";
-import { useMemo, useState } from "react";
+import type { Country, CountryId } from "../../../lib/types/geo.types";
+import { useCallback,  useState } from "react";
 import Map from "./Map/Map";
 import CountrySelector from "./CountrySelector/CountrySelector";
+import {
+  COUNTRIES,
+  MAPS,
+  POINTS_PX,
+} from "../../../lib/data/geo";
 
 const GeographySection = () => {
   const { t, i18n } = useTranslation("home");
   const lang = i18n.language;
 
-  const countryNames = useMemo(
-    () => (t("map.countries", { returnObjects: true }) as string[]) ?? [],
-    [t]
-  );
-
-  const countries = useMemo(
-    () =>
-      COUNTRY_IDS.map((id, i) => ({
-        id,
-        label: countryNames[i] ?? id,
-      })),
-    [countryNames]
-  );
-
   const [selected, setSelected] = useState<CountryId>("ukraine");
+  const [popupPx, setPopupPx] = useState<{ x: number; y: number } | null>(null);
 
+  const countries: Country[] = COUNTRIES;
+
+  const onSelect = useCallback((id: CountryId) => setSelected(id), []);
   return (
     <Wrap>
       <GeographyTytle lang={lang}>
@@ -36,16 +30,26 @@ const GeographySection = () => {
         <CountrySelector
           countries={countries}
           selected={selected}
-          onSelect={setSelected}
-          label={t("map.label")}
+          onSelect={onSelect}
         />
 
-        <Map
-          // countries={countries}
-          // selected={selected}
-          // onSelect={setSelected}
-          alt={t("map.alt", "World map with client markers")}
-        />
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            maxWidth: 1200,
+            margin: "24px 0",
+          }}
+        >
+          <Map
+            selected={selected}
+            onSelect={onSelect}
+            maps={MAPS}
+            pointsPx={POINTS_PX}
+            onPointPixels={setPopupPx}
+            popupPx={popupPx}
+          />
+        </div>
       </div>
     </Wrap>
   );

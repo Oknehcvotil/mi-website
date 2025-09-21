@@ -1,116 +1,86 @@
-import { memo } from "react";
-import type { CountryId } from "../../../../lib/types/home.types";
-import {
-  POINTS_MOB,
-  flagSet,
-  CLIENT_ASSET,
-} from "../../../../lib/data/home.page";
+import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import type { CountryId, ClientLogo } from "../../../../lib/types/geo.types";
+import { COUNTRY_IDS } from "../../../../lib/data/geo"; 
 import { webpSet } from "../../../../lib/helpers/helpers";
-import {
-  MapPointBtn,
-  MapPoint,
-  CountryPopup,
-  ClientPopup,
-  PopupsWrapper,
-} from "./MapPopup.styled";
-
-type Country = { id: CountryId; label: string };
+import { ClientPopup, CountryPopup, PopupsWrapper } from "./MapPopup.styled";
 
 type MapPopupProps = {
-  countries: Country[];
-  selected: CountryId;
-  onSelect: (id: CountryId) => void;
+  visible: boolean;
+  x: number;
+  y: number;
+  countryId: CountryId;
+  countryLabel?: string; 
+  client: ClientLogo;
+  flagBase: string;
+  className?: string;
+  flagsDir?: string;
+  clientsDir?: string;
 };
 
-const MapPopup = memo(({ countries, selected, onSelect }: MapPopupProps) => {
+const MapPopup = ({
+  visible,
+  x,
+  y,
+  countryId,
+  countryLabel,
+  client,
+  flagBase,
+  className,
+  flagsDir = "/icons/flags",
+  clientsDir = "/images/map-clients",
+}: MapPopupProps) => {
+  const { t } = useTranslation("home");
+
+  const localizedCountryLabel = useMemo(() => {
+    const labels = t("map.countries", { returnObjects: true }) as unknown;
+    if (Array.isArray(labels)) {
+      const idx = COUNTRY_IDS.indexOf(countryId);
+      if (idx !== -1 && typeof labels[idx] === "string") {
+        return labels[idx] as string;
+      }
+    }
+    return countryLabel ?? countryId;
+  }, [t, countryId, countryLabel]);
+
+  if (!visible) return null;
+
+  const flag = webpSet(`${flagsDir}/${flagBase}`);
+  const logo = webpSet(`${clientsDir}/${client.src}`);
+
   return (
-    <>
-      {/* ТОЧКИ */}
-      {countries.map((c) => {
-        const p = POINTS_MOB[c.id];
-        if (!p) return null;
+    <PopupsWrapper
+      className={className}
+      style={{
+        position: "absolute",
+        left: x,
+        top: y,
+      }}
+      role="dialog"
+      aria-label={localizedCountryLabel}
+    >
+      <CountryPopup style={{ display: "flex", alignItems: "center", gap: 8 }} className="popup--country">
+        <img
+          src={flag.src}
+          srcSet={flag.srcSet}
+          alt={`${localizedCountryLabel} flag`}
+          loading="lazy"
+          className="popup-flag"
+        />
+        <span>{localizedCountryLabel}</span>
+      </CountryPopup>
 
-        const isActive = c.id === selected;
-
-        return (
-          <>
-            <MapPointBtn
-              key={c.id}
-              type="button"
-              aria-label={c.label}
-              aria-pressed={isActive}
-              onMouseEnter={() => onSelect(c.id)}
-              onFocus={() => onSelect(c.id)}
-              onClick={() => onSelect(c.id)}
-              xPct={p.xPct}
-              yPct={p.yPct}
-            />
-            <MapPoint key={c.id} xPct={p.xPct} yPct={p.yPct}>
-              <PopupsWrapper>
-                {/* ПОПАП рисуем только над выбранной точкой */}
-                {isActive && (
-                  <>
-                    {/* Страна: флаг + название */}
-                    <CountryPopup>
-                      {(() => {
-                        const { src, srcSet } = flagSet(c.id);
-                        const countryName = c.label || "Selected country flag";
-                        return (
-                          <>
-                            <img
-                              alt={countryName}
-                              src={src}
-                              srcSet={srcSet}
-                              loading="lazy"
-                              decoding="async"
-                            />
-                            <span>{countryName}</span>
-                          </>
-                        );
-                      })()}
-                    </CountryPopup>
-
-                    {/* Клиент(ы) для выбранной страны */}
-                    <ClientPopup>
-                      {(() => {
-                        const asset = CLIENT_ASSET[c.id];
-                        if (!asset) return null;
-
-                        if (asset.type === "text")
-                          return <span>{asset.text}</span>;
-
-                        if (asset.type === "svg") {
-                          return (
-                            <img
-                              alt="clients"
-                              srcSet={asset.src}
-                              loading="lazy"
-                              decoding="async"
-                            />
-                          );
-                        }
-
-                        const { src, srcSet } = webpSet(asset.base);
-                        return (
-                          <img
-                            alt="client"
-                            src={src}
-                            srcSet={srcSet}
-                            loading="lazy"
-                            decoding="async"
-                          />
-                        );
-                      })()}
-                    </ClientPopup>
-                  </>
-                )}
-              </PopupsWrapper>
-            </MapPoint>
-          </>
-        );
-      })}
-    </>
+      <ClientPopup>
+        <img
+          src={logo.src}
+          srcSet={logo.srcSet}
+          alt={client.alt}
+          loading="lazy"
+          className="popup-client-logo"
+        />
+      </ClientPopup>
+    </PopupsWrapper>
   );
-});
+};
 
 export default MapPopup;

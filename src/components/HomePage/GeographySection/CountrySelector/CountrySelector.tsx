@@ -1,6 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
-import type { CountryId } from "../../../../lib/types/home.types";
+import type { Country, CountryId } from "../../../../lib/types/geo.types";
+
 import {
   SelectorCont,
   SelectorTitile,
@@ -10,36 +12,39 @@ import {
   SelectBtn,
 } from "./CountrySelector.styled";
 
-type Country = { id: CountryId; label: string };
-
-interface CountrySelectorProps {
+type CountrySelectorProps = {
   countries: Country[];
   selected: CountryId;
   onSelect: (id: CountryId) => void;
-  label: string;
-}
-
+};
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: -6, pointerEvents: "none" },
   visible: { opacity: 1, y: 0, pointerEvents: "auto" },
-  // мгновенно исчезают при закрытии
-  exit: { opacity: 0, y: -6, transition: { duration: 0 } },
+  exit: { opacity: 0, y: -6, pointerEvents: "none" },
 };
 
-const easeIn = [0.22, 1, 0.36, 1] as const;
+const easeIn: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-const CountrySelector = ({
+export default function CountrySelector({
   countries,
   selected,
   onSelect,
-  label,
-}: CountrySelectorProps) => {
+}: CountrySelectorProps) {
+  const { t } = useTranslation("home");
   const [isOpen, setIsOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
+  const countryLabels = t("map.countries", { returnObjects: true }) as string[];
 
-  const active = countries.find((c) => c.id === selected);
-  const others = countries.filter((c) => c.id !== selected);
+  const selectedSafe: CountryId = useMemo(() => {
+    const hasSelected = countries.some((c) => c.id === selected);
+    return hasSelected ? selected : "ukraine";
+  }, [countries, selected]);
+
+  const active = countries.find((c) => c.id === selectedSafe) ?? {
+    id: "ukraine" as CountryId,
+  };
+  const others = countries.filter((c) => c.id !== selectedSafe);
 
   const toggleOpen = () => setIsOpen((v) => !v);
   const close = () => setIsOpen(false);
@@ -49,7 +54,6 @@ const CountrySelector = ({
     close();
   };
 
-  // клик вне — закрыть
   useEffect(() => {
     const onDocClick = (e: MouseEvent) => {
       if (!rootRef.current) return;
@@ -59,7 +63,6 @@ const CountrySelector = ({
     return () => document.removeEventListener("mousedown", onDocClick);
   }, []);
 
-  // клавиатура
   const onActiveKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
@@ -71,13 +74,12 @@ const CountrySelector = ({
 
   return (
     <SelectorCont ref={rootRef}>
-      <SelectorTitile>{label}</SelectorTitile>
+      <SelectorTitile>{t("map.label")}</SelectorTitile>
 
       <ListCont>
-        {/* анимируем высоту самого списка */}
         <SelectorList
           id="country-options"
-          aria-label={label}
+          aria-label={t("map.label")}
           aria-expanded={isOpen}
           initial={false}
           isOpen={isOpen}
@@ -94,7 +96,7 @@ const CountrySelector = ({
                 onClick={toggleOpen}
                 onKeyDown={onActiveKeyDown}
               >
-                {active.label}
+                {countryLabels[countries.findIndex((c) => c.id === active.id)]}
                 <div className="arrow-cont">
                   <motion.svg
                     width={7}
@@ -110,7 +112,6 @@ const CountrySelector = ({
             </li>
           )}
 
-          {/* пункты-опции рендерим только когда открыт */}
           <AnimatePresence initial={false}>
             {isOpen &&
               others.map((c) => (
@@ -123,7 +124,7 @@ const CountrySelector = ({
                   transition={{ duration: 0.18, ease: easeIn }}
                 >
                   <SelectBtn type="button" onClick={() => handleSelect(c.id)}>
-                    {c.label}
+                    {countryLabels[countries.findIndex((cc) => cc.id === c.id)]}
                   </SelectBtn>
                 </motion.li>
               ))}
@@ -132,6 +133,4 @@ const CountrySelector = ({
       </ListCont>
     </SelectorCont>
   );
-};
-
-export default CountrySelector;
+}

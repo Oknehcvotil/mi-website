@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const Wrap = styled.section`
   display: none;
 
-  @media (min-width: 375px) {
+  @media (min-width: 380px) {
     display: block;
   }
 

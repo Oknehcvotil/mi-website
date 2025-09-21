@@ -25,7 +25,7 @@ export const SelectorTitile = styled.p`
 
 export const ListCont = styled.div`
   height: 35.05px;
-  width: 175px;
+  width: 180px;
   position: relative;
 `;
 
@@ -34,7 +34,7 @@ export const SelectorList = styled(motion.ul)<{ isOpen: boolean }>`
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 175px;
+  max-width: 180px;
   width: 100%;
   border-radius: 4px;
   z-index: 50;
