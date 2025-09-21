@@ -36,15 +36,15 @@ export const MAPS: Record<MapKey, MapDef> = {
 export const POINTS_PX: Record<MapKey, Record<CountryId, PinPx>> = {
   mob: {
     ukraine: { x: 202, y: 52 },
-    britain: { x: 167, y: 30 },
+    britain: { x: 166, y: 30 },
     canada: { x: 60, y: 32 },
     latvia: { x: 193, y: 29 },
     uae: { x: 115, y: 132 },
-    poland: { x: 199, y: 45 },
+    poland: { x: 198, y: 45 },
     portugal: { x: 154, y: 51 },
     turkey: { x: 85, y: 122 },
     usa: { x: 49, y: 62 },
-    hungary: { x: 191, y: 39 },
+    hungary: { x: 192, y: 39 },
     croatia: { x: 186, y: 43 },
     czech: { x: 183, y: 40 },
     montenegro: { x: 186, y: 54 },

@@ -1,11 +1,13 @@
 import styled from "@emotion/styled";
 
-export const PopupsWrapper = styled.div`
+export const PopupsWrapper = styled.div<{ x: number; y: number }>`
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
+  left: ${({ x }) => `${Math.round(x)}px`};
+  top: ${({ y }) => `${Math.round(y)}px`};
 
   &.popup--uae,
   &.popup--turkey {
@@ -24,6 +26,10 @@ export const PopupsWrapper = styled.div`
         border-color: white transparent transparent transparent;
       }
     }
+  }
+
+  &.lang-ua.popup--turkey {
+    left: ${({ x }) => x - 19}px;
   }
 `;
 

@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import type { CountryId, ClientLogo } from "../../../../lib/types/geo.types";
-import { COUNTRY_IDS } from "../../../../lib/data/geo"; 
+import { COUNTRY_IDS } from "../../../../lib/data/geo";
 import { webpSet } from "../../../../lib/helpers/helpers";
 import { ClientPopup, CountryPopup, PopupsWrapper } from "./MapPopup.styled";
 
@@ -10,7 +10,7 @@ type MapPopupProps = {
   x: number;
   y: number;
   countryId: CountryId;
-  countryLabel?: string; 
+  countryLabel?: string;
   client: ClientLogo;
   flagBase: string;
   className?: string;
@@ -30,7 +30,9 @@ const MapPopup = ({
   flagsDir = "/icons/flags",
   clientsDir = "/images/map-clients",
 }: MapPopupProps) => {
-  const { t } = useTranslation("home");
+  const { t, i18n } = useTranslation("home");
+
+  const langClass = `lang-${i18n.language}`;
 
   const localizedCountryLabel = useMemo(() => {
     const labels = t("map.countries", { returnObjects: true }) as unknown;
@@ -50,16 +52,16 @@ const MapPopup = ({
 
   return (
     <PopupsWrapper
-      className={className}
-      style={{
-        position: "absolute",
-        left: x,
-        top: y,
-      }}
+      className={`${className ?? ""} ${langClass}`}
+      x={x}
+      y={y}
       role="dialog"
       aria-label={localizedCountryLabel}
     >
-      <CountryPopup style={{ display: "flex", alignItems: "center", gap: 8 }} className="popup--country">
+      <CountryPopup
+        style={{ display: "flex", alignItems: "center", gap: 8 }}
+        className="popup--country"
+      >
         <img
           src={flag.src}
           srcSet={flag.srcSet}
