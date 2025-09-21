@@ -31,6 +31,20 @@ export const PopupsWrapper = styled.div<{ x: number; y: number }>`
   &.lang-ua.popup--turkey {
     left: ${({ x }) => x - 19}px;
   }
+
+  &.lang-en.popup--czech {
+    flex-direction: row-reverse;
+    left: 10px;
+
+    .popup--country {
+      flex-direction: row-reverse;
+
+      &::after {
+        content: "";
+        left: 74%;
+      }
+    }
+  }
 `;
 
 export const CountryPopup = styled.div`

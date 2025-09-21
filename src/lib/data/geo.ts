@@ -127,4 +127,5 @@ export const CLIENTS: Record<CountryId, ClientLogo> = {
 export const COUNTRY_POPUP_CLASS: Partial<Record<CountryId, string>> = {
   turkey: "popup--turkey",
   uae: "popup--uae",
+  czech: "popup--czech",
 };
