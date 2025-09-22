@@ -21,7 +21,7 @@ function ConsultBtn({
       onClick={onClick}
       maxWidth={maxWidth}
     >
-      {t("cta")}
+      <span>{t("cta")}</span>
     </ConsultBtnStyled>
   );
 }

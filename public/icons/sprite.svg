@@ -26,5 +26,8 @@
 <path fill="none" stroke="#8a38f5" style="stroke: var(--color1, #8a38f5)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M16.514 23.429v-14.857"></path>
 <path fill="none" stroke="#8a38f5" style="stroke: var(--color1, #8a38f5)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M22.457 23.429v-10.4"></path>
 </symbol>
+<symbol id="icon-slider-arrow" viewBox="0 0 19 32">
+<path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4.3636" d="M15.792 3.533l-12.468 12.467 12.468 12.468"></path>
+</symbol>
 </defs>
 </svg>

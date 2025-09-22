@@ -36,9 +36,7 @@ const GeographySection = () => {
         <div
           style={{
             position: "relative",
-            width: "100%",
-            maxWidth: 1200,
-            margin: "24px 0",
+            margin: "0 auto",
           }}
         >
           <Map

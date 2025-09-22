@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import SubMenuSection from "./SubMenuSection/SubMenuSection";
 import { type Section } from "../../../lib/types/nav.types";
 import { NAV_SECTIONS } from "../../../lib/data/nav.section";
-import PsiLink from "../PsiLink/PsiLink";
+import PsiLink from "../../Buttons/PsiLink/PsiLink";
 
 type NavBarProps = {
   onCloseBurger: () => void;

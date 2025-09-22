@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
-export const PopupsWrapper = styled.div<{ x: number; y: number }>`
+export const PopupsWrapper = styled(motion.div)<{ x: number; y: number }>`
   position: absolute;
   display: flex;
   align-items: center;
@@ -9,8 +10,18 @@ export const PopupsWrapper = styled.div<{ x: number; y: number }>`
   left: ${({ x }) => `${Math.round(x)}px`};
   top: ${({ y }) => `${Math.round(y)}px`};
 
-  &.popup--uae,
-  &.popup--turkey {
+  &.lang-en.popup-britain,
+  &.lang-en.popup-hungary,
+  &.lang-en.popup-croatia {
+    left: ${({ x }) => `${Math.round(x) + 2}px`};
+  }
+
+  &.lang-en.popup-portugal {
+    left: ${({ x }) => `${Math.round(x) + 3}px`};
+  }
+
+  &.popup-uae,
+  &.popup-turkey {
     flex-direction: row-reverse;
     .popup--country {
       flex-direction: row-reverse;
@@ -18,23 +29,20 @@ export const PopupsWrapper = styled.div<{ x: number; y: number }>`
       &::after {
         content: "";
         position: absolute;
-        bottom: 34px;
-        left: 70%;
-        transform: translateX(-50%) rotate(180deg);
-        border-width: 10px 10px 0 10px;
-        border-style: solid;
-        border-color: white transparent transparent transparent;
+        bottom: 26px;
+        left: 58%;
+        transform: rotate(135deg);
       }
     }
   }
 
-  &.lang-ua.popup--turkey {
-    left: ${({ x }) => x - 19}px;
+  &.lang-en.popup-turkey {
+    left: ${({ x }) => x + 15}px;
   }
 
-  &.lang-en.popup--czech {
+  &.lang-en.popup-czech {
     flex-direction: row-reverse;
-    left: 10px;
+    left: 1px;
 
     .popup--country {
       flex-direction: row-reverse;
@@ -47,7 +55,7 @@ export const PopupsWrapper = styled.div<{ x: number; y: number }>`
   }
 `;
 
-export const CountryPopup = styled.div`
+export const CountryPopup = styled(motion.div)`
   display: flex;
   align-items: center;
   gap: 3px;
@@ -72,17 +80,20 @@ export const CountryPopup = styled.div`
 
   &::after {
     content: "";
+    height: 15px;
+    width: 15px;
+    background-color: inherit;
+    border: inherit;
     position: absolute;
-    bottom: -8px;
-    left: 20%;
-    transform: translateX(-50%);
-    border-width: 10px 10px 0 10px;
-    border-style: solid;
-    border-color: white transparent transparent transparent;
+    bottom: -4px;
+    left: 15%;
+    clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+    transform: rotate(-45deg);
+    border-radius: 0 0 0 0.25em;
   }
 `;
 
-export const ClientPopup = styled.div`
+export const ClientPopup = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;

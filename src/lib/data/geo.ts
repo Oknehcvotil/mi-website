@@ -35,20 +35,20 @@ export const MAPS: Record<MapKey, MapDef> = {
 /** ПИКСЕЛИ относительно соответствующего базового размера карты выше */
 export const POINTS_PX: Record<MapKey, Record<CountryId, PinPx>> = {
   mob: {
-    ukraine: { x: 202, y: 52 },
-    britain: { x: 166, y: 30 },
-    canada: { x: 60, y: 32 },
-    latvia: { x: 193, y: 29 },
+    ukraine: { x: 199, y: 54 },
+    britain: { x: 161, y: 33 },
+    canada: { x: 57, y: 34 },
+    latvia: { x: 189, y: 32 },
     uae: { x: 115, y: 132 },
-    poland: { x: 198, y: 45 },
-    portugal: { x: 154, y: 51 },
-    turkey: { x: 85, y: 122 },
-    usa: { x: 49, y: 62 },
-    hungary: { x: 192, y: 39 },
-    croatia: { x: 186, y: 43 },
-    czech: { x: 183, y: 40 },
-    montenegro: { x: 186, y: 54 },
-    switzerland: { x: 175, y: 43 },
+    poland: { x: 195, y: 48 },
+    portugal: { x: 151, y: 54 },
+    turkey: { x: 72, y: 121 },
+    usa: { x: 45, y: 64 },
+    hungary: { x: 189, y: 41 },
+    croatia: { x: 183, y: 45 },
+    czech: { x: 179, y: 41 },
+    montenegro: { x: 184, y: 55 },
+    switzerland: { x: 173, y: 45 },
   },
   tab: {
     ukraine: { x: 56, y: 38 },
@@ -122,10 +122,4 @@ export const CLIENTS: Record<CountryId, ClientLogo> = {
     src: "switzerland-logo",
     alt: "369 CAPITAL",
   },
-};
-
-export const COUNTRY_POPUP_CLASS: Partial<Record<CountryId, string>> = {
-  turkey: "popup--turkey",
-  uae: "popup--uae",
-  czech: "popup--czech",
 };

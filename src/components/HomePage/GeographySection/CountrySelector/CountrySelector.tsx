@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { AnimatePresence, motion, type Variants } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import type { Country, CountryId } from "../../../../lib/types/geo.types";
 
 import {
@@ -18,19 +18,14 @@ type CountrySelectorProps = {
   onSelect: (id: CountryId) => void;
 };
 
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: -6, pointerEvents: "none" },
-  visible: { opacity: 1, y: 0, pointerEvents: "auto" },
-  exit: { opacity: 0, y: -6, pointerEvents: "none" },
-};
 
 const easeIn: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-export default function CountrySelector({
+const CountrySelector=({
   countries,
   selected,
   onSelect,
-}: CountrySelectorProps) {
+}: CountrySelectorProps) => {
   const { t } = useTranslation("home");
   const [isOpen, setIsOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -81,7 +76,6 @@ export default function CountrySelector({
           id="country-options"
           aria-label={t("map.label")}
           aria-expanded={isOpen}
-          initial={false}
           isOpen={isOpen}
           onMouseLeave={close}
         >
@@ -103,7 +97,7 @@ export default function CountrySelector({
                     height={5}
                     aria-hidden
                     animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.18, ease: easeIn }}
+                    transition={{ duration: 0.14, ease: easeIn }} // стрелка чуть быстрее
                   >
                     <use href="/icons/sprite.svg#icon-select-arrow" />
                   </motion.svg>
@@ -115,14 +109,7 @@ export default function CountrySelector({
           <AnimatePresence initial={false}>
             {isOpen &&
               others.map((c) => (
-                <motion.li
-                  key={c.id}
-                  variants={itemVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  transition={{ duration: 0.18, ease: easeIn }}
-                >
+                <motion.li key={c.id}>
                   <SelectBtn type="button" onClick={() => handleSelect(c.id)}>
                     {countryLabels[countries.findIndex((cc) => cc.id === c.id)]}
                   </SelectBtn>
@@ -134,3 +121,6 @@ export default function CountrySelector({
     </SelectorCont>
   );
 }
+
+
+export default CountrySelector;

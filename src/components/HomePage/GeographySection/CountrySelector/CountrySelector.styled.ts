@@ -24,12 +24,13 @@ export const SelectorTitile = styled.p`
 `;
 
 export const ListCont = styled.div`
-  height: 35.05px;
+  height: 36px;
   width: 175px;
   position: relative;
 `;
 
 export const SelectorList = styled(motion.ul)<{ isOpen: boolean }>`
+  box-sizing: border-box;
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -39,8 +40,6 @@ export const SelectorList = styled(motion.ul)<{ isOpen: boolean }>`
   border-radius: 4px;
   z-index: 50;
   padding: 5px 5px;
-  flex-direction: column;
-  justify-content: center;
 
   li:not(:last-of-type) {
     margin-bottom: 12px;
@@ -55,7 +54,7 @@ export const SelectorList = styled(motion.ul)<{ isOpen: boolean }>`
       : `
         background: linear-gradient(90deg, #a066ff 0%, #5427b1 100%);
         button {
-    color: #fff;
+    color: #fff};
       `}
 `;
 

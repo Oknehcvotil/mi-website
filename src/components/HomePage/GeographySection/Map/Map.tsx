@@ -7,11 +7,7 @@ import type {
 } from "../../../../lib/types/geo.types";
 import MapPopup from "../MapPopup/MapPopup";
 import { useTranslation } from "react-i18next";
-import {
-  FLAG_SRC,
-  CLIENTS,
-  COUNTRY_POPUP_CLASS,
-} from "../../../../lib/data/geo";
+import { FLAG_SRC, CLIENTS } from "../../../../lib/data/geo";
 
 import { MapCont, MapImage, MapPoint } from "./Map.styled";
 
@@ -31,7 +27,7 @@ function pickKey(width: number): MapKey {
   return "desk";
 }
 
-export default function Map({
+const Map =({
   selected,
   onSelect,
   maps,
@@ -39,9 +35,10 @@ export default function Map({
   popupPx,
   onPointPixels,
   alt = "Geography map",
-}: Props) {
+}: Props) => {
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const [wrapW, setWrapW] = useState<number>(0);
+  const { i18n } = useTranslation("home");
 
   useEffect(() => {
     const el = wrapRef.current;
@@ -57,12 +54,12 @@ export default function Map({
   const mapDef: MapDef = maps[key];
   const pts = pointsPx[key];
 
+
   const { t } = useTranslation("home");
 
   const countryLabel = t(`country.${selected}`);
   const client = CLIENTS[selected];
   const flagBase = FLAG_SRC[selected];
-  const popupClassName = COUNTRY_POPUP_CLASS[selected];
 
   // при смене страны сразу отдаём её координаты наружу
   useEffect(() => {
@@ -96,7 +93,7 @@ export default function Map({
             onClick={() => onSelect(id as CountryId)}
             aria-label={id}
             type="button"
-            className={id}
+            className={`${id} point.lang-${i18n.language}`}
           />
         ))}
       </div>
@@ -109,8 +106,9 @@ export default function Map({
         countryLabel={countryLabel}
         client={client}
         flagBase={flagBase}
-        className={popupClassName}
       />
     </MapCont>
   );
 }
+
+export default Map;

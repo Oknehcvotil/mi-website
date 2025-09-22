@@ -4,6 +4,10 @@ import type { CountryId, ClientLogo } from "../../../../lib/types/geo.types";
 import { COUNTRY_IDS } from "../../../../lib/data/geo";
 import { webpSet } from "../../../../lib/helpers/helpers";
 import { ClientPopup, CountryPopup, PopupsWrapper } from "./MapPopup.styled";
+import {
+  popupContainerVariants,
+  popupVariants,
+} from "../../../../lib/animations/home/animations.map";
 
 type MapPopupProps = {
   visible: boolean;
@@ -26,13 +30,13 @@ const MapPopup = ({
   countryLabel,
   client,
   flagBase,
-  className,
   flagsDir = "/icons/flags",
   clientsDir = "/images/map-clients",
 }: MapPopupProps) => {
   const { t, i18n } = useTranslation("home");
 
   const langClass = `lang-${i18n.language}`;
+  const countryClass = `popup-${countryId}`;
 
   const localizedCountryLabel = useMemo(() => {
     const labels = t("map.countries", { returnObjects: true }) as unknown;
@@ -52,15 +56,21 @@ const MapPopup = ({
 
   return (
     <PopupsWrapper
-      className={`${className ?? ""} ${langClass}`}
+      className={`${countryClass} ${langClass}`}
       x={x}
       y={y}
       role="dialog"
       aria-label={localizedCountryLabel}
+      variants={popupContainerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      key={`${countryId}-${x}-${y}`}
     >
       <CountryPopup
         style={{ display: "flex", alignItems: "center", gap: 8 }}
         className="popup--country"
+        variants={popupVariants}
       >
         <img
           src={flag.src}
@@ -72,7 +82,7 @@ const MapPopup = ({
         <span>{localizedCountryLabel}</span>
       </CountryPopup>
 
-      <ClientPopup>
+      <ClientPopup variants={popupVariants}>
         <img
           src={logo.src}
           srcSet={logo.srcSet}
