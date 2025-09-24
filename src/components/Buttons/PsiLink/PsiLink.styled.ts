@@ -17,6 +17,16 @@ export const PsiCustomLink = styled.a`
   color: #000;
   transition: background 0.3s ease, box-shadow 0.2s ease;
 
+  &.psiMi-seciton--btn {
+    display: inline-flex;
+    width: fit-content;
+    font-weight: 700;
+    line-height: 130%;
+    color: #020202;
+    max-width: 100%;
+    padding: 0 12px;
+  }
+
   &:hover,
   &:focus {
     background: linear-gradient(90deg, #138af9 0%, #6966ff 100%);

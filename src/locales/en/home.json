@@ -79,5 +79,11 @@
     ],
     "button": "learne more"
   },
-  "casesTitle": "cases <1>and</1> reviews"
+  "casesTitle": "cases <1>and</1> reviews",
+  "psyMi": {
+    "title": "PSYCHOLOGICAL TESTING PLATFORM IN <1>MI UNIVERSE</1>",
+    "logoAlt": "Логотип PSY MI",
+    "lead": "<1>PSY MI</1> is a platform that helps HR and recruiting teams make the recruitment process more efficient through psychological testing. ",
+    "cta": "Pass the test"
+  }
 }

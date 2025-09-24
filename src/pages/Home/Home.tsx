@@ -8,6 +8,7 @@ import ClientsSection from "../../components/HomePage/ClientsSection/ClientsSect
 import ServicesSection from "../../components/HomePage/ServicesSection/ServicesSection";
 import OurTeamSection from "../../components/HomePage/OurTeamSection/OurTeamSection";
 import CasesReviewsSection from "../../components/HomePage/CasesReviewsSection/CasesReviewsSection";
+import PsyMiHero from "../../components/HomePage/PsyMiHero/PsyMiHero";
 
 function Home() {
   return (
@@ -22,6 +23,7 @@ function Home() {
       <ServicesSection />
       <OurTeamSection />
       <CasesReviewsSection />
+      <PsyMiHero/>
     </>
   );
 }

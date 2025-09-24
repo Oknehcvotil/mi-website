@@ -1,18 +1,21 @@
 import { PsiCustomLink } from "./PsiLink.styled";
 
 type PsiLinkProps = {
-  onCloseBurger: () => void;
+  onCloseBurger?: () => void;
+  children: string;
+  className?: string;
 };
 
-const PsiLink = ({ onCloseBurger }: PsiLinkProps) => {
+const PsiLink = ({ onCloseBurger, className, children }: PsiLinkProps) => {
   return (
     <PsiCustomLink
       href="https://psymi.com.ua/"
       target="_blank"
       rel="noopener noreferrer"
       onClick={onCloseBurger}
+      className={className}
     >
-      PSY MI
+      {children}
     </PsiCustomLink>
   );
 };

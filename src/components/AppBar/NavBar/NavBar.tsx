@@ -51,7 +51,7 @@ const NavBar = ({ onCloseBurger }: NavBarProps) => {
         ))}
 
         <li>
-          <PsiLink onCloseBurger={onCloseBurger} />
+          <PsiLink onCloseBurger={onCloseBurger}>PSY MI</PsiLink>
         </li>
 
         <li>
