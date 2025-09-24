@@ -1,4 +1,10 @@
-import { forwardRef, Children, isValidElement, type ReactNode } from "react";
+import {
+  forwardRef,
+  Children,
+  isValidElement,
+  type ReactNode,
+  useRef,
+} from "react";
 import { Swiper, SwiperSlide, type SwiperRef } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper/modules";
 
@@ -16,6 +22,10 @@ const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
   { className, children },
   ref
 ) {
+  const prevRef = useRef<HTMLButtonElement | null>(null);
+  const nextRef = useRef<HTMLButtonElement | null>(null);
+  const pagRef = useRef<HTMLDivElement | null>(null);
+
   const slides = Children.toArray(children).map((child, i) => (
     <SwiperSlide key={i}>
       {isValidElement(child) ? child : <>{child}</>}
@@ -29,11 +39,29 @@ const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
         modules={[A11y, Navigation, Pagination]}
         slidesPerView={1}
         spaceBetween={0}
-        // Явно указываем селекторы кастомных элементов
-        navigation={{ prevEl: ".app-prev", nextEl: ".app-next" }}
-        pagination={{ el: ".app-pagination", clickable: true }}
-        // Гарантируем инициализацию после монтирования детей
+        // ставим пустые объекты — реальные элементы подставим ниже
+        navigation={{} as import("swiper/types").NavigationOptions}
+        pagination={{ clickable: true }}
+        onBeforeInit={(swiper) => {
+          // подсовываем реальные DOM-элементы
+          (
+            swiper.params.navigation as import("swiper/types").NavigationOptions
+          ).prevEl = prevRef.current;
+          (
+            swiper.params.navigation as import("swiper/types").NavigationOptions
+          ).nextEl = nextRef.current;
+          if (
+            swiper.params.pagination &&
+            typeof swiper.params.pagination === "object"
+          ) {
+            (
+              swiper.params
+                .pagination as import("swiper/types").PaginationOptions
+            ).el = pagRef.current;
+          }
+        }}
         onInit={(swiper) => {
+          // гарантируем корректную инициализацию
           swiper.navigation.init();
           swiper.navigation.update();
           swiper.pagination.init();
@@ -42,34 +70,36 @@ const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
         }}
       >
         {slides}
+        <ButtonsWrapper className="app-slider-controls" slot="container-end">
+          <SliderButton
+            slot="container-end"
+            className="app-prev"
+            type="button"
+            aria-label="Previous slide"
+            ref={prevRef}
+          >
+            <svg width={13} height={22}>
+              <use href="/icons/sprite.svg#icon-slider-arrow" />
+            </svg>
+          </SliderButton>
 
-        {/* КАСТОМНЫЕ КНОПКИ/ТОЧКИ ВНУТРИ SWIPER */}
+          <div slot="container-end" className="app-pagination" ref={pagRef} />
+
+          <SliderButton
+            slot="container-end"
+            className="app-next"
+            type="button"
+            aria-label="Next slide"
+            ref={nextRef}
+          >
+            <svg width={13} height={22} style={{ transform: "scaleX(-1)" }}>
+              <use href="/icons/sprite.svg#icon-slider-arrow" />
+            </svg>
+          </SliderButton>
+        </ButtonsWrapper>
       </Swiper>
-      <ButtonsWrapper className="app-slider-controls">
-        <SliderButton
-          slot="container-end"
-          className="app-prev"
-          type="button"
-          aria-label="Previous slide"
-        >
-          <svg width={13} height={22}>
-            <use href="/icons/sprite.svg#icon-slider-arrow" />
-          </svg>
-        </SliderButton>
 
-        <div slot="container-end" className="app-pagination" />
-
-        <SliderButton
-          slot="container-end"
-          className="app-next"
-          type="button"
-          aria-label="Next slide"
-        >
-          <svg width={13} height={22} style={{ transform: "scaleX(-1)" }}>
-            <use href="/icons/sprite.svg#icon-slider-arrow" />
-          </svg>
-        </SliderButton>
-      </ButtonsWrapper>
+      {/* Контролы — классы остаются для твоих стилей */}
     </SliderCont>
   );
 });

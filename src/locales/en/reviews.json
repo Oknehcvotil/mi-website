@@ -1,0 +1,38 @@
+{
+  "vitaliyMartynenko": {
+    "name": "Vitaliy Martynenko",
+    "position": "CEO & Founder Cryptolist",
+    "vacancies": {
+      "title": "Vacancies:",
+      "items": ["HRD"]
+    },
+    "terms": {
+      "title": "Closing date:",
+      "text": "4 weeks"
+    }
+  },
+  "andriyJmil": {
+    "name": "Andriy Jmil",
+    "position": "СЕО&Founder SVET, Spendy",
+    "vacancies": {
+      "title": "Vacancies:",
+      "items": ["Digital marketer x5", "SMM Manager"]
+    },
+    "terms": {
+      "title": "Cooperation period:",
+      "text": "2 years"
+    }
+  },
+  "bohdanBushe": {
+    "name": "Bohdan Bushe",
+    "position": "СЕО&Founder",
+    "vacancies": {
+      "title": "Vacancies:",
+      "items": ["SMM Manager"]
+    },
+    "terms": {
+      "title": "Closing date:",
+      "text": "Up to 4 weeks"
+    }
+  }
+}

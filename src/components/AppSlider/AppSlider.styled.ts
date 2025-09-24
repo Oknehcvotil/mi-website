@@ -3,12 +3,32 @@ import styled from "@emotion/styled";
 export const SliderCont = styled.div`
   position: relative;
 
+  .swiper-wrapper {
+    margin-bottom: 30px;
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 11px;
+    height: 11px;
+    background-color: #8a38f5;
+  }
+
+  .swiper-pagination-bullet {
+    width: 7px;
+    height: 7px;
+    background-color: #b2afb6;
+  }
+
   &.team-slider {
-    .swiper-pagination-bullet {
-      background-color: #fff;
-      width: 7px;
-      height: 7px;
+    .swiper-wrapper {
+      margin-bottom: 0px;
     }
+
+    .swiper-pagination-bullet,
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background-color: #fff;
+    }
+
     button {
       border: 1px solid #fff;
     }
@@ -16,7 +36,7 @@ export const SliderCont = styled.div`
     .app-slider-controls {
       position: absolute;
       left: 0;
-      bottom: -35px;
+      bottom: 0;
       z-index: 200;
 
       &::after {
@@ -49,7 +69,6 @@ export const ButtonsWrapper = styled.div`
     width: auto !important;
   }
 
-  /* чтобы центрировать под слайдером: оберни в блок с text-align:center */
   .swiper {
     text-align: center;
   }
@@ -57,11 +76,6 @@ export const ButtonsWrapper = styled.div`
   .swiper-pagination-bullet {
     margin: 0;
     opacity: 1;
-  }
-
-  .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    width: 11px;
-    height: 11px;
   }
 `;
 

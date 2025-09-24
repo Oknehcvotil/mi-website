@@ -29,5 +29,8 @@
 <symbol id="icon-slider-arrow" viewBox="0 0 19 32">
 <path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4.3636" d="M15.792 3.533l-12.468 12.467 12.468 12.468"></path>
 </symbol>
+<symbol id="icon-play" viewBox="0 0 36 36">
+<path fill="#fff" style="fill: var(--color1, #fff)" d="M28.087 16.27l-27.165 15.684v-31.367l27.165 15.684z"></path>
+</symbol>
 </defs>
 </svg>

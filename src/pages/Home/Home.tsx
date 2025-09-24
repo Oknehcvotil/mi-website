@@ -7,6 +7,7 @@ import GeographySection from "../../components/HomePage/GeographySection/Geograp
 import ClientsSection from "../../components/HomePage/ClientsSection/ClientsSection";
 import ServicesSection from "../../components/HomePage/ServicesSection/ServicesSection";
 import OurTeamSection from "../../components/HomePage/OurTeamSection/OurTeamSection";
+import CasesReviewsSection from "../../components/HomePage/CasesReviewsSection/CasesReviewsSection";
 
 function Home() {
   return (
@@ -20,6 +21,7 @@ function Home() {
       <ClientsSection />
       <ServicesSection />
       <OurTeamSection />
+      <CasesReviewsSection />
     </>
   );
 }

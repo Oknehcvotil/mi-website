@@ -127,3 +127,42 @@ export const teamCards = [
     ],
   },
 ];
+
+export const casesReviewsSlides = [
+  {
+    type: "video" as const,
+    youtubeUrl: "https://youtu.be/_5POb89UuGk",
+    author: "vitaliyMartynenko.name",
+    position: "vitaliyMartynenko.position",
+  },
+  {
+    type: "info" as const,
+    logos: [{ src: "/images/clients-logos/crypto", width: 175, height: 55 }],
+    keyPrefix: "vitaliyMartynenko",
+  },
+  {
+    type: "video" as const,
+    youtubeUrl: "https://youtu.be/xHpPy2hAaZI",
+    author: "andriyJmil.name",
+    position: "andriyJmil.position",
+  },
+  {
+    type: "info" as const,
+    logos: [
+      { src: "/images/clients-logos/cbet", width: 55, height: 45 },
+      { src: "/images/clients-logos/spendy", width: 105, height: 15 },
+    ],
+    keyPrefix: "andriyJmil",
+  },
+  {
+    type: "video" as const,
+    youtubeUrl: "https://youtube.com/shorts/myU6HcqN5iM?feature=share",
+    author: "bohdanBushe.name",
+    position: "bohdanBushe.position",
+  },
+  {
+    type: "info" as const,
+    logos: [{ src: "/images/clients-logos/ci-crypto", width: 195, height: 55 }],
+    keyPrefix: "bohdanBushe",
+  },
+];

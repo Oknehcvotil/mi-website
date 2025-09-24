@@ -38,7 +38,6 @@ export const SliderCont = styled.div`
   background-size: contain;
   background-position: center calc(100% - 35px);
   background-repeat: no-repeat;
-  padding-bottom: 35px;
 
   img {
     height: 450px;
