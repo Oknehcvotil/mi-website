@@ -21,6 +21,7 @@ export const PsyMititle = styled(motion.h2)`
   text-align: center;
   color: #14111a;
   margin-bottom: 15px;
+  line-height: 110%;
 
   span {
     font-size: 18px;
