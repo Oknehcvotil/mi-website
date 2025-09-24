@@ -76,6 +76,5 @@ export const PsyMiImageCont = styled(motion.div)`
   align-items: end;
   line-height: 0;
   min-height: 280px;
+  overflow: hidden;
 `;
-
-
