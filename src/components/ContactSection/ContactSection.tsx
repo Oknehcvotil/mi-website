@@ -86,6 +86,8 @@ const ContactSection = () => {
                       id={s.id}
                       href={s.href}
                       ariaLabel={t(s.labelKey)}
+                      width={s.width}
+                      height={s.height}
                     />
                   </motion.li>
                 ))}
