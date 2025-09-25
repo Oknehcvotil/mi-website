@@ -1,8 +1,9 @@
 import { Outlet } from "react-router-dom";
-import { Suspense, useState, useEffect } from "react";
-import AppBar from "../components/AppBar/AppBar";
-import BurgerMenu from "../components/AppBar/BurgerMenu/BurgerMenu";
-import LoaderM from "../components/Loader/LoaderM";
+import { Suspense, useState, useEffect, Fragment } from "react";
+import AppBar from "../AppBar/AppBar";
+import BurgerMenu from "../AppBar/BurgerMenu/BurgerMenu";
+import LoaderM from "../Loader/LoaderM";
+import AppFooter from "../AppFooter/AppFooter";
 
 const Layout = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -25,16 +26,17 @@ const Layout = () => {
   }, [menuIsOpen, setMenuIsOpen]);
 
   return (
-    <div>
+    <Fragment>
       <AppBar setMenuIsOpen={setMenuIsOpen} />
       <BurgerMenu isOpen={menuIsOpen} onClose={closeMenu} />
 
       <Suspense fallback={<LoaderM />}>
-        <main style={{ height: "100vh" }}>
+        <main >
           <Outlet />
         </main>
       </Suspense>
-    </div>
+      <AppFooter />
+    </Fragment>
   );
 };
 

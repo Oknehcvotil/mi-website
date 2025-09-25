@@ -23,3 +23,34 @@ export const socials: ContactSectionSocial[] = [
     height: "17px",
   },
 ];
+
+export const footerSocials: ContactSectionSocial[] = [
+  {
+    id: "instagram",
+    href: "https://www.instagram.com/mi___agency/",
+    labelKey: "instagram",
+    width: "18px",
+    height: "18px",
+  },
+  {
+    id: "telegram",
+    href: "https://t.me/mi_agency ",
+    labelKey: "telegram",
+    width: "17px",
+    height: "15px",
+  },
+  {
+    id: "facebook",
+    href: "https://www.facebook.com/HRmiagency",
+    labelKey: "FaceBook",
+    width: "11px",
+    height: "21px",
+  },
+  {
+    id: "linkedin",
+    href: "https://www.linkedin.com/company/86229788/admin/dashboard/",
+    labelKey: "linkedin",
+    width: "13px",
+    height: "12px",
+  },
+];

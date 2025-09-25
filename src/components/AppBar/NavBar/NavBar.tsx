@@ -18,10 +18,10 @@ const NavBar = ({ onCloseBurger }: NavBarProps) => {
   const match = useMatch("/:lang/*");
   const currentLang = match?.params.lang ?? "en";
 
-  // один state для открытого раздела
+  
   const [openId, setOpenId] = useState<Section["id"] | null>(null);
 
-  // закрываем выпадашки при смене маршрута
+  
   useEffect(() => {
     setOpenId(null);
   }, [pathname]);

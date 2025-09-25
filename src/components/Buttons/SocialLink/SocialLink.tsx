@@ -3,7 +3,7 @@ import { CustomSocialLink } from "./SocialLink.styled";
 type SocialLinkProps = {
   id: string;
   href: string;
-  ariaLabel: string;
+  ariaLabel?: string;
   width?: number | string;
   height?: number | string;
   spritePath?: string;

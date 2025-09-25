@@ -15,4 +15,9 @@ export const CustomSocialLink = styled.a`
   &:focus {
     background-color: #5427b1;
   }
+
+  &.footer-links {
+    width: 35px;
+    height: 35px;
+  }
 `;

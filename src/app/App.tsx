@@ -3,7 +3,7 @@ import { lazy } from "react";
 import { LanguageGuard } from "../router/LanguageGuard/LanguageGuard";
 import { SUPPORTED_LANGS, type Lang } from "../i18n/i18n";
 
-const Layout = lazy(() => import("../layouts/Layout"));
+const Layout = lazy(() => import("../components/Layout/Layout"));
 
 // HOME
 const Home = lazy(() => import("../pages/Home/Home"));
