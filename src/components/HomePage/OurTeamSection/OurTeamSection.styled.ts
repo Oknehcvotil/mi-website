@@ -1,13 +1,14 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
-export const SectionWrap = styled.section`
+export const SectionWrap = styled(motion.section)`
   position: relative;
   padding-top: 290;
   background: #f8f8fb;
   width: 100%;
 `;
 
-export const TitleWrap = styled.div`
+export const TitleWrap = styled(motion.div)`
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -30,7 +31,7 @@ export const TitleText = styled.h2`
   overflow: hidden;
 `;
 
-export const SliderCont = styled.div`
+export const SliderCont = styled(motion.div)`
   max-width: 390px;
   width: 100%;
   margin: 0 auto;

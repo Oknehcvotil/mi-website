@@ -1,0 +1,31 @@
+{
+  "kicker": "<1>nothing is impossible</1> for us when it comes to scaling your team.",
+  "title": "Any questions left?",
+  "lead": "Leave your contact information and we will advise you.",
+  "bullets": [
+    "Get answers to all your questions",
+    "Find out which service format is right for you",
+    "Find out about our exclusive offers"
+  ],
+  "contactTitle": "Contact for communication:",
+  "person": {
+    "name": "Maria",
+    "role": "CCO MI Agency",
+    "photoAlt": "Maria — CCO MI Agency"
+  },
+  "socials": {
+    "telegram": "Telegram",
+    "linkedin": "Linkedin",
+    "watsapp": "WhatsApp"
+  },
+  "form": {
+    "name": "Name",
+    "namePh": "Ivan",
+    "phone": "Phone",
+    "submit": "Send",
+    "privacyPolice": {
+      "title": "By clicking “Submit”, you",
+      "link": "agree to our Terms of Use, Privacy Policy and Cookie Policy"
+    }
+  }
+}

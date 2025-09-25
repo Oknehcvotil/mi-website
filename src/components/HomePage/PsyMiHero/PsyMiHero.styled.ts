@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export const PsyMiHeroSection = styled.section`
   background: rgba(243, 244, 249, 0.62);
-  padding: 40px 0;
+  padding: 40px 0 0;
 `;
 
 export const PsyMiContainer = styled.div`
@@ -78,5 +78,3 @@ export const PsyMiImageCont = styled(motion.div)`
   line-height: 0;
   min-height: 280px;
 `;
-
-

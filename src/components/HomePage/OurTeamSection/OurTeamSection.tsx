@@ -7,14 +7,20 @@ import {
   SliderCont,
 } from "./OurTeamSection.styled";
 import { TeamCard } from "./TeamCards/TeamCards";
+import { blockV, sectionV, titleV } from "../../../lib/animations/home/animations.swipers";
 
 const OurTeamSection = () => {
   return (
-    <SectionWrap>
-      <TitleWrap>
+    <SectionWrap
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={sectionV}
+    >
+      <TitleWrap variants={titleV}>
         <TitleText>OUR MI TEAM</TitleText>
       </TitleWrap>
-      <SliderCont>
+      <SliderCont variants={blockV}>
         <AppSlider className="team-slider">
           {teamCards.map((card) => (
             <TeamCard key={card.id} data={card} />
