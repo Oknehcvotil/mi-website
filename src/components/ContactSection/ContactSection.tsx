@@ -20,12 +20,16 @@ import {
   parent,
   popIn,
 } from "../../lib/animations/home/animations.contacts";
+import { useSectionInView } from "../../lib/hooks/useSectionInView";
 
 const ContactSection = () => {
+  const { ref } = useSectionInView("Contact", 0.1);
   const { t } = useTranslation("contacts");
 
   return (
     <ContactSectionSection
+      ref={ref} 
+      id="contact"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.35 }}

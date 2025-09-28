@@ -1,31 +1,17 @@
-import Competencies from "../../components/HomePage/Competencies/Competencies";
-import HeroSection from "../../components/HomePage/HeroSection/HeroSection";
-import MissionSection from "../../components/HomePage/MissionSection/MissionSection";
-import AdvantagesSection from "../../components/HomePage/AdvantagesSection/AdvantagesSection";
-import StatsSection from "../../components/HomePage/StatsSection/StatsSection";
-import GeographySection from "../../components/HomePage/GeographySection/GeographySection";
+import ContactSection from "../../components/ContactSection/ContactSection";
+import SectionNav from "../../components/SectionNav/SectionNav";
+import AboutUsSection from "../../components/HomePage/AboutUsSection/AboutUsSection";
 import ClientsSection from "../../components/HomePage/ClientsSection/ClientsSection";
 import ServicesSection from "../../components/HomePage/ServicesSection/ServicesSection";
-import OurTeamSection from "../../components/HomePage/OurTeamSection/OurTeamSection";
-import CasesReviewsSection from "../../components/HomePage/CasesReviewsSection/CasesReviewsSection";
-import PsyMiHero from "../../components/HomePage/PsyMiHero/PsyMiHero";
-import ContactSection from "../../components/ContactSection/ContactSection";
 
 function Home() {
   return (
     <>
-      <HeroSection />
-      <Competencies />
-      <MissionSection />
-      <AdvantagesSection />
-      <StatsSection />
-      <GeographySection />
+      <AboutUsSection />
       <ClientsSection />
       <ServicesSection />
-      <OurTeamSection />
-      <CasesReviewsSection />
-      <PsyMiHero />
       <ContactSection />
+      <SectionNav />
     </>
   );
 }

@@ -6,7 +6,8 @@ export const Header = styled.header<{ isScrolled: boolean }>`
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 500;
+  isolation: isolate;
 
   background: ${({ isScrolled }) =>
     isScrolled ? "rgba(255, 255, 255, 0.6)" : "transparent"};

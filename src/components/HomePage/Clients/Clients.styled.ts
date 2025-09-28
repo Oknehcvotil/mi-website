@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const SectionWrap = styled.section`
+export const SectionWrap = styled.div`
   padding-top: 40px;
 `;
 

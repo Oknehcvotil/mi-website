@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-export const StatsWrap = styled.section`
+export const StatsWrap = styled.div`
   padding: 40px 0;
 `;
 

@@ -1,12 +1,16 @@
 import { footerSocials } from "../../lib/data/contacts.section";
+import { useSectionInView } from "../../lib/hooks/useSectionInView";
 import LogoLink from "../Buttons/LogoLink/LogoLink";
 import SocialLink from "../Buttons/SocialLink/SocialLink";
 import Container from "../Container/Container";
 import { FooterWrap, SocialLinksList } from "./AppFooter.styled";
 
+
 const AppFooter = () => {
+  const { ref } = useSectionInView("Footer", 0.7);
+
   return (
-    <FooterWrap>
+    <FooterWrap ref={ref}>
       <Container className={"footer-cont"}>
         <LogoLink />
         <SocialLinksList>

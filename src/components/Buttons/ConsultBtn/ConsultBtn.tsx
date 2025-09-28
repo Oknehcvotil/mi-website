@@ -1,10 +1,11 @@
 import { useTranslation } from "react-i18next";
 import { ConsultBtnStyled } from "./ConsultBtn.styled";
+import { useActiveSectionContext } from "../../../lib/hooks/useActiveSectionContext";
 
 type ConsultBtnProps = {
   variant?: "primary" | "secondary" | "header";
   onClick?: () => void;
-  maxWidth?: string; // добавляем возможность задать max-width
+  maxWidth?: string;
 };
 
 function ConsultBtn({
@@ -13,12 +14,17 @@ function ConsultBtn({
   maxWidth,
 }: ConsultBtnProps) {
   const { t } = useTranslation();
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
     <ConsultBtnStyled
-      href="#"
+      href="#contact"
       variant={variant}
-      onClick={onClick}
+      onClick={() => {
+        setActiveSection("Contact");
+        setTimeOfLastClick(Date.now());
+        if (onClick) onClick();
+      }}
       maxWidth={maxWidth}
     >
       <span>{t("cta")}</span>

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-export const SectionWrap = styled(motion.section)`
+export const SectionWrap = styled(motion.div)`
   position: relative;
   padding-top: 290;
   background: #f8f8fb;

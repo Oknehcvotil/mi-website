@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const Wrap = styled.section`
+export const Wrap = styled.div`
   display: none;
 
   @media (min-width: 380px) {

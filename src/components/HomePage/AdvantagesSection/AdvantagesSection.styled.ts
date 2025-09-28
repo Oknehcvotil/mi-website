@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const AdvSection = styled.section`
+export const AdvSection = styled.div`
   padding: 30px 0;
   background: rgba(243, 244, 249, 0.62);
 `;

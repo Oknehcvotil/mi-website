@@ -166,3 +166,26 @@ export const casesReviewsSlides = [
     keyPrefix: "bohdanBushe",
   },
 ];
+
+export const homeLinks = [
+  {
+    name: "About",
+    hash: "#about",
+    label: "sectionLinks.aboutUs",
+  },
+  {
+    name: "Clients",
+    hash: "#clients",
+    label: "sectionLinks.clients",
+  },
+  {
+    name: "Services",
+    hash: "#services",
+    label: "sectionLinks.services",
+  },
+  {
+    name: "Contact",
+    hash: "#contact",
+    label: "sectionLinks.contatcs",
+  },
+] as const;

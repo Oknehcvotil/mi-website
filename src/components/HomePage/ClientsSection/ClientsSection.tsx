@@ -1,20 +1,15 @@
-import { Trans, useTranslation } from "react-i18next";
-import Container from "../../Container/Container";
-import { SectionWrap, Title } from "./ClientsSection.styled";
-import ClientsList from "./ClientsList/ClientsList";
+import { useSectionInView } from "../../../lib/hooks/useSectionInView";
+import Clients from "../Clients/Clients";
+import GeographySection from "../GeographySection/GeographySection";
 
 const ClientsSection = () => {
-  const { t } = useTranslation("home");
+  const { ref } = useSectionInView("Clients", 0.1);
 
   return (
-    <SectionWrap>
-      <Container>
-        <Title>
-          <Trans t={t} i18nKey="clientsTitle" components={{ 1: <span /> }} />
-        </Title>
-        <ClientsList />
-      </Container>
-    </SectionWrap>
+    <section ref={ref} id="clients">
+      <GeographySection />
+      <Clients />
+    </section>
   );
 };
 

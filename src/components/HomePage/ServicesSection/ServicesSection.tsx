@@ -1,20 +1,19 @@
-import { Trans, useTranslation } from "react-i18next";
-import Container from "../../Container/Container";
-import { SectionWrap, Title } from "./ServicesSection.styled";
-import ServicesList from "./ServicesList/ServicesList";
+import { useSectionInView } from "../../../lib/hooks/useSectionInView";
+import CasesReviewsSection from "../CasesReviewsSection/CasesReviewsSection";
+import OurTeamSection from "../OurTeamSection/OurTeamSection";
+import PsyMiHero from "../PsyMiHero/PsyMiHero";
+import Services from "../Services/Services";
 
 const ServicesSection = () => {
-  const { t } = useTranslation("home");
+  const { ref } = useSectionInView("Services", 0.1);
 
   return (
-    <SectionWrap>
-      <Container>
-        <Title>
-          <Trans t={t} i18nKey="services.title" components={{ 1: <span /> }} />
-        </Title>
-        <ServicesList />
-      </Container>
-    </SectionWrap>
+    <section ref={ref} id="services">
+      <Services />
+      <OurTeamSection />
+      <CasesReviewsSection />
+      <PsyMiHero />
+    </section>
   );
 };
 

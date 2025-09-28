@@ -5,7 +5,7 @@ export const BurgerLayuot = styled(motion.div)`
   position: fixed;
   inset: 0;
   background-color: rgba(217, 217, 217, 0.4);
-  z-index: 500;
+  z-index: 1000;
   overscroll-behavior: none;
 
   @media (min-width: 1620px) {

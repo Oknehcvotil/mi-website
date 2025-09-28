@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-export const CasesWrapper = styled(motion.section)`
+export const CasesWrapper = styled(motion.div)`
   padding: 40px 0 20px;
 `;
 

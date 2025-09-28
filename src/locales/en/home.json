@@ -85,5 +85,11 @@
     "logoAlt": "Логотип PSY MI",
     "lead": "<1>PSY MI</1> is a platform that helps HR and recruiting teams make the recruitment process more efficient through psychological testing. ",
     "cta": "Pass the test"
+  },
+  "sectionLinks": {
+    "aboutUs": "About Us",
+    "clients": "Clients",
+    "services": "Services",
+    "contatcs": "Contacts"
   }
 }
