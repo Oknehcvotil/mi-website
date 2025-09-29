@@ -12,6 +12,12 @@ export const BurgerCloseButton = styled.button`
   top: 23px;
   right: 23px;
 
+  &.close-modal {
+    width: 26px;
+    height: 26px;
+    top: 10px;
+    right: 10px;
+  }
   svg {
     transition: transform 0.3s;
   }

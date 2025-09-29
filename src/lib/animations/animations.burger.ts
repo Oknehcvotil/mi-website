@@ -23,3 +23,12 @@ export const panelVariants: Variants = {
     } as Transition,
   },
 };
+
+export const modalVariants: Variants = {
+  closed: { opacity: 0,  scale: 0.98, transition: { duration: 0.18 } },
+  open: {
+    opacity: 1,
+    scale: 1,
+    transition: { type: "spring", stiffness: 400, damping: 30 },
+  },
+};

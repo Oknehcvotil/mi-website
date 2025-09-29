@@ -5,7 +5,6 @@ import BurgerMenu from "../AppBar/BurgerMenu/BurgerMenu";
 import LoaderM from "../Loader/LoaderM";
 import AppFooter from "../AppFooter/AppFooter";
 import ActiveSectionContextProvider from "../../context/ActiveSectionContextProvider";
-// import PrivacyModal from "../ContactForm/PrivacyPolicy/PrivacyModal/PrivacyModal";
 
 const Layout = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);

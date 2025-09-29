@@ -1,9 +1,12 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { BurgerCont, BurgerLayuot } from "./BurgerMenu.styled";
-import BurgerCloseBtn from "./BurgerCloseBtn/BurgerCloseBtn";
+import BurgerCloseBtn from "../../BurgerCloseBtn/BurgerCloseBtn";
 import NavBar from "../NavBar/NavBar";
-import { overlayVariants, panelVariants } from "../../../lib/animations/animations.burger";
+import {
+  overlayVariants,
+  panelVariants,
+} from "../../../lib/animations/animations.burger";
 
 type BurgerMenuProps = {
   isOpen: boolean;
@@ -65,7 +68,8 @@ function BurgerMenu({ isOpen, onClose }: BurgerMenuProps) {
           const target = document.getElementById(newHash.slice(1));
           if (target) {
             const nearTop = Math.abs(target.getBoundingClientRect().top) < 2;
-            if (!nearTop) target.scrollIntoView({ behavior: "smooth", block: "start" });
+            if (!nearTop)
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
           }
         } else {
           window.scrollTo(0, scrollY);

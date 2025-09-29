@@ -31,6 +31,42 @@
   },
   "privacyPolicy": {
     "text": "By clicking “Submit”, you ",
-    "button": "agree to our Terms of Use, Privacy Policy and Cookie Policy"
+    "button": "agree to our Terms of Use, Privacy Policy and Cookie Policy",
+    "modal": {
+      "title": "Privacy Policy",
+      "intro": "We respect your privacy and care about the security of personal data. By using our site, you agree to the rules described below.",
+      "sections": {
+        "dataCollectTitle": "What data do we collect",
+        "dataCollectList": [
+          "Name, e-mail, phone - when you subscribe to the newsletter, leave an application or send a resume.",
+          "Technical data: IP address, browser type, cookies.",
+          "Other information that you provide voluntarily (for example, resume or supporting materials)."
+        ],
+        "purposeTitle": "For what purpose?",
+        "purposeList": [
+          "Provision of services: recruitment, communication with candidates and employers, consulting",
+          "Newsletters, useful materials, invitations to events.",
+          "Improving the site (analytics, convenience)."
+        ],
+        "unsubscribe": "You can unsubscribe from the newsletter at any time - there is an unsubscribe link in each letter.",
+        "securityTitle": "How we protect data",
+        "securityText": "We apply administrative and technical security measures (SSL/HTTPS, access control, confidentiality agreements). However, no system guarantees absolute protection, so we advise you to be careful when using the Internet.",
+        "thirdPartyTitle": "Transfer to third parties",
+        "thirdPartyText": "Your data is not sold or transferred to other companies, except in the following cases:",
+        "thirdPartyList": [
+          "when it is necessary to perform services (for example, mailing services or hosting),",
+          "or when required by law."
+        ],
+        "rightsTitle": "Your rights",
+        "rightsList": [
+          "access your data,",
+          "request its correction or deletion,",
+          "withdraw consent to processing,",
+          "file a complaint with an authorized body."
+        ],
+        "changesTitle": "Policy changes",
+        "changesText": "We may update this policy from time to time. The current version is always available on this page."
+      }
+    }
   }
 }
