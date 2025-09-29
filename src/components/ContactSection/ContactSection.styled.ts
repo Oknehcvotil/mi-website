@@ -22,7 +22,6 @@ export const Kicker = styled(motion.h3)`
 `;
 
 export const ContactSectionContainer = styled(motion.div)`
-  display: flex;
   max-width: 390px;
   width: 100%;
   margin: 0 auto;

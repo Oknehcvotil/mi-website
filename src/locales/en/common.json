@@ -10,5 +10,27 @@
     "recruitment": "Recruiment",
     "hrConsulting": "HR consulting",
     "businessPsy": "Business Psychology"
+  },
+  "form": {
+    "errors": {
+      "name": "The field is not filled in.",
+      "phone": "Incorrectly entered number",
+      "email": "Incorrect address entered"
+    },
+    "labels": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email"
+    },
+    "input": {
+      "name": "Ivan",
+      "email": "email@example.com"
+    },
+    "submitButton": "Send",
+    "successMessage": "Your application has been sent!"
+  },
+  "privacyPolicy": {
+    "text": "By clicking “Submit”, you ",
+    "button": "agree to our Terms of Use, Privacy Policy and Cookie Policy"
   }
 }

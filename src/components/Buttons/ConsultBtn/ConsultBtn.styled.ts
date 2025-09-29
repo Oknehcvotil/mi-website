@@ -23,14 +23,14 @@ export const ConsultBtnStyled = styled.a<{
 
   span {
     position: relative;
-    z-index: 1; /* текст всегда сверху */
+    z-index: 1;
   }
 
   ${({ variant }) =>
     variant === "primary" &&
     `
     border: none;
-    background: #5427b1; /* базовый фон */
+    background: #5427b1; 
     min-height: 45px;
     height: 100%;
     font-weight: 700;
@@ -45,12 +45,12 @@ export const ConsultBtnStyled = styled.a<{
       background: linear-gradient(90deg, #5427b1 0%, #a066ff 100%);
       opacity: 1;
       transition: opacity 0.35s ease;
-      z-index: 0; /* фон ниже текста */
+      z-index: 0;
     }
 
     &:hover::before,
     &:focus::before {
-      opacity: 0; /* плавно убираем градиент → остаётся однотонный фон */
+      opacity: 0; 
     }
 
     &:active {

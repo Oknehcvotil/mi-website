@@ -6,9 +6,31 @@
     "forCustomers": "Для клієнтів",
     "forCandidates": "Для кандидатів",
     "PhdOfRecruiting": "PHD of Recruiting",
-    "cases":"Відгуки та кейси",
+    "cases": "Відгуки та кейси",
     "recruitment": "Підбір персоналу",
     "hrConsulting": "HR консалтинг",
     "businessPsy": "Бізнес-психологія"
+  },
+  "form": {
+    "errors": {
+      "name": "Поле не заповнене",
+      "phone": "Некоректно введений номер",
+      "email": "Некоректно введена адреса"
+    },
+    "labels": {
+      "name": "Ім’я",
+      "phone": "Телефон",
+      "email": "Email"
+    },
+    "input": {
+      "name": "Іван",
+      "email": "email@example.com"
+    },
+    "submitButton": "Надіслати",
+    "successMessage": "Вашу заявку надіслано!"
+  },
+  "privacyPolicy": {
+    "text": "Натискаючи “Надіслати”, ти погоджуєшся з нашими ",
+    "button": "Умовами використання, Політикою конфіденційності та Політикою файлів cookie"
   }
 }

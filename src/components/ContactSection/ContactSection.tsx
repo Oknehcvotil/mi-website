@@ -21,6 +21,7 @@ import {
   popIn,
 } from "../../lib/animations/home/animations.contacts";
 import { useSectionInView } from "../../lib/hooks/useSectionInView";
+import ContactForm from "../ContactForm/ContactForm";
 
 const ContactSection = () => {
   const { ref } = useSectionInView("Contact", 0.1);
@@ -28,7 +29,7 @@ const ContactSection = () => {
 
   return (
     <ContactSectionSection
-      ref={ref} 
+      ref={ref}
       id="contact"
       initial="hidden"
       whileInView="show"
@@ -99,6 +100,7 @@ const ContactSection = () => {
             </div>
           </PersonCont>
         </ContactLeadContainer>
+        <ContactForm />
       </ContactSectionContainer>
     </ContactSectionSection>
   );
