@@ -20,10 +20,24 @@ function ConsultBtn({
     <ConsultBtnStyled
       href="#contact"
       variant={variant}
-      onClick={() => {
+      onClick={(e) => {
         setActiveSection("Contact");
         setTimeOfLastClick(Date.now());
-        if (onClick) onClick();
+
+        if (onClick) {
+          e.preventDefault();
+          onClick();
+
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              if (window.location.hash !== "#contact") {
+                history.pushState(null, "", "#contact");
+              }
+              const el = document.getElementById("contact");
+              if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+            });
+          });
+        }
       }}
       maxWidth={maxWidth}
     >
