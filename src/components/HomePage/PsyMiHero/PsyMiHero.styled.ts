@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 export const PsyMiHeroSection = styled.div`
   background: rgba(243, 244, 249, 0.62);
   padding: 40px 0 0;
+  overflow: hidden;
 `;
 
 export const PsyMiContainer = styled.div`

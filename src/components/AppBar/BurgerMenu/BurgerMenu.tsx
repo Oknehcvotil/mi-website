@@ -1,37 +1,16 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { BurgerCont, BurgerLayuot } from "./BurgerMenu.styled";
-import { type Variants, type Transition } from "framer-motion";
 import BurgerCloseBtn from "./BurgerCloseBtn/BurgerCloseBtn";
 import NavBar from "../NavBar/NavBar";
+import {
+  overlayVariants,
+  panelVariants,
+} from "../../../lib/animations/animations.burger";
 
 type BurgerMenuProps = {
   isOpen: boolean;
   onClose: () => void;
-};
-
-const overlayVariants = {
-  closed: {
-    opacity: 0,
-    pointerEvents: "none",
-    transition: { duration: 0.1, delay: 0.18 },
-  },
-  open: {
-    opacity: 1,
-    pointerEvents: "auto",
-    transition: { duration: 0.1, delay: 0 },
-  },
-};
-
-const panelVariants: Variants = {
-  closed: { x: "-100%", transition: { duration: 0.2, ease: [0.4, 0, 1, 1] } },
-  open: {
-    x: 0,
-    transition: {
-      duration: 0.2,
-      ease: [0.22, 1, 0.36, 1],
-    } as Transition,
-  },
 };
 
 function BurgerMenu({ isOpen, onClose }: BurgerMenuProps) {
@@ -39,7 +18,7 @@ function BurgerMenu({ isOpen, onClose }: BurgerMenuProps) {
     if (!isOpen) return;
 
     const scrollY = window.scrollY;
-    const sbw = window.innerWidth - document.documentElement.clientWidth; // ширина скроллбара
+    const sbw = window.innerWidth - document.documentElement.clientWidth; 
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
 
     document.body.style.overflow = "hidden";
