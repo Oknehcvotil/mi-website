@@ -1,7 +1,8 @@
 import { Formik, ErrorMessage, Form } from "formik";
 import * as Yup from "yup";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/bootstrap.css";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
+
 import {
   CustomField,
   FieldCont,
@@ -9,7 +10,6 @@ import {
   FormWrap,
   SubmitBtn,
 } from "./ContactForm.styled";
-import { isValidPhoneNumber } from "libphonenumber-js";
 import CustomErrorMessage from "./CustomErrorMessage/CustomErrorMessage";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
@@ -26,10 +26,12 @@ const ContactForm = () => {
       .email(t("form.errors.email"))
       .required(t("form.errors.name")),
     phone: Yup.string()
-      .test("is-valid-phone", t("form.errors.phone"), (value) =>
-        value ? isValidPhoneNumber("+" + value) : false
-      )
-      .required(t("form.errors.name")),
+      .required(t("form.errors.phone"))
+      .test(
+        "is-valid-phone",
+        t("form.errors.phone"),
+        (value) => (value ? value.length > 6 : false) // можно сделать кастомную проверку
+      ),
   });
 
   const handleSubmit = async (
@@ -71,7 +73,12 @@ const ContactForm = () => {
                 <label htmlFor="name">
                   {t("form.labels.name")} <span>*</span>
                 </label>
-                <CustomField name="name" placeholder={t("form.input.name")} />
+                <CustomField
+                  id="name"
+                  name="name"
+                  autoComplete="name"
+                  placeholder={t("form.input.name")}
+                />
                 <ErrorMessage name="name" component={CustomErrorMessage} />
               </FieldCont>
 
@@ -80,11 +87,13 @@ const ContactForm = () => {
                   {t("form.labels.phone")} <span>*</span>
                 </label>
                 <PhoneInput
-                  country={"ua"}
+                  defaultCountry="ua"
                   value={values.phone}
                   onChange={(phone) => setFieldValue("phone", phone)}
                   inputProps={{
+                    id: "phone",
                     name: "phone",
+                    autoComplete: "name",
                     required: true,
                   }}
                 />
@@ -96,8 +105,10 @@ const ContactForm = () => {
                   {t("form.labels.email")} <span>*</span>
                 </label>
                 <CustomField
+                  id="email"
                   name="email"
                   type="email"
+                  autoComplete="email"
                   placeholder="email@example.com"
                 />
                 <ErrorMessage name="email" component={CustomErrorMessage} />

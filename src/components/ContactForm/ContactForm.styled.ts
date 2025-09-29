@@ -47,28 +47,43 @@ export const FieldCont = styled.div`
     }
   }
 
-  .react-tel-input .form-control {
+  .react-international-phone-input-container {
     border: 1px solid #d8dadc;
     border-radius: 10px;
-    padding: 12px 16px 12px 60px;
+    gap: 5px;
+    padding: 0 16px;
+    min-height: 43.1px;
+    align-items: center;
+
+    &:focus-within {
+      border-color: #a066ff;
+      box-shadow: none;
+    }
+  }
+
+  .react-international-phone-country-selector-button {
+    border-radius: none;
+    border: none;
+    margin-right: 0px;
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+  }
+
+  .react-international-phone-input-container .react-international-phone-input {
+    border-radius: none;
+    border: none;
+    margin: 0;
     background: #fff;
     outline: none;
     font-weight: 400;
     font-size: 14px;
     line-height: 125%;
     font-family: "Montserrat";
-
-    &:focus {
-      border-color: #a066ff;
-      box-shadow: none;
-    }
-  }
-
-  .react-tel-input .selected-flag:hover::before,
-  .react-tel-input .selected-flag:focus::before,
-  .react-tel-input .flag-dropdown.open .selected-flag::before {
-    border: none;
-    box-shadow: none;
+    padding: 0;
   }
 `;
 
