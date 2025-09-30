@@ -5,10 +5,10 @@ import BurgerMenu from "../AppBar/BurgerMenu/BurgerMenu";
 import LoaderM from "../Loader/LoaderM";
 import AppFooter from "../AppFooter/AppFooter";
 import ActiveSectionContextProvider from "../../context/ActiveSectionContextProvider";
+import ScrollToTop from "../ScrollToTop/ScrollToTop";
 
 const Layout = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-  
 
   const closeMenu = () => {
     setMenuIsOpen(!menuIsOpen);
@@ -35,6 +35,7 @@ const Layout = () => {
 
       <Suspense fallback={<LoaderM />}>
         <main>
+          <ScrollToTop />
           <Outlet />
         </main>
       </Suspense>
