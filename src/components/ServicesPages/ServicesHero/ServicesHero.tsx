@@ -49,7 +49,10 @@ const ServicesHero = ({ content }: ServicesHeroProps) => {
         </MainHeroTitle>
 
         {subtitleKey && (
-          <HeroSubtitle variants={reduce ? undefined : fadeUp}>
+          <HeroSubtitle
+            variants={reduce ? undefined : fadeUp}
+            className={`hero-${className}--subtitle`}
+          >
             {t(subtitleKey)}
           </HeroSubtitle>
         )}

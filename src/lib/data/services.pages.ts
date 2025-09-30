@@ -15,6 +15,18 @@ export const forClientsHeroContent: ServicesHeroContent = {
   ],
   image: {
     basePath: "/images/mob/services-pages/services-hero-for-clients",
-    altKey: "hero.img1Alt",
+    altKey: "hero.imgAlt",
+  },
+};
+
+export const forCandidatesHeroContent: ServicesHeroContent = {
+  translationNs: "servicesForCandidates",
+  className: "for-candidates",
+  subtitleKey: "hero.subtitle",
+  sectionTitleKey: "hero.sectionTitle",
+  leadKey: "hero.lead",
+  image: {
+    basePath: "/images/mob/services-pages/services-hero-for-candidates",
+    altKey: "hero.imgAlt",
   },
 };

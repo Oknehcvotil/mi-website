@@ -27,6 +27,10 @@ export const HeroSubtitle = styled(motion.h3)`
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  &.hero-for-candidates--subtitle {
+    margin-bottom: 10px;
+  }
 `;
 
 export const LeadCont = styled(motion.div)`
@@ -36,6 +40,7 @@ export const LeadCont = styled(motion.div)`
     font-size: 26px;
     color: #020202;
     margin-bottom: 15px;
+    line-height: 32px;
   }
 
   p {
@@ -62,6 +67,12 @@ export const HeroImgCont = styled(motion.div)`
   &.hero-for-clients-img--cont {
     img {
       max-width: 200px;
+    }
+  }
+
+  &.hero-for-candidates-img--cont {
+    img {
+      max-width: 225px;
     }
   }
 `;
