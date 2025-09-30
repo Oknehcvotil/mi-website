@@ -20,4 +20,10 @@ export const CustomSocialLink = styled.a`
     width: 35px;
     height: 35px;
   }
+
+  &.telegram-icon {
+    svg {
+      margin-right: 3px;
+    }
+  }
 `;

@@ -12,11 +12,19 @@ export const CardWrap = styled.div`
   max-width: 390px;
   width: 100%;
 
+  h2 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 190%;
+    text-transform: uppercase;
+    color: #020202;
+  }
+
   &::before {
     content: "";
     position: absolute;
     inset: 0;
-    border: 2px solid #a066ff;
+    border: 3px solid #a066ff;
     border-radius: 16px;
     transform: rotate(-5deg);
     opacity: 0.4;
@@ -33,16 +41,11 @@ export const CardCont = styled.div`
   border-radius: 12px;
   backdrop-filter: blur(100px);
   box-shadow: inset 6px 11px 5px 0 #fff;
-  border: 1px solid #a066ff;
+  border: 3px solid #a066ff;
   padding: 10px 20px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 190%;
-  text-transform: uppercase;
   color: #020202;
   background-color: #fff;
   z-index: 1;
-
 `;
 
 export const ImgWrap = styled.div`
@@ -57,6 +60,7 @@ export const VacList = styled.ul`
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 5px;
 
   li {
     border: 2px solid #fff;
@@ -75,6 +79,10 @@ export const VacList = styled.ul`
       -webkit-text-fill-color: transparent;
     }
   }
+`;
+
+export const TermsTitle = styled.h2`
+  margin-bottom: 10px;
 `;
 
 export const TermsText = styled.p`

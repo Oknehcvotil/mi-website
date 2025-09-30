@@ -6,6 +6,7 @@ import {
   Line,
   LineWrapper,
   TermsText,
+  TermsTitle,
   VacList,
   CardWrap,
 } from "./CaseInfoCard.styled";
@@ -66,7 +67,7 @@ const CaseInfoCard = ({ logos, keyPrefix, className }: CaseInfoCardProps) => {
           </div>
 
           <div>
-            <h2>{termsTitle}</h2>
+            <TermsTitle>{termsTitle}</TermsTitle>
             <TermsText>{termsText}</TermsText>
           </div>
           <LineWrapper>

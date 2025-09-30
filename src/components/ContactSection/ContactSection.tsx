@@ -93,6 +93,7 @@ const ContactSection = () => {
                       ariaLabel={t(s.labelKey ?? "")}
                       width={s.width}
                       height={s.height}
+                      className={s.className}
                     />
                   </motion.li>
                 ))}

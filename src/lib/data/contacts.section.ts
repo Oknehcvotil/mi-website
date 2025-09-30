@@ -7,6 +7,7 @@ export const socials: ContactSectionSocial[] = [
     labelKey: "socials.telegram",
     width: "15px",
     height: "13px",
+    className: "telegram-icon",
   },
   {
     id: "linkedin",
@@ -38,6 +39,7 @@ export const footerSocials: ContactSectionSocial[] = [
     labelKey: "telegram",
     width: "17px",
     height: "15px",
+    className: "telegram-icon",
   },
   {
     id: "facebook",

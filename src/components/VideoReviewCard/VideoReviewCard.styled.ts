@@ -15,7 +15,6 @@ export const Card = styled.article`
   border: 5px solid #000;
 `;
 
-/* базовый слой */
 const Layer = styled.div`
   position: absolute;
   inset: 0;
@@ -84,16 +83,23 @@ export const Meta = styled.div`
   text-align: center;
   position: absolute;
   width: 100%;
-  bottom: 60px;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
   font-weight: 700;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 83%;
   text-align: center;
-  color: #fff;
+  background-color: #fff;
+  color: #a066ff;
+  border-radius: 5px;
+  padding: 10px 10px;
+  display: inline-block;
+  white-space: nowrap;
+  width: max-content;
 `;
 
 export const Name = styled.p`
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  color: #020202;
 `;

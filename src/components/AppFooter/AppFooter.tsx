@@ -5,7 +5,6 @@ import SocialLink from "../Buttons/SocialLink/SocialLink";
 import Container from "../Container/Container";
 import { FooterWrap, SocialLinksList } from "./AppFooter.styled";
 
-
 const AppFooter = () => {
   const { ref } = useSectionInView("Footer", 0.7);
 
@@ -23,7 +22,7 @@ const AppFooter = () => {
                 ariaLabel={s.labelKey}
                 width={s.width}
                 height={s.height}
-                className="footer-links"
+                className={`footer-links ${s.className}`}
               />
             </li>
           ))}

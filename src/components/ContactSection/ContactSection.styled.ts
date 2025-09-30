@@ -59,6 +59,10 @@ export const BulletItem = styled(motion.li)`
     margin-bottom: 10px;
   }
 
+  p {
+    margin-bottom: 0;
+  }
+
   .bullet-icon {
     width: 29px;
     height: 29px;

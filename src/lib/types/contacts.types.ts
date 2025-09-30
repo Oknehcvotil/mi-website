@@ -4,4 +4,5 @@ export type ContactSectionSocial = {
   labelKey?: string;
   width?: string;
   height?: string;
+  className?: string;
 };

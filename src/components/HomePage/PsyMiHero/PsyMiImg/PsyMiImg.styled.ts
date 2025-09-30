@@ -7,7 +7,7 @@ export const Img = styled(motion.img)`
   &.robot-img {
     position: absolute;
     bottom: -10px;
-    right: -10px;
+    right: 0px;
     height: auto;
     pointer-events: none;
   }
