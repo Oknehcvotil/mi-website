@@ -16,6 +16,10 @@ export const MainHeroTitle = styled(motion.h1)`
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  &.hero-PHD--title {
+    margin-bottom: 15px;
+  }
 `;
 
 export const HeroSubtitle = styled(motion.h3)`
@@ -71,8 +75,19 @@ export const HeroImgCont = styled(motion.div)`
   }
 
   &.hero-for-candidates-img--cont {
+    padding: 20px 0;
+
     img {
       max-width: 225px;
+    }
+  }
+
+  &.hero-PHD-img--cont {
+    padding: 0 0 0 15px;
+    justify-content: flex-start;
+
+    img {
+      max-width: 264px;
     }
   }
 `;

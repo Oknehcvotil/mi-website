@@ -1,16 +1,14 @@
+import React from "react";
+import ServicesHero from "../../../components/ServicesPages/ServicesHero/ServicesHero";
+import ContactSection from "../../../components/ContactSection/ContactSection";
+import { forPHDHeroContent } from "../../../lib/data/services.pages";
+
 function PhdRecruiting() {
   return (
-    <div
-      style={{
-        height: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontSize: "26px",
-      }}
-    >
-      COMING SOON
-    </div>
+    <React.Fragment>
+      <ServicesHero content={forPHDHeroContent} />
+      <ContactSection />
+    </React.Fragment>
   );
 }
 

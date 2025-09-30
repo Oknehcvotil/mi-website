@@ -30,3 +30,14 @@ export const forCandidatesHeroContent: ServicesHeroContent = {
     altKey: "hero.imgAlt",
   },
 };
+
+export const forPHDHeroContent: ServicesHeroContent = {
+  translationNs: "servicesPHD",
+  className: "PHD",
+  sectionTitleKey: "hero.sectionTitle",
+  leadKey: "hero.lead",
+  image: {
+    basePath: "/images/mob/services-pages/services-hero-phd",
+    altKey: "hero.imgAlt",
+  },
+};
