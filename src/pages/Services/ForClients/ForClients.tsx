@@ -1,16 +1,12 @@
+import React from "react";
+import ServicesHero from "../../../components/ServicesPages/ServicesHero/ServicesHero";
+import { forClientsHeroContent } from "../../../lib/data/services.pages";
+
 function ForClients() {
   return (
-    <div
-      style={{
-        height: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontSize: "26px",
-      }}
-    >
-      COMING SOON
-    </div>
+    <React.Fragment>
+      <ServicesHero content={forClientsHeroContent} />
+    </React.Fragment>
   );
 }
 

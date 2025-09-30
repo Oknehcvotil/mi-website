@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "title": "Our services",
+    "subtitle": "for customers",
+    "nav": {
+      "recruiting": "Recruitment",
+      "hr": "HR consulting",
+      "psychology": "Business Psychology",
+      "constructor": "Constructor"
+    },
+    "sectionTitle": "Recruitment",
+    "lead": "Search, assessment and selection of specialists who have the necessary competencies and share the Company's values.",
+    "imgAlt": "Recruitment icon"
+  }
+}

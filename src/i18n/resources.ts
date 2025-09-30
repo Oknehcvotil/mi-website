@@ -3,12 +3,14 @@ import en_header from "../locales/en/header.json";
 import en_home from "../locales/en/home.json";
 import en_reviews from "../locales/en/reviews.json";
 import en_contacts from "../locales/en/contacts.json";
+import en_servicesForClients from "../locales/en/servicesForClients.json";
 
 import ua_common from "../locales/ua/common.json";
 import ua_header from "../locales/ua/header.json";
 import ua_home from "../locales/ua/home.json";
 import ua_reviews from "../locales/ua/reviews.json";
 import ua_contacts from "../locales/ua/contacts.json";
+import ua_servicesForClients from "../locales/ua/servicesForClients.json";
 
 export const resources = {
   en: {
@@ -17,6 +19,7 @@ export const resources = {
     home: en_home,
     reviews: en_reviews,
     contacts: en_contacts,
+    servicesForClients: en_servicesForClients,
   },
   ua: {
     common: ua_common,
@@ -24,6 +27,7 @@ export const resources = {
     home: ua_home,
     reviews: ua_reviews,
     contacts: ua_contacts,
+    servicesForClients: ua_servicesForClients,
   },
 } as const;
 
@@ -33,4 +37,5 @@ export const NAMESPACES = [
   "home",
   "reviews",
   "contacts",
+  "servicesForClients",
 ] as const;

@@ -1,13 +1,17 @@
-import type { ReactNode } from "react";
+import { forwardRef } from "react";
+import type { ComponentPropsWithoutRef } from "react";
 import { Wrapper } from "./Container.styled";
 
-type ContainerProps = {
-  children: ReactNode;
-  className?: string;
-};
+type ContainerProps = ComponentPropsWithoutRef<typeof Wrapper>;
 
-function Container({ children, className }: ContainerProps) {
-  return <Wrapper className={className}>{children}</Wrapper>;
-}
+const Container = forwardRef<HTMLDivElement, ContainerProps>(
+  ({ children, ...rest }, ref) => {
+    return (
+      <Wrapper ref={ref} {...rest}>
+        {children}
+      </Wrapper>
+    );
+  }
+);
 
 export default Container;
