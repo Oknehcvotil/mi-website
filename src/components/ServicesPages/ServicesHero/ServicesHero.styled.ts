@@ -58,4 +58,10 @@ export const HeroImgCont = styled(motion.div)`
     display: block;
     object-fit: contain;
   }
+
+  &.hero-for-clients-img--cont {
+    img {
+      max-width: 200px;
+    }
+  }
 `;

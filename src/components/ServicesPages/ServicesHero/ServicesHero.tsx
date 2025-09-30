@@ -62,7 +62,10 @@ const ServicesHero = ({ content }: ServicesHeroProps) => {
           <ConsultBtn variant="primary" maxWidth="307px" />
         </LeadCont>
 
-        <HeroImgCont variants={reduce ? undefined : imgVariants}>
+        <HeroImgCont
+          variants={reduce ? undefined : imgVariants}
+          className={`hero-${className}-img--cont`}
+        >
           <picture>
             <source
               srcSet={`${image.basePath}@3x.${image.ext ?? "webp"}`}
