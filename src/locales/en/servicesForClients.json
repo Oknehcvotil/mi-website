@@ -11,5 +11,27 @@
     "sectionTitle": "Recruitment",
     "lead": "Search, assessment and selection of specialists who have the necessary competencies and share the Company's values.",
     "imgAlt": "Recruitment icon"
+  },
+  "topSale": "Top sales",
+  "plans": {
+    "full": { "title": "Full cycle" },
+    "flex": { "title": "Flexible cycle" },
+    "sub": { "title": "Subscription for recruitment services" },
+    "additionally": { "title": "Additionally" }
+  },
+  "features": {
+    "replace90": "Replacement guarantee for a trial period of 90 days;",
+    "replace30": "Replacement guarantee for a trial period of 30 days;",
+    "jobProfile": "Job profile formation;",
+    "marketAnalysis": "Analysis of competing offers on the market and packaging all the advantages and features of our offer;",
+    "screening": "Screening of hard & soft skills for the position profile;",
+    "onboarding": "Onboarding and support of the candidate during the internship.",
+    "jobOffer": "Job offer formation;",
+    "psychProfile": "Formation of a psychological portrait and report on the candidate;",
+    "clientInterview": "Scheduling a candidate interview with the client;",
+    "extendGuarantee": "Increased warranty period;",
+    "motivationSystem": "Development of a motivation system;",
+    "onboardingAnalysis": "Onboarding system analysis;",
+    "onboardingAdjustment": "Adjusting the onboarding system or developing it from scratch;"
   }
 }

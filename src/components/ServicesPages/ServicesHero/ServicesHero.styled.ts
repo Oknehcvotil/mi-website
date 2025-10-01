@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-export const HeroSectionWrap = styled.div`
+export const HeroSectionWrap = styled.section`
   padding-top: 105px;
 `;
 

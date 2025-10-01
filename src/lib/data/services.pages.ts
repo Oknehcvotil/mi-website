@@ -1,4 +1,5 @@
 import type { ServicesHeroContent } from "../types/servicesHero.type";
+import type { Plan } from "../types/servicesPages.type";
 
 export const forClientsHeroContent: ServicesHeroContent = {
   translationNs: "servicesForClients",
@@ -41,3 +42,71 @@ export const forPHDHeroContent: ServicesHeroContent = {
     altKey: "hero.imgAlt",
   },
 };
+
+export const forClientsPlan: Plan[] = [
+  {
+    translationNs: "servicesForClients",
+    titleKey: "plans.full.title",
+    topSale: true,
+    features: [
+      { key: "features.replace90" },
+      { key: "features.jobProfile" },
+      { key: "features.marketAnalysis" },
+      { key: "features.screening" },
+      { key: "features.onboarding" },
+      { key: "features.jobOffer" },
+      { key: "features.psychProfile" },
+      { key: "features.clientInterview" },
+    ],
+    className: "top--sale",
+  },
+  {
+    translationNs: "servicesForClients",
+    titleKey: "plans.flex.title",
+    features: [
+      { key: "features.replace30" },
+      { key: "features.jobProfile" },
+      { key: "features.marketAnalysis" },
+      { key: "features.screening" },
+      { key: "features.jobOffer" },
+      { key: "features.onboarding" },
+      {
+        key: "features.psychProfile",
+        disabled: true,
+        className: "disabled",
+      },
+      {
+        key: "features.clientInterview",
+        disabled: true,
+        className: "disabled",
+      },
+    ],
+    className: "plan--flex",
+  },
+  {
+    translationNs: "servicesForClients",
+    titleKey: "plans.sub.title",
+    features: [
+      { key: "features.jobProfile" },
+      { key: "features.marketAnalysis" },
+      { key: "features.screening" },
+      { key: "features.psychProfile" },
+      { key: "features.clientInterview" },
+      { key: "features.jobOffer" },
+      { key: "features.onboarding" },
+      { key: "features.replace30", disabled: true, className: "disabled" },
+    ],
+    className: "plan--subs",
+  },
+  {
+    translationNs: "servicesForClients",
+    titleKey: "plans.additionally.title",
+    features: [
+      { key: "features.extendGuarantee" },
+      { key: "features.motivationSystem" },
+      { key: "features.onboardingAnalysis" },
+      { key: "features.onboardingAdjustment" },
+    ],
+    className: "plan--dditionally",
+  },
+];

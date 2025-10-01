@@ -88,4 +88,50 @@ export const ConsultBtnStyled = styled.a<{
     transform: scale(0.97);
   }
     `};
+
+  ${({ variant }) =>
+    variant === "secondary" &&
+    `
+    border: none;
+    position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 12px;
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000;
+  background: linear-gradient(90deg, #5427B1 0%, #A066FF 100%);
+  text-decoration: none;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border-radius: 10px;
+    background: #fff;
+    z-index: 0;
+  }
+
+  span {
+    position: relative;
+    z-index: 1; 
+  }
+
+
+    &:hover,
+  &:focus {
+    background: linear-gradient(90deg, #a066ff 0%, #5427b1 100%);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+  }
+
+  &:active {
+    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background: #5427b1;
+    transform: scale(0.97);
+  }
+  `};
 `;

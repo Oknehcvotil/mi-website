@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { modalVariants } from "../../../lib/animations/animations.burger";
-import BurgerCloseBtn from "../../BurgerCloseBtn/BurgerCloseBtn";
+import BurgerCloseBtn from "../../Buttons/BurgerCloseBtn/BurgerCloseBtn";
 import { PolicyModalCont, TextCont } from "./PolicyModal.styled";
 import type { PolicySections } from "../../../lib/types/common.types";
 
