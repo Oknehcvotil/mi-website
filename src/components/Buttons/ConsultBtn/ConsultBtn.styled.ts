@@ -97,7 +97,7 @@ export const ConsultBtnStyled = styled.a<{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 12px;
+  padding: 12px 10px;
   border-radius: 15px;
   font-weight: 700;
   font-size: 20px;
