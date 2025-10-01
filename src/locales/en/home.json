@@ -79,6 +79,14 @@
     ],
     "button": "learne more"
   },
+  "teamStats": {
+    "yearsInBiz": "years in business psychology",
+    "specialists": "specialists in the MI team",
+    "yearsInHR": "years in HR & Recruiting",
+    "countries": "countries in the geography of cooperation",
+    "clientLevel": "CSI customer level",
+    "closedVacancy": "closed vacancies"
+  },
   "casesTitle": "cases <1>and</1> reviews",
   "psyMi": {
     "title": "PSYCHOLOGICAL TESTING PLATFORM IN <1>MI UNIVERSE</1>",
