@@ -100,7 +100,7 @@ export const ConsultBtnStyled = styled.a<{
   padding: 12px 0;
   border-radius: 15px;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
   color: #000;
   background: linear-gradient(90deg, #5427B1 0%, #A066FF 100%);
   text-decoration: none;
