@@ -1,6 +1,6 @@
 export const sectionVariants = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.12 } },
+  show: { transition: { staggerChildren: 0.6 } },
 };
 
 export const childVariants = {
