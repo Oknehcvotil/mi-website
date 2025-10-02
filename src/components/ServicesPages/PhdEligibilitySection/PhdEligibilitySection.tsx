@@ -5,12 +5,12 @@ import {
   listStagger,
   parent,
 } from "../../../lib/animations/services/animations.phdlEligibility";
-import PhdEligibilityCard from "./PhdEligibilityCard/PHDEligibilityCard";
 import Container from "../../Container/Container";
 import {
   ConsultLinkCont,
   EligibilityWrap,
 } from "./PhdEligibilitySection.styled";
+import EligibilityCard from "./EligibilityCard/EligibilityCard";
 
 const PhdEligibilitySection = () => {
   const ns = "servicesPHD";
@@ -41,7 +41,7 @@ const PhdEligibilitySection = () => {
     >
       <Container>
         <motion.div variants={reduce ? undefined : parent}>
-          <PhdEligibilityCard
+          <EligibilityCard
             translationNs={ns}
             titleKey="zero.title"
             itemsKeys={zeroToProKeys}
@@ -49,7 +49,7 @@ const PhdEligibilitySection = () => {
         </motion.div>
 
         <motion.div variants={reduce ? undefined : parent}>
-          <PhdEligibilityCard
+          <EligibilityCard
             translationNs={ns}
             titleKey="upskill.title"
             itemsKeys={upskillKeys}

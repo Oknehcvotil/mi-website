@@ -5,19 +5,19 @@ import {
   EligibilityCardList,
   EligibilityItem,
   EligibilityTitle,
-} from "./PhdEligibilityCard.styled";
+} from "./EligibilityCard.styled";
 
-type PhdEligibilityCardProps = {
+type EligibilityCardProps = {
   translationNs: string;
   titleKey: string;
   itemsKeys: string[];
 };
 
-const PhdEligibilityCard = ({
+const EligibilityCard = ({
   translationNs,
   titleKey,
   itemsKeys,
-}: PhdEligibilityCardProps) => {
+}: EligibilityCardProps) => {
   const { t } = useTranslation(translationNs);
   const reduce = useReducedMotion();
 
@@ -44,4 +44,4 @@ const PhdEligibilityCard = ({
   );
 };
 
-export default PhdEligibilityCard;
+export default EligibilityCard;
