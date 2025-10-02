@@ -11,5 +11,5 @@ export const parent: Variants = {
 
 export const listStagger: Variants = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.06 } },
+  show: { transition: { staggerChildren: 0.12 } },
 };
