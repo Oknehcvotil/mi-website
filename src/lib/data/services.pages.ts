@@ -232,3 +232,16 @@ export const forCandidatesPlans: Plan[] = [
     className: "plan--pro",
   },
 ];
+
+export const additionalHrServices = [
+  { key: "hr.srv.audit" },
+  { key: "hr.srv.onboarding" },
+  { key: "hr.srv.hrdRecruiter" },
+  { key: "hr.srv.hrBrand" },
+  { key: "hr.srv.attestation" },
+  { key: "hr.srv.roleMaps" },
+  { key: "hr.srv.hrStrategy" },
+  { key: "hr.srv.ceoClevel" },
+  { key: "hr.srv.corpCulture" },
+  { key: "hr.srv.motivation" },
+] as const;

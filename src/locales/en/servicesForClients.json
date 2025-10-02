@@ -33,5 +33,22 @@
     "motivationSystem": "Development of a motivation system;",
     "onboardingAnalysis": "Onboarding system analysis;",
     "onboardingAdjustment": "Adjusting the onboarding system or developing it from scratch;"
+  },
+  "hr": {
+    "title": "HR consulting",
+    "lead": "A package of services that optimize all HR processes of your Company.",
+    "separateTitle": "Can be ordered separately:",
+    "srv": {
+      "audit": "Analysis and recommendations on the functioning of HR processes",
+      "hrdRecruiter": "Full-time HRD consulting for HR/recruiter",
+      "onboarding": "Development and integration of the Onboarding process",
+      "hrBrand": "HR Brand Formation",
+      "attestation": "Formation of the certification system",
+      "roleMaps": "Development of job maps and development plans",
+      "hrStrategy": "HR Strategy Formation",
+      "ceoClevel": "Consulting for CEOs and C-level executives",
+      "corpCulture": "Formation of corporate culture",
+      "motivation": "Formation of a motivation system"
+    }
   }
 }
