@@ -4,5 +4,61 @@
     "sectionTitle": "PhD in Recruiting course",
     "lead": "We teach modern recruiting: from basics to advanced tools. Ideal for both beginners and practicing professionals.",
     "imgAlt": "Icon PHD of Recruiting"
+  },
+  "plans": {
+    "pOne": {
+      "title": "Package #1",
+      "features": [
+        "8 recorded training modules to complete at a time convenient for you",
+        "Practical tasks that will make your work easier in practice",
+        "1 joint Q&A meeting with a mentor (case analysis, answers to questions)",
+        "3 months of access to training materials"
+      ]
+    },
+    "pTwo": {
+      "title": "Package #2",
+      "features": [
+        "10 recorded training modules to complete at a time convenient for you",
+        "Practical tasks that will make your work easier in practice",
+        "Checking practical tasks by mentors",
+        "2 joint Q&A meetings with a mentor (case analysis, answers to questions)",
+        "Useful links — templates, offers, candidate evaluation, job description structure, recruiting resources, and more",
+        "Access to a closed chat room for course participants",
+        "6 months of access to materials",
+        "Course completion certificate — confirms your qualification and successful completion of the program"
+      ]
+    },
+    "pThree": {
+      "title": "Package #3",
+      "features": [
+        "12 recorded training modules to complete at a time convenient for you",
+        "2 exclusive modules in the recording from CEO & Founder MI Agency",
+        "Practical tasks that will make your work easier in practice",
+        "Checking practical tasks by mentors and providing personal detailed feedback",
+        "2 joint Q&A meetings with a mentor (case analysis, answers to questions)",
+        "1 personal meeting with a mentor",
+        "1 joint meeting with the CEO & Founder of MI Agency",
+        "Access to a closed chat room for course participants",
+        "3 months of mentoring support after completing the course: the opportunity to ask questions, receive recommendations, and submit your cases for analysis",
+        "Useful links — templates, offers, candidate evaluation, job description structure, recruiting resources, and more",
+        "9 months of access to materials",
+        "A personalized certificate with a mentor's comment on your work, confirming your qualifications and successful completion of the program"
+      ]
+    },
+    "pFour": {
+      "title": "Package #4",
+      "features": [
+        "Individual training with a mentor instead of recorded modules with a flexible schedule for you",
+        "2 exclusive modules from CEO & Founder MI Agency and 2 personal strategy sessions/consultations at your request",
+        "Access to all class recordings — the ability to return to materials at any time to consolidate knowledge and repeat what has been learned",
+        "Practical tasks that will make your work easier in practice",
+        "Access to the database of templates, tools and internal developments of MI Agency",
+        "12 months of access to training materials",
+        "Personal support — constant contact with a mentor, case analysis, recommendations, and support throughout the course",
+        "Developing a personal strategy for developing a recruiter’s personal brand",
+        "Creating a professional resume and LinkedIn profile",
+        "A personalized certificate with a mentor's comment on your work, confirming your qualifications and successful completion of the program"
+      ]
+    }
   }
 }

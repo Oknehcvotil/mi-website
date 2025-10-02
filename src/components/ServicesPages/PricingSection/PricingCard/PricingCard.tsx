@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import type { Plan } from "../../../../lib/types/servicesPages.type";
 import TopSaleBadge from "../TopSaleBadge/TopSaleBadge";
 import { useReducedMotion } from "framer-motion";
@@ -42,7 +42,7 @@ const PricingCard = ({ plan }: PricingCardProps) => {
                 <use href="/icons/sprite.svg#icon-check"></use>
               </svg>
             </CheckBox>
-            {t(f.key)}
+            <Trans t={t} i18nKey={f.key} components={{ 1: <span /> }} />
           </FeaturesItems>
         ))}
       </ul>

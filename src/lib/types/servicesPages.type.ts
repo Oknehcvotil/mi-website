@@ -5,11 +5,10 @@ type Feature = {
 };
 
 export type Plan = {
+  id?: string;
   translationNs: string;
   titleKey: string;
   topSale?: boolean;
   features: Feature[];
   className?: string;
 };
-
-

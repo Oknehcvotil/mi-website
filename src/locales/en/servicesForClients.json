@@ -16,7 +16,7 @@
   "plans": {
     "full": { "title": "Full cycle" },
     "flex": { "title": "Flexible cycle" },
-    "sub": { "title": "Subscription for recruitment services" },
+    "sub": { "title": "Recruitment subscription" },
     "additionally": { "title": "Additionally" }
   },
   "features": {
