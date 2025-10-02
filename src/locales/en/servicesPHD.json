@@ -5,6 +5,28 @@
     "lead": "We teach modern recruiting: from basics to advanced tools. Ideal for both beginners and practicing professionals.",
     "imgAlt": "Icon PHD of Recruiting"
   },
+  "aria": "Eligibility section for PHD of Recruiting program",
+  "zero": {
+    "title": "DO YOU WANT TO LEARN A PROFESSION <1>FROM SCRATCH</1>:",
+    "items": [
+      "Do you want to acquire a <1>new specialty</1> without long-term training?",
+      "Are you looking for a stable income of <1>$500+ in just 2 months?</1>",
+      "Do you dream of <1>working remotely</1> from anywhere in the world?",
+      "Want to <1>change your boring job</1> into a meaningful profession?"
+    ]
+  },
+  "upskill": {
+    "title": "DO YOU WANT TO <1>IMPROVE</1> YOUR QUALIFICATIONS:",
+    "items": [
+      "Do you want to work more <1>systematically and confidently</1>?",
+      "Tired of the chaos of recruiting — you want <1>structured and effective tools</1>",
+      "Are you looking to <1>increase your paycheck</1> or change your niche?",
+      "Looking to scale: <1>freelance, international clients, leadership roles</1>"
+    ]
+  },
+  "cta": {
+    "note": "If at least one point is about you — <1>PHD of Recruiting</1> is your chance!"
+  },
   "plans": {
     "pOne": {
       "title": "Package #1",
