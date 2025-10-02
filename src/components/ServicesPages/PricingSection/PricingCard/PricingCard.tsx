@@ -33,7 +33,7 @@ const PricingCard = ({ plan }: PricingCardProps) => {
         {features.map((f, i) => (
           <FeaturesItems
             key={i}
-            className={f.className}
+            className={`${className ?? ""} ${f.className ?? ""}`}
             data-disabled={f.disabled ? "true" : "false"}
             aria-disabled={f.disabled || undefined}
           >
@@ -42,7 +42,9 @@ const PricingCard = ({ plan }: PricingCardProps) => {
                 <use href="/icons/sprite.svg#icon-check"></use>
               </svg>
             </CheckBox>
-            <Trans t={t} i18nKey={f.key} components={{ 1: <span /> }} />
+            <p>
+              <Trans t={t} i18nKey={f.key} components={{ 1: <span /> }} />
+            </p>
           </FeaturesItems>
         ))}
       </ul>

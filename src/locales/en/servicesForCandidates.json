@@ -5,5 +5,43 @@
     "sectionTitle": "Career counseling",
     "lead": "A package of services for successful employment and creating an impressive professional resume.",
     "imgAlt": "Icon For candidates"
+  },
+  "plans": {
+    "basic": {
+      "title": "Basic",
+      "features": [
+        "Career consultation with the Head of Recruiting - 1 hour;",
+        "A checklist for packaging a professional personal brand on LinkedIn, Instagram, and others of your choice;",
+        "Interview preparation checklist;",
+        "Checklist for successfully passing the interview;",
+        "Formation of a complete psychological portrait and recommendations for personal professional growth;",
+        "Development of a designer resume in 2 languages (Ukrainian, English), with an additional option to change the languages to those important to you;",
+        "List of job search resources;"
+      ]
+    },
+    "standard": {
+      "title": "Standard",
+      "features": [
+        "Career consultation with the Head of Recruiting - 1 hour;",
+        "A checklist for packaging a professional personal brand on LinkedIn, Instagram, and others of your choice;",
+        "Interview preparation checklist;",
+        "Checklist for successfully passing the interview;",
+        "Development of a designer resume in 2 languages (Ukrainian, English); <1>additionally, there is an option to change languages to those that are important to you;</1>",
+        "Formation of a complete psychological portrait and recommendations for personal professional growth;",
+        "List of job search resources;"
+      ]
+    },
+    "pro": {
+      "title": "Pro",
+      "features": [
+        "Career consultation with a Business Psychologist - 1 hour;",
+        "A checklist for packaging a professional personal brand on LinkedIn, Instagram, and others of your choice;",
+        "Interview preparation checklist;",
+        "Checklist for successfully passing the interview;",
+        "Development of a designer resume in 2 languages (Ukrainian, English), with an additional option to change the languages to those important to you;",
+        "Formation of a complete psychological portrait and recommendations for personal professional growth;",
+        "List of job search resources;"
+      ]
+    }
   }
 }

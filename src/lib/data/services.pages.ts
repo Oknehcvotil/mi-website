@@ -178,3 +178,57 @@ export const PHDPlans: Plan[] = [
     className: "plan--pFour",
   },
 ];
+
+export const forCandidatesPlans: Plan[] = [
+  {
+    translationNs: "servicesForCandidates",
+    titleKey: "plans.standard.title",
+    features: [
+      { key: "plans.standard.features.0" },
+      { key: "plans.standard.features.1" },
+      { key: "plans.standard.features.2" },
+      { key: "plans.standard.features.3" },
+      { key: "plans.standard.features.4" },
+      {
+        key: "plans.standard.features.5",
+        disabled: true,
+        className: "disabled",
+      },
+      {
+        key: "plans.standard.features.6",
+        disabled: true,
+        className: "disabled",
+      },
+    ],
+    topSale: true,
+    className: "top--sale",
+  },
+  {
+    translationNs: "servicesForCandidates",
+    titleKey: "plans.basic.title",
+    features: [
+      { key: "plans.basic.features.0" },
+      { key: "plans.basic.features.1" },
+      { key: "plans.basic.features.2" },
+      { key: "plans.basic.features.3" },
+      { key: "plans.basic.features.4" },
+      { key: "plans.basic.features.5", disabled: true, className: "disabled" },
+      { key: "plans.basic.features.6", disabled: true, className: "disabled" },
+    ],
+    className: "plan--basic",
+  },
+  {
+    translationNs: "servicesForCandidates",
+    titleKey: "plans.pro.title",
+    features: [
+      { key: "plans.pro.features.0" },
+      { key: "plans.pro.features.1" },
+      { key: "plans.pro.features.2" },
+      { key: "plans.pro.features.3" },
+      { key: "plans.pro.features.4" },
+      { key: "plans.pro.features.5" },
+      { key: "plans.pro.features.6" },
+    ],
+    className: "plan--pro",
+  },
+];

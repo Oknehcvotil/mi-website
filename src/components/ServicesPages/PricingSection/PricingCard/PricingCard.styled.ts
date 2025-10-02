@@ -51,10 +51,19 @@ export const FeaturesItems = styled.li`
     margin-bottom: 5px;
   }
 
-  &.disabled {
+  &.disabled,
+  span {
     opacity: 0.85;
     text-decoration: line-through;
     color: rgba(128, 128, 128, 0.58);
+    text-decoration-skip-ink: none;
+  }
+
+  &.top--sale.disabled,
+  span {
+    opacity: 0.85;
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.54);
     text-decoration-skip-ink: none;
   }
 `;
@@ -72,7 +81,6 @@ export const CheckBox = styled.div`
   background-color: #9e2fff;
 
   svg {
-    margin-left: 1px;
     fill: #fff;
   }
 
@@ -87,5 +95,10 @@ export const CheckBox = styled.div`
   &.disabled {
     opacity: 0.85;
     background-color: rgba(128, 128, 128, 0.58);
+  }
+
+  &.top--sale.disabled {
+    opacity: 0.85;
+    background-color: rgba(255, 255, 255, 0.54);
   }
 `;
