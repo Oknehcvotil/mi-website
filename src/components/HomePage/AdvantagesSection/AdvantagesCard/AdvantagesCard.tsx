@@ -24,7 +24,10 @@ const AdvantagesCard = ({ img, title, variants }: AdvantagesCardProps) => {
     >
       <AdvCardImgCont>
         <svg>
-          <use href={`/images/mob/${img.mob}.svg`}></use>
+          <use
+            href={`/images/mob/${img.mob}.svg`}
+            xlinkHref={`/images/mob/${img.mob}.svg`}
+          ></use>
         </svg>
       </AdvCardImgCont>
 
