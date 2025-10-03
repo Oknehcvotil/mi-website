@@ -1,7 +1,5 @@
 import { useReducedMotion } from "framer-motion";
-import {
-  sectionVariants,
-} from "../../../lib/animations/services/animations.pricing";
+import { sectionVariants } from "../../../lib/animations/services/animations.pricing";
 import type { Plan } from "../../../lib/types/servicesPages.type";
 import Container from "../../Container/Container";
 import PricingCard from "./PricingCard/PricingCard";
@@ -18,7 +16,7 @@ const PricingSection = ({ plans }: PricingSectionProps) => {
     <PricingSectionWrap
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }}
       variants={reduce ? undefined : sectionVariants}
     >
       <Container className="pricing-section-container">

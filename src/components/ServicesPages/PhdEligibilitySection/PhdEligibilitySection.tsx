@@ -36,7 +36,7 @@ const PhdEligibilitySection = () => {
       aria-label={t("aria")}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.1 }}
       variants={reduce ? undefined : listStagger}
     >
       <Container>

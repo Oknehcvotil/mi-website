@@ -70,7 +70,7 @@ export const HeroImgCont = styled(motion.div)`
 
   &.hero-for-clients-img--cont {
     img {
-      max-width: 200px;
+      max-width: 265px;
     }
   }
 
