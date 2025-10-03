@@ -7,6 +7,7 @@ import {
 import ContactSection from "../../../components/ContactSection/ContactSection";
 import PricingSection from "../../../components/ServicesPages/PricingSection/PricingSection";
 import HrConsultingSection from "../../../components/ServicesPages/HrConsultingSection/HrConsultingSection";
+import BusinessPsychologySection from "../../../components/ServicesPages/BusinessPsychologySection/BusinessPsychologySection";
 
 function ForClients() {
   return (
@@ -14,6 +15,7 @@ function ForClients() {
       <ServicesHero content={forClientsHeroContent} />
       <PricingSection plans={forClientsPlan} />
       <HrConsultingSection />
+      <BusinessPsychologySection />
       <ContactSection />
     </React.Fragment>
   );

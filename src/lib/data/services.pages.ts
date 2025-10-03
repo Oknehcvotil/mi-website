@@ -116,18 +116,6 @@ export const PHDPlans: Plan[] = [
     translationNs: "servicesPHD",
     titleKey: "plans.pOne.title",
     features: [
-      { key: "plans.pOne.features.0" },
-      { key: "plans.pOne.features.1" },
-      { key: "plans.pOne.features.2" },
-      { key: "plans.pOne.features.3" },
-    ],
-    topSale: true,
-    className: "top--one",
-  },
-  {
-    translationNs: "servicesPHD",
-    titleKey: "plans.pTwo.title",
-    features: [
       { key: "plans.pTwo.features.0" },
       { key: "plans.pTwo.features.1" },
       { key: "plans.pTwo.features.2" },
@@ -139,6 +127,18 @@ export const PHDPlans: Plan[] = [
     ],
     topSale: true,
     className: "top--sale",
+  },
+  {
+    translationNs: "servicesPHD",
+    titleKey: "plans.pTwo.title",
+    features: [
+      { key: "plans.pOne.features.0" },
+      { key: "plans.pOne.features.1" },
+      { key: "plans.pOne.features.2" },
+      { key: "plans.pOne.features.3" },
+    ],
+    topSale: true,
+    className: "top--one",
   },
   {
     translationNs: "servicesPHD",
