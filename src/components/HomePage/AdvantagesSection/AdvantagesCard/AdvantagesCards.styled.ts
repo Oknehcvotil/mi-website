@@ -20,6 +20,11 @@ export const ListItem = styled(motion.li)`
       font-size: 21px;
     }
   }
+
+  img {
+    width: 140px;
+    height: auto;
+  }
 `;
 
 export const AdvText = styled.h3`
@@ -34,15 +39,5 @@ export const AdvText = styled.h3`
     font-size: 25px;
     line-height: 113%;
     text-transform: uppercase;
-  }
-`;
-
-export const AdvCardImgCont = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  svg {
-    width: 140px;
   }
 `;

@@ -1,6 +1,6 @@
 import { type Variants } from "framer-motion";
 import { Trans, useTranslation } from "react-i18next";
-import { ListItem, AdvText, AdvCardImgCont } from "./AdvantagesCards.styled";
+import { ListItem, AdvText } from "./AdvantagesCards.styled";
 
 type AdvantagesCardProps = {
   img: {
@@ -22,14 +22,9 @@ const AdvantagesCard = ({ img, title, variants }: AdvantagesCardProps) => {
       viewport={{ once: true, amount: 0.5 }}
       aria-label={title}
     >
-      <AdvCardImgCont>
-        <svg>
-          <use
-            href={`/images/mob/${img.mob}.svg`}
-            xlinkHref={`/images/mob/${img.mob}.svg`}
-          ></use>
-        </svg>
-      </AdvCardImgCont>
+      <div>
+        <img src={`/images/mob/${img.mob}.svg`} alt={img.alt} />
+      </div>
 
       <AdvText>
         <Trans t={t} i18nKey={title} components={{ 1: <span /> }} />
