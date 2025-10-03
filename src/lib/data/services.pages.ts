@@ -1,5 +1,5 @@
 import type { ServicesHeroContent } from "../types/servicesHero.type";
-import type { Plan } from "../types/servicesPages.type";
+import type { Plan, TeamContactConfig } from "../types/servicesPages.type";
 
 export const forClientsHeroContent: ServicesHeroContent = {
   translationNs: "servicesForClients",
@@ -244,3 +244,15 @@ export const additionalHrServices = [
   { key: "hr.srv.corpCulture" },
   { key: "hr.srv.motivation" },
 ] as const;
+
+export const teamForClientsConfig: TeamContactConfig = {
+  translationNs: "servicesForClients",
+  images: {
+    leftImg: "/images/mob/team/irina-ceo",
+    rightImg: "/images/mob/team/tatyana-human-resourses",
+    leftImgAlt: "Irina MI portrait",
+    rightImgAlt: "Tetyana portrait",
+    leftClassName: "left--img",
+    rightClassName: "right--img",
+  },
+};

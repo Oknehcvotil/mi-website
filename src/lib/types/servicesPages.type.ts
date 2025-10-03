@@ -12,3 +12,18 @@ export type Plan = {
   features: Feature[];
   className?: string;
 };
+
+export type TeamContactImages = {
+  leftImg: string;
+  rightImg: string;
+  leftImgAlt?: string;
+  rightImgAlt?: string;
+  leftClassName?: string;
+  rightClassName?: string;
+};
+
+export type TeamContactConfig = {
+  id?: string;
+  translationNs: string;
+  images: TeamContactImages;
+};
