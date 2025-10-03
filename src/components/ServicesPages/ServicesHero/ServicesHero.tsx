@@ -69,12 +69,22 @@ const ServicesHero = ({ content }: ServicesHeroProps) => {
           variants={reduce ? undefined : imgVariants}
           className={`hero-${className}-img--cont`}
         >
-          <img
-            src={`${image.basePath}.${image.ext ?? "svg"}`}
-            alt={t(image.altKey)}
-            loading="eager"
-            decoding="async"
-          />
+          <picture>
+            <source
+              srcSet={`${image.basePath}@3x.${image.ext ?? "webp"}`}
+              media="(min-resolution: 3dppx)"
+            />
+            <source
+              srcSet={`${image.basePath}@2x.${image.ext ?? "webp"}`}
+              media="(min-resolution: 2dppx)"
+            />
+            <img
+              src={`${image.basePath}.${image.ext ?? "webp"}`}
+              alt={t(image.altKey)}
+              loading="eager"
+              decoding="async"
+            />
+          </picture>
         </HeroImgCont>
       </Container>
     </HeroSectionWrap>
