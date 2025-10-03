@@ -25,6 +25,9 @@ export const HrLeadText = styled.div`
 
 export const HrImgCont = styled(motion.div)`
   padding: 35px 80px 65px;
+  max-width: 390px;
+  width: 100%;
+  margin: 0 auto;
 
   img {
     width: 100%;
@@ -36,9 +39,7 @@ export const HrImgCont = styled(motion.div)`
 
 export const HrAdditionalCont = styled.div`
   background: #f3f4f9;
-  padding: 20px 15px 30px;
-  max-width: 390px;
-  margin: 0 auto;
+  padding: 20px 0 30px;
 `;
 
 export const HrAdditionalTitle = styled.h3`
@@ -49,5 +50,7 @@ export const HrAdditionalTitle = styled.h3`
   text-transform: uppercase;
   text-align: center;
   color: #020202;
-  margin-bottom: 15px;
+  margin: 0 auto 15px;
+  max-width: 360px;
+  width: 100%;
 `;

@@ -7,6 +7,10 @@ export const AdditionalServicesList = styled(motion.ul)`
   justify-content: center;
   gap: 10px;
   flex-direction: column;
+  padding: 0 15px;
+  max-width: 390px;
+  width: 100%;
+  margin: 0 auto;
 `;
 
 export const AdditionalServicesItems = styled(motion.li)`
