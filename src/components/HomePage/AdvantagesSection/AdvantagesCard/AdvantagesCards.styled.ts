@@ -36,3 +36,13 @@ export const AdvText = styled.h3`
     text-transform: uppercase;
   }
 `;
+
+export const AdvCardImgCont = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 140px;
+  }
+`;
