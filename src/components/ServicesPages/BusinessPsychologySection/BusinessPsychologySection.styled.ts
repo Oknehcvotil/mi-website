@@ -22,7 +22,7 @@ export const PsyhologyLeadCont = styled.div`
 `;
 
 export const PsyhologyImgCont = styled.div`
-  padding: 20px 0 30px;
+  padding-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;

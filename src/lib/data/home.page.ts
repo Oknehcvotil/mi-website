@@ -69,7 +69,7 @@ export const clientsLogos = [
 export const servicesLinks = [
   "/services/for-clients",
   "/services/for-clients#hr",
-  "/services/for-clients",
+  "/services/for-clients#psychology",
   "/services/for-candidates",
   "/services/phd-recruiting",
 ];

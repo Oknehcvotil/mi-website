@@ -16,6 +16,7 @@ const BusinessPsychologySection = () => {
 
   return (
     <PsyhologyWrap
+      id="psychology"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
