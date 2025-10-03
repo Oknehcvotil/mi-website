@@ -250,9 +250,22 @@ export const teamForClientsConfig: TeamContactConfig = {
   images: {
     leftImg: "/images/mob/team/irina-ceo",
     rightImg: "/images/mob/team/tatyana-human-resourses",
-    leftImgAlt: "Irina MI portrait",
+    leftImgAlt: "Irina portrait",
     rightImgAlt: "Tetyana portrait",
-    leftClassName: "left--img",
-    rightClassName: "right--img",
+    leftClassName: "irina",
+    rightClassName: "tatyana",
+  },
+};
+
+export const teamForCandidatesConfig: TeamContactConfig = {
+  className: "for-candidates",
+  translationNs: "servicesForCandidates",
+  images: {
+    leftImg: "/images/mob/team/daria-recruiting",
+    rightImg: "/images/mob/team/tatyana-human-resourses",
+    leftImgAlt: "Daria portrait",
+    rightImgAlt: "Tatiana portrait",
+    leftClassName: "daria",
+    rightClassName: "tatyana-height",
   },
 };

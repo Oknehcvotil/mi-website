@@ -23,6 +23,7 @@ export type TeamContactImages = {
 };
 
 export type TeamContactConfig = {
+  className?: string;
   id?: string;
   translationNs: string;
   images: TeamContactImages;

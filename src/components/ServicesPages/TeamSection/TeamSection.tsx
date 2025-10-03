@@ -30,8 +30,8 @@ const TeamSection = ({ config }: TeamSectionProps) => {
       <BackgroundWrap>
         <BackgroundText>team team team team team team</BackgroundText>
       </BackgroundWrap>
-      <TeamCont>
-        <LeftImgCont>
+      <TeamCont className={config.className}>
+        <LeftImgCont className={config.images.leftClassName}>
           <picture>
             <source
               srcSet={`${config.images.leftImg}@3x.webp`}
@@ -84,7 +84,7 @@ const TeamSection = ({ config }: TeamSectionProps) => {
           <ConsultBtn variant="primary" maxWidth="307px" />
         </TeamLeadCont>
 
-        <RightImgCont>
+        <RightImgCont className={config.images.rightClassName}>
           <picture>
             <source
               srcSet={`${config.images.rightImg}@3x.webp`}

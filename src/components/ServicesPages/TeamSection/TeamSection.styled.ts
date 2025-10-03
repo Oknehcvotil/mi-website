@@ -7,7 +7,7 @@ export const TeamCont = styled(motion.div)`
   position: relative;
   margin: 0 auto;
 
-  &::after {
+  &:not(.for-candidates):after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -88,10 +88,19 @@ export const LeftImgCont = styled.div`
   left: 0;
   z-index: 2;
 
+  &.daria {
+    min-height: 405px;
+  }
+
   img {
     position: absolute;
     bottom: -40px;
     left: -90px;
+
+    &.daria {
+      bottom: -30px;
+      left: -120px;
+    }
   }
 `;
 
@@ -102,9 +111,17 @@ export const RightImgCont = styled.div`
   overflow: hidden;
   min-height: 365px;
 
+  &.tatyana-height {
+    min-height: 405px;
+  }
+
   img {
     position: absolute;
     bottom: -40px;
     right: -110px;
+
+    &.tatyana-height {
+      bottom: 0;
+    }
   }
 `;
