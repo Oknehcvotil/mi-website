@@ -48,5 +48,26 @@
     "overline": "Always in touch with you:",
     "title": "DARIA & TATIANA",
     "subtitle": "Head of Recruiting & Human Resources Director"
+  },
+  "cases": {
+    "title": "Cases <1>and</1> reviews",
+    "before": {
+      "cardTitle": "TO MI",
+      "points": [
+        "lack of understanding of how to properly present your strengths and professionalism",
+        "lack of resume structure and understanding of where to find your dream offer"
+      ],
+      "alt": "Before case example"
+    },
+    "after": {
+      "cardTitle": "After:",
+      "points": [
+        "understanding your own characteristics, strengths and advantages for employers",
+        "understanding how to communicate with recruiters",
+        "no fear of interviews",
+        "5 job offers per month"
+      ],
+      "alt": "After case example"
+    }
   }
 }

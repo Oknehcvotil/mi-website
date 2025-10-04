@@ -11,8 +11,8 @@ import { useTranslation } from "react-i18next";
 
 type VideoReviewCardProps = {
   youtubeUrl: string;
-  author: string;
-  position: string;
+  author?: string;
+  position?: string;
   className?: string;
   classes?: { root?: string; meta?: string; playBtn?: string };
   posterOverride?: string;
@@ -53,8 +53,8 @@ const VideoReviewCard = ({
       `?autoplay=1&playsinline=1&rel=0&modestbranding=1&controls=1`
     : null;
 
-  const authorText = t(author);
-  const positionText = t(position);
+  const authorText = author ? t(author) : undefined;
+  const positionText = position ? t(position) : undefined;
 
   useEffect(() => {
     if (!cardRef.current) return;
@@ -100,10 +100,12 @@ const VideoReviewCard = ({
         </PosterLayer>
       )}
 
-      <Meta className={classes?.meta}>
-        <Name>{authorText}</Name>
-        <p>{positionText}</p>
-      </Meta>
+      {(authorText || positionText) && (
+        <Meta className={classes?.meta}>
+          {authorText && <Name>{authorText}</Name>}
+          {positionText && <p>{positionText}</p>}
+        </Meta>
+      )}
     </Card>
   );
 };
