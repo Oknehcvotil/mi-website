@@ -10,6 +10,7 @@ import PricingSection from "../../../components/ServicesPages/PricingSection/Pri
 import HrConsultingSection from "../../../components/ServicesPages/HrConsultingSection/HrConsultingSection";
 import BusinessPsychologySection from "../../../components/ServicesPages/BusinessPsychologySection/BusinessPsychologySection";
 import TeamSection from "../../../components/ServicesPages/TeamSection/TeamSection";
+import ConstructorSection from "../../../components/ServicesPages/ConstructorSection/ConstructorSection";
 
 function ForClients() {
   return (
@@ -19,6 +20,7 @@ function ForClients() {
       <HrConsultingSection />
       <BusinessPsychologySection />
       <TeamSection config={teamForClientsConfig} />
+      <ConstructorSection />
       <ContactSection />
     </React.Fragment>
   );

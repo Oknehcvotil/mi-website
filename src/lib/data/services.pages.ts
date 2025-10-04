@@ -269,3 +269,15 @@ export const teamForCandidatesConfig: TeamContactConfig = {
     rightClassName: "tatyana-height",
   },
 };
+
+export const constructorItems = [
+  {
+    key: "constructor.recruitment",
+    className: "recruitment--item",
+    hasTrans: true,
+  },
+  { key: "constructor.hrConsulting", className: "hr--item" },
+  { key: "constructor.businessPsychology", className: "psychology-item" },
+];
+
+

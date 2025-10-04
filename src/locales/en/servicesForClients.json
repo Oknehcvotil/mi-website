@@ -60,5 +60,12 @@
     "overline": "Always in touch with you:",
     "title": "IRINA MI & TATYANA",
     "subtitle": "CEO & Founder & Human Resources Director"
+  },
+  "constructor": {
+    "title": "CONSTRUCTOR",
+    "lead": "The ability to choose any of the services presented separately, and we will individually calculate the cost and terms for you",
+    "recruitment": "RECRUITMENT",
+    "hrConsulting": "HR CONSULTING",
+    "businessPsychology": "BUSINESS PSYCHOLOGY"
   }
 }
