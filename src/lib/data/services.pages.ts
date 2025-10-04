@@ -281,3 +281,17 @@ export const constructorItems = [
 ];
 
 
+export const candidatesCasescards = [
+  {
+    img: "/images/mob/services-pages/resume-before",
+    titleKey: "cases.before.cardTitle",
+    pointsKey: "cases.before.points",
+    altKey: "cases.before.alt",
+  },
+  {
+    img: "/images/mob/services-pages/resume-after",
+    titleKey: "cases.after.cardTitle",
+    pointsKey: "cases.after.points",
+    altKey: "cases.after.alt",
+  },
+] as const;

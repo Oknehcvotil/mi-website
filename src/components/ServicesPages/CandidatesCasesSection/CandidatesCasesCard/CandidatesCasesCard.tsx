@@ -8,40 +8,40 @@ import {
 
 type CandidatesCasesCardProps = {
   translationNs: string;
-  title: string;
-  list: string[];
-  imageSrc: string;
-  alt: string;
+  titleKey: string; 
+  pointsKey: string; 
+  imageSrc: string; 
+  altKey: string; 
 };
 
 const CandidatesCasesCard = ({
   translationNs,
-  title,
-  list,
+  titleKey,
+  pointsKey,
   imageSrc,
-  alt,
+  altKey,
 }: CandidatesCasesCardProps) => {
   const { t } = useTranslation(translationNs);
 
+  const points = t(pointsKey, { returnObjects: true }) as string[];
+
   return (
     <Container>
-      <CandidatesCasesTitle>{t(title)}</CandidatesCasesTitle>
+      <CandidatesCasesTitle>{t(titleKey)}</CandidatesCasesTitle>
+
       <CandidatesCasesList>
-        {list.map((itemKey) => (
-          <li key={itemKey}>{t(itemKey)}</li>
+        {points.map((item, idx) => (
+          <li key={idx}>{item}</li>
         ))}
       </CandidatesCasesList>
+
       <CadidatesImgCont>
         <picture>
           <source
-            srcSet={`
-      ${imageSrc}.webp 1x,
-      ${imageSrc}@2x.webp 2x,
-      ${imageSrc}@3x.webp 3x
-    `}
+            srcSet={`${imageSrc}.webp 1x, ${imageSrc}@2x.webp 2x, ${imageSrc}@3x.webp 3x`}
             type="image/webp"
           />
-          <img src={`${imageSrc}.jpg`} alt={t(alt)} loading="lazy" />
+          <img src={`${imageSrc}.jpg`} alt={t(altKey)} loading="lazy" />
         </picture>
       </CadidatesImgCont>
     </Container>

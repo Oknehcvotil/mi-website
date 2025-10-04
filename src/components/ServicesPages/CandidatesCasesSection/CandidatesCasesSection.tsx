@@ -12,26 +12,12 @@ import {
 import VideoReviewCard from "../../VideoReviewCard/VideoReviewCard";
 import AppSlider from "../../AppSlider/AppSlider";
 import CandidatesCasesCard from "./CandidatesCasesCard/CandidatesCasesCard";
+import { candidatesCasescards } from "../../../lib/data/services.pages";
 
 const NS = "servicesForCandidates";
 
 const CandidatesCasesSection = () => {
   const { t } = useTranslation(NS);
-
-  const cards = [
-    {
-      img: "/images/mob/services-pages/resume-before",
-      titleKey: "cases.before.cardTitle",
-      pointsKey: "cases.before.points",
-      altKey: "cases.before.alt",
-    },
-    {
-      img: "/images/mob/services-pages/resume-after",
-      titleKey: "cases.after.cardTitle",
-      pointsKey: "cases.after.points",
-      altKey: "cases.after.alt",
-    },
-  ] as const;
 
   return (
     <CandidatesCasesWrapper
@@ -47,14 +33,14 @@ const CandidatesCasesSection = () => {
       <motion.div variants={blockV}>
         <AppSlider>
           <VideoReviewCard youtubeUrl="https://youtube.com/shorts/Mz-nywzOggg?feature=share" />
-          {cards.map(({ img, titleKey, pointsKey, altKey }) => (
+          {candidatesCasescards.map(({ img, titleKey, pointsKey, altKey }) => (
             <CandidatesCasesCard
               key={titleKey}
-              translationNs={NS}
-              title={t(titleKey)}
-              list={t(pointsKey, { returnObjects: true }) as string[]}
+              translationNs="servicesForCandidates"
+              titleKey={titleKey}
+              pointsKey={pointsKey}
               imageSrc={img}
-              alt={t(altKey)}
+              altKey={altKey}
             />
           ))}
         </AppSlider>
