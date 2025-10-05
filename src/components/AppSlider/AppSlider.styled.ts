@@ -5,6 +5,7 @@ export const SliderCont = styled.div`
 
   .swiper-wrapper {
     margin-bottom: 30px;
+    align-items: center;
   }
 
   .swiper-pagination-bullet.swiper-pagination-bullet-active {

@@ -82,5 +82,34 @@
         "A personalized certificate with a mentor's comment on your work, confirming your qualifications and successful completion of the program"
       ]
     }
+  },
+  "cases": {
+    "title": "Cases <1>and</1> Reviews",
+    "requestTitle": "Request from the client:",
+    "resultTitle": "Result:",
+    "alina": {
+      "name": "Alina",
+      "review": [
+        "I took a recruiting course with Tetiana at the MI Agency company — and it was one of the most useful training experiences in recent times. Without water, all business, with an emphasis on practice.",
+        "I liked that Tetiana gives feedback, shares real cases and is always available if questions arise.",
+        "After the course, I gained more self-confidence and an understanding of how to really work with recruitment, and the most important thing is that you can count on support even after the course ends 🤍 \n I recommend it to those who want to enter the profession, as well as to improve their qualifications 💪",
+        "MI AGENCY only has nice mentors 🫶 \nI recommend it with all my heart! ✨"
+      ],
+      "clientRequest": "The company was faced with the need to quickly increase the efficiency of its internal recruiter. The main task was to provide practical tools to improve recruitment results in a short time.",
+      "result": "The internal recruiter significantly expanded his knowledge and tools, increased confidence in communication with candidates, and improved the offer conversion rate."
+    },
+
+    "iryna": {
+      "name": "Iryna",
+      "review": [
+        "I would like to sincerely thank the MI Agency team 💜 for the professional mentoring that I received at the start of my work as a recruiter and HR at the Svet agency. A huge thank you to Tetyana, who completely immersed herself in this process and was there for me at every stage of my development — from getting to know the basics of the profession to confidently conducting all HR and recruiting processes.",
+        "I would also like to note that the mentoring was not limited to theory — it included practical cases, adaptation sections, constant support and feedback. This helped me quickly enter the role and work confidently.",
+        "I also thank my manager Iryna — her experience and professional advice were very valuable. To this day, I feel the support of the MI Agency team, and it is truly priceless!",
+        "I recommend MI Agency to everyone who is looking for high-quality HR mentoring and professional support.",
+        "Thank you for your work! 💜"
+      ],
+      "clientRequest": "The company needed support in developing its internal HR function. The task was to prepare the HR manager to work independently with all key HR processes: from recruiting to developing corporate culture.",
+      "result": "The HR manager gained a comprehensive understanding and practical skills in managing HR processes, which helped her successfully work in this position for over 3 years."
+    }
   }
 }

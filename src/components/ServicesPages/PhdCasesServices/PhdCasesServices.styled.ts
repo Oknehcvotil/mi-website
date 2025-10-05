@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-export const CandidatesCasesWrapper = styled(motion.section)`
+export const PhdCasesWrapper = styled(motion.section)`
   padding: 40px 0 20px;
 `;
 
-export const CandidatesCasesTitle = styled(motion.h2)`
+export const PhdCasesTitle = styled(motion.h2)`
   line-height: 100%;
   font-family: "Unbounded";
   font-weight: 700;
