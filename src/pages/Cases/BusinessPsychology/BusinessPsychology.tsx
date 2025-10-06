@@ -1,4 +1,4 @@
-function IGaming() {
+function BusinessPsychology() {
   return (
     <div
       style={{
@@ -14,4 +14,4 @@ function IGaming() {
   );
 }
 
-export default IGaming
+export default BusinessPsychology;

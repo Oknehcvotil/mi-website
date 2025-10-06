@@ -1,4 +1,4 @@
-function FinTech() {
+function CasesForCandidates() {
   return (
     <div
       style={{
@@ -14,4 +14,4 @@ function FinTech() {
   );
 }
 
-export default FinTech;
+export default CasesForCandidates;

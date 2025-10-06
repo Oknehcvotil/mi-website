@@ -1,4 +1,4 @@
-function Marketing() {
+function ConsultingIT() {
   return (
     <div
       style={{
@@ -14,4 +14,4 @@ function Marketing() {
   );
 }
 
-export default Marketing;
+export default ConsultingIT;

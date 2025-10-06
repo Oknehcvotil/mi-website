@@ -1,4 +1,4 @@
-function Web() {
+function RecruitmentIT() {
   return (
     <div
       style={{
@@ -14,4 +14,4 @@ function Web() {
   );
 }
 
-export default Web;
+export default RecruitmentIT;
