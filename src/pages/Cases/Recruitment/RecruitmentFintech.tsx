@@ -1,5 +1,12 @@
+import React from "react";
+import ContactSection from "../../../components/ContactSection/ContactSection";
+
 function RecruitmentFintech() {
-  return <div>RecruitmentFintech</div>;
+  return (
+    <React.Fragment>
+      <ContactSection />
+    </React.Fragment>
+  );
 }
 
 export default RecruitmentFintech;

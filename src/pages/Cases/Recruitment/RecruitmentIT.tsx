@@ -1,16 +1,11 @@
+import React from "react";
+import ContactSection from "../../../components/ContactSection/ContactSection";
+
 function RecruitmentIT() {
   return (
-    <div
-      style={{
-        height: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontSize: "26px",
-      }}
-    >
-      COMING SOON
-    </div>
+    <React.Fragment>
+      <ContactSection />
+    </React.Fragment>
   );
 }
 

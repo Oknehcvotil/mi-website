@@ -1,10 +1,16 @@
 import { Outlet } from "react-router-dom";
+import CasesHero from "../CasesPages/CasesHero/CasesHero";
+import { recruitmentCasesConfig } from "../../lib/data/cases.recruitment";
+import React from "react";
 
 function RecruitmentLayout() {
   return (
-    <section>
-      <Outlet />
-    </section>
+    <React.Fragment>
+      <CasesHero caseConfig={recruitmentCasesConfig} />
+      <section>
+        <Outlet />
+      </section>
+    </React.Fragment>
   );
 }
 
