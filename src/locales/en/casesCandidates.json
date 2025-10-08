@@ -1,0 +1,71 @@
+{
+  "title": "Cases of our candidates",
+  "reviews": {
+    "philip": {
+      "name": "Philip",
+      "position": "Senior Level Artist"
+    },
+    "rodrigo": {
+      "name": "Rodrigo",
+      "position": "Senior 3D Artist"
+    },
+    "maksim": {
+      "name": "Maksim",
+      "position": "Assistant managing trader"
+    },
+    "chinhiz": {
+      "name": "Chinhiz",
+      "position": "Senior Full-Stack developer"
+    },
+    "christina": {
+      "name": "Christina",
+      "position": "Moderator"
+    },
+    "kyrylo": {
+      "name": "Kyrylo",
+      "position": "Digital Marketer"
+    },
+    "hanna": {
+      "name": "Hanna",
+      "position": "HR Generalist"
+    },
+    "vadim": {
+      "name": "Vadim",
+      "position": "Fronted Developer"
+    },
+    "juliaSmm": {
+      "title": "Yulia, position: SMM-manager",
+      "items": [
+        "<1>SMM manager position in the crypto fund Monolith!</1>",
+        "The cooperation was high-quality, convenient and they constantly provided updates and relevant information on the vacancy. Also, the communication itself was very pleasant) Thank you for helping me find the right company!"
+      ]
+    },
+    "bahodyr": {
+      "title": "Bahodyr, position: Dispatcher",
+      "items": [
+        "From the very beginning of the work, Iryna proved herself to be a true professional. Her ability to find an approach to people, choose the right moment and a high level of professionalism helped me quickly establish contact with her. During the interview, she communicated in English, which greatly simplified the process. Her support and flexibility made this interaction as comfortable and productive as possible."
+      ]
+    },
+    "annaAssistant": {
+      "title": "Anna, position: Assistant",
+      "items": [
+        "The girl was very friendly, I don't like interviews, but she managed to make me feel comfortable."
+      ]
+    },
+    "juliaAssistant": {
+      "title": "Yulia, position: Assistant",
+      "items": [
+        "I would like to express my sincere gratitude to MI Agency for your professional and human support during my job search.",
+        "I received a great offer that perfectly matched my career goals and worldview. All stages of cooperation were as clear, understandable and effective as possible. I was especially impressed by the emotional component, I felt a sincere interest in my success and support at every stage and friendly and warm communication) for this I am very grateful) thanks to the offer from your company I found a great place to work, where I am realized and feel 100% in my place.",
+        "Good luck to you!"
+      ]
+    },
+    "victoriaManager": {
+      "title": "Victoria, position: Financial Manager",
+      "items": [
+        "<1>A month and a half ago</1>, I was interviewed for the position of financial manager.\nI would like to express my sincere gratitude to HR manager Iryna for her professionalism and responsible approach to work.\nEach stage of the interview was held in a friendly and positive atmosphere, which contributed to open and comfortable communication.\nIryna pays great attention to detail, perfectly recognizes the talents and potential of candidates, harmoniously combining the company's requirements with the candidates' capabilities.\nHer support and recommendations helped me quickly adapt to the job. Iryna is a wonderful person and a true professional who always works at the highest level.",
+        "Thank you very much for your cooperation!"
+      ]
+    }
+  }
+}

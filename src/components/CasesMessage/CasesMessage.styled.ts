@@ -33,11 +33,27 @@ export const CasesMessageList = styled.ul`
   overflow-wrap: break-word;
   hyphens: auto;
 
+  &.not-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  &.gap {
+    li {
+      &:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
+    }
+  }
   & > li::marker {
     color: currentColor;
   }
   li {
     text-indent: 0;
+
+    span {
+      font-weight: 700;
+    }
   }
 `;
 
@@ -57,4 +73,15 @@ export const CasesImgCont = styled.div`
     height: 100%;
     object-fit: cover;
   }
+`;
+
+export const MessageTime = styled.span`
+  color: #8e8e93;
+  font-family: "SF Pro Display";
+  font-weight: 400;
+  font-style: italic;
+  font-size: 10px;
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
 `;

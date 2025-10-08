@@ -1,4 +1,4 @@
-import type { CasesHeroConfig } from "../types/cases.hero";
+import type { CasesHeroConfig } from "../types/cases.hero.types";
 
 export const recruitmentCasesConfig: CasesHeroConfig = {
   translationNs: "casesRecruitment",

@@ -1,12 +1,14 @@
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import {
   CasesImgCont,
   CasesMessageList,
   CasesMessageTextCard,
   CasesMessageTitle,
   CasesMessageWrap,
+  MessageTime,
 } from "./CasesMessage.styled";
 import Container from "../Container/Container";
+import { cx } from "../../lib/helpers/helpers";
 
 type CasesMessage = {
   translationNs: string;
@@ -14,7 +16,7 @@ type CasesMessage = {
   textKey: string;
   imgSrc: string;
   alt?: string;
-  className?: string;
+  className?: string | string[];
 };
 
 const CasesMessage = ({
@@ -32,9 +34,11 @@ const CasesMessage = ({
     defaultValue: [],
   }) as string[];
 
+  const merged = cx(className);
+
   return (
     <Container>
-      <CasesMessageWrap className={className}>
+      <CasesMessageWrap className={merged}>
         <CasesImgCont>
           <img
             src={`${imgSrc}.webp`}
@@ -45,12 +49,15 @@ const CasesMessage = ({
         </CasesImgCont>
         <CasesMessageTextCard>
           <CasesMessageTitle>{t(`${titleKey}`)}</CasesMessageTitle>
-          <CasesMessageList>
+          <CasesMessageList className={merged}>
             {items.map((text, i) => (
-              <li key={i}>{text}</li>
+              <li key={i}>
+                <Trans t={t} i18nKey={text} components={{ 1: <span /> }} />
+              </li>
             ))}
           </CasesMessageList>
         </CasesMessageTextCard>
+        <MessageTime>11:45</MessageTime>
       </CasesMessageWrap>
     </Container>
   );

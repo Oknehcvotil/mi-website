@@ -1,5 +1,8 @@
-// VideoReviewCard.styled.ts
 import styled from "@emotion/styled";
+
+export const VideoCardWrap = styled.div`
+  position: relative;
+`;
 
 export const Card = styled.article`
   display: flex;
@@ -13,6 +16,13 @@ export const Card = styled.article`
   margin: 0 auto;
   border-radius: 13px;
   border: 5px solid #000;
+  aspect-ratio: 16 / 9;
+
+  &.vertical {
+    max-width: 360px;
+    min-height: 275px;
+    margin-bottom: 15px;
+  }
 `;
 
 const Layer = styled.div`
@@ -38,6 +48,7 @@ export const PosterLayer = styled(Layer)`
     object-fit: cover;
   }
 `;
+
 
 export const FrameLayer = styled(Layer)`
   iframe {
@@ -89,7 +100,6 @@ export const Meta = styled.div`
   font-weight: 700;
   font-size: 15px;
   line-height: 83%;
-  text-align: center;
   background-color: #fff;
   color: #a066ff;
   border-radius: 5px;
@@ -97,6 +107,26 @@ export const Meta = styled.div`
   display: inline-block;
   white-space: nowrap;
   width: max-content;
+
+  &.vertical {
+    position: static;
+    background-color: transparent;
+    color: #020202;
+    transform: translateX(0);
+    padding: 0;
+    border-radius: 0;
+    margin: 0 auto;
+    width: 100%;
+
+    p {
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 120%;
+      text-align: center;
+      color: #020202;
+      margin-bottom: 0;
+    }
+  }
 `;
 
 export const Name = styled.p`

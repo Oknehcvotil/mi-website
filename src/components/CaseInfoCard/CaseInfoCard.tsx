@@ -21,7 +21,7 @@ type CaseInfoCardProps = {
   }[];
   keyPrefix: string;
   className?: string;
-  translationNs?: string | readonly string[];
+  translationNs?: string;
 };
 
 const CaseInfoCard = ({

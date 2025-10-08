@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import type { CasesHeroConfig } from "../../../lib/types/cases.hero";
+import type { CasesHeroConfig } from "../../../lib/types/cases.hero.types";
 import CasesNav from "./CasesNav/CasesNav";
 import {
   fadeUp,

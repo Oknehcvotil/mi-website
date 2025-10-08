@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import type { NavItem } from "../../../../lib/types/cases.hero";
+import type { NavItem } from "../../../../lib/types/cases.hero.types";
 import {
   CasesHeroNavList,
   CasesHeroNavWrap,

@@ -1,16 +1,13 @@
+import React from "react";
+import CandidatesCases from "../../../components/CasesPages/CandidatesCases/CandidatesCases";
+import ContactSection from "../../../components/ContactSection/ContactSection";
+
 function CasesForCandidates() {
   return (
-    <div
-      style={{
-        height: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontSize: "26px",
-      }}
-    >
-      COMING SOON
-    </div>
+    <React.Fragment>
+      <CandidatesCases />
+      <ContactSection />
+    </React.Fragment>
   );
 }
 
