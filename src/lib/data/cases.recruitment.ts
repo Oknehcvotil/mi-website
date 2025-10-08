@@ -7,7 +7,7 @@ export const recruitmentCasesConfig: CasesHeroConfig = {
   nav: [
     { hash: "recruitment/it", labelKey: "IT" },
     { hash: "recruitment/web", labelKey: "WEB 3.0" },
-    { hash: "recruitment/Marketing", labelKey: "Marketing" },
+    { hash: "recruitment/marketing", labelKey: "Marketing" },
     { hash: "recruitment/fintech", labelKey: "FinTech" },
     { hash: "recruitment/igaming", labelKey: "iGaming" },
     { hash: "recruitment/other", labelKey: "Other" },

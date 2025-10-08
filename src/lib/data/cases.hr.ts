@@ -7,7 +7,7 @@ export const hrCasesConfig: CasesHeroConfig = {
   nav: [
     { hash: "hr-consulting/it", labelKey: "IT" },
     { hash: "hr-consulting/web", labelKey: "WEB 3.0" },
-    { hash: "hr-consulting/Marketing", labelKey: "Marketing" },
+    { hash: "hr-consulting/marketing", labelKey: "Marketing" },
     { hash: "hr-consulting/other", labelKey: "Other" },
   ],
   image: {
