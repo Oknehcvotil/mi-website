@@ -43,10 +43,14 @@ const CasesHero = ({ caseConfig }: CasesHeroProps) => {
         >
           {t("title")}
         </CasesHeroTitle>
-        {nav && nav.length > 0 && <CasesNav nav={nav} ns={translationNs} />}
+        {nav && nav.length > 0 && (
+          <CasesNav nav={nav} ns={translationNs} className={className} />
+        )}
         <motion.div variants={reduce ? undefined : fadeUp}>
           <CasesHeroSubtitle>{t("subTitle")}</CasesHeroSubtitle>
-          <CasesHeroLead>{t("lead")}</CasesHeroLead>
+          <CasesHeroLead className={`cases-hero-${className}--lead`}>
+            {t("lead")}
+          </CasesHeroLead>
           <ConsultBtn variant="primary" maxWidth="307px" />
         </motion.div>
 

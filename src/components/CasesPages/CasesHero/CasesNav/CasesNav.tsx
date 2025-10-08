@@ -15,16 +15,20 @@ import { motion } from "framer-motion";
 type CasesNavProps = {
   nav: NavItem[];
   ns: string;
+  className?: string;
 };
 
-const CasesNav = ({ nav, ns }: CasesNavProps) => {
+const CasesNav = ({ nav, ns, className }: CasesNavProps) => {
   const { t } = useTranslation(ns);
   const match = useMatch("/:lang/*");
   const currentLang = match?.params.lang ?? "en";
 
   return (
     <CasesHeroNavWrap>
-      <CasesHeroNavList variants={navListV}>
+      <CasesHeroNavList
+        variants={navListV}
+        className={`nav-cases--${className}`}
+      >
         {nav.map((item) => (
           <motion.li key={item.hash} variants={navItemV}>
             <CasesNavLink to={`/${currentLang}/cases/${item.hash}`}>

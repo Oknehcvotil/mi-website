@@ -7,6 +7,8 @@ import en_servicesForClients from "../locales/en/servicesForClients.json";
 import en_servicesForCandidates from "../locales/en/servicesForCandidates.json";
 import en_servicesPHD from "../locales/en/servicesPHD.json";
 import en_casesRecruitment from "../locales/en/casesRecruitment.json";
+import en_casesBusiness from "../locales/en/casesBusiness.json";
+import en_casesHr from "../locales/en/casesHr.json";
 
 import ua_common from "../locales/ua/common.json";
 import ua_header from "../locales/ua/header.json";
@@ -17,6 +19,8 @@ import ua_servicesForClients from "../locales/ua/servicesForClients.json";
 import ua_servicesForCandidates from "../locales/ua/servicesForCandidates.json";
 import ua_servicesPHD from "../locales/ua/servicesPHD.json";
 import ua_casesRecruitment from "../locales/ua/casesRecruitment.json";
+import ua_casesBusiness from "../locales/ua/casesBusiness.json";
+import ua_casesHr from "../locales/ua/casesHr.json";
 
 export const resources = {
   en: {
@@ -29,6 +33,8 @@ export const resources = {
     servicesForCandidates: en_servicesForCandidates,
     servicesPHD: en_servicesPHD,
     casesRecruitment: en_casesRecruitment,
+    casesBusiness: en_casesBusiness,
+    casesHr: en_casesHr,
   },
   ua: {
     common: ua_common,
@@ -40,6 +46,8 @@ export const resources = {
     servicesForCandidates: ua_servicesForCandidates,
     servicesPHD: ua_servicesPHD,
     casesRecruitment: ua_casesRecruitment,
+    casesBusiness: ua_casesBusiness,
+    casesHr: ua_casesHr,
   },
 } as const;
 
@@ -53,4 +61,6 @@ export const NAMESPACES = [
   "servicesForCandidates",
   "servicesPHD",
   "casesRecruitment",
+  "casesBusiness",
+  "casesHr",
 ] as const;

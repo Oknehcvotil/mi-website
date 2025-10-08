@@ -1,10 +1,16 @@
+import React from "react";
 import { Outlet } from "react-router-dom";
+import CasesHero from "../CasesPages/CasesHero/CasesHero";
+import { hrCasesConfig } from "../../lib/data/cases.hr";
 
 function ConsultingLayout() {
   return (
-    <section>
-      <Outlet />
-    </section>
+    <React.Fragment>
+      <CasesHero caseConfig={hrCasesConfig} />
+      <section>
+        <Outlet />
+      </section>
+    </React.Fragment>
   );
 }
 

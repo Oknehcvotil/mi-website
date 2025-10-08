@@ -15,6 +15,12 @@ export const CasesHeroNavList = styled(motion.ul)`
   max-width: 255px;
   width: 100%;
   margin: 0 auto;
+
+  &.nav-cases--hr {
+    max-width: 100%;
+    justify-content: center;
+    gap: 7px;
+  }
 `;
 
 export const CasesNavLink = styled(NavLink)`

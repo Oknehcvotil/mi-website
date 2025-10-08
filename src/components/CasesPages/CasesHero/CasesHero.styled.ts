@@ -18,6 +18,10 @@ export const CasesHeroTitle = styled(motion.h1)`
   -webkit-text-fill-color: transparent;
 
   margin-bottom: 10px;
+
+  &.cases-hero-business--title {
+    margin-bottom: 20px;
+  }
 `;
 
 export const CasesHeroSubtitle = styled.h2`
@@ -35,6 +39,13 @@ export const CasesHeroLead = styled.p`
   line-height: 130%;
   color: #020202;
   margin-bottom: 10px;
+  max-width: 320px;
+  width: 100%;
+  margin-right: auto;
+
+  &.cases-hero-hr--lead {
+    max-width: 290px;
+  }
 `;
 
 export const CasesHeroImgCont = styled.div`
@@ -54,5 +65,13 @@ export const CasesHeroImgCont = styled.div`
     img {
       max-width: 200px;
     }
+  }
+
+  &.cases-hero-business-img--cont {
+    padding: 20px 0 10px;
+  }
+
+  &.cases-hero-hr-img--cont {
+    padding: 30px 0;
   }
 `;

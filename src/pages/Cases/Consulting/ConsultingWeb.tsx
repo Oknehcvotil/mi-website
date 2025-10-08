@@ -1,5 +1,12 @@
+import React from "react";
+import ContactSection from "../../../components/ContactSection/ContactSection";
+
 function ConsultingWeb() {
-  return <div>RecruitmentWeb</div>;
+  return (
+    <React.Fragment>
+      <ContactSection />
+    </React.Fragment>
+  );
 }
 
 export default ConsultingWeb;
