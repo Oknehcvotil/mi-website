@@ -79,6 +79,15 @@ export const VacList = styled.ul`
       -webkit-text-fill-color: transparent;
     }
   }
+
+  &.cases--business-psyhology {
+    li {
+      p {
+        font-size: 13px;
+        line-height: 115%;
+      }
+    }
+  }
 `;
 
 export const TermsTitle = styled.h2`

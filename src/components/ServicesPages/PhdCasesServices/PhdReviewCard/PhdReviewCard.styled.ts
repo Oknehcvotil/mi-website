@@ -16,6 +16,7 @@ export const PhdReviewImgCont = styled.div`
   flex: 0 0 40px;
   width: 40px;
   height: 40px;
+  border-radius: 50%;
   overflow: hidden;
 
   img {

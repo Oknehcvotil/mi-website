@@ -1,5 +1,31 @@
 {
   "title": "Our cases",
   "subTitle": "Business Psychology",
-  "lead": "A list of services that allows you to normalize the atmosphere and relationships in the team, and minimize the impact of this factor on business results."
+  "lead": "A list of services that allows you to normalize the atmosphere and relationships in the team, and minimize the impact of this factor on business results.",
+  "cases": {
+    "kitrum": {
+      "title": "Decision from the MI Agency team:",
+      "items": [
+        "1:1 interviews were conducted with all C-level specialists in the company",
+        "Psychological profiles were compiled for each C-level specialist and their employees across departments",
+        "Recommendations were provided on management and communication with subordinates",
+        "Personal requests of C-level specialists were processed",
+        "A strategy for managing C-level specialists was developed",
+        "A recruitment strategy was developed based on the testing results for each department",
+        "The company's development stage was determined using the Adizes methodology, and the Company's development strategy was outlined"
+      ],
+      "review": {
+        "vacancies": {
+          "title": "Request:",
+          "items": [
+            "Determining the level of development of the company using the I.I. Adizes testing methodology based on the results of C-Level Specialists and developing a company development strategy based on the results obtained."
+          ]
+        },
+        "terms": {
+          "title": "Working period:",
+          "text": "3 months"
+        }
+      }
+    }
+  }
 }

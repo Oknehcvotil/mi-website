@@ -10,6 +10,7 @@ import {
   VacList,
   CardWrap,
 } from "./CaseInfoCard.styled";
+import Container from "../Container/Container";
 
 type CaseInfoCardProps = {
   logos: {
@@ -20,10 +21,16 @@ type CaseInfoCardProps = {
   }[];
   keyPrefix: string;
   className?: string;
+  translationNs?: string | readonly string[];
 };
 
-const CaseInfoCard = ({ logos, keyPrefix, className }: CaseInfoCardProps) => {
-  const { t } = useTranslation("reviews");
+const CaseInfoCard = ({
+  logos,
+  keyPrefix,
+  className,
+  translationNs = "reviews",
+}: CaseInfoCardProps) => {
+  const { t } = useTranslation(translationNs);
 
   const company = t(`${keyPrefix}.position`);
   const vacTitle = t(`${keyPrefix}.vacancies.title`);
@@ -34,48 +41,50 @@ const CaseInfoCard = ({ logos, keyPrefix, className }: CaseInfoCardProps) => {
   const termsText = t(`${keyPrefix}.terms.text`);
 
   return (
-    <CaseInfoCardWrapper className={className} aria-label={company}>
-      <CardWrap>
-        <CardCont>
-          <ImgWrap>
-            {logos.map((logo, i) => (
-              <img
-                key={i}
-                src={`${logo.src}.webp`}
-                srcSet={`
+    <Container>
+      <CaseInfoCardWrapper className={className} aria-label={company}>
+        <CardWrap className={className}>
+          <CardCont>
+            <ImgWrap>
+              {logos.map((logo, i) => (
+                <img
+                  key={i}
+                  src={`${logo.src}.webp`}
+                  srcSet={`
               ${logo.src}.webp 1x,
               ${logo.src}@2x.webp 2x,
               ${logo.src}@3x.webp 3x
             `}
-                width={logo.width ?? 175}
-                height={logo.height ?? 55}
-                alt={logo.alt ?? company}
-                loading="lazy"
-              />
-            ))}
-          </ImgWrap>
-
-          <div>
-            <h2>{vacTitle}</h2>
-            <VacList>
-              {vacItems?.map((v) => (
-                <li key={v}>
-                  <p>{v}</p>
-                </li>
+                  width={logo.width ?? 175}
+                  height={logo.height ?? 55}
+                  alt={logo.alt ?? company}
+                  loading="lazy"
+                />
               ))}
-            </VacList>
-          </div>
+            </ImgWrap>
 
-          <div>
-            <TermsTitle>{termsTitle}</TermsTitle>
-            <TermsText>{termsText}</TermsText>
-          </div>
-          <LineWrapper>
-            <Line />
-          </LineWrapper>
-        </CardCont>
-      </CardWrap>
-    </CaseInfoCardWrapper>
+            <div>
+              <h2>{vacTitle}</h2>
+              <VacList className={className}>
+                {vacItems?.map((v) => (
+                  <li key={v}>
+                    <p>{v}</p>
+                  </li>
+                ))}
+              </VacList>
+            </div>
+
+            <div>
+              <TermsTitle className={className}>{termsTitle}</TermsTitle>
+              <TermsText className={className}>{termsText}</TermsText>
+            </div>
+            <LineWrapper>
+              <Line />
+            </LineWrapper>
+          </CardCont>
+        </CardWrap>
+      </CaseInfoCardWrapper>
+    </Container>
   );
 };
 

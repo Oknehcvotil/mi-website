@@ -20,6 +20,10 @@ export const SliderCont = styled.div`
     background-color: #b2afb6;
   }
 
+  .swiper-slide {
+    overflow: hidden;
+  }
+
   &.team-slider {
     .swiper-wrapper {
       margin-bottom: 0px;
