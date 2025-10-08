@@ -12,7 +12,7 @@ export const CasesHeroNavList = styled(motion.ul)`
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 3px 7px;
-  max-width: 255px;
+  max-width: 265px;
   width: 100%;
   margin: 0 auto;
 

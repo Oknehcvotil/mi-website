@@ -69,9 +69,17 @@ export const CasesHeroImgCont = styled.div`
 
   &.cases-hero-business-img--cont {
     padding: 20px 0 10px;
+
+    img {
+      max-width: 190px;
+    }
   }
 
   &.cases-hero-hr-img--cont {
     padding: 30px 0;
+
+    img {
+      max-width: 205px;
+    }
   }
 `;
