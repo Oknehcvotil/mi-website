@@ -72,7 +72,7 @@ export const casesCandidatesList: CasesCandidatesItem[] = [
   },
   {
     kind: "video",
-    url: "https://youtube.com/shorts/TqboaYk7fQQ",
+    url: "https://www.youtube.com/shorts/juZEyPHvqno",
     author: "reviews.kyrylo.name",
     position: "reviews.kyrylo.position",
   },

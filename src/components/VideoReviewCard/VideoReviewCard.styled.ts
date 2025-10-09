@@ -42,10 +42,15 @@ const Layer = styled.div`
 `;
 
 export const PosterLayer = styled(Layer)`
+  position: relative;
+  overflow: hidden; /* обрезает черные поля по краям */
+
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* растягивает изображение */
+    object-position: center; /* центрирует */
+    display: block;
   }
 `;
 

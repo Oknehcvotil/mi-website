@@ -32,7 +32,7 @@ const CandidatesCasesSection = () => {
 
       <motion.div variants={blockV}>
         <AppSlider>
-          <VideoReviewCard youtubeUrl="https://youtube.com/shorts/Mz-nywzOggg?feature=share" />
+          <VideoReviewCard youtubeUrl="https://www.youtube.com/shorts/mJKkUmSTbEE" />
           {candidatesCasescards.map(({ img, titleKey, pointsKey, altKey }) => (
             <CandidatesCasesCard
               key={titleKey}

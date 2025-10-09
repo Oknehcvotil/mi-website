@@ -8,10 +8,10 @@ import {
 
 type CandidatesCasesCardProps = {
   translationNs: string;
-  titleKey: string; 
-  pointsKey: string; 
-  imageSrc: string; 
-  altKey: string; 
+  titleKey: string;
+  pointsKey: string;
+  imageSrc: string;
+  altKey: string;
 };
 
 const CandidatesCasesCard = ({
@@ -26,7 +26,7 @@ const CandidatesCasesCard = ({
   const points = t(pointsKey, { returnObjects: true }) as string[];
 
   return (
-    <Container>
+    <Container style={{ paddingBottom: "5px" }}>
       <CandidatesCasesTitle>{t(titleKey)}</CandidatesCasesTitle>
 
       <CandidatesCasesList>
