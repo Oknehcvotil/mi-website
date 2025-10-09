@@ -43,17 +43,17 @@ const Layer = styled.div`
 
 export const PosterLayer = styled(Layer)`
   position: relative;
-  overflow: hidden; /* обрезает черные поля по краям */
+  overflow: hidden;
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* растягивает изображение */
-    object-position: center; /* центрирует */
     display: block;
+    object-fit: cover;
+    object-position: center;
+    background-color: #000;
   }
 `;
-
 
 export const FrameLayer = styled(Layer)`
   iframe {

@@ -38,6 +38,7 @@ const CandidatesCases = () => {
                 position={item.position}
                 className="vertical"
                 withBorders={false}
+                posterOverride={item.posterOverride}
               />
             );
           }

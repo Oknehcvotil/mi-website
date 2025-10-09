@@ -73,6 +73,7 @@ export const casesCandidatesList: CasesCandidatesItem[] = [
   {
     kind: "video",
     url: "https://www.youtube.com/shorts/juZEyPHvqno",
+    posterOverride: "/images/youtube-posters/kyrylo-youtube-poster.webp",
     author: "reviews.kyrylo.name",
     position: "reviews.kyrylo.position",
   },
