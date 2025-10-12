@@ -11,16 +11,15 @@ export const Card = styled.article`
   position: relative;
   max-width: 295px;
   width: 100%;
-  min-height: 385px;
+  height: 385px;
   overflow: hidden;
   margin: 0 auto;
   border-radius: 13px;
   border: 5px solid #000;
-  aspect-ratio: 16 / 9;
 
   &.vertical {
     max-width: 360px;
-    min-height: 275px;
+    height: 275px;
     margin-bottom: 15px;
   }
 `;
