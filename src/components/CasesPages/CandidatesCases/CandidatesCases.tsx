@@ -2,7 +2,8 @@ import { useTranslation } from "react-i18next";
 import {
   sectionV,
   titleV,
-} from "../../../lib/animations/cases/animations.hero";
+  blockV,
+} from "../../../lib/animations/home/animations.swipers";
 import {
   CandidatesCasesTitle,
   CandidatesSectionWrap,
@@ -12,6 +13,7 @@ import AppSlider from "../../AppSlider/AppSlider";
 import VideoReviewCard from "../../VideoReviewCard/VideoReviewCard";
 import CasesMessage from "../../CasesMessage/CasesMessage";
 import { casesCandidatesList } from "../../../lib/data/cases.candidates";
+import { motion } from "framer-motion";
 
 const CandidatesCases = () => {
   const ns = "casesCandidates";
@@ -26,50 +28,52 @@ const CandidatesCases = () => {
       <CandidatesCasesTitle variants={titleV}>
         {t("title")}
       </CandidatesCasesTitle>
-      <AppSlider>
-        {casesCandidatesList.map((item, i) => {
-          if (item.kind === "video") {
+      <motion.div variants={blockV}>
+        <AppSlider>
+          {casesCandidatesList.map((item, i) => {
+            if (item.kind === "video") {
+              return (
+                <VideoReviewCard
+                  key={`v-${i}`}
+                  youtubeUrl={item.url}
+                  translationNs={ns}
+                  author={item.author}
+                  position={item.position}
+                  className="vertical"
+                  withBorders={false}
+                  posterOverride={item.posterOverride}
+                />
+              );
+            }
+            if (item.kind === "pair") {
+              return (
+                <MergedCasesCont key={`p-${i}`}>
+                  {[item.left, item.right].map((c, idx) => (
+                    <CasesMessage
+                      key={`p-${i}-${idx}`}
+                      translationNs={ns}
+                      imgSrc={c.img}
+                      titleKey={c.title}
+                      textKey={c.items}
+                      className={c.className}
+                    />
+                  ))}
+                </MergedCasesCont>
+              );
+            }
             return (
-              <VideoReviewCard
-                key={`v-${i}`}
-                youtubeUrl={item.url}
+              <CasesMessage
+                key={`s-${i}`}
                 translationNs={ns}
-                author={item.author}
-                position={item.position}
-                className="vertical"
-                withBorders={false}
-                posterOverride={item.posterOverride}
+                imgSrc={item.card.img}
+                titleKey={item.card.title}
+                textKey={item.card.items}
+                className={item.card.className}
               />
             );
-          }
-          if (item.kind === "pair") {
-            return (
-              <MergedCasesCont key={`p-${i}`}>
-                {[item.left, item.right].map((c, idx) => (
-                  <CasesMessage
-                    key={`p-${i}-${idx}`}
-                    translationNs={ns}
-                    imgSrc={c.img}
-                    titleKey={c.title}
-                    textKey={c.items}
-                    className={c.className}
-                  />
-                ))}
-              </MergedCasesCont>
-            );
-          }
-          return (
-            <CasesMessage
-              key={`s-${i}`}
-              translationNs={ns}
-              imgSrc={item.card.img}
-              titleKey={item.card.title}
-              textKey={item.card.items}
-              className={item.card.className}
-            />
-          );
-        })}
-      </AppSlider>
+          })}
+        </AppSlider>
+      </motion.div>
     </CandidatesSectionWrap>
   );
 };

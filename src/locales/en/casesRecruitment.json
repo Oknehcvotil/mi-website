@@ -1,5 +1,128 @@
 {
   "title": "Our cases",
   "subTitle": "Recruitment",
-  "lead": "Search, assessment and selection of specialists who have the necessary competencies and share the Company's values."
+  "lead": "Search, assessment and selection of specialists who have the necessary competencies and share the Company's values.",
+  "it": {
+    "lyudmilaSheludko": {
+      "name": "Lyudmila Sheludko",
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Python Developer х2"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "2 vacancies in 8 weeks"
+      }
+    },
+    "nauda": {
+      "title": "Nauda's review",
+      "items": [
+        "We needed a specialist who could become our right hand — help the managers in the operating room, adapt to our style and think a few steps ahead.",
+        "After filling out the brief, a few days later we immediately received candidates who “felt” our dynamics — accuracy, flexibility, calm confidence",
+        "A separate plus — a psychological portrait of each. We didn’t waste time explaining why “no” — it was immediately clear who suited us.\n The result — not just a strong assistant, but a person who became part of the system."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Assistant"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 4 weeks"
+      }
+    },
+    "optionOne": {
+      "title": "Candidate requirements",
+      "items": [
+        "4–5 years of experience with Unity Development in the AR/VR space;",
+        "3+ years of experience with Python, C, C++, or C#, SQL;",
+        "Excellent understanding of software engineering principles;",
+        "Knowledge of optimization for mobile, web, and PC;",
+        "Good understanding of asynchronous and multithreaded application development and architecture;",
+        "Direct experience with game logic, particle systems, and client–server communication scenarios;",
+        "Basic knowledge of 3D modeling software (Maya, 3D Max, or Blender);",
+        "Knowledge of 3JS or A-frame libraries for 3D web development;",
+        "Experience integrating APIs and third-party hardware functionality;",
+        "Clear understanding of gameplay and creating fun and engaging experiences."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Interactive developer"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "4 weeks"
+      }
+    },
+    "softKraft": {
+      "title": "Marek CEO, candidate requirements",
+      "items": [
+        "4+ years of JavaScript development experience;",
+        "Good knowledge of TypeScript;",
+        "Great experience with REST API;",
+        "Ability to work with React, Redux, styled-components;",
+        "Ability to transform design requirements into a real layout;",
+        "Advanced adaptive/cross-viewing of CSS and HTML;",
+        "Advanced level of English."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Senior React Developer"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 3 weeks"
+      }
+    },
+    "kitrum": {
+      "title": "Feedback Vlad Kitaynyk CEO & Founder",
+      "items": [
+        "We were looking for an assistant who would not just complete operational tasks, but would fit into the corporate culture and pace of the team.",
+        "After the first brief, within a few days we were shown candidates who had passed the preliminary selection and test — without unnecessary calls.",
+        "One of the finalists approached us so organically that we quickly made a decision. And the vacancy was closed in 3 weeks.",
+        "It’s great that the process was not “blind” — thanks to psychological testing we received not just a resume, but a clear understanding of who we were dealing with and an understanding of how to approach the motivation and management of the candidate.Everything was done promptly, without unnecessary fuss — this is exactly what an HR partner should be like."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Assistant"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 4 weeks"
+      }
+    },
+    "nuggClub": {
+      "title": "Nugg Club review",
+      "items": [
+        "From the first conversation, we understood: the MI Agency team is not just a service, but engaged partners.",
+        "They know how to listen, immerse themselves in the business context and take into account not only experience, but also corporate culture.",
+        "All stages — from the brief to the offer — were coordinated, and the final result fully met our expectations.",
+        "We got not just an assistant, but a person who harmoniously fit into our dynamics."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Senior UI/UX Designer", "Ruby", "QA"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 4 weeks"
+      }
+    },
+    "nda": {
+      "title": "NDA company review",
+      "items": [
+        "We were looking for a WordPress developer with experience in custom solutions and an understanding of the logic of IT projects.",
+        "MI Agency responded quickly to the request; within a month we received 3 high-quality profiles that met both the technical requirements and the communication style in our team.",
+        "We selected a candidate who met all the key criteria — and he soon joined the project.",
+        "The quality of the preliminary filtering was impressive: each option was appropriate, we did not waste time. Communication was clear, understandable, with constant status updates."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Wordpress developer"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 4 weeks"
+      }
+    }
+  }
 }
