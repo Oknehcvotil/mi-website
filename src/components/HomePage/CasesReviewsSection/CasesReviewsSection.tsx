@@ -33,6 +33,7 @@ const CasesReviewsSection = () => {
                 youtubeUrl={slide.youtubeUrl}
                 author={slide.author}
                 position={slide.position}
+                posterOverride={slide.posterOverride}
               />
             ) : (
               <CaseInfoCard

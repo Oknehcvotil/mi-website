@@ -1,7 +1,7 @@
 import type CasesMessage from "../../components/CasesMessage/CasesMessage";
 import type VideoReviewCard from "../../components/VideoReviewCard/VideoReviewCard";
 
-export type ItItem =
+export type CasesItem =
   | { type: "video"; props: React.ComponentProps<typeof VideoReviewCard> }
   | {
       type: "case";

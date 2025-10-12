@@ -143,6 +143,7 @@ export const casesReviewsSlides = [
   {
     type: "video" as const,
     youtubeUrl: "https://youtu.be/xHpPy2hAaZI",
+    posterOverride: "/images/youtube-posters/andriy-jmil-youtube-poster.webp",
     author: "andriyJmil.name",
     position: "andriyJmil.position",
   },

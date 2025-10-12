@@ -1,5 +1,5 @@
 import type { CasesHeroConfig } from "../types/cases.hero.types";
-import type { ItItem } from "../types/cases.recruitment";
+import type { CasesItem } from "../types/cases.recruitment";
 
 export const recruitmentCasesConfig: CasesHeroConfig = {
   translationNs: "casesRecruitment",
@@ -18,7 +18,7 @@ export const recruitmentCasesConfig: CasesHeroConfig = {
   },
 };
 
-export const itItems: ItItem[] = [
+export const itItems: CasesItem[] = [
   {
     type: "video",
     props: {
@@ -106,5 +106,112 @@ export const itItems: ItItem[] = [
     type: "case",
     keyPrefix: "it.nda",
     logos: [{ src: "/images/clients-logos/nda", width: 95, height: 40 }],
+  },
+];
+
+export const webItems: CasesItem[] = [
+  {
+    type: "video",
+    props: {
+      youtubeUrl: "https://youtu.be/_5POb89UuGk",
+      author: "web.vitaliyMartynenko.name",
+      position: "web.vitaliyMartynenko.position",
+    },
+  },
+  {
+    type: "case",
+    keyPrefix: "web.vitaliyMartynenko",
+    logos: [{ src: "/images/clients-logos/crypto", width: 175, height: 55 }],
+  },
+
+  {
+    type: "msg",
+    imgSrc: "/images/cases-pages/recruiment/solus-person",
+    titleKey: "web.solus.title",
+    textKey: "web.solus.items",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    keyPrefix: "web.solus",
+    logos: [{ src: "/images/clients-logos/solus", width: 115, height: 40 }],
+  },
+
+  {
+    type: "msg",
+    imgSrc: "/images/cases-pages/recruiment/majinx-person",
+    titleKey: "web.majinx.title",
+    textKey: "web.majinx.items",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    keyPrefix: "web.majinx",
+    logos: [{ src: "/images/clients-logos/majinx", width: 160, height: 40 }],
+  },
+
+  {
+    type: "msg",
+    imgSrc: "/images/cases-pages/recruiment/nda-person-web",
+    titleKey: "web.ndaSales.title",
+    textKey: "web.ndaSales.items",
+  },
+  {
+    type: "case",
+    keyPrefix: "web.ndaSales",
+    logos: [{ src: "/images/clients-logos/nda", width: 95, height: 40 }],
+  },
+
+  {
+    type: "msg",
+    imgSrc: "/images/cases-pages/recruiment/monolith-person",
+    titleKey: "web.monolith.title",
+    textKey: "web.monolith.items",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    keyPrefix: "web.monolith",
+    logos: [{ src: "/images/clients-logos/monolith", width: 190, height: 25 }],
+  },
+
+  {
+    type: "msg",
+    imgSrc: "/images/cases-pages/recruiment/nda-person-bdm",
+    titleKey: "web.ndaBdm.title",
+    textKey: "web.ndaBdm.items",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    keyPrefix: "web.ndaBdm",
+    logos: [{ src: "/images/clients-logos/nda", width: 95, height: 40 }],
+  },
+
+  {
+    type: "msg",
+    imgSrc: "/images/cases-pages/recruiment/nda-person-multi",
+    titleKey: "web.ndaMulti.title",
+    textKey: "web.ndaMulti.items",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    keyPrefix: "web.ndaMulti",
+    logos: [{ src: "/images/clients-logos/nda", width: 95, height: 40 }],
+  },
+
+  {
+    type: "video",
+    props: {
+      youtubeUrl: "https://youtube.com/shorts/myU6HcqN5iM?feature=share",
+      author: "web.bohdanBushe.name",
+      position: "web.bohdanBushe.position",
+    },
+  },
+  {
+    type: "case",
+    keyPrefix: "web.bohdanBushe",
+    logos: [{ src: "/images/clients-logos/ci-crypto", width: 195, height: 55 }],
   },
 ];

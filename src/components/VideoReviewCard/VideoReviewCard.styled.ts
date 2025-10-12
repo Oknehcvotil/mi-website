@@ -128,12 +128,15 @@ export const Meta = styled.div`
       line-height: 120%;
       text-align: center;
       color: #020202;
-      margin-bottom: 0;
     }
   }
 `;
 
 export const Name = styled.p`
-  margin-bottom: 10px;
+  margin-top: 0px;
   color: #020202;
+`;
+
+export const Position = styled.p`
+  margin-top: 10px;
 `;

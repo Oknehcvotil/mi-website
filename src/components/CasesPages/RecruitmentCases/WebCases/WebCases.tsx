@@ -7,9 +7,11 @@ import { motion } from "framer-motion";
 import VideoReviewCard from "../../../VideoReviewCard/VideoReviewCard";
 import CaseInfoCard from "../../../CaseInfoCard/CaseInfoCard";
 import CasesMessage from "../../../CasesMessage/CasesMessage";
-import { itItems } from "../../../../lib/data/cases.recruitment";
+import { webItems } from "../../../../lib/data/cases.recruitment";
 
-const ItCases = () => {
+const NS = "casesRecruitment";
+
+const WebCases = () => {
   return (
     <motion.section
       initial="hidden"
@@ -19,26 +21,28 @@ const ItCases = () => {
     >
       <motion.div variants={blockV}>
         <AppSlider>
-          {itItems.map((item, i) => {
+          {webItems.map((item, i) => {
             switch (item.type) {
               case "video":
-                return <VideoReviewCard key={`v-${i}`} {...item.props} />;
+                return (
+                  <VideoReviewCard
+                    key={`v-${i}`}
+                    translationNs={NS}
+                    {...item.props}
+                  />
+                );
               case "case":
                 return (
                   <CaseInfoCard
                     key={`c-${i}`}
-                    translationNs="casesRecruitment"
+                    translationNs={NS}
                     keyPrefix={item.keyPrefix}
                     logos={item.logos}
                   />
                 );
               case "msg":
                 return (
-                  <CasesMessage
-                    key={`m-${i}`}
-                    translationNs="casesRecruitment"
-                    {...item}
-                  />
+                  <CasesMessage key={`m-${i}`} translationNs={NS} {...item} />
                 );
             }
           })}
@@ -48,4 +52,4 @@ const ItCases = () => {
   );
 };
 
-export default ItCases;
+export default WebCases;

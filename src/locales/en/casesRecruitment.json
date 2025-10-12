@@ -124,5 +124,139 @@
         "text": "Up to 4 weeks"
       }
     }
+  },
+  "web": {
+    "vitaliyMartynenko": {
+      "name": "Vitaliy Martynenko",
+      "position": "CEO & Founder Cryptolist",
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["HRD"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "4 weeks"
+      }
+    },
+    "solus": {
+      "title": "Feedback from Ruslan Partner & CMO",
+      "items": [
+        "We had a specific and difficult request — an influencer marketer with experience in Web3 and ready-made cases, the vacancy had been open in the company for 3 years.",
+        "The MI Agency team managed to accurately read who exactly we were looking for. They took the entire process on themselves — from the search to the final approval.",
+        "The candidate successfully underwent adaptation and is now working with us on a permanent basis.",
+        "We evaluate this cooperation as high-quality and effective — without overload and unnecessary control on our part."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Influence Marketing Lead"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "8 weeks"
+      }
+    },
+    "majinx": {
+      "title": "Feedback Ruslan CEO & Founder",
+      "items": [
+        "We needed a BDM with specific experience in Web3, fundraising and strategic partnerships.",
+        "The MI Agency team immediately offered a selection of relevant candidates who had already passed the preliminary assessment.",
+        "In the end, we chose one of the specialists who got involved from day one and quickly started to deliver results.",
+        "We were pleasantly surprised by how deeply the team immersed themselves in the request and accompanied us at every stage."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Business Development Manager"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 4 weeks"
+      }
+    },
+    "ndaSales": {
+      "title": "NDA company requirements",
+      "items": [
+        "3+ years of experience as a sales manager;",
+        "Experience in building a sales department from scratch;",
+        "Knowledge of sales management techniques and sales psychology;",
+        "Ability to organize the work of the department, set KPIs;",
+        "Ability to analyze the market and competitors’ work;",
+        "Ability to analyze and work with large amounts of information;",
+        "English level — Upper-Intermediate;",
+        "Result-oriented, diplomatic assertiveness, ability to effectively negotiate and think strategically;",
+        "Experience working in crypto projects."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Head of Sales department"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 4 weeks"
+      }
+    },
+    "monolith": {
+      "title": "Feedback from Ivan Co-Founder",
+      "items": [
+        "We worked on several areas at the same time — from launching SMM to forming an analytical team.",
+        "The first to be hired was a senior analyst who laid the foundation for the fund’s work and later rose to the role of Principal.We also recruited specialists for the airdrop area and marketing.",
+        "We found an SMM specialist in less than two weeks. All candidates were accurate in their request — strong both professionally and in their communication style.",
+        "It was comfortable to work with a team that understood the task from the first time. Thank you for the speed and quality."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["SMM Manager", "Senior Analyst x2", "Airdrop Analyst x2"]
+      },
+      "terms": {
+        "title": "Average closing time:",
+        "text": "3 weeks"
+      }
+    },
+    "ndaBdm": {
+      "title": "NDA company review",
+      "items": [
+        "We had a request for a BDM who would join the process and start selling right away. But during the selection process, it became clear: we needed a different type of person — one who would build a sales department from scratch.",
+        "The team didn’t just select candidates, but helped us focus on the right person.",
+        "After updating the request, we quickly found a strong specialist who fit perfectly into the team.",
+        "Fast pace, high-quality feedback, and a deep understanding of the Web3 market are what we especially appreciate about our cooperation."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Business Development Manager"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 8 weeks"
+      }
+    },
+    "ndaMulti": {
+      "title": "NDA company review",
+      "items": [
+        "Several areas were opened at the same time: marketing, analytics, sales, management.",
+        "The MI Agency team very quickly understood each request and selected strong people for each role.",
+        "A marketer was found in less than three weeks, and other specialists were also closed without delay.",
+        "I liked that each vacancy was accompanied not just by a resume, but by an understanding of why this person is 'in the right place'.",
+        "With such interaction, it is easy to scale."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Marketer", "BizDev", "Analyst", "Project Manager"]
+      },
+      "terms": {
+        "title": "Average closing time:",
+        "text": "Up to 3 weeks"
+      }
+    },
+    "bohdanBushe": {
+      "name": "Bohdan Bushe",
+      "position": "СЕО&Founder",
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["SMM Manager"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 4 weeks"
+      }
+    }
   }
 }
