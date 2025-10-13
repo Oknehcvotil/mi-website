@@ -216,6 +216,38 @@ export const webItems: CasesItem[] = [
   },
 ];
 
+export const marketingItems: CasesItem[] = [
+  {
+    type: "video",
+    props: {
+      youtubeUrl: "https://youtu.be/xHpPy2hAaZI",
+      posterOverride: "/images/youtube-posters/andriy-jmil-youtube-poster.webp",
+      author: "marketing.andriyJmil.name",
+      position: "marketing.andriyJmil.position",
+    },
+  },
+  {
+    type: "case",
+    logos: [
+      { src: "/images/clients-logos/cbet", width: 55, height: 45 },
+      { src: "/images/clients-logos/spendy", width: 105, height: 15 },
+    ],
+    keyPrefix: "marketing.andriyJmil",
+  },
+  {
+    type: "msg",
+    titleKey: "marketing.frgmnt.title",
+    textKey: "marketing.frgmnt.items",
+    imgSrc: "/images/cases-pages/recruiment/frgmnt-person",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    logos: [{ src: "/images/clients-logos/frgmnt", width: 140, height: 40 }],
+    keyPrefix: "marketing.frgmnt",
+  },
+];
+
 export const fintechItems: FintechCasesItem[] = [
   {
     type: "msg",
