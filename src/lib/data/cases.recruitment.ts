@@ -1,5 +1,5 @@
 import type { CasesHeroConfig } from "../types/cases.hero.types";
-import type { CasesItem } from "../types/cases.recruitment";
+import type { CasesItem, FintechCasesItem } from "../types/cases.recruitment";
 
 export const recruitmentCasesConfig: CasesHeroConfig = {
   translationNs: "casesRecruitment",
@@ -216,74 +216,29 @@ export const webItems: CasesItem[] = [
   },
 ];
 
-export const marketingItems: CasesItem[] = [
+export const fintechItems: FintechCasesItem[] = [
   {
-    type: "video",
-    props: {
-      youtubeUrl: "https://youtu.be/xHpPy2hAaZI",
-      posterOverride: "/images/youtube-posters/andriy-jmil-youtube-poster.webp",
-      author: "marketing.andriyJmil.name",
-      position: "marketing.andriyJmil.position",
-    },
+    type: "msg",
+    titleKey: "fintech.fintechNda.title",
+    textKey: "fintech.fintechNda.items",
+    imgSrc: "/images/cases-pages/recruiment/fintech-nda-person",
   },
   {
     type: "case",
-    logos: [
-      { src: "/images/clients-logos/cbet", width: 55, height: 45 },
-      { src: "/images/clients-logos/spendy", width: 105, height: 15 },
-    ],
-    keyPrefix: "marketing.andriyJmil",
+    keyPrefix: "fintech.fintechNda",
+    className: "fintech--nda",
+    logoTitle: "fintech.fintechNda.logo",
   },
   {
     type: "msg",
-    titleKey: "marketing.frgmnt.title",
-    textKey: "marketing.frgmnt.items",
-    imgSrc: "/images/cases-pages/recruiment/frgmnt-person",
-    className: ["not-list", "gap"],
+    titleKey: "fintech.ndaTech.title",
+    textKey: "fintech.ndaTech.items",
+    imgSrc: "/images/cases-pages/recruiment/nda-tech-person",
+    className: ["not-list"],
   },
   {
     type: "case",
-    logos: [{ src: "/images/clients-logos/frgmnt", width: 140, height: 40 }],
-    keyPrefix: "marketing.frgmnt",
-  },
-  {
-    type: "msg",
-    titleKey: "marketing.miko.title",
-    textKey: "marketing.miko.items",
-    imgSrc: "/images/cases-pages/recruiment/miko-person",
-    className: ["not-list", "gap"],
-  },
-  {
-    type: "case",
-    logos: [{ src: "/images/clients-logos/miko", width: 140, height: 40 }],
-    keyPrefix: "marketing.miko",
-  },
-  {
-    type: "msg",
-    titleKey: "marketing.hornsHacks.title",
-    textKey: "marketing.hornsHacks.items",
-    imgSrc: "/images/cases-pages/recruiment/horns-hacks-person",
-    className: ["not-list", "gap"],
-  },
-  {
-    type: "case",
-    logos: [
-      { src: "/images/clients-logos/horns-hacks", width: 70, height: 55 },
-    ],
-    keyPrefix: "marketing.hornsHacks",
-  },
-  {
-    type: "video",
-    props: {
-      youtubeUrl: "https://youtu.be/HVRd0PENPDY ",
-      author: "marketing.annaKutsenko.name",
-      position: "marketing.annaKutsenko.position",
-    },
-  },
-  {
-    type: "case",
-    keyPrefix: "marketing.annaKutsenko",
-    className: "kutsenko",
-    logoTitle: "marketing.annaKutsenko.name",
+    keyPrefix: "fintech.ndaTech",
+    logos: [{ src: "/images/clients-logos/nda", width: 95, height: 40 }],
   },
 ];

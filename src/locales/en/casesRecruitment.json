@@ -334,5 +334,54 @@
         "text": "Up to 4 weeks"
       }
     }
+  },
+  "fintech": {
+    "fintechNda": {
+      "title": "NDA company requirements",
+      "logo": "FINTECH startup under NDA",
+      "items": [
+        "5+ years of development experience;",
+        "Experience as a Full-stack Dev;",
+        "Experience with JavaScript;",
+        "MERN stack: MongoDB, Express, React JS, Node JS;",
+        "AWS (EC2, CloudFront CDN, S3) + Docker skills;",
+        "Project management from start to finish;",
+        "Ability to conduct internal code audits;",
+        "Experience as a team leader;",
+        "Understanding of API key operation;",
+        "Skills in training new employees;",
+        "Experience in startups;",
+        "Designing organizational project processes;",
+        "Experience in fintech will be a plus;",
+        "Professional portfolio with successful cases;",
+        "English: B2."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Full-stack Developer"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 2 weeks"
+      }
+    },
+    "ndaTech": {
+      "title": "NDA company review",
+      "items": [
+        "We are a startup that is actively scaling, so we were looking for several technical specialists at once: from support to DevOps.",
+        "MI Agency quickly understood who we needed and how to prioritize positions. Thanks to a clear process and regular updates, we didn’t waste time on unnecessary conversations — only on the final candidates.",
+        "DevOps joined the team after a month, QA — in two weeks, and full-stack and 3 tech support — within 1.5 months.",
+        "It is especially valuable that each candidate underwent psychological testing — we immediately received analytics on work style, motivation, and potential growth areas.",
+        "The result was not just closed vacancies, but a team that quickly joined our pace and is already producing results."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["DevOps", "Tech Support x3", "QA", "Fullstack Dev"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "All vacancies closed in 3 months"
+      }
+    }
   }
 }

@@ -140,11 +140,24 @@ export const Line = styled.div`
 `;
 
 export const LogoTitle = styled.h2`
+  margin: 0 auto 10px;
+  width: 100%;
+
   &.kutsenko-caseinfo-title {
     font-weight: 700;
     font-size: 35px;
     line-height: 114%;
     text-transform: uppercase;
+    color: #020202;
+  }
+
+  &.fintech--nda-caseinfo-title {
+    max-width: 300px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 107%;
+    text-transform: uppercase;
+    text-align: center;
     color: #020202;
   }
 `;
