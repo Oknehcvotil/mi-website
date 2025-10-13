@@ -383,5 +383,78 @@
         "text": "All vacancies closed in 3 months"
       }
     }
+  },
+  "igaming": {
+    "hundredFtd": {
+      "title": "100FTD review",
+      "logo": "100FTD",
+      "items": [
+        "We were looking for an HR specialist who would take on the entire cycle of work with personnel — from recruiting to team support.",
+        "The recruiters from MI quickly came up with a high-quality sample — each candidate was thoroughly selected and had the necessary experience.",
+        "One of them organically fit into our approach to work.",
+        "Communication was clear and professional — no sense of 'working for a tick'."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["HR"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "3 weeks"
+      }
+    },
+    "ndaRecruiter": {
+      "title": "NDA company review",
+      "items": [
+        "We were looking for an internal recruiter for an international team with an understanding of the specifics of the market and the company culture.",
+        "The MI Agency team approached the selection carefully — they took into account both experience and values that are important to us.",
+        "The candidate not only exceeded expectations in terms of hard skills, but also quickly adapted to the team.",
+        "Thanks to this selection format, we saved a lot of time and resources."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Recruiter"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "4 weeks"
+      }
+    },
+    "flint": {
+      "title": "Flint team feedback",
+      "items": [
+        "We work in an industry where speed is everything, so it is critical to have a partner who understands the request from the first contact.",
+        "With MI Agency we have developed exactly such cooperation — we have repeatedly applied for positions for various tasks and each time received an accurate closing without delays.",
+        "The team works clearly, keeps pace and is always in touch.",
+        "A reliable partner who can be entrusted with recruiting."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": [
+          "More than 20 SEO specialists of various levels (from trainee to senior) have been selected, as well as the positions of Link builder, Sales manager and Head of Sales have been filled."
+        ]
+      },
+      "terms": {
+        "title": "Collaboration:",
+        "text": "Over 1.5 years"
+      }
+    },
+    "gambeat": {
+      "title": "GAMBEAT review",
+      "items": [
+        "We were looking for an affiliate manager who understands the gambling industry and has experience in similar campaigns.",
+        "MI specialists provided a profile candidate within a month. The person adapted quickly and is now confidently closing the direction.",
+        "It is especially valuable that they did not “throw” everyone at us in a row — it was clear that each option underwent filtering and preliminary evaluation.",
+        "This is exactly the approach we were looking for."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Affiliate manager"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 4 weeks"
+      }
+    }
   }
 }

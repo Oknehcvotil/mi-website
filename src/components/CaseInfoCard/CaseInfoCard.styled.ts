@@ -160,4 +160,13 @@ export const LogoTitle = styled.h2`
     text-align: center;
     color: #020202;
   }
+
+  &.hundredFtd-caseinfo-title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #020202;
+    text-align: center;
+  }
 `;

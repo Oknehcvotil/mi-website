@@ -1,5 +1,5 @@
 import type { CasesHeroConfig } from "../types/cases.hero.types";
-import type { CasesItem, FintechCasesItem } from "../types/cases.recruitment";
+import type { CasesItem, NoVideoCasesItem } from "../types/cases.recruitment";
 
 export const recruitmentCasesConfig: CasesHeroConfig = {
   translationNs: "casesRecruitment",
@@ -248,7 +248,7 @@ export const marketingItems: CasesItem[] = [
   },
 ];
 
-export const fintechItems: FintechCasesItem[] = [
+export const fintechItems: NoVideoCasesItem[] = [
   {
     type: "msg",
     titleKey: "fintech.fintechNda.title",
@@ -272,5 +272,57 @@ export const fintechItems: FintechCasesItem[] = [
     type: "case",
     keyPrefix: "fintech.ndaTech",
     logos: [{ src: "/images/clients-logos/nda", width: 95, height: 40 }],
+  },
+];
+
+export const igamingItems: NoVideoCasesItem[] = [
+  {
+    type: "msg",
+    titleKey: "igaming.hundredFtd.title",
+    textKey: "igaming.hundredFtd.items",
+    imgSrc: "/images/cases-pages/recruiment/hundred-ftd-person",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    keyPrefix: "igaming.hundredFtd",
+    className: "hundredFtd",
+    logoTitle: "igaming.hundredFtd.logo",
+  },
+  {
+    type: "msg",
+    titleKey: "igaming.ndaRecruiter.title",
+    textKey: "igaming.ndaRecruiter.items",
+    imgSrc: "/images/cases-pages/recruiment/nda-recruiter-person",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    keyPrefix: "igaming.ndaRecruiter",
+    logos: [{ src: "/images/clients-logos/nda", width: 95, height: 40 }],
+  },
+  {
+    type: "msg",
+    titleKey: "igaming.flint.title",
+    textKey: "igaming.flint.items",
+    imgSrc: "/images/cases-pages/recruiment/flint-person",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    keyPrefix: "igaming.flint",
+    logos: [{ src: "/images/clients-logos/flint", width: 115, height: 45 }],
+  },
+  {
+    type: "msg",
+    titleKey: "igaming.gambeat.title",
+    textKey: "igaming.gambeat.items",
+    imgSrc: "/images/cases-pages/recruiment/gambeat-person",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    keyPrefix: "igaming.gambeat",
+    logos: [{ src: "/images/clients-logos/gambeat", width: 190, height: 40 }],
   },
 ];

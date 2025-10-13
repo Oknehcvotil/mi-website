@@ -15,7 +15,7 @@ export type CasesItem =
       "translationNs"
     >);
 
-export type FintechCasesItem =
+export type NoVideoCasesItem =
   | {
       type: "case";
       keyPrefix: string;
