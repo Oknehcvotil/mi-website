@@ -18,3 +18,14 @@ export type PolicySections = {
   changesTitle: string;
   changesText: string;
 };
+
+export type VideoReviewCardProps = {
+  youtubeUrl: string;
+  author?: string;
+  position?: string;
+  className?: string;
+  withBorders?: boolean;
+  classes?: { root?: string; meta?: string; playBtn?: string };
+  posterOverride?: string;
+  translationNs?: string;
+};

@@ -6,7 +6,9 @@ export type CasesItem =
   | {
       type: "case";
       keyPrefix: string;
-      logos: Array<{ src: string; width: number; height: number }>;
+      logos?: Array<{ src: string; width: number; height: number }>;
+      logoTitle?: string;
+      className?: string;
     }
   | ({ type: "msg" } & Omit<
       React.ComponentProps<typeof CasesMessage>,

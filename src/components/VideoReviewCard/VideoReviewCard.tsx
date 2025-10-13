@@ -16,37 +16,14 @@ import {
   Position,
 } from "./VideoReviewCard.styled";
 import { useTranslation } from "react-i18next";
+import type { VideoReviewCardProps } from "../../lib/types/common.types";
+import {
+  extractYoutubeId,
+  getYoutubePosterHQ,
+  getYoutubePosterMax,
+} from "../../lib/helpers/youtube";
 
-type VideoReviewCardProps = {
-  youtubeUrl: string;
-  author?: string;
-  position?: string;
-  className?: string;
-  withBorders?: boolean;
-  classes?: { root?: string; meta?: string; playBtn?: string };
-  posterOverride?: string;
-  translationNs?: string;
-};
-
-function extractYoutubeId(url: string): string | null {
-  try {
-    const u = new URL(url);
-    if (u.hostname.includes("youtu.be")) return u.pathname.slice(1) || null;
-    const v = u.searchParams.get("v");
-    if (v) return v;
-    const m = u.pathname.match(/\/(embed|shorts)\/([^/?#]+)/);
-    return m?.[2] ?? null;
-  } catch {
-    return null;
-  }
-}
-
-const getYoutubePosterMax = (id: string) =>
-  `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
-const getYoutubePosterHQ = (id: string) =>
-  `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
-
-const VideoReviewCard: React.FC<VideoReviewCardProps> = ({
+const VideoReviewCard = ({
   youtubeUrl,
   author,
   position,
@@ -55,7 +32,7 @@ const VideoReviewCard: React.FC<VideoReviewCardProps> = ({
   classes,
   posterOverride,
   translationNs = "reviews",
-}) => {
+}: VideoReviewCardProps) => {
   const { t } = useTranslation(translationNs);
   const [playing, setPlaying] = useState(false);
   const [posterSrc, setPosterSrc] = useState<string | undefined>(

@@ -215,3 +215,75 @@ export const webItems: CasesItem[] = [
     logos: [{ src: "/images/clients-logos/ci-crypto", width: 195, height: 55 }],
   },
 ];
+
+export const marketingItems: CasesItem[] = [
+  {
+    type: "video",
+    props: {
+      youtubeUrl: "https://youtu.be/xHpPy2hAaZI",
+      posterOverride: "/images/youtube-posters/andriy-jmil-youtube-poster.webp",
+      author: "marketing.andriyJmil.name",
+      position: "marketing.andriyJmil.position",
+    },
+  },
+  {
+    type: "case",
+    logos: [
+      { src: "/images/clients-logos/cbet", width: 55, height: 45 },
+      { src: "/images/clients-logos/spendy", width: 105, height: 15 },
+    ],
+    keyPrefix: "marketing.andriyJmil",
+  },
+  {
+    type: "msg",
+    titleKey: "marketing.frgmnt.title",
+    textKey: "marketing.frgmnt.items",
+    imgSrc: "/images/cases-pages/recruiment/frgmnt-person",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    logos: [{ src: "/images/clients-logos/frgmnt", width: 140, height: 40 }],
+    keyPrefix: "marketing.frgmnt",
+  },
+  {
+    type: "msg",
+    titleKey: "marketing.miko.title",
+    textKey: "marketing.miko.items",
+    imgSrc: "/images/cases-pages/recruiment/miko-person",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    logos: [{ src: "/images/clients-logos/miko", width: 140, height: 40 }],
+    keyPrefix: "marketing.miko",
+  },
+  {
+    type: "msg",
+    titleKey: "marketing.hornsHacks.title",
+    textKey: "marketing.hornsHacks.items",
+    imgSrc: "/images/cases-pages/recruiment/horns-hacks-person",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    logos: [
+      { src: "/images/clients-logos/horns-hacks", width: 70, height: 55 },
+    ],
+    keyPrefix: "marketing.hornsHacks",
+  },
+  {
+    type: "video",
+    props: {
+      youtubeUrl: "https://youtu.be/HVRd0PENPDY ",
+      author: "marketing.annaKutsenko.name",
+      position: "marketing.annaKutsenko.position",
+    },
+  },
+  {
+    type: "case",
+    keyPrefix: "marketing.annaKutsenko",
+    className: "kutsenko",
+    logoTitle: "marketing.annaKutsenko.name",
+  },
+];

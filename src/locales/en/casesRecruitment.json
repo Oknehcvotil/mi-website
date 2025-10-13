@@ -258,5 +258,81 @@
         "text": "Up to 4 weeks"
       }
     }
+  },
+  "marketing": {
+    "andriyJmil": {
+      "name": "Andriy Jmil",
+      "position": "СЕО&Founder SVET, Spendy",
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Digital marketer x5", "SMM Manager"]
+      },
+      "terms": {
+        "title": "Cooperation period:",
+        "text": "2 years"
+      }
+    },
+    "frgmnt": {
+      "title": "FRGMNT review",
+      "items": [
+        "We were looking for an assistant for two managers — someone who could quickly adapt to the office rhythm, work with a team, and complete both administrative and personal tasks.",
+        "The MI Agency team read the request on the first try and showed us finalists with relevant experience within a few days. One of the candidates passed the test and joined the team — he integrated perfectly and has been working with us ever since.",
+        "At the same time, we were looking for a designer. The approach was the same — precise, without unnecessary iterations. We got a person who not only had the necessary level but also fit perfectly into the brand’s visual style.",
+        "There was a feeling that the team was working with us in the same rhythm — and this is very valuable."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Executive Assistant", "Graphic Designer"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 4 weeks"
+      }
+    },
+    "miko": {
+      "title": "Feedback from Angelina CEO & Founder",
+      "items": [
+        "We needed a recruiter who is oriented towards marketing specialties — from creative to technical.",
+        "In 4 weeks, the MI Agency team provided 6 relevant candidates. All of them had the appropriate experience and understanding of our specifics.",
+        "We quickly conducted interviews, chose the best option and saw the result in the first month.",
+        "It is especially valuable that the agency delved deeply into the tasks, did not send random resumes and helped make a decision, relying not only on the CV, but also on the person’s potential in our culture."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Recruiter"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 4 weeks"
+      }
+    },
+    "hornsHacks": {
+      "title": "Review by Arthur CEO & Founder",
+      "items": [
+        "We were looking for a specialist who understands YouTube: algorithms, promotion, analytics, and content strategy.",
+        "After the brief, we were shown several candidates with experience in this niche. One of them brilliantly coped with the test and began cooperation.",
+        "The recruiters were included in the process, did not lose focus on the details, and we got the result we expected."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["YouTube Marketing Manager"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 4 weeks"
+      }
+    },
+    "annaKutsenko": {
+      "name": "Anna Kutsenko",
+      "position": "Coach and Influencer",
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["SMM Manager", "Assistant"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 4 weeks"
+      }
+    }
   }
 }

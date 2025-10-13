@@ -9,16 +9,18 @@ import {
   TermsTitle,
   VacList,
   CardWrap,
+  LogoTitle,
 } from "./CaseInfoCard.styled";
 import Container from "../Container/Container";
 
 type CaseInfoCardProps = {
-  logos: {
+  logos?: {
     src: string;
     width?: number;
     height?: number;
     alt?: string;
   }[];
+  logoTitle?: string;
   keyPrefix: string;
   className?: string;
   translationNs?: string;
@@ -26,6 +28,7 @@ type CaseInfoCardProps = {
 
 const CaseInfoCard = ({
   logos,
+  logoTitle,
   keyPrefix,
   className,
   translationNs = "reviews",
@@ -41,26 +44,32 @@ const CaseInfoCard = ({
   const termsText = t(`${keyPrefix}.terms.text`);
 
   return (
-    <Container>
+    <Container style={{ padding: "0 10px" }}>
       <CaseInfoCardWrapper className={className} aria-label={company}>
         <CardWrap className={className}>
           <CardCont>
             <ImgWrap>
-              {logos.map((logo, i) => (
-                <img
-                  key={i}
-                  src={`${logo.src}.webp`}
-                  srcSet={`
-              ${logo.src}.webp 1x,
-              ${logo.src}@2x.webp 2x,
-              ${logo.src}@3x.webp 3x
-            `}
-                  width={logo.width ?? 175}
-                  height={logo.height ?? 55}
-                  alt={logo.alt ?? company}
-                  loading="lazy"
-                />
-              ))}
+              {logos && logos.length > 0 ? (
+                logos.map((logo, i) => (
+                  <img
+                    key={i}
+                    src={`${logo.src}.webp`}
+                    srcSet={`
+                      ${logo.src}.webp 1x,
+                      ${logo.src}@2x.webp 2x,
+                      ${logo.src}@3x.webp 3x
+                    `}
+                    width={logo.width ?? 175}
+                    height={logo.height ?? 55}
+                    alt={logo.alt ?? company}
+                    loading="lazy"
+                  />
+                ))
+              ) : logoTitle ? (
+                <LogoTitle className={`${className}-caseinfo-title`}>
+                  {t(logoTitle)}
+                </LogoTitle>
+              ) : null}
             </ImgWrap>
 
             <div>
@@ -78,6 +87,7 @@ const CaseInfoCard = ({
               <TermsTitle className={className}>{termsTitle}</TermsTitle>
               <TermsText className={className}>{termsText}</TermsText>
             </div>
+
             <LineWrapper>
               <Line />
             </LineWrapper>

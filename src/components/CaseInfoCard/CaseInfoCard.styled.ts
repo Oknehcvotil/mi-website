@@ -42,7 +42,7 @@ export const CardCont = styled.div`
   backdrop-filter: blur(100px);
   box-shadow: inset 6px 11px 5px 0 #fff;
   border: 3px solid #a066ff;
-  padding: 10px 20px;
+  padding: 10px;
   color: #020202;
   background-color: #fff;
   z-index: 1;
@@ -105,7 +105,8 @@ export const TermsText = styled.p`
 
 export const LineWrapper = styled.div`
   position: relative;
-  width: 100%;
+  width: 95%;
+  margin: 0 auto;
   height: 12px;
   display: flex;
   align-items: center;
@@ -135,5 +136,15 @@ export const Line = styled.div`
 
   &::after {
     right: -6px;
+  }
+`;
+
+export const LogoTitle = styled.h2`
+  &.kutsenko-caseinfo-title {
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 114%;
+    text-transform: uppercase;
+    color: #020202;
   }
 `;
