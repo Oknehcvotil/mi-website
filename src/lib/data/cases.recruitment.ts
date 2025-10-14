@@ -326,3 +326,78 @@ export const igamingItems: NoVideoCasesItem[] = [
     logos: [{ src: "/images/clients-logos/gambeat", width: 190, height: 40 }],
   },
 ];
+
+export const othersItems: CasesItem[] = [
+  {
+    type: "msg",
+    titleKey: "others.objectOne.title",
+    textKey: "others.objectOne.items",
+    imgSrc: "/images/cases-pages/recruiment/object-one-person",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    keyPrefix: "others.objectOne",
+    logos: [
+      { src: "/images/clients-logos/object-one", width: 160, height: 40 },
+    ],
+  },
+
+  {
+    type: "msg",
+    titleKey: "others.reelly.title",
+    textKey: "others.reelly.items",
+    imgSrc: "/images/cases-pages/recruiment/reelly-person",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    keyPrefix: "others.reelly",
+    logos: [{ src: "/images/clients-logos/reelly", width: 110, height: 40 }],
+  },
+
+  {
+    type: "video",
+    props: {
+      youtubeUrl: "https://youtu.be/h_jeb5pweos",
+      author: "others.eugene.name",
+      position: "others.eugene.position",
+    },
+  },
+  {
+    type: "case",
+    keyPrefix: "others.eugene",
+    logos: [{ src: "/images/clients-logos/yz-pro", width: 155, height: 45 }],
+  },
+
+  {
+    type: "msg",
+    titleKey: "others.everest.title",
+    textKey: "others.everest.items",
+    imgSrc: "/images/cases-pages/recruiment/everest-person",
+  },
+  {
+    type: "case",
+    keyPrefix: "others.everest",
+    logos: [{ src: "/images/clients-logos/everest", width: 75, height: 60 }],
+  },
+
+  {
+    type: "msg",
+    titleKey: "others.smartDevelopment.title",
+    textKey: "others.smartDevelopment.items",
+    imgSrc: "/images/cases-pages/recruiment/smart-development-person",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    keyPrefix: "others.smartDevelopment",
+    logos: [
+      {
+        src: "/images/clients-logos/smart-development",
+        width: 285,
+        height: 25,
+      },
+    ],
+  },
+];

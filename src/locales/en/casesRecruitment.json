@@ -456,5 +456,88 @@
         "text": "Up to 4 weeks"
       }
     }
+  },
+  "others": {
+    "objectOne": {
+      "title": "Object1 review",
+      "items": [
+        "We had a specific task — to find a BDM who could establish work with investors and partners in a narrow direction.",
+        "The MI team quickly felt the specifics and gathered strong candidates with relevant experience.",
+        "One of them is already on board, and we see real results from the first weeks of work.",
+        "It felt like the team was not just selecting, but understanding the business context."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Business Development Manager"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 8 weeks"
+      }
+    },
+    "reelly": {
+      "title": "Reelly review",
+      "items": [
+        "We were looking for a lawyer with experience in the international market — the task was atypical, with high quality requirements.",
+        "The MI Agency team approached the process very carefully; they studied the profile in depth, clarified all critical points, and checked backgrounds.",
+        "In a short time, we received a candidate who exactly met the requirements and immediately got started.",
+        "There was a feeling that they were working with us not “as if according to a template,” but with an understanding of the specifics of the business."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Legal Counsel"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 4 weeks"
+      }
+    },
+    "eugene": {
+      "name": "Eugene",
+      "position": "CEO & Founder YZ Pro",
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Human Resources Manager", "Recruiter"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 4 weeks"
+      }
+    },
+    "everest": {
+      "title": "Candidate requirements",
+      "items": [
+        "Knowledge of Linux (CentOS/Fedora/Ubuntu)",
+        "Ability to write scripts for automation (Bash)",
+        "Experience with Docker/Containerization",
+        "Experience with Ansible/Chef/Puppet",
+        "Experience in setting up CI/CD pipelines"
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Middle + DevOps Engineer"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 4 weeks"
+      }
+    },
+    "smartDevelopment": {
+      "title": "Feedback Andriy CEO & Founder",
+      "items": [
+        "We needed a sales person who not only knows how to sell, but also understands our product and niche.",
+        "The MI Agency team approached the process very delicately: they did not impose decisions, but advised — based on experience and the real market.",
+        "In the end, we chose a person who quickly got involved in the process and is already producing results.",
+        "It was easy — calm communication, accurate recommendations and respect for our internal pace."
+      ],
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["Sales Manager"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 4 weeks"
+      }
+    }
   }
 }
