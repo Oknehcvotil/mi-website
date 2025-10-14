@@ -9,7 +9,6 @@ import CaseInfoCard from "../../../CaseInfoCard/CaseInfoCard";
 import CasesMessage from "../../../CasesMessage/CasesMessage";
 import { othersItems } from "../../../../lib/data/cases.recruitment";
 
-
 const OtherCases = () => {
   return (
     <motion.section
@@ -23,7 +22,13 @@ const OtherCases = () => {
           {othersItems.map((item, i) => {
             switch (item.type) {
               case "video":
-                return <VideoReviewCard key={`v-${i}`} {...item.props} />;
+                return (
+                  <VideoReviewCard
+                    key={`v-${i}`}
+                    translationNs="casesRecruitment"
+                    {...item.props}
+                  />
+                );
               case "case":
                 return (
                   <CaseInfoCard
