@@ -53,6 +53,7 @@ export const ImgWrap = styled.div`
   justify-content: center;
   align-items: center;
   gap: 15px;
+  margin-bottom: 5px;
 `;
 
 export const VacList = styled.ul`
@@ -142,6 +143,12 @@ export const Line = styled.div`
 export const LogoTitle = styled.h2`
   margin: 0 auto 10px;
   width: 100%;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 107%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #020202;
 
   &.kutsenko-caseinfo-title {
     font-weight: 700;
@@ -168,5 +175,23 @@ export const LogoTitle = styled.h2`
     text-transform: uppercase;
     color: #020202;
     text-align: center;
+  }
+
+  &.digitalMarketingAgency-caseinfo-title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 107%;
+    text-transform: uppercase;
+    text-align: center;
+    color: #020202;
+  }
+
+  &.ndaWeb-caseinfo-title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 107%;
+    text-transform: uppercase;
+    text-align: center;
+    color: #020202;
   }
 `;

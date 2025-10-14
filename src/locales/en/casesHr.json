@@ -1,5 +1,172 @@
 {
   "title": "Our cases",
   "subTitle": "HR consulting",
-  "lead": "A package of services that optimize all HR processes of your Company."
+  "lead": "A package of services that optimize all HR processes of your Company.",
+  "it": {
+    "ndaHr": {
+      "title": "The MI Agency team developed the following HR processes for the project:",
+      "items": [
+        "Psychological audit of employees",
+        "Audit of company HR processes",
+        "Analysis and optimization of organizational structure",
+        "Development and implementation of a system of material and non-material motivation of corporate level",
+        "Development and implementation of HR strategy for the company",
+        "Development and implementation of job descriptions for all employees",
+        "Development and implementation of a personnel evaluation system",
+        "Development and implementation of an Onboarding and Adaptation system",
+        "Removal of CEO from operational activities",
+        "Consultation of CEO and C-level specialists"
+      ],
+      "vacancies": {
+        "title": "Services:",
+        "items": [
+          "Full HR support for the agency, development and implementation of HR processes"
+        ]
+      },
+      "terms": {
+        "title": "Working period:",
+        "text": "3 months"
+      }
+    }
+  },
+  "marketing": {
+    "digitalMarketingAgency": {
+      "title": "The MI Agency team developed the following HR processes:",
+      "logo": "Digital marketing agency",
+      "items": [
+        "Psychological audit of the team",
+        "Audit of the Company’s HR processes",
+        "System of adaptation of new employees",
+        "System of non-material motivation of employees",
+        "Personal development plans developed for each employee",
+        "Personalized job cards developed",
+        "Training of the HR department carried out",
+        "Developed and implemented the company’s corporate culture, including the unique mission/values/traditions of the Company"
+      ],
+      "vacancies": {
+        "title": "Services:",
+        "items": [
+          "Development and implementation of HR processes, training and mentoring of the HR department"
+        ]
+      },
+      "terms": {
+        "title": "Working period:",
+        "text": "2 months"
+      }
+    },
+    "svet": {
+      "title": "The MI Agency team developed the following HR processes for the Svet Company:",
+      "items": [
+        "Recruitment system",
+        "New employee adaptation system",
+        "Employee material and non-material motivation system",
+        "Personal development plans developed for each employee",
+        "Personalized job offers developed",
+        "The Company’s corporate culture, including the Company’s unique mission/values/traditions, was developed and implemented",
+        "Work regulations within the Company were drawn up"
+      ],
+      "vacancies": {
+        "title": "Services:",
+        "items": [
+          "Full HR support for the agency, development and implementation of HR processes"
+        ]
+      },
+      "terms": {
+        "title": "Collaboration period:",
+        "text": "Over 1.5 years"
+      }
+    },
+    "ndaAffiliate": {
+      "title": "What was implemented by the MI Agency team:",
+      "items": [
+        "Full-fledged implementation of the HRD function on outsourcing",
+        "Psychological audit of the team and owners",
+        "Formation of psychological portraits of employees and the ideal candidate",
+        "Audit of existing processes, identification of blind spots and delegation zones",
+        "Conducting a strategic session with co-owners",
+        "Development of a new organizational structure",
+        "Description of job profiles for each role in the structure",
+        "A well-developed and implemented onboarding process and Welcome Book",
+        "Creation of a training system for employees",
+        "Implementation of a KPI system for current employees",
+        "Implementation of an appraisal / transfer of skills system",
+        "Formation of EVP and employee positioning",
+        "Formation of the company’s mission, philosophy and values and adaptation of the company’s corporate culture",
+        "Systematization of financial accounting",
+        "Development of a referral program for partners"
+      ],
+      "vacancies": {
+        "title": "Services:",
+        "items": ["HR consulting - affiliate program"]
+      },
+      "terms": {
+        "title": "Working period:",
+        "text": "3 months"
+      }
+    }
+  },
+  "web": {
+    "ndaWeb": {
+      "title": "The MI Agency team completed the following tasks:",
+      "logo": "NDA WEB3 project",
+      "items": [
+        "An experienced HR Generalist was found who fully met the customer’s requirements",
+        "KPIs for the HR Generalist were developed and implemented",
+        "The company’s HR processes were developed and implemented",
+        "Business processes in the company were developed and implemented",
+        "Once a week, sessions were held with the HR Generalist regarding the built Roadmap and current issues"
+      ],
+      "vacancies": {
+        "title": "Services:",
+        "items": ["Recruitment, onboarding and further advising HR Generalist"]
+      },
+      "terms": {
+        "title": "Working period:",
+        "text": "2 months"
+      }
+    }
+  },
+  "others": {
+    "softloft": {
+      "title": "MI Agency team solution",
+      "items": [
+        "Psychological testing of the company owner and key employees",
+        "Formation of psychological portraits of the team",
+        "Identification of areas for improving communication and effective interaction with top management",
+        "Analysis of the onboarding process, formation of a new model",
+        "Identification of responsible persons and process holders at different stages of onboarding",
+        "Development of a business process and a package of accompanying documents",
+        "Developed a unified comprehensive Sales Book, which combined: Welcome Book, Onboarding block, Sales system"
+      ],
+      "vacancies": {
+        "title": "Services:",
+        "items": ["HR solutions designer"]
+      },
+      "terms": {
+        "title": "Working period:",
+        "text": "1 month"
+      }
+    },
+    "softloftReview": {
+      "title": "SoftLoft review",
+      "items": [
+        "Our cooperation with MI Agency concerned two key areas: developing a system for adapting newcomers to the SoftLoft team and forming a clear, modern system of tasks and motivation for an HR specialist.",
+        "We worked with wonderful professionals — Maria Karpenko and Tatyana Ryazantseva. This was a real example of well-coordinated teamwork. Maria and Tatyana did not just fulfill a technical task — they immersed themselves in our reality, in the specifics of real estate, in the SoftLoft atmosphere. Instead of a 'template approach', we received a systematic, flexible and very human adaptation model that takes into account both the ambitions of a newcomer and the realities of the team.",
+        "It felt like they went the whole way with us — from the strategic vision to the daily details. And most importantly, the proposed solutions were not detached from life. They are accurate, logical, and meet the challenges of the time. The recommendations and projects we received are easy to integrate into internal processes, and they are already working.",
+        "Personally, as a manager, it was important to me that cooperation was not exhausting, but inspiring. And it was. High-quality communication, sincere involvement in our project, clear deadlines and the feeling that you are heard — all this was at the highest level.",
+        "MI Agency is not just a contractor. It is a team that thinks together with you. And if it is important for you not to just 'close the task', but to make the work processes in the team lively, understandable and sustainable — feel free to contact us."
+      ]
+    },
+    "mobReview": {
+      "items-first": [
+        "Our cooperation with MI Agency concerned two key areas: developing a system for adapting newcomers to the SoftLoft team and forming a clear, modern system of tasks and motivation for an HR specialist.",
+        "We worked with wonderful professionals — Maria Karpenko and Tatyana Ryazantseva. This was a real example of well-coordinated teamwork. Maria and Tatyana did not just fulfill a technical task — they immersed themselves in our reality, in the specifics of real estate, in the SoftLoft atmosphere. Instead of a 'template approach', we received a systematic, flexible and very human adaptation model that takes into account both the ambitions of a newcomer and the realities of the team."
+      ],
+      "items-second": [
+        "It felt like they went the whole way with us — from the strategic vision to the daily details. And most importantly, the proposed solutions were not detached from life. They are accurate, logical, and meet the challenges of the time. The recommendations and projects we received are easy to integrate into internal processes, and they are already working.",
+        "Personally, as a manager, it was important to me that cooperation was not exhausting, but inspiring. And it was. High-quality communication, sincere involvement in our project, clear deadlines and the feeling that you are heard — all this was at the highest level.",
+        "MI Agency is not just a contractor. It is a team that thinks together with you. And if it is important for you not to just 'close the task', but to make the work processes in the team lively, understandable and sustainable — feel free to contact us."
+      ]
+    }
+  }
 }

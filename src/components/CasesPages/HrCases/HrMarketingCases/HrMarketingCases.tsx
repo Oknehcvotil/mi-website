@@ -6,11 +6,11 @@ import {
 import { motion } from "framer-motion";
 import CaseInfoCard from "../../../CaseInfoCard/CaseInfoCard";
 import CasesMessage from "../../../CasesMessage/CasesMessage";
-import { hrItItems } from "../../../../lib/data/cases.hr";
+import { hrMarketingItems } from "../../../../lib/data/cases.hr";
 
 const NS = "casesHr";
 
-const HrItCases = () => {
+const HrMarketingCases = () => {
   return (
     <motion.section
       initial="hidden"
@@ -20,7 +20,7 @@ const HrItCases = () => {
     >
       <motion.div variants={blockV}>
         <AppSlider>
-          {hrItItems.map((item, i) => {
+          {hrMarketingItems.map((item, i) => {
             switch (item.type) {
               case "case":
                 return (
@@ -29,6 +29,8 @@ const HrItCases = () => {
                     translationNs={NS}
                     keyPrefix={item.keyPrefix}
                     logos={item.logos}
+                    logoTitle={item.logoTitle}
+                    className={item.className}
                   />
                 );
               case "msg":
@@ -43,4 +45,4 @@ const HrItCases = () => {
   );
 };
 
-export default HrItCases;
+export default HrMarketingCases;

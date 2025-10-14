@@ -1,5 +1,5 @@
 import type { CasesHeroConfig } from "../types/cases.hero.types";
-import type { CasesItem, NoVideoCasesItem } from "../types/cases.recruitment";
+import type { CasesItem, NoVideoCasesItem } from "../types/cases.types"
 
 export const recruitmentCasesConfig: CasesHeroConfig = {
   translationNs: "casesRecruitment",
