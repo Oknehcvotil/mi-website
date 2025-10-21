@@ -11,17 +11,16 @@ import PhdReviewCard from "./PhdReviewCard/PhdReviewCard";
 import ReqAndResultCard from "./ReqAndResultCard/ReqAndResultCard";
 
 const NS = "servicesPHD";
-const IMG = "/images/phd-cases/example";
 
 const PhdCasesServices = () => {
   const { t } = useTranslation(NS);
 
-  const Review = (base: "cases.alina" | "cases.iryna") => (
+  const Review = (base: string, img: string) => (
     <PhdReviewCard
       translationNs={NS}
       nameKey={`${base}.name`}
       reviewKey={`${base}.review`}
-      imgSrc={IMG}
+      imgSrc={img}
     />
   );
   const ReqRes = (base: "cases.alina" | "cases.iryna") => (
@@ -45,10 +44,12 @@ const PhdCasesServices = () => {
 
       <motion.div variants={blockV}>
         <AppSlider>
-          {Review("cases.alina")}
+          {Review("cases.alina", "/images/phd-cases/alina")}
           {ReqRes("cases.alina")}
-          {Review("cases.iryna")}
+          {Review("cases.iryna", "/images/phd-cases/iryna")}
           {ReqRes("cases.iryna")}
+          {Review("cases.elizaveta", "/images/phd-cases/elizaveta")}
+          {Review("cases.olesya", "/images/phd-cases/olesya")}
         </AppSlider>
       </motion.div>
     </PhdCasesWrapper>
