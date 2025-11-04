@@ -38,6 +38,12 @@ export const CardTitle = styled.h2`
     -webkit-text-fill-color: transparent;
     font-size: 40px;
   }
+
+  &.for-clients {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 117%;
+  }
 `;
 
 export const FeaturesItems = styled.li`

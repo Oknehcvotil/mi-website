@@ -69,10 +69,10 @@ const ContactSection = () => {
               <picture>
                 <source
                   type="image/webp"
-                  srcSet="/images/mob/team/maria-cco.webp 1x, /images/mob/team/maria-cco@2x.webp 2x, /images/mob/team/maria-cco@3x.webp 3x"
+                  srcSet="/images/maria-cco.webp 1x, /images/maria-cco@2x.webp 2x, /images/maria-cco@3x.webp 3x"
                 />
                 <img
-                  src="/images/mob/team/maria-cco.webp"
+                  src="/images/maria-cco.webp"
                   alt={t("person.photoAlt")}
                   loading="lazy"
                 />

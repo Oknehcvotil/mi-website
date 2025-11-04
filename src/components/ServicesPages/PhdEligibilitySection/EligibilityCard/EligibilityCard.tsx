@@ -7,16 +7,18 @@ import {
   EligibilityTitle,
 } from "./EligibilityCard.styled";
 
+type Item = { key: string; icon: string; width: number; height: number };
+
 type EligibilityCardProps = {
   translationNs: string;
   titleKey: string;
-  itemsKeys: string[];
+  items: Item[];
 };
 
 const EligibilityCard = ({
   translationNs,
   titleKey,
-  itemsKeys,
+  items,
 }: EligibilityCardProps) => {
   const { t } = useTranslation(translationNs);
   const reduce = useReducedMotion();
@@ -32,10 +34,13 @@ const EligibilityCard = ({
       </EligibilityTitle>
 
       <EligibilityCardList>
-        {itemsKeys.map((k) => (
-          <EligibilityItem key={k}>
+        {items.map(({ key, icon, width, height }) => (
+          <EligibilityItem key={key}>
+            <svg width={width} height={height}>
+              <use href={`/icons/sprite.svg#icon-${icon}`}></use>
+            </svg>
             <p>
-              <Trans t={t} i18nKey={k} components={{ 1: <strong /> }} />
+              <Trans t={t} i18nKey={key} components={{ 1: <strong /> }} />
             </p>
           </EligibilityItem>
         ))}

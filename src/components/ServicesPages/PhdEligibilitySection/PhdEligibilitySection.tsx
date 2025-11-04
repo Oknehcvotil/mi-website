@@ -11,25 +11,12 @@ import {
   EligibilityWrap,
 } from "./PhdEligibilitySection.styled";
 import EligibilityCard from "./EligibilityCard/EligibilityCard";
+import { upskillItems, zeroToProItems } from "../../../lib/data/services.pages";
 
 const PhdEligibilitySection = () => {
   const ns = "servicesPHD";
   const { t } = useTranslation(ns);
   const reduce = useReducedMotion();
-
-  const zeroToProKeys = [
-    "zero.items.0",
-    "zero.items.1",
-    "zero.items.2",
-    "zero.items.3",
-  ];
-
-  const upskillKeys = [
-    "upskill.items.0",
-    "upskill.items.1",
-    "upskill.items.2",
-    "upskill.items.3",
-  ];
 
   return (
     <EligibilityWrap
@@ -44,7 +31,7 @@ const PhdEligibilitySection = () => {
           <EligibilityCard
             translationNs={ns}
             titleKey="zero.title"
-            itemsKeys={zeroToProKeys}
+            items={zeroToProItems}
           />
         </motion.div>
 
@@ -52,7 +39,7 @@ const PhdEligibilitySection = () => {
           <EligibilityCard
             translationNs={ns}
             titleKey="upskill.title"
-            itemsKeys={upskillKeys}
+            items={upskillItems}
           />
         </motion.div>
 

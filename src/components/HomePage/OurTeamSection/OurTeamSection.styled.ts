@@ -40,7 +40,5 @@ export const SliderCont = styled(motion.div)`
   background-position: center calc(100% - 35px);
   background-repeat: no-repeat;
 
-  img {
-    height: 450px;
-  }
+  
 `;

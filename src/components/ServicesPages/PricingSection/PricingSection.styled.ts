@@ -12,4 +12,6 @@ export const CardsList = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 40px;
+
+  
 `;

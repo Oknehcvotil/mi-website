@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 
 export const CardCont = styled.article`
   position: relative;
-  padding-top: 26px;
 
   img {
     margin-bottom: 35px;
