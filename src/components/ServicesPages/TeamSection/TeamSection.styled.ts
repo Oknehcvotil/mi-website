@@ -82,25 +82,27 @@ export const LeftImgCont = styled.div`
   max-width: 390px;
   width: 100%;
   overflow: hidden;
-  min-height: 365px;
+  height: auto;
+  min-height: 370px;
 
   bottom: 0;
   left: 0;
-  z-index: 2;
 
   &.daria {
-    min-height: 405px;
+    min-height: 370px;
+
+    img {
+      bottom: -30px;
+      left: -50px;
+    }
   }
 
   img {
     position: absolute;
     bottom: -40px;
-    left: -90px;
-
-    &.daria {
-      bottom: -30px;
-      left: -120px;
-    }
+    left: -20px;
+    width: 80%;
+    height: auto;
   }
 `;
 
@@ -109,19 +111,13 @@ export const RightImgCont = styled.div`
   max-width: 390px;
   width: 100%;
   overflow: hidden;
-  min-height: 365px;
-
-  &.tatyana-height {
-    min-height: 405px;
-  }
+  min-height: 370px;
+  z-index: 3;
 
   img {
     position: absolute;
-    bottom: -40px;
-    right: -110px;
-
-    &.tatyana-height {
-      bottom: 0;
-    }
+    bottom: -55px;
+    right: -40px;
+    width: 80%;
   }
 `;

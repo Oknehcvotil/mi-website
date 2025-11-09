@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const StatsWrap = styled.div`
   position: absolute;
-  bottom: 65px;
+  bottom: 100px;
   left: 35px;
   border-radius: 13px;
   background: linear-gradient(
@@ -31,12 +31,12 @@ export const StatsWrap = styled.div`
   }
 
   &.badge-left {
-    bottom: 80px;
+    bottom: 125px;
     left: 20px;
   }
 
   &.badge-right {
-    bottom: 14px;
+    bottom: 50px;
     left: 140px;
   }
 `;

@@ -25,7 +25,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({ data }) => {
 
   return (
     <CardCont aria-label={`${data.name}, ${data.role}`}>
-      <NameCont>
+      <NameCont className={`team-${data.id}`}>
         <h3>{data.name}</h3>
         <p>{data.role}</p>
       </NameCont>

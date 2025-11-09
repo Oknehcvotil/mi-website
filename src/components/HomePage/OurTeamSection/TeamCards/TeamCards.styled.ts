@@ -2,22 +2,45 @@ import styled from "@emotion/styled";
 
 export const CardCont = styled.article`
   position: relative;
-
-  img {
-    margin-bottom: 35px;
-  }
 `;
 
 export const NameCont = styled.div`
   position: absolute;
-  top: 0;
-  left: 30px;
-  max-width: 150px;
-  width: 100%;
+  top: 20px;
   font-weight: 700;
   font-size: 20px;
   color: #000;
   line-height: 112%;
+
+  &.team-irina {
+    right: 15px;
+  }
+
+  &.team-tatyana {
+    max-width: 145px;
+    width: 100%;
+    left: 20px;
+    top: 160px;
+  }
+
+  &.team-maria {
+    max-width: 130px;
+    width: 100%;
+    right: 0;
+    top: 30px;
+  }
+
+  &.team-anastasia {
+    max-width: 130px;
+    width: 100%;
+    right: 0;
+  }
+
+  &.team-daria {
+    left: 20px;
+    max-width: 130px;
+    width: 100%;
+  }
 
   p {
     font-weight: 500;
