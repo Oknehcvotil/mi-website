@@ -27,9 +27,7 @@ const AdditionalServices = () => {
           key={s.key}
           variants={reduce ? undefined : itemVariants}
         >
-          <button type="button" aria-label={t(s.key)}>
-            {t(s.key)}
-          </button>
+          <p>{t(s.key)}</p>
         </AdditionalServicesItems>
       ))}
     </AdditionalServicesList>

@@ -9,7 +9,7 @@ export const SubMenuTitle = styled.span<{
 }>`
   cursor: pointer;
   display: flex;
-  justify-content: ${({ justify }) => justify ?? "center"};
+  justify-content: ${({ justify }) => justify ?? "flex-start"};
   align-items: center;
   gap: 7px;
   min-height: 45px;
@@ -71,7 +71,7 @@ export const SubMenuTitle = styled.span<{
 export const SubMenuList = styled(motion.ul)`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   padding: 13px 17px;
   border: 2px solid #a066ff;

@@ -8,7 +8,7 @@ import {
 } from "../../../lib/data/services.pages";
 import PricingSection from "../../../components/ServicesPages/PricingSection/PricingSection";
 import TeamSection from "../../../components/ServicesPages/TeamSection/TeamSection";
-import CandidatesCasesSection from "../../../components/ServicesPages/CandidatesCasesSection/CandidatesCasesSection";
+// import CandidatesCasesSection from "../../../components/ServicesPages/CandidatesCasesSection/CandidatesCasesSection";
 
 function ForCandidates() {
   return (
@@ -16,7 +16,7 @@ function ForCandidates() {
       <ServicesHero content={forCandidatesHeroContent} />
       <PricingSection plans={forCandidatesPlans} />
       <TeamSection config={teamForCandidatesConfig} />
-      <CandidatesCasesSection />
+      {/* <CandidatesCasesSection /> */}
       <ContactSection />
     </React.Fragment>
   );
