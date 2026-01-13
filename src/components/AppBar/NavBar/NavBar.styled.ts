@@ -19,7 +19,7 @@ export const MainLink = styled(NavLink)`
   border: 2px solid #a066ff;
   border-radius: 8px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   min-height: 45px;
   height: 100%;

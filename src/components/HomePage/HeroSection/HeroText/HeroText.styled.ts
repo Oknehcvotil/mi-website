@@ -7,9 +7,9 @@ export const Wrapper = styled(motion.div)`
   margin: 0 auto 10px;
 `;
 
-export const HeroTitle = styled(motion.h1)`
+export const HeroTitle = styled(motion.h1)<{ lang: string }>`
   font-weight: 500;
-  font-size: 20px;
+  font-size: ${({ lang }) => (lang === "en" ? "17px" : "20px")};
   font-family: "Unbounded";
   line-height: 24px;
   margin-bottom: 13px;

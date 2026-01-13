@@ -87,25 +87,11 @@ export const teamCards = [
         className: "badge-left",
       },
       {
-        value: "15+",
-        labelKey: "teamStats.specialists",
+        value: "9+",
+        labelKey: "teamStats.yearsInHR",
         className: "badge-right",
       },
     ],
-  },
-  {
-    id: "tatyana",
-    name: "Tatyana",
-    role: "Chief Human Resources Officer",
-    imgBase: "tatyana-human-resourses",
-    stats: [{ value: "9+", labelKey: "teamStats.yearsInHR" }],
-  },
-  {
-    id: "maria",
-    name: "Maria",
-    role: "Сhief Customer Officer",
-    imgBase: "maria-customer",
-    stats: [{ value: "10+", labelKey: "teamStats.countries" }],
   },
   {
     id: "anastasia",
@@ -113,6 +99,20 @@ export const teamCards = [
     role: "Сhief Operation Officer",
     imgBase: "anastasia-operation",
     stats: [{ value: "98%", labelKey: "teamStats.clientLevel" }],
+  },
+  {
+    id: "tatyana",
+    name: "Tatyana",
+    role: "Chief Human Resources Officer",
+    imgBase: "tatyana-human-resourses",
+    stats: [{ value: "15+", labelKey: "teamStats.specialists" }],
+  },
+  {
+    id: "maria",
+    name: "Maria",
+    role: "Сhief Customer Officer",
+    imgBase: "maria-customer",
+    stats: [{ value: "10+", labelKey: "teamStats.countries" }],
   },
   {
     id: "daria",

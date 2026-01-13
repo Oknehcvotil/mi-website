@@ -8,8 +8,9 @@ import { Wrapper, HeroTitle, TitleAccent, SubTitle } from "./HeroText.styled";
 import ConsultBtn from "../../../Buttons/ConsultBtn/ConsultBtn";
 
 const HeroText = () => {
-  const { t } = useTranslation("home");
+  const { t, i18n } = useTranslation("home");
   const reduce = useReducedMotion();
+  const lang = i18n.language;
 
   return (
     <Wrapper
@@ -19,7 +20,7 @@ const HeroText = () => {
       viewport={{ amount: 0.5, once: true }}
       animate={reduce ? "show" : undefined}
     >
-      <HeroTitle variants={textUp}>
+      <HeroTitle variants={textUp} lang={lang}>
         <Trans t={t} i18nKey="heroTitle" components={{ 1: <TitleAccent /> }} />
       </HeroTitle>
 
