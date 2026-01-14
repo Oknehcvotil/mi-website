@@ -1,12 +1,13 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-export const List = styled.ul`
+export const List = styled(motion.ul)`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
+  margin-bottom: 20px;
 `;
 
 export const ListItem = styled(motion.li)`

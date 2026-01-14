@@ -6,7 +6,7 @@ export const HeroPictCont = styled(motion.div)`
   max-width: 390px;
   margin: 0 auto;
 
-  &::after {
+  /* &::after {
     content: "";
     position: absolute;
     left: 0;
@@ -15,7 +15,7 @@ export const HeroPictCont = styled(motion.div)`
     height: 16px;
     width: 100%;
     background: linear-gradient(90deg, #a066ff 0%, #5427b1 100%);
-  }
+  } */
 `;
 
 export const HeroImage = styled.img`

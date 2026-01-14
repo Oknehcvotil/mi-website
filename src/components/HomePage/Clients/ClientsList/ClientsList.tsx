@@ -1,46 +1,53 @@
+import { AnimatePresence } from "framer-motion";
 import { clientsLogos } from "../../../../lib/data/home.page";
 import { List, ListItem } from "./ClientsList.styled";
 
 const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 50,
-  },
+  initial: { opacity: 0, y: 18 },
   animate: (index: number) => ({
     opacity: 1,
     y: 0,
-    transition: {
-      delay: 0.05 * index,
-    },
+    transition: { delay: 0.04 * index },
   }),
 };
 
-const ClientsList = () => {
+type Props = {
+  expanded: boolean;
+  collapsedCount: number;
+};
+
+const ClientsList = ({ expanded, collapsedCount }: Props) => {
+  const visible = expanded
+    ? clientsLogos
+    : clientsLogos.slice(0, collapsedCount);
+
   return (
-    <List>
-      {clientsLogos.map((logo, i) => (
-        <ListItem
-          key={i}
-          variants={fadeInAnimationVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{
-            once: true,
-          }}
-          custom={i}
-        >
-          <img
-            src={`/images/clients-logos/${logo}.webp`}
-            srcSet={`
-                  /images/clients-logos/${logo}.webp 1x,
-                  /images/clients-logos/${logo}@2x.webp 2x,
-                  /images/clients-logos/${logo}@3x.webp 3x
-                `}
-            alt={logo}
-          />
-        </ListItem>
-      ))}
-    </List>
+    <AnimatePresence mode="popLayout" initial={false}>
+      <List layout>
+        {visible.map((logo, i) => (
+          <ListItem
+            layout
+            key={logo} // лучше чем i
+            variants={fadeInAnimationVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            custom={i}
+          >
+            <img
+              src={`/images/clients-logos/${logo}.webp`}
+              srcSet={`
+                /images/clients-logos/${logo}.webp 1x,
+                /images/clients-logos/${logo}@2x.webp 2x,
+                /images/clients-logos/${logo}@3x.webp 3x
+              `}
+              alt={logo}
+              loading="lazy"
+            />
+          </ListItem>
+        ))}
+      </List>
+    </AnimatePresence>
   );
 };
 

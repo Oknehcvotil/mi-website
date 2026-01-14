@@ -2,37 +2,52 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
 export const StatsItem = styled(motion.li)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   position: relative;
+  gap: 10px;
+  position: absolute;
+  right: 15px;
 
-  &:not(:last-of-type) {
-    margin-bottom: 25px;
+  &:nth-of-type(1) {
+    top: 15px;
+  }
+
+  &:nth-of-type(2) {
+    top: 70px;
   }
 
   &:nth-of-type(3) {
-    margin-bottom: 38px;
+    bottom: 70px;
+
+    p {
+      max-width: 130px;
+    }
+  }
+
+  &:last-of-type {
+    bottom: 15px;
+    align-items: baseline;
   }
 `;
 
 export const ValueText = styled.h3`
   font-weight: 800;
-  font-size: 100px;
+  font-size: 50px;
   line-height: 1;
-  background: linear-gradient(90deg, #a066ff 0%, #5427b1 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #fff;
 `;
 
 export const LabelText = styled.p`
-  max-width: 253px;
+  max-width: 70px;
   font-weight: 500;
-  font-size: 25px;
-  line-height: 1;
-  color: #000;
+  font-size: 12px;
+  line-height: 130%;
+  color: #fff;
 
   span {
     position: absolute;
-    top: -25px;
-    left: 0;
+    left: -70px;
   }
 `;

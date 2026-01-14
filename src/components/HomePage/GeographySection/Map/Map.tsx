@@ -61,7 +61,7 @@ const Map =({
   const client = CLIENTS[selected];
   const flagBase = FLAG_SRC[selected];
 
-  // при смене страны сразу отдаём её координаты наружу
+
   useEffect(() => {
     const found = pts[selected];
     if (!found) {

@@ -1,7 +1,13 @@
 import { useTranslation } from "react-i18next";
-import { List, ServicesItems, ServicesLink } from "./ServicesList.styled";
+import {
+  List,
+  ServicesItems,
+  ServicesLink,
+  TitleCont,
+} from "./ServicesList.styled";
 import { useMatch } from "react-router-dom";
 import { servicesLinks } from "../../../../lib/data/home.page";
+import { servicesIcons } from "../../../../lib/data/home.page";
 
 const fadeInAnimationVariants = {
   initial: {
@@ -27,30 +33,40 @@ const ServicesList = () => {
   }) as string[];
   const texts = t("services.text", { returnObjects: true }) as string[];
   const button = t("services.button");
-  const links = servicesLinks;
 
   return (
     <List>
-      {subTitles.map((title, i) => (
-        <ServicesItems
-          key={i}
-          variants={fadeInAnimationVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{
-            once: true,
-          }}
-          custom={i}
-        >
-          <h3>{title}</h3>
-          <p>{texts[i]}</p>
-          <ServicesLink to={`/${currentLang}${links[i]}`}>
-            {button}
-          </ServicesLink>
-        </ServicesItems>
-      ))}
+      {subTitles.map((title, i) => {
+        const icon = servicesIcons[i]; // { name, width, height }
+
+        return (
+          <ServicesItems
+            key={i}
+            variants={fadeInAnimationVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            custom={i}
+          >
+            <TitleCont>
+              <svg width={icon.width} height={icon.height}>
+                <use href={`/icons/sprite.svg#${icon.name}`} />
+              </svg>
+
+              <h3>{title}</h3>
+            </TitleCont>
+
+            <p>{texts[i]}</p>
+
+            <ServicesLink to={`/${currentLang}${servicesLinks[i]}`}>
+              {button}
+            </ServicesLink>
+          </ServicesItems>
+        );
+      })}
     </List>
   );
 };
 
 export default ServicesList;
+

@@ -26,4 +26,12 @@ export const CustomSocialLink = styled.a`
       margin-right: 3px;
     }
   }
+
+  &.team-card-social {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+  }
 `;

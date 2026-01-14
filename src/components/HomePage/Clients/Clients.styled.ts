@@ -18,3 +18,22 @@ export const Title = styled.h2`
     color: #a066ff;
   }
 `;
+
+export const CollapsBtn = styled.button`
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 75%;
+  color: #020202;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 auto;
+
+  svg {
+    transition: transform 0.25s ease;
+  }
+
+  &[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+  }
+`;

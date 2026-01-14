@@ -1,10 +1,21 @@
 import { Trans, useTranslation } from "react-i18next";
+import { useState } from "react";
 import Container from "../../Container/Container";
-import { SectionWrap, Title } from "./Clients.styled";
+import { CollapsBtn, SectionWrap, Title } from "./Clients.styled";
 import ClientsList from "./ClientsList/ClientsList";
+import { clientsLogos } from "../../../lib/data/home.page";
+
+// если хочешь разное кол-во на моб/десктоп — проще сделать через CSS,
+// но стартовое N тут:
+const COLLAPSED_COUNT = 6;
 
 const Clients = () => {
   const { t } = useTranslation("home");
+  const [expanded, setExpanded] = useState(false);
+
+  const canToggle = clientsLogos.length > COLLAPSED_COUNT;
+
+  const buttonText = expanded ? t("clientsCollapse") : t("clientsMore");
 
   return (
     <SectionWrap>
@@ -12,7 +23,21 @@ const Clients = () => {
         <Title>
           <Trans t={t} i18nKey="clientsTitle" components={{ 1: <span /> }} />
         </Title>
-        <ClientsList />
+
+        <ClientsList expanded={expanded} collapsedCount={COLLAPSED_COUNT} />
+
+        {canToggle && (
+          <CollapsBtn
+            type="button"
+            onClick={() => setExpanded((p) => !p)}
+            aria-expanded={expanded}
+          >
+            {buttonText}
+            <svg width={20} height={9}>
+              <use href="/icons/sprite.svg#icon-collaps-arrow" />
+            </svg>
+          </CollapsBtn>
+        )}
       </Container>
     </SectionWrap>
   );

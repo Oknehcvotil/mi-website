@@ -18,19 +18,25 @@ export const ServicesItems = styled(motion.li)`
   box-shadow: 0 0 50px 0 rgba(141, 141, 141, 0.15);
   background: rgba(255, 255, 255, 0.5);
 
-  h3 {
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 130%;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-
   p {
     font-weight: 400;
     font-size: 15px;
     line-height: 147%;
     margin-bottom: 10px;
+  }
+`;
+
+export const TitleCont = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 10px;
+
+  h3 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+    text-transform: uppercase;
   }
 `;
 

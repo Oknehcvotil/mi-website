@@ -59,7 +59,6 @@ export const clientsLogos = [
   "cbet",
   "novaPoshta",
   "neatpeak",
-  "husky",
   "nauda",
   "aroma",
   "flint",
@@ -92,6 +91,13 @@ export const teamCards = [
         className: "badge-right",
       },
     ],
+    link: {
+      id: "linkedin",
+      href: "https://www.linkedin.com/in/maria-karpenko-7451b4183/",
+      labelKey: "socials.linkedin",
+      width: "13px",
+      height: "11px",
+    },
   },
   {
     id: "anastasia",
@@ -99,6 +105,13 @@ export const teamCards = [
     role: "Сhief Operation Officer",
     imgBase: "anastasia-operation",
     stats: [{ value: "98%", labelKey: "teamStats.clientLevel" }],
+    link: {
+      id: "linkedin",
+      href: "https://www.linkedin.com/in/maria-karpenko-7451b4183/",
+      labelKey: "socials.linkedin",
+      width: "13px",
+      height: "11px",
+    },
   },
   {
     id: "tatyana",
@@ -106,6 +119,13 @@ export const teamCards = [
     role: "Chief Human Resources Officer",
     imgBase: "tatyana-human-resourses",
     stats: [{ value: "15+", labelKey: "teamStats.specialists" }],
+    link: {
+      id: "linkedin",
+      href: "https://www.linkedin.com/in/maria-karpenko-7451b4183/",
+      labelKey: "socials.linkedin",
+      width: "13px",
+      height: "11px",
+    },
   },
   {
     id: "maria",
@@ -113,6 +133,13 @@ export const teamCards = [
     role: "Сhief Customer Officer",
     imgBase: "maria-customer",
     stats: [{ value: "10+", labelKey: "teamStats.countries" }],
+    link: {
+      id: "linkedin",
+      href: "https://www.linkedin.com/in/maria-karpenko-7451b4183/",
+      labelKey: "socials.linkedin",
+      width: "13px",
+      height: "11px",
+    },
   },
   {
     id: "daria",
@@ -125,6 +152,13 @@ export const teamCards = [
         labelKey: "teamStats.closedVacancy",
       },
     ],
+    link: {
+      id: "linkedin",
+      href: "https://www.linkedin.com/in/maria-karpenko-7451b4183/",
+      labelKey: "socials.linkedin",
+      width: "13px",
+      height: "11px",
+    },
   },
 ];
 
@@ -189,5 +223,71 @@ export const homeLinks = [
     name: "Contact",
     hash: "#contact",
     label: "sectionLinks.contatcs",
+  },
+] as const;
+
+export const servicesIcons = [
+  {
+    name: "icon-recruitmanet",
+    width: 30,
+    height: 30,
+  },
+  {
+    name: "icon-hr",
+    width: 32,
+    height: 32,
+  },
+  {
+    name: "icon-business",
+    width: 30,
+    height: 30,
+  },
+  {
+    name: "icon-career",
+    width: 30,
+    height: 30,
+  },
+  {
+    name: "icon-phd",
+    width: 30,
+    height: 30,
+  },
+] as const;
+
+export const teamSocials = [
+  {
+    id: "linkedin",
+    href: "https://www.linkedin.com/in/maria-karpenko-7451b4183/",
+    labelKey: "socials.linkedin",
+    width: "13px",
+    height: "11px",
+  },
+  {
+    id: "linkedin",
+    href: "https://www.linkedin.com/in/maria-karpenko-7451b4183/",
+    labelKey: "socials.linkedin",
+    width: "13px",
+    height: "11px",
+  },
+  {
+    id: "linkedin",
+    href: "https://www.linkedin.com/in/maria-karpenko-7451b4183/",
+    labelKey: "socials.linkedin",
+    width: "13px",
+    height: "11px",
+  },
+  {
+    id: "linkedin",
+    href: "https://www.linkedin.com/in/maria-karpenko-7451b4183/",
+    labelKey: "socials.linkedin",
+    width: "13px",
+    height: "11px",
+  },
+  {
+    id: "linkedin",
+    href: "https://www.linkedin.com/in/maria-karpenko-7451b4183/",
+    labelKey: "socials.linkedin",
+    width: "13px",
+    height: "11px",
   },
 ] as const;

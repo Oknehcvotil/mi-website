@@ -68,7 +68,6 @@ export const ConsultBtnStyled = styled.a<{
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 202px;
   width: 100%;
   min-height: 40px;
   height: 100%;

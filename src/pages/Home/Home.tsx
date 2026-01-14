@@ -1,5 +1,5 @@
 import ContactSection from "../../components/ContactSection/ContactSection";
-import SectionNav from "../../components/SectionNav/SectionNav";
+// import SectionNav from "../../components/SectionNav/SectionNav";
 import AboutUsSection from "../../components/HomePage/AboutUsSection/AboutUsSection";
 import ClientsSection from "../../components/HomePage/ClientsSection/ClientsSection";
 import ServicesSection from "../../components/HomePage/ServicesSection/ServicesSection";
@@ -12,7 +12,7 @@ function Home() {
       <ClientsSection />
       <ServicesSection />
       <ContactSection />
-      <SectionNav />
+      {/* <SectionNav /> */}
     </React.Fragment>
   );
 }

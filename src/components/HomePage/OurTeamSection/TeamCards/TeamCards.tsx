@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import StatsBadge from "../StatsBadge/StatsBadge";
 import { CardCont, NameCont } from "./TeamCards.styled";
+import SocialLink from "../../../Buttons/SocialLink/SocialLink";
 
 type StatItem = {
   value: string;
@@ -14,6 +15,13 @@ export type TeamCardData = {
   role: string;
   imgBase: string;
   stats?: StatItem[];
+  link: {
+    id: string;
+    href: string;
+    labelKey: string;
+    width: string;
+    height: string;
+  };
 };
 
 type TeamCardProps = {
@@ -38,6 +46,16 @@ export const TeamCard: React.FC<TeamCardProps> = ({ data }) => {
                 `}
         alt={`${data.name} photo`}
         loading="lazy"
+      />
+
+      <SocialLink
+        key={data.link.id}
+        id={data.link.id}
+        href={data.link.href}
+        ariaLabel={t(data.link.labelKey ?? "")}
+        width={data.link.width}
+        height={data.link.height}
+        className="team-card-social"
       />
 
       {data.stats?.map((s, i) => (

@@ -1,6 +1,6 @@
 {
   "heroTitle": "<1>Full HR Solution:</1> talents, processes, business psychology",
-  "subtitle": "Effectively closing the most complex vacancies and business needs in IT, Gamedev and WEB 3.0.",
+  "subtitle": "Effectively closing the most complex vacancies and business needs in IT, Gamedev and WEB 3.0., Real Estate and Marketing",
   "competencies": {
     "title": "OUR AREAS OF EXPERTISE:",
     "list": [
@@ -77,7 +77,7 @@
       "A package of services for successful employment and creating an impressive professional resume.",
       "We teach modern recruiting: from basics to advanced tools. Ideal for both beginners and practicing professionals."
     ],
-    "button": "learne more"
+    "button": "learn more"
   },
   "teamStats": {
     "yearsInBiz": "years in business psychology",
@@ -99,5 +99,7 @@
     "clients": "Clients",
     "services": "Services",
     "contatcs": "Contacts"
-  }
+  },
+  "clientsMore": "Learn more",
+  "clientsCollapse": "Collapse"
 }

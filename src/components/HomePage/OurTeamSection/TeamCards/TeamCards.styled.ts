@@ -13,26 +13,26 @@ export const NameCont = styled.div`
   line-height: 112%;
 
   &.team-irina {
-    right: 15px;
+    left: 50px;
   }
 
   &.team-tatyana {
     max-width: 145px;
     width: 100%;
-    left: 20px;
-    top: 160px;
+    left: 8px;
+    top: 70px;
   }
 
   &.team-maria {
     max-width: 130px;
     width: 100%;
-    right: 0;
-    top: 30px;
+    left: 8px;
   }
 
   &.team-anastasia {
     max-width: 130px;
     width: 100%;
+    top: 70px;
     right: 0;
   }
 
