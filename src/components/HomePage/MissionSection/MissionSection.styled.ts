@@ -19,6 +19,7 @@ export const SectionCont = styled.div`
   height: 540px;
   position: relative;
   overflow: hidden;
+  margin: 0 auto;
 `;
 
 export const SubTitle = styled.h3`

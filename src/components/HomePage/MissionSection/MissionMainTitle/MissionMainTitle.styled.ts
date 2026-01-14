@@ -6,7 +6,7 @@ export const TitleCont = styled(motion.div)<{ lang: string }>`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 0 auto 16px;
+  margin: 0 auto;
   max-width: ${({ lang }) => (lang === "en" ? "290px" : "265px")};
   width: 100%;
   overflow: hidden;

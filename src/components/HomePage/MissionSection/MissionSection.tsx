@@ -12,26 +12,21 @@ const MissionSection = () => {
 
   return (
     <Wrap>
-      <Container style={{ padding: 0 }}>
+      <Container style={{ marginBottom: 16 }}>
         <MissionMainTitle />
-        <SectionCont>
-          <StatsList
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            {statsCards.map((c, idx) => (
-              <StatsItemCard key={idx} value={c.value} labelKey={c.label} />
-            ))}
-          </StatsList>
-        </SectionCont>
-
-        {/* <div>
-          <SubTitle>{t("values.title")}</SubTitle>
-          <ValuesGrid />
-        </div> */}
       </Container>
+      <SectionCont>
+        <StatsList
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {statsCards.map((c, idx) => (
+            <StatsItemCard key={idx} value={c.value} labelKey={c.label} />
+          ))}
+        </StatsList>
+      </SectionCont>
     </Wrap>
   );
 };
