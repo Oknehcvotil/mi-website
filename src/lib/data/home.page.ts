@@ -93,7 +93,7 @@ export const teamCards = [
     ],
     link: {
       id: "linkedin",
-      href: "https://www.linkedin.com/in/maria-karpenko-7451b4183/",
+      href: "https://www.linkedin.com/in/iirinami/",
       labelKey: "socials.linkedin",
       width: "13px",
       height: "11px",
@@ -107,7 +107,7 @@ export const teamCards = [
     stats: [{ value: "98%", labelKey: "teamStats.clientLevel" }],
     link: {
       id: "linkedin",
-      href: "https://www.linkedin.com/in/maria-karpenko-7451b4183/",
+      href: "https://www.linkedin.com/in/anastasiia-belousova-7311b418b/",
       labelKey: "socials.linkedin",
       width: "13px",
       height: "11px",
@@ -121,7 +121,7 @@ export const teamCards = [
     stats: [{ value: "15+", labelKey: "teamStats.specialists" }],
     link: {
       id: "linkedin",
-      href: "https://www.linkedin.com/in/maria-karpenko-7451b4183/",
+      href: "https://www.linkedin.com/in/tatyana-ryazantseva-freedom/",
       labelKey: "socials.linkedin",
       width: "13px",
       height: "11px",
@@ -154,7 +154,7 @@ export const teamCards = [
     ],
     link: {
       id: "linkedin",
-      href: "https://www.linkedin.com/in/maria-karpenko-7451b4183/",
+      href: "https://www.linkedin.com/in/daria-boitsova-2a13a7215/",
       labelKey: "socials.linkedin",
       width: "13px",
       height: "11px",
