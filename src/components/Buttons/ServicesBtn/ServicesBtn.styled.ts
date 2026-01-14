@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
+import { NavLink } from "react-router-dom";
 
-export const ServButton = styled.a`
+export const ServButton = styled(NavLink)`
   border: 2px solid #a066ff;
   border-radius: 8px;
   padding: 12px 9px;
@@ -14,7 +15,8 @@ export const ServButton = styled.a`
   margin-right: 15px;
 
   &:hover,
-  &:focus {
+  &:focus,
+  &.active {
     background: linear-gradient(90deg, #a066ff 0%, #5427b1 100%);
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     color: #fff;

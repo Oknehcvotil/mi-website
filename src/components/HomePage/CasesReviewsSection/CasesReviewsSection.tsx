@@ -1,5 +1,9 @@
 import { Trans, useTranslation } from "react-i18next";
-import { CasesTitle, CasesWrapper } from "./CasesReviewsSection.styled";
+import {
+  CasesTitle,
+  CasesWrapper,
+  ReviewsLink,
+} from "./CasesReviewsSection.styled";
 import VideoReviewCard from "../../VideoReviewCard/VideoReviewCard";
 import CaseInfoCard from "../../CaseInfoCard/CaseInfoCard";
 import AppSlider from "../../AppSlider/AppSlider";
@@ -10,9 +14,12 @@ import {
   titleV,
 } from "../../../lib/animations/home/animations.swipers";
 import { motion } from "framer-motion";
+import { useMatch } from "react-router-dom";
 
 const CasesReviewsSection = () => {
   const { t } = useTranslation("home");
+  const match = useMatch("/:lang/*");
+  const currentLang = match?.params.lang ?? "en";
 
   return (
     <CasesWrapper
@@ -24,7 +31,7 @@ const CasesReviewsSection = () => {
       <CasesTitle variants={titleV}>
         <Trans t={t} i18nKey="casesTitle" components={{ 1: <span /> }} />
       </CasesTitle>
-      <motion.div variants={blockV}>
+      <motion.div variants={blockV} style={{ marginBottom: "20px" }}>
         <AppSlider>
           {casesReviewsSlides.map((slide, i) =>
             slide.type === "video" ? (
@@ -45,6 +52,9 @@ const CasesReviewsSection = () => {
           )}
         </AppSlider>
       </motion.div>
+      <ReviewsLink to={`/${currentLang}/cases/recruitment`}>
+        {t("moreCasesAndReviews")}
+      </ReviewsLink>
     </CasesWrapper>
   );
 };

@@ -13,8 +13,8 @@ export const TeamCont = styled(motion.div)`
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 25px;
-    background: #d9d9d9;
+    height: 17px;
+    background: #8a38f5;
     z-index: 4;
   }
 `;
@@ -92,15 +92,15 @@ export const LeftImgCont = styled.div`
     min-height: 370px;
 
     img {
-      bottom: -30px;
-      left: -50px;
+      bottom: -40px;
+      left: -70px;
     }
   }
 
   img {
     position: absolute;
-    bottom: -40px;
-    left: -20px;
+    bottom: 5px;
+    left: -50px;
     width: 80%;
     height: auto;
   }
@@ -116,8 +116,8 @@ export const RightImgCont = styled.div`
 
   img {
     position: absolute;
-    bottom: -55px;
-    right: -40px;
+    bottom: -135px;
+    right: -15px;
     width: 80%;
   }
 `;

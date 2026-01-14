@@ -7,8 +7,6 @@ import {
 } from "../../../lib/animations/services/animations.team";
 import { motion } from "framer-motion";
 import {
-  BackgroundText,
-  BackgroundWrap,
   LeftImgCont,
   NamesTitle,
   PositionText,
@@ -27,9 +25,9 @@ const TeamSection = ({ config }: TeamSectionProps) => {
 
   return (
     <section>
-      <BackgroundWrap>
+      {/* <BackgroundWrap>
         <BackgroundText>team team team team team team</BackgroundText>
-      </BackgroundWrap>
+      </BackgroundWrap> */}
       <TeamCont className={config.className}>
         <LeftImgCont className={config.images.leftClassName}>
           <picture>

@@ -2,7 +2,17 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
 export const HrSectionWrap = styled(motion.section)`
-  padding-top: 20px;
+  padding-top: 60px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 17px;
+    background: #8a38f5;
+  }
 `;
 
 export const HrTitle = styled.h2`
@@ -53,4 +63,15 @@ export const HrAdditionalTitle = styled.h3`
   margin: 0 auto 15px;
   max-width: 360px;
   width: 100%;
+`;
+
+export const CollapsBtn = styled.button`
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 75%;
+  color: #020202;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 auto;
 `;

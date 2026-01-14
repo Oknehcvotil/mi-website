@@ -11,12 +11,12 @@ const fadeInAnimationVariants = {
   }),
 };
 
-type Props = {
+type ClientsListProps = {
   expanded: boolean;
   collapsedCount: number;
 };
 
-const ClientsList = ({ expanded, collapsedCount }: Props) => {
+const ClientsList = ({ expanded, collapsedCount }: ClientsListProps) => {
   const visible = expanded
     ? clientsLogos
     : clientsLogos.slice(0, collapsedCount);
@@ -27,7 +27,7 @@ const ClientsList = ({ expanded, collapsedCount }: Props) => {
         {visible.map((logo, i) => (
           <ListItem
             layout
-            key={logo} // лучше чем i
+            key={logo} 
             variants={fadeInAnimationVariants}
             initial="initial"
             whileInView="animate"

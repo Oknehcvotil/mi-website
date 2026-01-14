@@ -76,5 +76,7 @@
     "recruitment": "RECRUITMENT",
     "hrConsulting": "HR CONSULTING",
     "businessPsychology": "BUSINESS PSYCHOLOGY"
-  }
+  },
+  "servicesMore": "Learn more",
+  "servicesCollapse": "Collapse"
 }

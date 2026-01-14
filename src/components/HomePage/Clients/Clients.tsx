@@ -5,8 +5,6 @@ import { CollapsBtn, SectionWrap, Title } from "./Clients.styled";
 import ClientsList from "./ClientsList/ClientsList";
 import { clientsLogos } from "../../../lib/data/home.page";
 
-// если хочешь разное кол-во на моб/десктоп — проще сделать через CSS,
-// но стартовое N тут:
 const COLLAPSED_COUNT = 6;
 
 const Clients = () => {

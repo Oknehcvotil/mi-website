@@ -10,7 +10,7 @@ export const AdditionalServicesList = styled(motion.ul)`
   padding: 0 15px;
   max-width: 390px;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 25px;
 `;
 
 export const AdditionalServicesItems = styled(motion.li)`

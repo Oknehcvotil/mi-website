@@ -37,7 +37,7 @@ export const NameCont = styled.div`
   }
 
   &.team-daria {
-    left: 20px;
+    left: 15px;
     max-width: 130px;
     width: 100%;
   }

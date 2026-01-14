@@ -4,6 +4,16 @@ import { motion } from "framer-motion";
 export const PsyhologyWrap = styled(motion.section)`
   background: rgba(255, 255, 255, 0.4);
   padding: 40px 0;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 17px;
+    background: #8a38f5;
+  }
 `;
 
 export const PsyhologyLeadCont = styled.div`

@@ -1,14 +1,12 @@
 import { useTranslation } from "react-i18next";
 import Container from "../../Container/Container";
 import {
-  PsyhologyImgCont,
   PsyhologyLeadCont,
   PsyhologyWrap,
 } from "./BusinessPsychologySection.styled";
 import { motion } from "framer-motion";
 import {
   fadeUp,
-  imgAppear,
 } from "../../../lib/animations/services/animations.psychology";
 
 const BusinessPsychologySection = () => {
@@ -26,7 +24,7 @@ const BusinessPsychologySection = () => {
           <motion.h2 variants={fadeUp}>{t("psyhology.title")}</motion.h2>
           <motion.p variants={fadeUp}>{t("psyhology.lead")}</motion.p>
         </PsyhologyLeadCont>
-        <PsyhologyImgCont>
+        {/* <PsyhologyImgCont>
           <source
             srcSet="/images/mob/services-pages/users.webp@3x.webp"
             media="(min-resolution: 3dppx)"
@@ -41,7 +39,7 @@ const BusinessPsychologySection = () => {
             alt={t("psyhology.alt")}
             loading="lazy"
           />
-        </PsyhologyImgCont>
+        </PsyhologyImgCont> */}
       </Container>
     </PsyhologyWrap>
   );
