@@ -7,7 +7,15 @@ export const Wrap = styled.div`
 `;
 
 export const SectionCont = styled.div`
-  background-image: url("/images/mob/background/mission-bg.jpg");
+  background-image: image-set(
+    url("/images/mob/background/mission-bg.webp") type("image/webp") 1x,
+    url("/images/mob/background/mission-bg@2x.webp") type("image/webp") 2x,
+    url("/images/mob/background/mission-bg@3x.webp") type("image/webp") 3x,
+
+    url("/images/mob/background/mission-bg.jpg") 1x,
+    url("/images/mob/background/mission-bg@2x.jpg") 2x,
+    url("/images/mob/background/mission-bg@3x.jpg") 3x
+  );
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -28,25 +36,22 @@ export const SectionCont = styled.div`
     z-index: 1;
     pointer-events: none;
 
-    background: 
-    radial-gradient(
+    background: radial-gradient(
         70% 65% at 95% 8%,
         rgba(132, 82, 255, 0.72) 0%,
         rgba(132, 82, 255, 0.45) 40%,
         rgba(132, 82, 255, 0.2) 60%,
         rgba(132, 82, 255, 0) 78%
       ),
-        radial-gradient(
-          70% 65% at 95% 92%,
-          rgba(132, 82, 255, 0.72) 0%,
-          rgba(132, 82, 255, 0.45) 40%,
-          rgba(132, 82, 255, 0.2) 60%,
-          rgba(132, 82, 255, 0) 78%
-        );
+      radial-gradient(
+        70% 65% at 95% 92%,
+        rgba(132, 82, 255, 0.72) 0%,
+        rgba(132, 82, 255, 0.45) 40%,
+        rgba(132, 82, 255, 0.2) 60%,
+        rgba(132, 82, 255, 0) 78%
+      );
     mix-blend-mode: screen;
   }
-
-  
 `;
 
 export const SubTitle = styled.h3`
