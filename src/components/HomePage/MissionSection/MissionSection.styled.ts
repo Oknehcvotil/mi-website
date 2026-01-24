@@ -20,6 +20,33 @@ export const SectionCont = styled.div`
   position: relative;
   overflow: hidden;
   margin: 0 auto;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background: 
+    radial-gradient(
+        70% 65% at 95% 8%,
+        rgba(132, 82, 255, 0.72) 0%,
+        rgba(132, 82, 255, 0.45) 40%,
+        rgba(132, 82, 255, 0.2) 60%,
+        rgba(132, 82, 255, 0) 78%
+      ),
+        radial-gradient(
+          70% 65% at 95% 92%,
+          rgba(132, 82, 255, 0.72) 0%,
+          rgba(132, 82, 255, 0.45) 40%,
+          rgba(132, 82, 255, 0.2) 60%,
+          rgba(132, 82, 255, 0) 78%
+        );
+    mix-blend-mode: screen;
+  }
+
+  
 `;
 
 export const SubTitle = styled.h3`
