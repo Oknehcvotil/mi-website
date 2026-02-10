@@ -130,7 +130,6 @@ export const PHDPlans: Plan[] = [
       { key: "plans.pOne.features.2" },
       { key: "plans.pOne.features.3" },
     ],
-    topSale: true,
     className: "top--one",
   },
   {
