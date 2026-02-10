@@ -73,7 +73,7 @@ export const VacList = styled.ul`
     p {
       font-weight: 700;
       font-size: 15px;
-      line-height: 100%;
+      line-height: 110%;
       background: linear-gradient(90deg, #a066ff 0%, #5427b1 100%);
       background-clip: text;
       -webkit-background-clip: text;
