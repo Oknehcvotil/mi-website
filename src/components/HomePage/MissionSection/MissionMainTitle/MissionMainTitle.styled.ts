@@ -14,6 +14,13 @@ export const TitleCont = styled(motion.div)<{ lang: string }>`
   @media (min-width: 375px) {
     max-width: ${({ lang }) => (lang === "en" ? "100%" : "265px")};
   }
+
+  @media (min-width: 768px) {
+    max-width: 100%;
+    flex-direction: ${({ lang }) => (lang === "en" ? "column" : "row")};
+    position: relative;
+    justify-content: ${({ lang }) => (lang === "en" ? "center" : "flex-start")};
+  }
 `;
 
 export const Title = styled(motion.h2)<{ lang: string }>`
@@ -30,10 +37,14 @@ export const Title = styled(motion.h2)<{ lang: string }>`
   @media (min-width: 375px) {
     font-size: ${({ lang }) => (lang === "en" ? "82px" : "90px")};
   }
+
+  @media (min-width: 768px) {
+    font-size: 90px;
+    line-height: 100%;
+  }
 `;
 
 export const TitleText = styled(motion.p)`
-  background: linear-gradient(270deg, #a066ff 0%, #5427b1 100%);
   display: flex;
   justify-content: center;
   padding: 10px 0 10px 15px;
@@ -44,13 +55,31 @@ export const TitleText = styled(motion.p)`
   margin: 0;
   position: relative;
 
-  &::after {
-    content: "";
-    height: 3px;
-    position: absolute;
-    top: -1px;
-    left: 0;
+  @media (max-width: 767px) {
     background: linear-gradient(270deg, #a066ff 0%, #5427b1 100%);
-    width: 100%;
+    &::after {
+      content: "";
+      height: 3px;
+      position: absolute;
+      top: -1px;
+      left: 0;
+      background: linear-gradient(270deg, #a066ff 0%, #5427b1 100%);
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    background: ${({ lang }) =>
+      lang === "en"
+        ? "linear-gradient(270deg, #a066ff 0%, #5427b1 100%)"
+        : "linear-gradient(90deg, #a066ff 0%, #5427b1 100%)"};
+    position: ${({ lang }) => (lang === "en" ? "static" : "absolute")};
+    max-width: ${({ lang }) => (lang === "en" ? "399px" : "480px")};
+    padding: 11px 20px;
+    height: 63px;
+    left: 270px;
+    top: 50%;
+    transform: ${({ lang }) =>
+      lang === "en" ? "translateY(-21%)" : "translateY(-50%)"};
   }
 `;

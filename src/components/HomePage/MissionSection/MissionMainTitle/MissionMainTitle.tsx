@@ -9,8 +9,8 @@ const MissionMainTitle = () => {
   const { t, i18n } = useTranslation("home");
   const lang = i18n.language;
 
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
     <TitleCont
@@ -21,7 +21,7 @@ const MissionMainTitle = () => {
       transition={{ duration: 0.6, ease: easeIn }}
     >
       <Title lang={lang}>{t("missionTitle")}</Title>
-      <TitleText>{t("missionTitleText")}</TitleText>
+      <TitleText lang={lang}>{t("missionTitleText")}</TitleText>
     </TitleCont>
   );
 };
