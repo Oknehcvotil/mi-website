@@ -1,10 +1,16 @@
 import { Trans, useTranslation } from "react-i18next";
-import { motion, useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "framer-motion";
 import {
   container,
   textUp,
 } from "../../../../lib/animations/home/animations.hero";
-import { Wrapper, HeroTitle, TitleAccent, SubTitle } from "./HeroText.styled";
+import {
+  Wrapper,
+  HeroTitle,
+  TitleAccent,
+  SubTitle,
+  BtnWrapper,
+} from "./HeroText.styled";
 import ConsultBtn from "../../../Buttons/ConsultBtn/ConsultBtn";
 
 const HeroText = () => {
@@ -26,9 +32,9 @@ const HeroText = () => {
 
       <SubTitle variants={textUp}>{t("subtitle")}</SubTitle>
 
-      <motion.div variants={textUp}>
+      <BtnWrapper variants={textUp}>
         <ConsultBtn variant="primary" maxWidth="307px" />
-      </motion.div>
+      </BtnWrapper>
     </Wrapper>
   );
 };

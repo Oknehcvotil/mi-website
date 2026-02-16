@@ -1,8 +1,15 @@
 import { type Dispatch, type SetStateAction, useState, useEffect } from "react";
-import { Header, HeaderWrapper } from "./AppBar.styles";
+import {
+  BurgerMenuBtn,
+  Header,
+  HeaderWrapper,
+  LogoLink,
+} from "./AppBar.styles";
 import ConsultBtn from "../Buttons/ConsultBtn/ConsultBtn";
 import LangSwitcher from "./LangSwitcher/LangSwitcher";
 import ServicesBtn from "../Buttons/ServicesBtn/ServicesBtn";
+import { useMediaQuery } from "../../lib/hooks/useMediaQuery";
+import { useMatch } from "react-router-dom";
 
 type AppBarProps = {
   setMenuIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -10,6 +17,10 @@ type AppBarProps = {
 
 function AppBar({ setMenuIsOpen }: AppBarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const match = useMatch("/:lang/*");
+  const currentLang = match?.params.lang ?? "en";
+
+  const isTablet = useMediaQuery("(min-width: 768px)");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,18 +37,26 @@ function AppBar({ setMenuIsOpen }: AppBarProps) {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
-        <button
-          onClick={() => setMenuIsOpen(true)}
-          style={{ marginRight: "auto" }}
-          type="button"
-        >
+        <BurgerMenuBtn type="button" onClick={() => setMenuIsOpen(true)}>
           <svg width={40} height={40}>
             <use href="/icons/sprite.svg#icon-menu"></use>
           </svg>
-        </button>
+        </BurgerMenuBtn>
+        <LogoLink to={`/${currentLang}`} end>
+          <svg width={70} height={30}>
+            <use
+              href="/icons/sprite.svg#icon-main-logo"
+              xlinkHref="/icons/sprite.svg#icon-main-logo"
+            ></use>
+          </svg>
+        </LogoLink>
         <LangSwitcher />
         <ServicesBtn />
-        <ConsultBtn variant="header" maxWidth="140px" />
+        <ConsultBtn
+          variant="header"
+          maxWidth={isTablet ? "200px" : "140px"}
+          order={isTablet ? 4 : 0}
+        />
       </HeaderWrapper>
     </Header>
   );

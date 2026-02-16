@@ -16,6 +16,10 @@ export const HeroPictCont = styled(motion.div)`
     width: 100%;
     background: linear-gradient(90deg, #a066ff 0%, #5427b1 100%);
   } */
+
+  @media (min-width: 768px) {
+    max-width: 768px;
+  }
 `;
 
 export const HeroImage = styled.img`

@@ -11,4 +11,9 @@ export const Wrapper = styled(motion.div)`
     align-items: center;
     justify-content: space-between;
   }
+
+  @media (min-width: 768px) {
+    max-width: 768px;
+    padding: 0 25px;
+  }
 `;

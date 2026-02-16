@@ -33,6 +33,39 @@ export const ListItem = styled(motion.li)`
     width: 68px;
     height: auto;
   }
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    padding: 25px 10px;
+    min-height: 300px;
+    gap: 15px;
+
+    img {
+      display: inline-block;
+      width: 125px;
+      height: auto;
+    }
+
+    &:nth-of-type(3) {
+      span {
+        font-size: 20px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      span {
+        font-size: 23px;
+      }
+    }
+
+    &:nth-of-type(4) {
+      span {
+        font-size: 25px;
+        display: inline-block;
+        max-width: 200px;
+      }
+    }
+  }
 `;
 
 export const AdvText = styled.h3`
@@ -49,5 +82,16 @@ export const AdvText = styled.h3`
     font-size: 20px;
     line-height: 113%;
     text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 100%;
+    font-size: 20px;
+    text-align: center;
+
+    span {
+      font-size: 25px;
+      text-align: center;
+    }
   }
 `;

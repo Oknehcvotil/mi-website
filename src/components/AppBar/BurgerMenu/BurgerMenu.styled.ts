@@ -19,6 +19,7 @@ export const BurgerCont = styled(motion.aside)`
   left: 0;
   bottom: 0;
   width: 88%;
+  max-width: 350px;
   height: 100dvh;
   background: #fff;
   border-right: 1px solid rgba(0, 0, 0, 0.06);
@@ -30,10 +31,11 @@ export const BurgerCont = styled(motion.aside)`
   padding-left: 15px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain; 
+  overscroll-behavior: contain;
   touch-action: pan-y;
 
   @media (min-width: 768px) {
     width: 50%;
+    max-width: 400px;
   }
 `;

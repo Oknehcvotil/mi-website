@@ -6,12 +6,14 @@ type ConsultBtnProps = {
   variant?: "primary" | "secondary" | "header";
   onClick?: () => void;
   maxWidth?: string;
+  order?: number;
 };
 
 function ConsultBtn({
   variant = "primary",
   onClick,
   maxWidth,
+  order,
 }: ConsultBtnProps) {
   const { t } = useTranslation();
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
@@ -20,6 +22,7 @@ function ConsultBtn({
     <ConsultBtnStyled
       href="#contact"
       variant={variant}
+      order={order}
       onClick={(e) => {
         setActiveSection("Contact");
         setTimeOfLastClick(Date.now());

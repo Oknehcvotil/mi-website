@@ -27,4 +27,9 @@ export const ServButton = styled(NavLink)`
     background: #5427b1;
     transform: scale(0.97);
   }
+
+  @media (min-width: 768px) {
+    order: 1;
+    margin-right: 175px;
+  }
 `;

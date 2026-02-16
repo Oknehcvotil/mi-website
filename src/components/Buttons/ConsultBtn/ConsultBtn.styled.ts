@@ -3,13 +3,14 @@ import styled from "@emotion/styled";
 export const ConsultBtnStyled = styled.a<{
   variant: string;
   maxWidth?: string;
+  order?: number;
 }>`
   position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  order: ${({ order }) => order ?? 0};
   font-weight: 500;
   font-size: 14px;
   line-height: 107%;

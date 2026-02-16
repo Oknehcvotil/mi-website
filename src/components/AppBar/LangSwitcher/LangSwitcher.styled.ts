@@ -6,6 +6,10 @@ export const LangCont = styled.div`
   margin-right: 10px;
   width: 55px;
   min-height: 40px;
+
+  @media (min-width: 768px) {
+    order: 3;
+  }
 `;
 
 export const LangList = styled(motion.ul)`
