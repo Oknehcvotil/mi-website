@@ -10,7 +10,11 @@ import {
   ListCont,
   ActiveBtn,
   SelectBtn,
+  TabList,
+  TabBtn,
+  CountriesTitle,
 } from "./CountrySelector.styled";
+import { useMediaQuery } from "../../../../lib/hooks/useMediaQuery";
 
 type CountrySelectorProps = {
   countries: Country[];
@@ -18,10 +22,9 @@ type CountrySelectorProps = {
   onSelect: (id: CountryId) => void;
 };
 
-
 const easeIn: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-const CountrySelector=({
+const CountrySelector = ({
   countries,
   selected,
   onSelect,
@@ -30,6 +33,8 @@ const CountrySelector=({
   const [isOpen, setIsOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
   const countryLabels = t("map.countries", { returnObjects: true }) as string[];
+
+  const isTablet = useMediaQuery("(min-width: 768px)");
 
   const selectedSafe: CountryId = useMemo(() => {
     const hasSelected = countries.some((c) => c.id === selected);
@@ -69,58 +74,90 @@ const CountrySelector=({
 
   return (
     <SelectorCont ref={rootRef}>
-      <SelectorTitile>{t("map.label")}</SelectorTitile>
+      {isTablet ? (
+        <>
+          <CountriesTitle>{t("map.countriesTitle")}</CountriesTitle>
+          <span className="rail" aria-hidden />
+          <TabList>
+            {countries.map((c) => (
+              <li key={c.id}>
+                <TabBtn
+                  type="button"
+                  data-active={c.id === selected}
+                  onClick={() => onSelect(c.id)}
+                >
+                  {countryLabels[countries.findIndex((cc) => cc.id === c.id)]}
+                </TabBtn>
+              </li>
+            ))}
+          </TabList>
+        </>
+      ) : (
+        <>
+          <SelectorTitile>{t("map.label")}</SelectorTitile>
 
-      <ListCont>
-        <SelectorList
-          id="country-options"
-          aria-label={t("map.label")}
-          aria-expanded={isOpen}
-          isOpen={isOpen}
-          onMouseLeave={close}
-        >
-          {active && (
-            <li key={active.id}>
-              <ActiveBtn
-                type="button"
-                aria-pressed
-                aria-controls="country-options"
-                aria-expanded={isOpen}
-                isOpen={isOpen}
-                onClick={toggleOpen}
-                onKeyDown={onActiveKeyDown}
-              >
-                {countryLabels[countries.findIndex((c) => c.id === active.id)]}
-                <div className="arrow-cont">
-                  <motion.svg
-                    width={7}
-                    height={5}
-                    aria-hidden
-                    animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.14, ease: easeIn }} // стрелка чуть быстрее
+          <ListCont>
+            <SelectorList
+              id="country-options"
+              aria-label={t("map.label")}
+              aria-expanded={isOpen}
+              isOpen={isOpen}
+              onMouseLeave={close}
+            >
+              {active && (
+                <li key={active.id}>
+                  <ActiveBtn
+                    type="button"
+                    aria-pressed
+                    aria-controls="country-options"
+                    aria-expanded={isOpen}
+                    isOpen={isOpen}
+                    onClick={toggleOpen}
+                    onKeyDown={onActiveKeyDown}
                   >
-                    <use href="/icons/sprite.svg#icon-select-arrow" />
-                  </motion.svg>
-                </div>
-              </ActiveBtn>
-            </li>
-          )}
+                    {
+                      countryLabels[
+                        countries.findIndex((c) => c.id === active.id)
+                      ]
+                    }
+                    <div className="arrow-cont">
+                      <motion.svg
+                        width={7}
+                        height={5}
+                        aria-hidden
+                        animate={{ rotate: isOpen ? 180 : 0 }}
+                        transition={{ duration: 0.14, ease: easeIn }} 
+                      >
+                        <use href="/icons/sprite.svg#icon-select-arrow" />
+                      </motion.svg>
+                    </div>
+                  </ActiveBtn>
+                </li>
+              )}
 
-          <AnimatePresence initial={false}>
-            {isOpen &&
-              others.map((c) => (
-                <motion.li key={c.id}>
-                  <SelectBtn type="button" onClick={() => handleSelect(c.id)}>
-                    {countryLabels[countries.findIndex((cc) => cc.id === c.id)]}
-                  </SelectBtn>
-                </motion.li>
-              ))}
-          </AnimatePresence>
-        </SelectorList>
-      </ListCont>
+              <AnimatePresence initial={false}>
+                {isOpen &&
+                  others.map((c) => (
+                    <motion.li key={c.id}>
+                      <SelectBtn
+                        type="button"
+                        onClick={() => handleSelect(c.id)}
+                      >
+                        {
+                          countryLabels[
+                            countries.findIndex((cc) => cc.id === c.id)
+                          ]
+                        }
+                      </SelectBtn>
+                    </motion.li>
+                  ))}
+              </AnimatePresence>
+            </SelectorList>
+          </ListCont>
+        </>
+      )}
     </SelectorCont>
   );
-}
-
+};
 
 export default CountrySelector;

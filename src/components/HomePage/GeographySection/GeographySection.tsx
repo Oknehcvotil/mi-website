@@ -1,4 +1,4 @@
-import { Wrap, GeographyTytle } from "./GeographySection.styled";
+import { Wrap, GeographyTytle, MapCont } from "./GeographySection.styled";
 import { useTranslation, Trans } from "react-i18next";
 import type { Country, CountryId } from "../../../lib/types/geo.types";
 import { useState } from "react";
@@ -20,8 +20,8 @@ const GeographySection = () => {
     countries,
     selected,
     onSelect: setSelected,
-    delay: 5000,
-    pauseAfterManual: 7000,
+    delay: 50000000000000000,   
+    pauseAfterManual: 7000000000000000000000,
   });
 
   return (
@@ -30,13 +30,13 @@ const GeographySection = () => {
         <Trans t={t} i18nKey="map.title" components={{ 1: <span /> }} />
       </GeographyTytle>
 
-      <CountrySelector
-        countries={countries}
-        selected={selected}
-        onSelect={onSelectSmart}
-      />
+      <MapCont>
+        <CountrySelector
+          countries={countries}
+          selected={selected}
+          onSelect={onSelectSmart}
+        />
 
-      <div style={{ position: "relative", margin: "0 auto" }}>
         <Map
           selected={selected}
           onSelect={onSelectSmart}
@@ -45,7 +45,7 @@ const GeographySection = () => {
           popupPx={popupPx}
           onPointPixels={setPopupPx}
         />
-      </div>
+      </MapCont>
     </Wrap>
   );
 };

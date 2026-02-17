@@ -37,21 +37,19 @@ const Map =({
   alt = "Geography map",
 }: Props) => {
   const wrapRef = useRef<HTMLDivElement | null>(null);
-  const [wrapW, setWrapW] = useState<number>(0);
   const { i18n } = useTranslation("home");
+ const [width, setWidth] = useState<number>(
+   typeof window !== "undefined" ? window.innerWidth : 0
+ );
 
-  useEffect(() => {
-    const el = wrapRef.current;
-    if (!el) return;
-    const ro = new ResizeObserver((entries) => {
-      setWrapW(entries[0].contentRect.width);
-    });
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, []);
+ useEffect(() => {
+   const onResize = () => setWidth(window.innerWidth);
+   window.addEventListener("resize", onResize, { passive: true });
+   return () => window.removeEventListener("resize", onResize);
+ }, []);
 
-  const key: MapKey = pickKey(wrapW || 0);
-  const mapDef: MapDef = maps[key];
+ const key: MapKey = pickKey(width);
+ const mapDef: MapDef = maps[key];
   const pts = pointsPx[key];
 
 

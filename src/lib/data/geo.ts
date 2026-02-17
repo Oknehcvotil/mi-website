@@ -32,7 +32,6 @@ export const MAPS: Record<MapKey, MapDef> = {
   desk: { src: "/images/map-desc.webp", width: 1365, height: 790 },
 } as const;
 
-/** ПИКСЕЛИ относительно соответствующего базового размера карты выше */
 export const POINTS_PX: Record<MapKey, Record<CountryId, PinPx>> = {
   mob: {
     ukraine: { x: 199, y: 54 },
@@ -51,20 +50,20 @@ export const POINTS_PX: Record<MapKey, Record<CountryId, PinPx>> = {
     switzerland: { x: 173, y: 45 },
   },
   tab: {
-    ukraine: { x: 56, y: 38 },
-    britain: { x: 46, y: 30 },
-    canada: { x: 19, y: 30 },
-    latvia: { x: 53, y: 29 },
-    uae: { x: 63, y: 48 },
-    poland: { x: 55, y: 35 },
-    portugal: { x: 44, y: 38 },
-    turkey: { x: 58, y: 44 },
-    usa: { x: 15, y: 42 },
-    hungary: { x: 54, y: 33 },
-    croatia: { x: 52, y: 35 },
-    czech: { x: 50, y: 32 },
-    montenegro: { x: 53, y: 39 },
-    switzerland: { x: 50, y: 34 },
+    ukraine: { x: 293, y: 62 },
+    britain: { x: 250, y: 38 },
+    canada: { x: 133, y: 39 },
+    latvia: { x: 282, y: 35},
+    uae: { x: 213, y: 144 },
+    poland: { x: 289, y: 54 },
+    portugal: { x: 239, y: 62 },
+    turkey: { x: 168, y: 133 },
+    usa: { x: 119, y: 71 },
+    hungary: { x: 282, y: 42 },
+    croatia: { x: 276, y: 51 },
+    czech: { x: 271, y: 47 },
+    montenegro: { x: 277, y: 63 },
+    switzerland: { x: 265, y: 52 },
   },
   desk: {
     ukraine: { x: 56, y: 38 },

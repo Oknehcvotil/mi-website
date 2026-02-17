@@ -43,6 +43,7 @@
   "map": {
     "title": "geography of <1>mi customers</1>",
     "label": "Choose a country:",
+    "countriesTitle": "Countries",
     "countries": [
       "Ukraine",
       "Britain",

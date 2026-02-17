@@ -8,6 +8,11 @@ export const MapCont = styled.div`
   max-width: 390px;
   width: 100%;
   position: relative;
+
+  @media (min-width: 768px) {
+    max-width: 530px;
+    margin: 0;
+  }
 `;
 
 export const MapImage = styled.img`

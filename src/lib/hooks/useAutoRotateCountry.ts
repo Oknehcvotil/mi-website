@@ -44,13 +44,13 @@ export const useAutoRotateCountry = ({
     }, delay);
   }, [clearTimers, delay, onSelect, order, selected]);
 
-  // запуск / перезапуск автосмены
+  
   useEffect(() => {
     startAuto();
     return clearTimers;
   }, [startAuto, clearTimers]);
 
-  // handler для ручного выбора (клик по карте / селектор)
+  
   const onSelectSmart = useCallback(
     (id: CountryId) => {
       onSelect(id);
