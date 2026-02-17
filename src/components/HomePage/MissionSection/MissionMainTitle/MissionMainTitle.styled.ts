@@ -17,20 +17,38 @@ export const TitleCont = styled(motion.div)<{ lang: string }>`
   }
 
   @media (min-width: 768px) {
-    max-width: 100%;
+    max-width: ${({ lang }) => (lang === "en" ? "370px" : "100%")};
     flex-direction: ${({ lang }) => (lang === "en" ? "column" : "row")};
     justify-content: center;
     overflow: hidden;
 
+    ${({ lang }) =>
+      lang !== "en" &&
+      `
     &::after {
       content: "";
       height: 4px;
       position: absolute;
       top: 21px;
       left: 0;
-      background: #ffff;
+      background: #fff;
       width: 100%;
     }
+  `}
+
+    ${({ lang }) =>
+      lang === "en" &&
+      `
+    &::after {
+      content: "";
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: -1px;
+      background: #fff;
+      width: 8px;
+    }
+  `}
   }
 `;
 
@@ -59,7 +77,7 @@ export const Title = styled(motion.h2)<{ lang: string }>`
   }
 `;
 
-export const TitleText = styled(motion.p)`
+export const TitleText = styled(motion.p)<{ lang: string }>`
   display: flex;
   justify-content: center;
   padding: 10px 0 10px 15px;
@@ -92,6 +110,13 @@ export const TitleText = styled(motion.p)`
     padding: 11px 20px;
     height: 65px;
     max-width: 385px;
-    margin-left: -8px;
+
+    ${({ lang }) =>
+      lang !== "en" &&
+      `
+   margin-left: -8px;
+  `}
+
+    margin-top: -21px;
   }
 `;
