@@ -87,7 +87,7 @@ export const TitleText = styled(motion.p)`
       content: "";
       height: 4px;
       position: absolute;
-      bottom: -3px;
+      bottom: -2px;
       left: 0;
       background: linear-gradient(90deg, #a066ff 0%, #5427b1 100%);
       width: 100%;
@@ -97,7 +97,7 @@ export const TitleText = styled(motion.p)`
       content: "";
       height: 3px;
       position: absolute;
-      top: 0px;
+      top: -1px;
       left: 0;
       background: linear-gradient(90deg, #a066ff 0%, #5427b1 100%);
       width: 100%;
