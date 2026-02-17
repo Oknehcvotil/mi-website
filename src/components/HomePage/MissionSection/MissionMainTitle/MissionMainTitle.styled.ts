@@ -10,6 +10,7 @@ export const TitleCont = styled(motion.div)<{ lang: string }>`
   max-width: ${({ lang }) => (lang === "en" ? "290px" : "265px")};
   width: 100%;
   overflow: hidden;
+  position: relative;
 
   @media (min-width: 375px) {
     max-width: ${({ lang }) => (lang === "en" ? "100%" : "265px")};
@@ -17,10 +18,19 @@ export const TitleCont = styled(motion.div)<{ lang: string }>`
 
   @media (min-width: 768px) {
     max-width: 100%;
-    height: 63px;
     flex-direction: ${({ lang }) => (lang === "en" ? "column" : "row")};
     justify-content: center;
     overflow: hidden;
+
+    &::after {
+      content: "";
+      height: 4px;
+      position: absolute;
+      top: 21px;
+      left: 0;
+      background: #ffff;
+      width: 100%;
+    }
   }
 `;
 
