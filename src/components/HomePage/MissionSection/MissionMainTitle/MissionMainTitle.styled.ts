@@ -17,9 +17,10 @@ export const TitleCont = styled(motion.div)<{ lang: string }>`
 
   @media (min-width: 768px) {
     max-width: 100%;
-
+    height: 63px;
     flex-direction: ${({ lang }) => (lang === "en" ? "column" : "row")};
     justify-content: center;
+    overflow: hidden;
   }
 `;
 
@@ -79,28 +80,8 @@ export const TitleText = styled(motion.p)`
         : "linear-gradient(90deg, #a066ff 0%, #5427b1 100%)"};
     max-width: ${({ lang }) => (lang === "en" ? "399px" : "480px")};
     padding: 11px 20px;
-    height: 60px;
+    height: 65px;
     max-width: 385px;
     margin-left: -8px;
-
-    &::after {
-      content: "";
-      height: 4px;
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      background: linear-gradient(90deg, #a066ff 0%, #5427b1 100%);
-      width: 100%;
-    }
-
-    &::before {
-      content: "";
-      height: 3px;
-      position: absolute;
-      top: -1px;
-      left: 0;
-      background: linear-gradient(90deg, #a066ff 0%, #5427b1 100%);
-      width: 100%;
-    }
   }
 `;
