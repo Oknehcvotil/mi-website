@@ -117,6 +117,10 @@ export const TitleText = styled(motion.p)<{ lang: string }>`
    margin-left: -8px;
   `}
 
+    ${({ lang }) =>
+      lang === "en" &&
+      `
     margin-top: -21px;
+  `}
   }
 `;
