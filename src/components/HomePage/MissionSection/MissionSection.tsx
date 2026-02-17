@@ -1,5 +1,10 @@
 import Container from "../../Container/Container";
-import { SectionCont, StatsList, Wrap } from "./MissionSection.styled";
+import {
+  SectionCont,
+  StatsList,
+  Wrap,
+  PicFrame,
+} from "./MissionSection.styled";
 import MissionMainTitle from "./MissionMainTitle/MissionMainTitle";
 // import { useTranslation } from "react-i18next";
 // import ValuesGrid from "./ValuesGrid/ValuesGrid";
