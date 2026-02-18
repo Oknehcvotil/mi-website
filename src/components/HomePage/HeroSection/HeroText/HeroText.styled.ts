@@ -11,6 +11,13 @@ export const Wrapper = styled(motion.div)`
     margin: 0 auto;
     max-width: 768px;
   }
+
+  @media (min-width: 1920px) {
+    max-width: 925px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
 `;
 
 export const HeroTitle = styled(motion.h1)<{ lang: string }>`
@@ -24,6 +31,12 @@ export const HeroTitle = styled(motion.h1)<{ lang: string }>`
     font-size: 40px;
     line-height: 50px;
   }
+  @media (min-width: 1920px) {
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 62px;
+    margin-bottom: 25px;
+  }
 `;
 
 export const TitleAccent = styled.span`
@@ -33,6 +46,22 @@ export const TitleAccent = styled.span`
   @media (min-width: 768px) {
     font-size: 40px;
     line-height: 50px;
+  }
+
+  @media (min-width: 1920px) {
+    font-weight: 500;
+    font-size: 55px;
+  }
+`;
+
+export const UkraineAccent = styled.span`
+  display: none;
+
+  @media (min-width: 1920px) {
+    display: inline;
+    color: #a066ff;
+    font-weight: 500;
+    font-size: 55px;
   }
 `;
 
@@ -45,11 +74,22 @@ export const SubTitle = styled(motion.p)`
     line-height: 130%;
     margin-bottom: 40px;
   }
+
+  @media (min-width: 1920px) {
+    font-size: 32px;
+    max-width: 760px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
 `;
 
 export const BtnWrapper = styled(motion.div)`
   @media (min-width: 768px) {
     display: flex;
     justify-content: center;
+  }
+
+  @media (min-width: 1920px) {
+    justify-content: flex-start;
   }
 `;

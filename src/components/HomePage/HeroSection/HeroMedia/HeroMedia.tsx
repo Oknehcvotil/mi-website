@@ -10,9 +10,15 @@ const HeroMedia = ({ alt = "MI Agency team" }: HeroMediaProps) => {
     <HeroPictCont variants={imageIn}>
       <picture>
         <source
+          media="(min-width: 1920px)"
+          srcSet="/images/desktop/team_desk.webp 1x, /images/desktop/team_desk@2x.webp 2x, /images/desktop/team_desk@3x.webp 3x"
+        />
+
+        <source
           media="(min-width: 768px)"
           srcSet="/images/tab/team_tab.webp 1x, /images/tab/team_tab@2x.webp 2x, /images/tab/team_tab@3x.webp 3x"
         />
+
         <HeroImage
           decoding="async"
           fetchPriority="high"

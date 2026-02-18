@@ -7,6 +7,10 @@ export const AdvSection = styled.div`
   @media (min-width: 768px) {
     padding: 40px 0;
   }
+
+  @media (min-width: 1920px) {
+    padding: 80px 0 50px;
+  }
 `;
 
 export const AdvList = styled.ul`
@@ -20,5 +24,10 @@ export const AdvList = styled.ul`
     gap: 20px;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+
+  @media (min-width: 1920px) {
+    gap: 0;
+    justify-content: space-between;
   }
 `;

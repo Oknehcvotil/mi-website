@@ -16,4 +16,9 @@ export const Wrapper = styled(motion.div)`
     max-width: 768px;
     padding: 0 25px;
   }
+
+  @media (min-width: 1920px) {
+    max-width: 1920px;
+    padding: 0 45px;
+  }
 `;

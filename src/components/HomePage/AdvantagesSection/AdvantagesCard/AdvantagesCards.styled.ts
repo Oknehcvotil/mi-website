@@ -66,6 +66,44 @@ export const ListItem = styled(motion.li)`
       }
     }
   }
+
+  @media (min-width: 1920px) {
+    flex-direction: column;
+    padding: 25px 30px;
+    min-height: 350px;
+    gap: 25px;
+    max-width: 418px;
+    width: 100%;
+
+    img {
+      width: 160px;
+      height: auto;
+    }
+
+    &:nth-of-type(3) {
+      max-width: 470px;
+      h3 {
+        font-size: 22px;
+      }
+      span {
+        font-size: 26px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      span {
+        font-size: 25px;
+      }
+    }
+
+    &:nth-of-type(4) {
+      span {
+        font-size: 28px;
+        display: inline-block;
+        max-width: 200px;
+      }
+    }
+  }
 `;
 
 export const AdvText = styled.h3`
@@ -92,6 +130,16 @@ export const AdvText = styled.h3`
     span {
       font-size: 25px;
       text-align: center;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 25px;
+    line-height: 130%;
+    max-width: 100%;
+    span {
+      font-size: 30px;
+      line-height: 113%;
     }
   }
 `;

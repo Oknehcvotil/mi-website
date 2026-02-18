@@ -8,15 +8,18 @@ import {
   Wrapper,
   HeroTitle,
   TitleAccent,
+  UkraineAccent,
   SubTitle,
   BtnWrapper,
 } from "./HeroText.styled";
 import ConsultBtn from "../../../Buttons/ConsultBtn/ConsultBtn";
+import { useMediaQuery } from "../../../../lib/hooks/useMediaQuery";
 
 const HeroText = () => {
   const { t, i18n } = useTranslation("home");
   const reduce = useReducedMotion();
   const lang = i18n.language;
+  const isDesk = useMediaQuery("(min-width: 1920px)");
 
   return (
     <Wrapper
@@ -27,13 +30,17 @@ const HeroText = () => {
       animate={reduce ? "show" : undefined}
     >
       <HeroTitle variants={textUp} lang={lang}>
-        <Trans t={t} i18nKey="heroTitle" components={{ 1: <TitleAccent /> }} />
+        <Trans
+          t={t}
+          i18nKey="heroTitle"
+          components={{ 1: <TitleAccent />, 2: <UkraineAccent /> }}
+        />
       </HeroTitle>
 
       <SubTitle variants={textUp}>{t("subtitle")}</SubTitle>
 
       <BtnWrapper variants={textUp}>
-        <ConsultBtn variant="primary" maxWidth="307px" />
+        <ConsultBtn variant="primary" maxWidth={isDesk ? "610px" : "307px"} />
       </BtnWrapper>
     </Wrapper>
   );

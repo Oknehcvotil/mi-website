@@ -1,4 +1,4 @@
-import { HeroSectionWrap } from "./HeroSection.styled";
+import { HeroSectionWrap, HeroCont } from "./HeroSection.styled";
 import HeroText from "./HeroText/HeroText";
 import HeroMedia from "./HeroMedia/HeroMedia";
 import { useSectionInView } from "../../../lib/hooks/useSectionInView";
@@ -8,10 +8,10 @@ const HeroSection = () => {
 
   return (
     <HeroSectionWrap ref={ref} id="about">
-      <div>
+      <HeroCont>
         <HeroText />
         <HeroMedia />
-      </div>
+      </HeroCont>
     </HeroSectionWrap>
   );
 };
