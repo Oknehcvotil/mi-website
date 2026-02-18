@@ -32,4 +32,8 @@ export const ServButton = styled(NavLink)`
     order: 1;
     margin-right: 175px;
   }
+
+  @media (min-width: 1920px) {
+    display: none;
+  }
 `;

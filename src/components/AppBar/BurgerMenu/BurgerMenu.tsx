@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
-import { BurgerCont, BurgerLayuot } from "./BurgerMenu.styled";
+import { BurgerCont, BurgerLayuot, NavCont } from "./BurgerMenu.styled";
 import BurgerCloseBtn from "../../Buttons/BurgerCloseBtn/BurgerCloseBtn";
 import NavBar from "../NavBar/NavBar";
 import {
@@ -99,7 +99,9 @@ function BurgerMenu({ isOpen, onClose }: BurgerMenuProps) {
         variants={panelVariants}
       >
         <BurgerCloseBtn onClose={onClose} />
-        <NavBar onCloseBurger={onClose} />
+        <NavCont>
+          <NavBar onCloseBurger={onClose} />
+        </NavCont>
       </BurgerCont>
     </BurgerLayuot>,
     root

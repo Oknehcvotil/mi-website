@@ -21,7 +21,7 @@ const GeographySection = () => {
     selected,
     onSelect: setSelected,
     delay: 5000,   
-    pauseAfterManual: 7000,
+    pauseAfterManual: 7000, 
   });
 
   return (

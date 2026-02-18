@@ -87,6 +87,16 @@ export const ConsultBtnStyled = styled.a<{
     background: #5427b1;
     transform: scale(0.97);
   }
+
+  @media (min-width: 1920px) {
+    height: 60px;
+    padding: 0 15px;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 120%;
+    max-width: 100%;
+    width: auto;
+  }
     `};
 
   ${({ variant }) =>

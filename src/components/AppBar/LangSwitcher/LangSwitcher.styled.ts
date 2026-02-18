@@ -10,6 +10,13 @@ export const LangCont = styled.div`
   @media (min-width: 768px) {
     order: 3;
   }
+
+  @media (min-width: 1920px) {
+    min-height: 50px;
+    width: 80px;
+    margin-right: 55px;
+    height: 100%;
+  }
 `;
 
 export const LangList = styled(motion.ul)`
@@ -62,5 +69,32 @@ export const LangList = styled(motion.ul)`
 
   svg {
     stroke: #a066ff;
+  }
+
+  @media (min-width: 1920px) {
+    min-height: 50px;
+    width: 80px;
+
+    &:hover {
+      height: 90px;
+    }
+    button {
+      font-size: 25px;
+      line-height: 120%;
+      gap: 5px;
+    }
+
+    li:first-of-type {
+      width: fit-content;
+      top: 9px;
+      left: 11px;
+    }
+
+    li:last-of-type {
+      width: fit-content;
+      top: 51px;
+      left: 11px;
+      transform: translateY(-50%);
+    }
   }
 `;

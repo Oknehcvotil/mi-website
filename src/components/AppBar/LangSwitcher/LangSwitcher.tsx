@@ -3,11 +3,12 @@ import { useLang } from "../../../lib/hooks/useLang";
 import { SUPPORTED_LANGS, type Lang } from "../../../i18n/i18n";
 import { type Variants, motion } from "framer-motion";
 import { LangCont, LangList } from "./LangSwitcher.styled";
+import { useMediaQuery } from "../../../lib/hooks/useMediaQuery";
 
-const listVariants: Variants = {
+const listVariants = (isDesk: boolean): Variants => ({
   closed: { height: 40 },
-  open: { height: 70 },
-};
+  open: { height: isDesk ? 95 : 70 },
+});
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: -6, pointerEvents: "none" },
@@ -19,6 +20,7 @@ const LABEL: Record<Lang, string> = { en: "EN", ua: "UA" };
 const LangSwitcher = () => {
   const { lang, switchLang } = useLang();
   const [open, setOpen] = useState(false);
+  const isDesk = useMediaQuery("(min-width: 1920px)");
 
   const otherLang = useMemo<Lang>(
     () => (SUPPORTED_LANGS.find((l) => l !== lang) ?? "en") as Lang,
@@ -36,7 +38,7 @@ const LangSwitcher = () => {
             setOpen(true);
           }
         }}
-        variants={listVariants}
+        variants={listVariants(isDesk)}
         initial="closed"
         animate={open ? "open" : "closed"}
         transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
@@ -50,8 +52,8 @@ const LangSwitcher = () => {
           >
             {LABEL[lang]}
             <motion.svg
-              width={9}
-              height={7}
+              width={isDesk ? 12 : 9}
+              height={isDesk ? 8 : 7}
               animate={{ rotate: open ? 180 : 0 }}
             >
               <use href="/icons/sprite.svg#icon-select-arrow"></use>

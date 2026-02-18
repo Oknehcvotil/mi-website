@@ -39,4 +39,17 @@ export const PsiCustomLink = styled.a`
     transform: scale(0.97);
     color: #fff;
   }
+
+  @media (min-width: 1920px) {
+    height: 50px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 125px;
+    width: 100%;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 120%;
+  }
 `;

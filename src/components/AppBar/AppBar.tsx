@@ -10,6 +10,8 @@ import LangSwitcher from "./LangSwitcher/LangSwitcher";
 import ServicesBtn from "../Buttons/ServicesBtn/ServicesBtn";
 import { useMediaQuery } from "../../lib/hooks/useMediaQuery";
 import { useMatch } from "react-router-dom";
+import NavBar from "./NavBar/NavBar";
+import MainPageLink from "./MainPaigeLink/MainPaigeLink";
 
 type AppBarProps = {
   setMenuIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -21,6 +23,7 @@ function AppBar({ setMenuIsOpen }: AppBarProps) {
   const currentLang = match?.params.lang ?? "en";
 
   const isTablet = useMediaQuery("(min-width: 768px)");
+  const isDesk = useMediaQuery("(min-width: 1920px)");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,8 +45,11 @@ function AppBar({ setMenuIsOpen }: AppBarProps) {
             <use href="/icons/sprite.svg#icon-menu"></use>
           </svg>
         </BurgerMenuBtn>
+
+        {isDesk && <NavBar />}
+
         <LogoLink to={`/${currentLang}`} end>
-          <svg width={70} height={30}>
+          <svg width={isDesk ? 130 : 70} height={isDesk ? 55 : 30}>
             <use
               href="/icons/sprite.svg#icon-main-logo"
               xlinkHref="/icons/sprite.svg#icon-main-logo"
@@ -51,11 +57,12 @@ function AppBar({ setMenuIsOpen }: AppBarProps) {
           </svg>
         </LogoLink>
         <LangSwitcher />
+        {isDesk && <MainPageLink />}
         <ServicesBtn />
         <ConsultBtn
           variant="header"
           maxWidth={isTablet ? "200px" : "140px"}
-          order={isTablet ? 4 : 0}
+          order={isDesk ? 5 : isTablet ? 4 : 0}
         />
       </HeaderWrapper>
     </Header>

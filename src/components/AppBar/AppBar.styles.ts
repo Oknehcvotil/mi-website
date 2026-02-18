@@ -14,9 +14,13 @@ export const Header = styled.header<{ isScrolled: boolean }>`
     isScrolled ? "rgba(255, 255, 255, 0.6)" : "transparent"};
   backdrop-filter: ${({ isScrolled }) => (isScrolled ? "blur(10px)" : "none")};
   transition: all 0.3s ease;
+
+  @media (min-width: 1920px) {
+    position: relative;
+  }
 `;
 
-export const HeaderWrapper = styled(motion.div)`
+export const HeaderWrapper = styled(motion.nav)`
   margin: 0 auto;
   max-width: 390px;
   width: 100%;
@@ -29,6 +33,12 @@ export const HeaderWrapper = styled(motion.div)`
     padding: 0 25px;
     min-height: 65px;
   }
+
+  @media (min-width: 1920px) {
+    max-width: 1920px;
+    padding: 0 45px;
+    min-height: 115px;
+  }
 `;
 
 export const BurgerMenuBtn = styled.button`
@@ -36,6 +46,10 @@ export const BurgerMenuBtn = styled.button`
 
   @media (min-width: 768px) {
     margin-right: 30px;
+  }
+
+  @media (min-width: 1920px) {
+    display: none;
   }
 `;
 
@@ -46,5 +60,9 @@ export const LogoLink = styled(NavLink)`
     display: block;
     margin-right: 55px;
     order: 2;
+  }
+
+  @media (min-width: 1920px) {
+    margin-right: auto;
   }
 `;

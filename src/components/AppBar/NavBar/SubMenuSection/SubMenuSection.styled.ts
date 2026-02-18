@@ -2,6 +2,10 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 
+export const SubMenuItem = styled.li`
+  position: relative;
+`;
+
 export const SubMenuTitle = styled.span<{
   active: boolean;
   width?: string;
@@ -66,6 +70,16 @@ export const SubMenuTitle = styled.span<{
       stroke: #fff;
     }
   }
+
+  @media (min-width: 1920px) {
+    margin: 0;
+    min-height: 50px;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 120%;
+    max-width: 100%;
+    padding: 0 10px;
+  }
 `;
 
 export const SubMenuList = styled(motion.ul)`
@@ -86,6 +100,31 @@ export const SubMenuList = styled(motion.ul)`
       margin-bottom: 0;
     }
   }
+
+  @media (min-width: 1920px) {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: max-content;
+    max-width: max-content;
+    padding: 20px;
+    border: none;
+
+    ::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 4px;
+      border-radius: 10px;
+      pointer-events: none; 
+      background: linear-gradient(90deg, #a066ff, #5427b1);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+  }
 `;
 
 export const SubLink = styled(NavLink)`
@@ -99,5 +138,10 @@ export const SubLink = styled(NavLink)`
   &:focus,
   &.active {
     font-weight: 700;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 25px;
+    line-height: 120%;
   }
 `;

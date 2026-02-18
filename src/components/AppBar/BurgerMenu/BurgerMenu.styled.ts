@@ -8,7 +8,7 @@ export const BurgerLayuot = styled(motion.div)`
   z-index: 1000;
   overscroll-behavior: none;
 
-  @media (min-width: 1620px) {
+  @media (min-width: 1920px) {
     display: none;
   }
 `;
@@ -36,6 +36,20 @@ export const BurgerCont = styled(motion.aside)`
 
   @media (min-width: 768px) {
     width: 50%;
-    max-width: 400px;
+    max-width: 700px;
+  }
+`;
+
+export const NavCont = styled.nav`
+  margin-left: auto;
+  max-width: 310px;
+  width: 100%;
+
+  li {
+    margin-bottom: 20px;
+  }
+
+  li:last-of-type {
+    margin-bottom: 0;
   }
 `;

@@ -1,13 +1,14 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { SubMenuList, SubLink, SubMenuTitle } from "./SubMenuSection.styled";
+import { SubMenuList, SubLink, SubMenuTitle, SubMenuItem } from "./SubMenuSection.styled";
 import { type Section } from "../../../../lib/types/nav.types";
+import { useMediaQuery } from "../../../../lib/hooks/useMediaQuery";
 
 type SubMenuSectionProps = {
   section: Section;
   currentLang: string;
   isOpen: boolean;
   setOpen: (next: boolean) => void;
-  onSelect: () => void;
+  onSelect?: () => void;
   t: (key: string) => string;
   pathname: string;
 };
@@ -44,6 +45,7 @@ const SubMenuSection = ({
   pathname,
 }: SubMenuSectionProps) => {
   const active = pathname.startsWith(`/${currentLang}${section.basePath}`);
+  const isDesk = useMediaQuery("(min-width: 1920px)");
 
   const onKeyDown: React.KeyboardEventHandler = (e) => {
     if (e.key === "Enter" || e.key === " ") {
@@ -54,7 +56,7 @@ const SubMenuSection = ({
     }
   };
   return (
-    <li
+    <SubMenuItem
       role="listbox"
       aria-expanded={isOpen}
       aria-label={t(section.titleKey)}
@@ -70,8 +72,8 @@ const SubMenuSection = ({
       >
         {t(section.titleKey)}
         <motion.svg
-          width={9}
-          height={7}
+          width={isDesk ? 15 : 9}
+          height={isDesk ? 9 : 7}
           aria-hidden
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.18 }}
@@ -98,7 +100,7 @@ const SubMenuSection = ({
           </SubMenuList>
         )}
       </AnimatePresence>
-    </li>
+    </SubMenuItem>
   );
 };
 
