@@ -109,6 +109,7 @@ export const SubMenuList = styled(motion.ul)`
     max-width: max-content;
     padding: 20px;
     border: none;
+    background-color: #fff;
 
     ::before {
       content: "";
@@ -116,7 +117,7 @@ export const SubMenuList = styled(motion.ul)`
       inset: 0;
       padding: 4px;
       border-radius: 10px;
-      pointer-events: none; 
+      pointer-events: none;
       background: linear-gradient(90deg, #a066ff, #5427b1);
       -webkit-mask: linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
