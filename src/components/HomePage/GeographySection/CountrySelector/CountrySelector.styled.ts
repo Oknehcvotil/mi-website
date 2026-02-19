@@ -56,6 +56,34 @@ export const SelectorCont = styled.div`
       z-index: 3;
     }
   }
+
+  @media (min-width: 1920px) {
+    max-width: 410px;
+    margin: 0 auto 0 0;
+    flex-direction: column;
+
+    .rail {
+      top: 25px;
+      width: 3px;
+      height: 98%;
+    }
+
+    &::after {
+      left: -14px;
+      top: 11px;
+      width: 30px;
+      height: 30px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -14px;
+      bottom: -11px;
+      width: 30px;
+      height: 30px;
+    }
+  }
 `;
 
 export const SelectorTitile = styled.p`
@@ -191,6 +219,22 @@ export const CountriesTitle = styled.p`
     top: 50%;
     transform: translateY(-50%);
   }
+
+  @media (min-width: 1920px) {
+    margin-bottom: 25px;
+    font-size: 40px;
+    line-height: 133%;
+
+    &::after {
+      width: 80px;
+      right: -85px;
+    }
+
+    &::before {
+      width: 80px;
+      left: -85px;
+    }
+  }
 `;
 
 export const TabList = styled.ul`
@@ -221,5 +265,11 @@ export const TabBtn = styled.button`
   &:hover,
   &:focus {
     color: #5427b1;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 30px;
+    line-height: 177%;
+    margin-bottom: 10px;
   }
 `;

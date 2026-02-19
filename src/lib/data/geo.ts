@@ -29,7 +29,7 @@ export const COUNTRIES: Country[] = COUNTRY_IDS.map((id) => ({ id }));
 export const MAPS: Record<MapKey, MapDef> = {
   mob: { src: "/images/mob/map-mob.webp", width: 390, height: 225 },
   tab: { src: "/images/tab/map-tab.webp", width: 530, height: 300 },
-  desk: { src: "/images/map-desc.webp", width: 1365, height: 790 },
+  desk: { src: "/images/desktop/map-desktop.webp", width: 1365, height: 790 },
 } as const;
 
 export const POINTS_PX: Record<MapKey, Record<CountryId, PinPx>> = {
@@ -53,13 +53,13 @@ export const POINTS_PX: Record<MapKey, Record<CountryId, PinPx>> = {
     ukraine: { x: 293, y: 62 },
     britain: { x: 250, y: 38 },
     canada: { x: 133, y: 39 },
-    latvia: { x: 282, y: 35},
+    latvia: { x: 282, y: 35 },
     uae: { x: 213, y: 144 },
     poland: { x: 289, y: 54 },
     portugal: { x: 239, y: 62 },
     turkey: { x: 168, y: 133 },
     usa: { x: 119, y: 71 },
-    hungary: { x: 282, y: 42 },
+    hungary: { x: 283, y: 47 },
     croatia: { x: 276, y: 51 },
     czech: { x: 271, y: 47 },
     montenegro: { x: 277, y: 63 },

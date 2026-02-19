@@ -13,6 +13,10 @@ export const MapCont = styled.div`
     max-width: 530px;
     margin: 0;
   }
+
+  @media (min-width: 1920px) {
+    max-width: 100%;
+  }
 `;
 
 export const MapImage = styled.img`

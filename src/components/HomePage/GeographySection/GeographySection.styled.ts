@@ -11,7 +11,11 @@ export const Wrap = styled.div`
   background: #f8f8fb;
 
   @media (min-width: 768px) {
-    padding: 25px 25px;
+    padding: 25px 0;
+  }
+
+  @media (min-width: 1920px) {
+    padding: 40px 0;
   }
 `;
 
@@ -35,6 +39,11 @@ export const GeographyTytle = styled.h2<{ lang: string }>`
     max-width: 100%;
     margin: 0 auto 15px;
   }
+
+  @media (min-width: 1920px) {
+    margin-bottom: 60px;
+    font-size: 80px;
+  }
 `;
 
 export const MapSection = styled.div`
@@ -52,5 +61,11 @@ export const MapCont = styled.div`
     flex-direction: row;
     max-width: 768px;
     margin: 0 auto;
+    padding: 0 25px;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 1920px;
+    padding: 0 45px;
   }
 `;
