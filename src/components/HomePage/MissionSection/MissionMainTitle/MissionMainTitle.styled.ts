@@ -21,7 +21,6 @@ export const TitleCont = styled(motion.div)<{ lang: string }>`
     flex-direction: ${({ lang }) => (lang === "en" ? "column" : "row")};
     justify-content: center;
     overflow: hidden;
-    
 
     ${({ lang }) =>
       lang !== "en" &&
@@ -51,6 +50,21 @@ export const TitleCont = styled(motion.div)<{ lang: string }>`
     }
   `}
   }
+
+  @media (min-width: 1920px) {
+    max-width: 100%;
+    flex-direction: row;
+
+    &::after {
+      content: "";
+      height: ${({ lang }) => (lang === "en" ? "8px" : "7px")};
+      position: absolute;
+      top: 42px;
+      left: 34%;
+      background: #fff;
+      width: 70%;
+    }
+  }
 `;
 
 export const Title = styled(motion.h2)<{ lang: string }>`
@@ -75,6 +89,13 @@ export const Title = styled(motion.h2)<{ lang: string }>`
     justify-content: ${({ lang }) => (lang === "en" ? "center" : "flex-start")};
     line-height: normal;
     overflow: visible;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 100%;
+    flex-direction: row;
+    font-size: 180px;
+    justify-content: flex-start;
   }
 `;
 
@@ -123,5 +144,18 @@ export const TitleText = styled(motion.p)<{ lang: string }>`
       `
     margin-top: -21px;
   `}
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 37px;
+    line-height: 146%;
+    padding: 0 200px 0 15px;
+    height: 132px;
+    max-width: 1100px;
+    margin-left: -15px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #a066ff 0%, #5427b1 100%);
+    margin-top: 0;
   }
 `;

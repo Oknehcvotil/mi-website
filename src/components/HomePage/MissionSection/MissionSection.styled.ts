@@ -4,6 +4,10 @@ import { motion } from "framer-motion";
 export const Wrap = styled.div`
   padding-top: 20px;
   padding-bottom: 40px;
+
+  @media (min-width: 1920px) {
+    padding: 70px 0 80px;
+  }
 `;
 
 export const SectionCont = styled.div`
@@ -37,7 +41,8 @@ export const SectionCont = styled.div`
       z-index: 1;
       pointer-events: none;
 
-      background: radial-gradient(
+      background:
+        radial-gradient(
           70% 65% at 95% 8%,
           rgba(132, 82, 255, 0.72) 0%,
           rgba(132, 82, 255, 0.45) 40%,
