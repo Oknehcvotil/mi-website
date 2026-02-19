@@ -15,7 +15,7 @@ export const MapCont = styled.div`
   }
 
   @media (min-width: 1920px) {
-    max-width: 100%;
+    max-width: 1365px;
   }
 `;
 
