@@ -28,7 +28,7 @@ export const TitleCont = styled(motion.div)<{ lang: string }>`
       `
     &::after {
       content: "";
-      height: 3px;
+      height: 4px;
       position: absolute;
       top: 21px;
       left: 35%;
