@@ -11,13 +11,15 @@ import MissionMainTitle from "./MissionMainTitle/MissionMainTitle";
 import { statsCards } from "../../../lib/data/home.page";
 import { container } from "../../../lib/animations/home/animations.stats";
 import { StatsItemCard } from "../StatsSection/StatsItemCard/StatsItemCard";
+import { useMediaQuery } from "../../../lib/hooks/useMediaQuery";
 
 const MissionSection = () => {
   // const { t } = useTranslation("home");
+  const isDesk = useMediaQuery("(min-width: 1920px)");
 
   return (
     <Wrap>
-      <Container style={{ marginBottom: 16 }}>
+      <Container style={isDesk ? { marginBottom: 110 } : { marginBottom: 16 }}>
         <MissionMainTitle />
       </Container>
       <SectionCont>
@@ -33,10 +35,27 @@ const MissionSection = () => {
         </StatsList>
         <PicFrame>
           <picture>
+            {/* Desktop 1920+ WEBP */}
+            <source
+              media="(min-width: 1920px)"
+              type="image/webp"
+              srcSet="/images/desktop/mission-team.webp 1x, /images/desktop/mission-team@2x.webp 2x, /images/desktop/mission-team@3x.webp 3x"
+            />
+
+            {/* Desktop 1920+ JPG fallback */}
+            <source
+              media="(min-width: 1920px)"
+              type="image/jpeg"
+              srcSet="/images/desktop/mission-team.jpg 1x, /images/desktop/mission-team@2x.jpg 2x, /images/desktop/mission-team@3x.jpg 3x"
+            />
+
+            {/* Tablet WEBP */}
             <source
               type="image/webp"
-              srcSet="/images/tab/mission-team.webp 1x, /images/tab/mission-team@2x.webp 2x, /images/tab/mission-team@3x.webp 3x    "
+              srcSet="/images/tab/mission-team.webp 1x, /images/tab/mission-team@2x.webp 2x, /images/tab/mission-team@3x.webp 3x"
             />
+
+            {/* Tablet JPG fallback */}
             <source
               type="image/jpeg"
               srcSet="/images/tab/mission-team.jpg 1x, /images/tab/mission-team@2x.jpg 2x, /images/tab/mission-team@3x.jpg 3x"

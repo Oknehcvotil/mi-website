@@ -66,6 +66,12 @@ export const SectionCont = styled.div`
     height: auto;
     padding: 50px 25px;
   }
+
+  @media (min-width: 1920px) {
+    max-width: 1920px;
+    height: auto;
+    padding: 0 45px;
+  }
 `;
 
 export const StatsList = styled(motion.ul)`
@@ -75,6 +81,10 @@ export const StatsList = styled(motion.ul)`
 
   @media (min-width: 768px) {
     margin-right: 35px;
+  }
+
+  @media (min-width: 1920px) {
+    margin-right: 130px;
   }
 `;
 
@@ -92,6 +102,17 @@ export const PicFrame = styled.div`
 
     img {
       border-radius: 19px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    width: 552px;
+    height: 736px;
+
+    img {
+      border-radius: 19px;
+      width: 505px;
+      height: auto;
     }
   }
 `;

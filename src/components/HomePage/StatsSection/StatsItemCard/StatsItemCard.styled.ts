@@ -58,6 +58,31 @@ export const StatsItem = styled(motion.li)`
       margin-bottom: 0;
     }
   }
+
+  @media (min-width: 1920px) {
+    margin-bottom: 10px;
+    max-width: 100%;
+
+    &:nth-of-type(2) {
+      p {
+        max-width: 400px;
+      }
+    }
+
+    &:nth-of-type(3) {
+      p {
+        max-width: 400px;
+      }
+    }
+
+    &:last-of-type {
+      h3 {
+        margin-left: 185px;
+      }
+      align-items: baseline;
+      margin-bottom: 0;
+    }
+  }
 `;
 
 export const ValueText = styled.h3`
@@ -73,6 +98,10 @@ export const ValueText = styled.h3`
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 180px;
   }
 `;
 
@@ -95,5 +124,10 @@ export const LabelText = styled.p`
     span {
       left: 0px;
     }
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 35px;
+    max-width: 400px;
   }
 `;
