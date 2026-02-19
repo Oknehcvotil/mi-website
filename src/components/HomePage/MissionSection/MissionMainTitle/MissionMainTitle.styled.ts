@@ -21,18 +21,19 @@ export const TitleCont = styled(motion.div)<{ lang: string }>`
     flex-direction: ${({ lang }) => (lang === "en" ? "column" : "row")};
     justify-content: center;
     overflow: hidden;
+    
 
     ${({ lang }) =>
       lang !== "en" &&
       `
     &::after {
       content: "";
-      height: 4px;
+      height: 3px;
       position: absolute;
       top: 21px;
-      left: 0;
+      left: 35%;
       background: #fff;
-      width: 100%;
+      width: 70%;
     }
   `}
 
