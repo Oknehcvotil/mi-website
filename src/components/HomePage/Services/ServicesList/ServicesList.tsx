@@ -8,6 +8,7 @@ import {
 import { useMatch } from "react-router-dom";
 import { servicesLinks } from "../../../../lib/data/home.page";
 import { servicesIcons } from "../../../../lib/data/home.page";
+import { useMediaQuery } from "../../../../lib/hooks/useMediaQuery";
 
 const fadeInAnimationVariants = {
   initial: {
@@ -28,6 +29,8 @@ const ServicesList = () => {
   const match = useMatch("/:lang/*");
   const currentLang = match?.params.lang ?? "en";
 
+  const isDesk = useMediaQuery("(min-width: 1920px)");
+
   const subTitles = t("services.subTitiles", {
     returnObjects: true,
   }) as string[];
@@ -37,7 +40,8 @@ const ServicesList = () => {
   return (
     <List>
       {subTitles.map((title, i) => {
-        const icon = servicesIcons[i]; // { name, width, height }
+        const icon = servicesIcons[i];
+        const size = isDesk ? icon.desk : icon.mob;
 
         return (
           <ServicesItems
@@ -49,7 +53,7 @@ const ServicesList = () => {
             custom={i}
           >
             <TitleCont>
-              <svg width={icon.width} height={icon.height}>
+              <svg width={size.w} height={size.h}>
                 <use href={`/icons/sprite.svg#${icon.name}`} />
               </svg>
 
@@ -69,4 +73,3 @@ const ServicesList = () => {
 };
 
 export default ServicesList;
-

@@ -4,14 +4,25 @@ import Container from "../../Container/Container";
 import { CollapsBtn, SectionWrap, Title } from "./Clients.styled";
 import ClientsList from "./ClientsList/ClientsList";
 import { clientsLogos } from "../../../lib/data/home.page";
+import { useMediaQuery } from "../../../lib/hooks/useMediaQuery";
 
-const COLLAPSED_COUNT = 6;
+const MOB_COLLAPSED_COUNT = 6;
+const TAB_COLLAPSED_COUNT = 8;
 
 const Clients = () => {
   const { t } = useTranslation("home");
   const [expanded, setExpanded] = useState(false);
 
-  const canToggle = clientsLogos.length > COLLAPSED_COUNT;
+  const isDesk = useMediaQuery("(min-width: 1920px)");
+  const isTablet = useMediaQuery("(min-width: 768px)");
+
+  const collapsedCount = isDesk
+    ? clientsLogos.length
+    : isTablet
+      ? TAB_COLLAPSED_COUNT
+      : MOB_COLLAPSED_COUNT;
+
+  const canToggle = !isDesk && clientsLogos.length > collapsedCount;
 
   const buttonText = expanded ? t("clientsCollapse") : t("clientsMore");
 
@@ -22,7 +33,7 @@ const Clients = () => {
           <Trans t={t} i18nKey="clientsTitle" components={{ 1: <span /> }} />
         </Title>
 
-        <ClientsList expanded={expanded} collapsedCount={COLLAPSED_COUNT} />
+        <ClientsList expanded={expanded} collapsedCount={collapsedCount} />
 
         {canToggle && (
           <CollapsBtn

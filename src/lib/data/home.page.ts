@@ -229,28 +229,28 @@ export const homeLinks = [
 export const servicesIcons = [
   {
     name: "icon-recruitmanet",
-    width: 30,
-    height: 30,
+    mob: { w: 30, h: 30 },
+    desk: { w: 66, h: 66 },
   },
   {
     name: "icon-hr",
-    width: 32,
-    height: 32,
+    mob: { w: 32, h: 32 },
+    desk: { w: 69, h: 69 },
   },
   {
     name: "icon-business",
-    width: 30,
-    height: 30,
+    mob: { w: 30, h: 30 },
+    desk: { w: 75, h: 75 },
   },
   {
     name: "icon-career",
-    width: 30,
-    height: 30,
+    mob: { w: 30, h: 30 },
+    desk: { w: 83, h: 83 },
   },
   {
     name: "icon-phd",
-    width: 30,
-    height: 30,
+    mob: { w: 30, h: 30 },
+    desk: { w: 84, h: 81 },
   },
 ] as const;
 

@@ -2,6 +2,15 @@ import styled from "@emotion/styled";
 
 export const SectionWrap = styled.div`
   padding-top: 40px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 15px;
+  }
+
+  @media (min-width: 1920px) {
+    padding-top: 80px;
+    padding-bottom: 35px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -16,6 +25,10 @@ export const Title = styled.h2`
 
   span {
     color: #a066ff;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 80px;
   }
 `;
 
@@ -35,5 +48,9 @@ export const CollapsBtn = styled.button`
 
   &[aria-expanded="true"] svg {
     transform: rotate(180deg);
+  }
+
+  @media (min-width: 1920px) {
+    display: none;
   }
 `;

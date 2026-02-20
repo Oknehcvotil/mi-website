@@ -8,6 +8,21 @@ export const List = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 15px;
+
+  @media (min-width: 768px) {
+    display: grid;
+
+    grid-template-columns: repeat(2, 351px);
+    gap: 15px;
+
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  @media (min-width: 1920px) {
+    grid-template-columns: repeat(2, 820px);
+    gap: 30px;
+  }
 `;
 
 export const ServicesItems = styled(motion.li)`
@@ -15,7 +30,6 @@ export const ServicesItems = styled(motion.li)`
   border-radius: 10px;
   padding: 20px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 50px 0 rgba(141, 141, 141, 0.15);
   background: rgba(255, 255, 255, 0.5);
 
   p {
@@ -23,6 +37,54 @@ export const ServicesItems = styled(motion.li)`
     font-size: 15px;
     line-height: 147%;
     margin-bottom: 10px;
+  }
+
+  @media (min-width: 768px) {
+    padding: 20px;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+      0 0 50px 0 rgba(141, 141, 141, 0.15),
+      0 4px 4px 0 rgba(0, 0, 0, 0.25),
+      inset -5px -3px 14px 0 rgba(0, 0, 0, 0.25);
+
+    &:last-of-type {
+      grid-column: 1 / -1;
+      justify-self: center;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    &:nth-of-type(3) {
+      h3 {
+        max-width: 100px;
+      }
+    }
+  }
+
+  @media (min-width: 1920px) {
+    min-height: 450px;
+    padding: 60px 40px 30px 40px;
+
+    &:nth-of-type(3),
+    &:nth-of-type(1) {
+      h3 {
+        max-width: 100%;
+      }
+    }
+
+    &:last-of-type {
+      grid-column: 1 / -1;
+      justify-self: center;
+      max-width: 820px;
+    }
+
+    p {
+      font-size: 30px;
+      line-height: 133%;
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -37,6 +99,18 @@ export const TitleCont = styled.div`
     font-size: 20px;
     line-height: 130%;
     text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 22px;
+  }
+
+  @media (min-width: 1920px) {
+    h3 {
+      font-size: 55px;
+      line-height: 114%;
+      max-width: 590px;
+    }
   }
 `;
 
@@ -56,7 +130,11 @@ export const ServicesLink = styled(HashLink)`
   width: 100%;
   min-height: 40px;
   background-color: #fff;
-  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.2s ease;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.2s ease;
 
   &:hover,
   &:focus {
@@ -68,5 +146,19 @@ export const ServicesLink = styled(HashLink)`
     box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     background: #5427b1;
     color: #fff;
+  }
+
+  @media (min-width: 768px) {
+    margin-top: auto;
+  }
+
+  @media (min-width: 1920px) {
+    border: 6px solid #a066ff;
+    border-radius: 15px;
+    max-width: 420px;
+    width: 100%;
+    min-height: 80px;
+    font-size: 30px;
+    line-height: 133%;
   }
 `;
