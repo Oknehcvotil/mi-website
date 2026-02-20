@@ -22,6 +22,10 @@ export const SelectorCont = styled.div`
     margin: 0 auto 0 0;
     flex-direction: column;
 
+    &.selector-cont--en {
+      max-width: 188px;
+    }
+
     .rail {
       content: "";
       position: absolute;
@@ -37,7 +41,7 @@ export const SelectorCont = styled.div`
       content: "";
       position: absolute;
       left: -7px;
-      top: 6px;
+      top: 3px;
       width: 16px;
       height: 16px;
       border-radius: 50%;
@@ -61,6 +65,10 @@ export const SelectorCont = styled.div`
     max-width: 410px;
     margin: 0 auto 0 0;
     flex-direction: column;
+
+    &.selector-cont--en {
+      max-width: 400px;
+    }
 
     .rail {
       top: 25px;
@@ -198,26 +206,28 @@ export const CountriesTitle = styled.p`
   margin-bottom: 15px;
   position: relative;
 
-  &::after {
-    content: "";
-    position: absolute;
-    height: 1px;
-    width: 18px;
-    background-color: #808080;
-    right: -25px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+  &.countries-title--ua {
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 18px;
+      background-color: #808080;
+      right: -25px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
-  &::before {
-    content: "";
-    position: absolute;
-    height: 1px;
-    width: 18px;
-    background-color: #808080;
-    left: -25px;
-    top: 50%;
-    transform: translateY(-50%);
+    &::before {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 18px;
+      background-color: #808080;
+      left: -25px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
   @media (min-width: 1920px) {
@@ -225,14 +235,16 @@ export const CountriesTitle = styled.p`
     font-size: 40px;
     line-height: 133%;
 
-    &::after {
-      width: 80px;
-      right: -85px;
-    }
+    &.countries-title--ua {
+      &::after {
+        width: 80px;
+        right: -85px;
+      }
 
-    &::before {
-      width: 80px;
-      left: -85px;
+      &::before {
+        width: 80px;
+        left: -85px;
+      }
     }
   }
 `;

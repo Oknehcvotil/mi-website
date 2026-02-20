@@ -15,6 +15,7 @@ import {
   CountriesTitle,
 } from "./CountrySelector.styled";
 import { useMediaQuery } from "../../../../lib/hooks/useMediaQuery";
+import i18n from "../../../../i18n/i18n";
 
 type CountrySelectorProps = {
   countries: Country[];
@@ -73,10 +74,12 @@ const CountrySelector = ({
   };
 
   return (
-    <SelectorCont ref={rootRef}>
+    <SelectorCont ref={rootRef} className={`selector-cont--${i18n.language}`}>
       {isTablet ? (
         <>
-          <CountriesTitle>{t("map.countriesTitle")}</CountriesTitle>
+          <CountriesTitle className={`countries-title--${i18n.language}`}>
+            {t("map.countriesTitle")}
+          </CountriesTitle>
           <span className="rail" aria-hidden />
           <TabList>
             {countries.map((c) => (
@@ -126,7 +129,7 @@ const CountrySelector = ({
                         height={5}
                         aria-hidden
                         animate={{ rotate: isOpen ? 180 : 0 }}
-                        transition={{ duration: 0.14, ease: easeIn }} 
+                        transition={{ duration: 0.14, ease: easeIn }}
                       >
                         <use href="/icons/sprite.svg#icon-select-arrow" />
                       </motion.svg>

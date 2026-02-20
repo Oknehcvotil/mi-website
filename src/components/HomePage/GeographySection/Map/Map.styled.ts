@@ -66,4 +66,48 @@ export const MapPoint = styled.button<{ x: number; y: number }>`
   &.portugal {
     left: ${({ x }) => x + 20}px;
   }
+
+  @media (min-width: 1920px) {
+    width: 25px;
+    height: 25px;
+    left: ${({ x }) => x + 26}px;
+    top: ${({ y }) => y + 80}px;
+
+    &.uae {
+      left: ${({ x }) => x + 20}px;
+      top: ${({ y }) => y + 78}px;
+    }
+
+    &.portugal {
+      left: ${({ x }) => x + 24}px;
+      top: ${({ y }) => y + 78}px;
+    }
+
+    &.turkey {
+      left: ${({ x }) => x + 26}px;
+      top: ${({ y }) => y + 78}px;
+    }
+
+    &.usa {
+      left: ${({ x }) => x + 20}px;
+      top: ${({ y }) => y + 78}px;
+    }
+
+    &.hungary {
+      left: ${({ x }) => x + 20}px;
+    }
+
+    &.czech {
+      left: ${({ x }) => x + 19}px;
+      top: ${({ y }) => y + 69}px;
+    }
+
+    &.montenegro {
+      left: ${({ x }) => x + 28}px;
+    }
+
+    &.switzerland {
+      left: ${({ x }) => x + 25}px;
+    }
+  }
 `;

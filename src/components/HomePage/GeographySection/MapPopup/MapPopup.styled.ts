@@ -53,6 +53,49 @@ export const PopupsWrapper = styled(motion.div)<{ x: number; y: number }>`
       }
     }
   }
+
+  @media (min-width: 768px) {
+    &.lang-en.popup-czech {
+      left: 93px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    gap: 10px;
+
+    &.popup-uae,
+    &.popup-turkey {
+      flex-direction: row;
+      .popup--country {
+        flex-direction: row;
+
+        &::after {
+          content: "";
+          bottom: -8px;
+          left: 15%;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    &.lang-en.popup-czech {
+      flex-direction: row;
+      left: 645px;
+
+      .popup--country {
+        flex-direction: row;
+
+        &::after {
+          content: "";
+          left: 15%;
+        }
+      }
+    }
+
+    &.lang-en.popup-turkey {
+      left: ${({ x }) => x + 7}px;
+    }
+  }
 `;
 
 export const CountryPopup = styled(motion.div)`
@@ -91,6 +134,29 @@ export const CountryPopup = styled(motion.div)`
     transform: rotate(-45deg);
     border-radius: 0 0 0 0.25em;
   }
+
+  @media (min-width: 1920px) {
+    height: 70px;
+    padding-left: 10px;
+    padding-right: 8px;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+
+    span {
+      font-size: 20px;
+    }
+
+    &::after {
+      content: "";
+      height: 30px;
+      width: 30px;
+      bottom: -8px;
+      left: 15%;
+    }
+  }
 `;
 
 export const ClientPopup = styled(motion.div)`
@@ -107,5 +173,18 @@ export const ClientPopup = styled(motion.div)`
   img {
     max-height: 30px;
     max-width: 60px;
+  }
+
+  @media (min-width: 1920px) {
+    height: 70px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-height: 60px;
+      max-width: 150px;
+    }
   }
 `;
