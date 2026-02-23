@@ -56,6 +56,7 @@ export const CardWrap = styled.div`
     &::before {
       height: 400px;
       border: 8px solid #a066ff;
+      top: 60px;
     }
   }
 `;
