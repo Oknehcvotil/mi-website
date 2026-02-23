@@ -81,4 +81,56 @@ export const StatsWrap = styled.div`
       left: auto;
     }
   }
+
+  @media (min-width: 1920px) {
+    padding: 5px 0px 5px 15px;
+    width: 100%;
+    strong {
+      font-size: 66px;
+    }
+
+    span {
+      font-size: 18px;
+    }
+
+    &.badge-left.irina {
+      bottom: 300px;
+      left: 750px;
+      max-width: 350px;
+    }
+
+    &.badge-right.irina {
+      bottom: 135px;
+      left: 950px;
+      max-width: 280px;
+    }
+
+    &.tatyana {
+      bottom: 135px;
+      left: 120px;
+      max-width: 380px;
+    }
+
+    &.maria {
+      bottom: 290px;
+      left: 1220px;
+      max-width: 310px;
+
+      span {
+        max-width: 150px;
+      }
+    }
+
+    &.anastasia {
+      left: 460px;
+      bottom: 240px;
+      max-width: 290px;
+    }
+
+    &.daria {
+      right: 80px;
+      bottom: 150px;
+      max-width: 290px;
+    }
+  }
 `;

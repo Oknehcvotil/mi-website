@@ -33,6 +33,28 @@ export const CustomSocialLink = styled.a`
     right: 15px;
     width: 35px;
     height: 35px;
+
+    @media (min-width: 1920px) {
+      position: relative;
+      top: 0;
+      right: 0;
+      width: 55px;
+      height: 55px;
+      margin-left: 8px;
+
+      &.team-card-social.social-irina,
+      &.team-card-social.social-daria {
+        top: 0;
+        right: 0;
+      }
+
+      &.team-card-social.social-tatyana,
+      &.team-card-social.social-maria,
+      &.team-card-social.social-anastasia {
+        top: 0;
+        left: 0;
+      }
+    }
   }
 
   @media (min-width: 768px) {

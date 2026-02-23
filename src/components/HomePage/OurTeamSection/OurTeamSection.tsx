@@ -13,17 +13,17 @@ import {
   sectionV,
 } from "../../../lib/animations/home/animations.swipers";
 import { useMediaQuery } from "../../../lib/hooks/useMediaQuery";
+import TeamDesktop from "./TeamDesktop/TeamDesktop";
 
 const OurTeamSection = () => {
+  const isTablet = useMediaQuery("(min-width: 768px)");
 
-   const isTablet = useMediaQuery("(min-width: 768px)");
+  const tabletSlides = [
+    [teamCards[0], teamCards[2]].filter(Boolean), // 1 + 3
+    [teamCards[3], teamCards[1], teamCards[4]].filter(Boolean), // 2 + 4 + 5
+  ].filter((g) => g.length);
 
-   const tabletSlides = [
-     [teamCards[0], teamCards[2]].filter(Boolean), // 1 + 3
-     [teamCards[3], teamCards[1], teamCards[4]].filter(Boolean), // 2 + 4 + 5
-   ].filter((g) => g.length);
-
-   const slides = isTablet ? tabletSlides : teamCards.map((card) => [card]);
+  const slides = isTablet ? tabletSlides : teamCards.map((card) => [card]);
 
   return (
     <SectionWrap
@@ -38,7 +38,10 @@ const OurTeamSection = () => {
       <SliderCont variants={blockV}>
         <AppSlider className="team-slider">
           {slides.map((group, idx) => (
-            <Slide key={idx} className={`team-slide team-slide--${group.length}`}>
+            <Slide
+              key={idx}
+              className={`team-slide team-slide--${group.length}`}
+            >
               {group.map((card) => (
                 <TeamCard key={card.id} data={card} />
               ))}
@@ -46,6 +49,7 @@ const OurTeamSection = () => {
           ))}
         </AppSlider>
       </SliderCont>
+      <TeamDesktop />
     </SectionWrap>
   );
 };
