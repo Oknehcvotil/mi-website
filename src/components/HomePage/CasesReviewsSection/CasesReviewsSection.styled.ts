@@ -4,6 +4,14 @@ import { Link } from "react-router-dom";
 
 export const CasesWrapper = styled(motion.div)`
   padding: 40px 0 20px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 30px;
+  }
+
+  @media (min-width: 1920px) {
+    padding: 80px 0;
+  }
 `;
 
 export const CasesTitle = styled(motion.h2)`
@@ -18,6 +26,15 @@ export const CasesTitle = styled(motion.h2)`
 
   span {
     color: #a066ff;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 40px;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 80px;
+    margin-bottom: 40px;
   }
 `;
 
@@ -48,5 +65,40 @@ export const ReviewsLink = styled(Link)`
     box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     background: #5427b1;
     transform: scale(0.97);
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 30px;
+    line-height: 133%;
+    max-width: 560px;
+    height: 80px;
+    border-radius: 15px;
+    border: 6px solid #a066ff;
+  }
+`;
+
+export const CardsWrapper = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    gap: 25px;
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 25px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 1920px;
+    padding: 0 45px;
+    gap: 110px;
+  }
+`;
+
+export const SliderCont = styled(motion.div)`
+  margin-bottom: 20px;
+
+  @media (min-width: 1920px) {
+    margin-bottom: 40px;
   }
 `;

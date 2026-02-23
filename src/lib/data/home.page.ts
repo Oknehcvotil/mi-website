@@ -172,7 +172,15 @@ export const casesReviewsSlides = [
   },
   {
     type: "info" as const,
-    logos: [{ src: "/images/clients-logos/ci-crypto", width: 195, height: 55 }],
+    logos: [
+      {
+        src: "/images/clients-logos/ci-crypto",
+        width: 195,
+        height: 55,
+        deskWidth: 405,
+        deskHeight: 120,
+      },
+    ],
     keyPrefix: "bohdanBushe",
   },
   {
@@ -183,7 +191,7 @@ export const casesReviewsSlides = [
   },
   {
     type: "info" as const,
-    logos: [{ src: "/images/clients-logos/crypto", width: 175, height: 55 }],
+    logos: [{ src: "/images/clients-logos/crypto", width: 175, height: 55, deskWidth: 465, deskHeight: 140 }],
     keyPrefix: "vitaliyMartynenko",
   },
   {
@@ -196,8 +204,8 @@ export const casesReviewsSlides = [
   {
     type: "info" as const,
     logos: [
-      { src: "/images/clients-logos/cbet", width: 55, height: 45 },
-      { src: "/images/clients-logos/spendy", width: 105, height: 15 },
+      { src: "/images/clients-logos/cbet", width: 55, height: 45, deskWidth: 170, deskHeight: 140 },
+      { src: "/images/clients-logos/spendy", width: 105, height: 15, deskWidth: 320, deskHeight: 40 },
     ],
     keyPrefix: "andriyJmil",
   },

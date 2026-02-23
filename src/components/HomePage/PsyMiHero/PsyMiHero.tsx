@@ -39,13 +39,26 @@ const PsyMiHero = () => {
           </PsyMititle>
 
           <PsyMiLogoCont>
-            <img
-              src="/images/psy-mi/logo.webp"
-              srcSet="/images/psy-mi/logo.webp 1x, /images/psy-mi/logo@2x.webp 2x, /images/psy-mi/logo@3x.webp 3x"
-              alt="PSY MI"
-              loading="lazy"
-              decoding="async"
-            />
+            <picture>
+              {/* Desktop 1920+ */}
+              <source
+                media="(min-width: 1920px)"
+                srcSet="/images/psy-mi/logo-desk.webp 1x, /images/psy-mi/logo-desk@2x.webp 2x, /images/psy-mi/logo-desk@3x.webp 3x"
+              />
+
+              <source
+                media="(min-width: 768px)"
+                srcSet="/images/psy-mi/logo-tab.webp 1x, /images/psy-mi/logo-tab@2x.webp 2x, /images/psy-mi/logo-tab@3x.webp 3x"
+              />
+
+              <img
+                src="/images/psy-mi/logo.webp"
+                srcSet="/images/psy-mi/logo.webp 1x, /images/psy-mi/logo@2x.webp 2x, /images/psy-mi/logo@3x.webp 3x"
+                alt="PSY MI"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <strong>
               PSY <span>MI</span>
             </strong>

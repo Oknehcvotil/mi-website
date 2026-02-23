@@ -10,6 +10,11 @@ export const PsyMiContainer = styled.div`
   max-width: 390px;
   padding: 0 15px;
   margin: 0 auto;
+
+  @media (min-width: 768px) {
+    max-width: 768px;
+    padding: 0 25px;
+  }
 `;
 
 export const PsyMititle = styled(motion.h2)`
@@ -29,6 +34,14 @@ export const PsyMititle = styled(motion.h2)`
 
   .color-mask {
     color: #a066ff;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 30px;
+    margin-bottom: 20px;
+    span {
+      font-size: 30px;
+    }
   }
 `;
 
@@ -50,6 +63,24 @@ export const PsyMiLogoCont = styled.div`
       -webkit-text-fill-color: transparent;
       background-clip: text;
       color: transparent;
+    }
+  }
+
+  @media (min-width: 768px) {
+    gap: 20px;
+    margin-bottom: 20px;
+
+    strong {
+      font-size: 26px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    gap: 45px;
+    margin-bottom: 85px;
+
+    strong {
+      font-size: 59px;
     }
   }
 `;

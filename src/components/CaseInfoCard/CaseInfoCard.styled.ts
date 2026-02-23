@@ -18,6 +18,12 @@ export const CardWrap = styled.div`
     line-height: 190%;
     text-transform: uppercase;
     color: #020202;
+
+    @media (min-width: 1920px) {
+      font-size: 35px;
+      line-height: 109%;
+      margin-bottom: 15px;
+    }
   }
 
   &::before {
@@ -29,6 +35,28 @@ export const CardWrap = styled.div`
     transform: rotate(-5deg);
     opacity: 0.4;
     pointer-events: none;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 390px;
+
+    &::before {
+      transform: rotate(-16deg);
+      border-radius: 0;
+      height: 200px;
+      top: 23px;
+      opacity: 0.4;
+      background: rgba(160, 102, 255, 0.05);
+    }
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 1000px;
+
+    &::before {
+      height: 400px;
+      border: 8px solid #a066ff;
+    }
   }
 `;
 
@@ -46,6 +74,17 @@ export const CardCont = styled.div`
   color: #020202;
   background-color: #fff;
   z-index: 1;
+
+  @media (min-width: 768px) {
+    width: 360px;
+  }
+
+  @media (min-width: 1920px) {
+    width: 890px;
+    max-width: 100%;
+    padding: 40px 80px;
+    border: 8px solid #a066ff;
+  }
 `;
 
 export const ImgWrap = styled.div`
@@ -54,6 +93,10 @@ export const ImgWrap = styled.div`
   align-items: center;
   gap: 15px;
   margin-bottom: 5px;
+
+  @media (min-width: 1920px) {
+    margin-bottom: 40px;
+  }
 `;
 
 export const VacList = styled.ul`
@@ -89,6 +132,20 @@ export const VacList = styled.ul`
       }
     }
   }
+
+  @media (min-width: 1920px) {
+    gap: 20px;
+    margin-bottom: 40px;
+
+    li {
+      padding: 11px;
+
+      p {
+        font-size: 25px;
+        line-height: 140%;
+      }
+    }
+  }
 `;
 
 export const TermsTitle = styled.h2`
@@ -102,6 +159,11 @@ export const TermsText = styled.p`
   text-align: center;
   color: #000;
   margin-bottom: 15px;
+
+  @media (min-width: 1920px) {
+    font-size: 25px;
+    line-height: 140%;
+  }
 `;
 
 export const LineWrapper = styled.div`

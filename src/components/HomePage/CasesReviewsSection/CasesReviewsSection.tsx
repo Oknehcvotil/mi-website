@@ -1,8 +1,10 @@
 import { Trans, useTranslation } from "react-i18next";
 import {
+  CardsWrapper,
   CasesTitle,
   CasesWrapper,
   ReviewsLink,
+  SliderCont,
 } from "./CasesReviewsSection.styled";
 import VideoReviewCard from "../../VideoReviewCard/VideoReviewCard";
 import CaseInfoCard from "../../CaseInfoCard/CaseInfoCard";
@@ -13,13 +15,27 @@ import {
   sectionV,
   titleV,
 } from "../../../lib/animations/home/animations.swipers";
-import { motion } from "framer-motion";
 import { useMatch } from "react-router-dom";
+import { useMediaQuery } from "../../../lib/hooks/useMediaQuery";
 
 const CasesReviewsSection = () => {
   const { t } = useTranslation("home");
   const match = useMatch("/:lang/*");
   const currentLang = match?.params.lang ?? "en";
+
+  const isTablet = useMediaQuery("(min-width: 768px)");
+
+  const groupedSlides = isTablet
+    ? casesReviewsSlides.reduce<(typeof casesReviewsSlides)[]>(
+        (acc, _, index, arr) => {
+          if (index % 2 === 0) {
+            acc.push(arr.slice(index, index + 2));
+          }
+          return acc;
+        },
+        [],
+      )
+    : casesReviewsSlides.map((slide) => [slide]);
 
   return (
     <CasesWrapper
@@ -31,27 +47,31 @@ const CasesReviewsSection = () => {
       <CasesTitle variants={titleV}>
         <Trans t={t} i18nKey="casesTitle" components={{ 1: <span /> }} />
       </CasesTitle>
-      <motion.div variants={blockV} style={{ marginBottom: "20px" }}>
+      <SliderCont variants={blockV} >
         <AppSlider>
-          {casesReviewsSlides.map((slide, i) =>
-            slide.type === "video" ? (
-              <VideoReviewCard
-                key={i}
-                youtubeUrl={slide.youtubeUrl}
-                author={slide.author}
-                position={slide.position}
-                posterOverride={slide.posterOverride}
-              />
-            ) : (
-              <CaseInfoCard
-                key={i}
-                logos={slide.logos}
-                keyPrefix={slide.keyPrefix}
-              />
-            )
-          )}
+          {groupedSlides.map((group, slideIndex) => (
+            <CardsWrapper key={slideIndex}>
+              {group.map((slide, i) =>
+                slide.type === "video" ? (
+                  <VideoReviewCard
+                    key={i}
+                    youtubeUrl={slide.youtubeUrl}
+                    author={slide.author}
+                    position={slide.position}
+                    posterOverride={slide.posterOverride}
+                  />
+                ) : (
+                  <CaseInfoCard
+                    key={i}
+                    logos={slide.logos}
+                    keyPrefix={slide.keyPrefix}
+                  />
+                ),
+              )}
+            </CardsWrapper>
+          ))}
         </AppSlider>
-      </motion.div>
+      </SliderCont>
       <ReviewsLink to={`/${currentLang}/cases/recruitment`}>
         {t("moreCasesAndReviews")}
       </ReviewsLink>

@@ -15,6 +15,10 @@ export const Wrapper = styled(motion.div)`
   @media (min-width: 768px) {
     max-width: 768px;
     padding: 0 25px;
+
+    &.case-info-card-container {
+      margin: 0 ;
+    }
   }
 
   @media (min-width: 1920px) {

@@ -12,12 +12,15 @@ import {
   LogoTitle,
 } from "./CaseInfoCard.styled";
 import Container from "../Container/Container";
+import { useMediaQuery } from "../../lib/hooks/useMediaQuery";
 
 type CaseInfoCardProps = {
   logos?: {
     src: string;
     width?: number;
     height?: number;
+    deskWidth?: number;
+    deskHeight?: number;
     alt?: string;
   }[];
   logoTitle?: string;
@@ -43,28 +46,43 @@ const CaseInfoCard = ({
   const termsTitle = t(`${keyPrefix}.terms.title`);
   const termsText = t(`${keyPrefix}.terms.text`);
 
+  const isDesktop = useMediaQuery("(min-width: 1920px)");
+
   return (
-    <Container style={{ padding: "0 10px" }}>
+    <Container
+      style={{ padding: "0 10px" }}
+      className={"case-info-card-container"}
+    >
       <CaseInfoCardWrapper className={className} aria-label={company}>
         <CardWrap className={className}>
           <CardCont>
             <ImgWrap>
               {logos && logos.length > 0 ? (
-                logos.map((logo, i) => (
-                  <img
-                    key={i}
-                    src={`${logo.src}.webp`}
-                    srcSet={`
-                      ${logo.src}.webp 1x,
-                      ${logo.src}@2x.webp 2x,
-                      ${logo.src}@3x.webp 3x
-                    `}
-                    width={logo.width ?? 175}
-                    height={logo.height ?? 55}
-                    alt={logo.alt ?? company}
-                    loading="lazy"
-                  />
-                ))
+                logos.map((logo, i) => {
+                  const w = isDesktop
+                    ? (logo.deskWidth ?? logo.width ?? 175)
+                    : (logo.width ?? 175);
+                  const h = isDesktop
+                    ? (logo.deskHeight ?? logo.height ?? 55)
+                    : (logo.height ?? 55);
+
+                  return (
+                    <picture key={i}>
+                      <source
+                        media="(min-width: 1920px)"
+                        srcSet={`${logo.src}-desktop.webp 1x, ${logo.src}-desktop@2x.webp 2x, ${logo.src}-desktop@3x.webp 3x`}
+                      />
+                      <img
+                        src={`${logo.src}.webp`}
+                        srcSet={`${logo.src}.webp 1x, ${logo.src}@2x.webp 2x, ${logo.src}@3x.webp 3x`}
+                        width={w}
+                        height={h}
+                        alt={logo.alt ?? company}
+                        loading="lazy"
+                      />
+                    </picture>
+                  );
+                })
               ) : logoTitle ? (
                 <LogoTitle className={`${className}-caseinfo-title`}>
                   {t(logoTitle)}

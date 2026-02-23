@@ -122,7 +122,7 @@ const VideoReviewCard = ({
           </PosterLayer>
         )}
       </Card>
-      {(authorText || positionText) && (
+      {!playing && (authorText || positionText)  && (
         <Meta className={`${classes?.meta ?? ""} ${className ?? ""}`}>
           {authorText && <Name>{authorText}</Name>}
           {positionText && <Position>{positionText}</Position>}

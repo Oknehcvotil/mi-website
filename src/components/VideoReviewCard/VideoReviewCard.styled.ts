@@ -16,11 +16,17 @@ export const Card = styled.article`
   margin: 0 auto;
   border-radius: 13px;
   border: 5px solid #000;
+  aspect-ratio: 3 / 4;
 
   &.vertical {
-    max-width: 360px;
-    height: 275px;
+    width: 360px;
     margin-bottom: 15px;
+  }
+
+  @media (min-width: 1920px) {
+    height: 725px;
+    max-width: 555px;
+    border: 15px solid #000;
   }
 `;
 
@@ -92,6 +98,24 @@ export const PlayBtn = styled.button`
   &:focus {
     background-color: rgba(160, 102, 255, 0.7);
   }
+
+  @media (min-width: 1920px) {
+    width: 245px;
+    height: 245px;
+
+    &::after {
+      content: "";
+      opacity: 1;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      translate: -35% -50%;
+      border-left: 60px solid currentColor;
+      border-top: 34.5px solid transparent;
+      border-bottom: 34.5px solid transparent;
+      transition: background-color 0.2s ease;
+    }
+  }
 `;
 
 export const Meta = styled.div`
@@ -130,13 +154,24 @@ export const Meta = styled.div`
       color: #020202;
     }
   }
+
+  @media (min-width: 1920px) {
+    font-size: 35px;
+    white-space: normal;
+  }
 `;
 
 export const Name = styled.p`
   margin-top: 0px;
   color: #020202;
+
+  @media (min-width: 1920px) {
+    font-size: 40px;
+  }
 `;
 
 export const Position = styled.p`
   margin-top: 10px;
+
+  max-width: 400px;
 `;
