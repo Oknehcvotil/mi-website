@@ -19,6 +19,11 @@ export const CustomSocialLink = styled.a`
   &.footer-links {
     width: 35px;
     height: 35px;
+
+    @media (min-width: 1920px) {
+      width: 67px;
+      height: 67px;
+    }
   }
 
   &.telegram-icon {

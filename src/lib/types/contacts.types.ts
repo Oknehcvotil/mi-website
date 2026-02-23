@@ -4,5 +4,7 @@ export type ContactSectionSocial = {
   labelKey?: string;
   width?: string;
   height?: string;
+  desktopWidth?: string;
+  desktopHeight?: string;
   className?: string;
 };

@@ -32,6 +32,8 @@ export const footerSocials: ContactSectionSocial[] = [
     labelKey: "instagram",
     width: "18px",
     height: "18px",
+    desktopWidth: "34px",
+    desktopHeight: "34px",
   },
   {
     id: "telegram",
@@ -39,6 +41,8 @@ export const footerSocials: ContactSectionSocial[] = [
     labelKey: "telegram",
     width: "17px",
     height: "15px",
+    desktopWidth: "34px",
+    desktopHeight: "34px",
     className: "telegram-icon",
   },
   {
@@ -47,6 +51,8 @@ export const footerSocials: ContactSectionSocial[] = [
     labelKey: "FaceBook",
     width: "11px",
     height: "21px",
+    desktopWidth: "21px",
+    desktopHeight: "39px",
   },
   {
     id: "linkedin",
@@ -54,5 +60,7 @@ export const footerSocials: ContactSectionSocial[] = [
     labelKey: "linkedin",
     width: "13px",
     height: "12px",
+    desktopWidth: "26px",
+    desktopHeight: "39px",
   },
 ];
