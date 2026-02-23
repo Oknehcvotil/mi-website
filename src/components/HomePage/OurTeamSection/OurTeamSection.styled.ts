@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export const SectionWrap = styled(motion.div)`
   position: relative;
-  padding-top: 290;
+  padding-top: 20px;
   background: #f8f8fb;
   width: 100%;
 `;
@@ -40,5 +40,16 @@ export const SliderCont = styled(motion.div)`
   background-position: center calc(100% - 35px);
   background-repeat: no-repeat;
 
-  
+  @media (min-width: 768px) {
+    max-width: 768px;
+    background-image: url("/images/tab/background/team-bg.jpg");
+    background-position: center calc(100% - 40px);
+  }
+`;
+
+export const Slide = styled.article`
+  position: relative;
+  @media (min-width: 768px) {
+    display: flex;
+  }
 `;

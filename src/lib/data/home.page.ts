@@ -81,7 +81,7 @@ export const teamCards = [
     imgBase: "irina-ceo",
     stats: [
       {
-        value: "6+",
+        value: "10+",
         labelKey: "teamStats.yearsInBiz",
         className: "badge-left",
       },

@@ -31,23 +31,27 @@ type TeamCardProps = {
 export const TeamCard: React.FC<TeamCardProps> = ({ data }) => {
   const { t } = useTranslation("home");
 
-  return (
-    <CardCont aria-label={`${data.name}, ${data.role}`}>
+  return (<>
+    <CardCont className={`card-${data.id}`}>
       <NameCont className={`team-${data.id}`}>
         <h3>{data.name}</h3>
         <p>{data.role}</p>
       </NameCont>
-      <img
-        src={`/images/mob/team/${data.imgBase}.webp`}
-        srcSet={`
-                  /images/mob/team/${data.imgBase}.webp 1x,
-                  /images/mob/team/${data.imgBase}@2x.webp 2x,
-                  /images/mob/team/${data.imgBase}@3x.webp 3x
-                `}
-        alt={`${data.name} photo`}
-        loading="lazy"
-      />
-
+      <picture>
+        <source
+          media="(min-width: 768px)"
+          srcSet={`/images/tab/team/${data.imgBase}.webp 1x, /images/tab/team/${data.imgBase}@2x.webp 2x, /images/tab/team/${data.imgBase}@3x.webp 3x
+    `}
+        />
+        <img
+          src={`/images/mob/team/${data.imgBase}.webp`}
+          srcSet={`/images/mob/team/${data.imgBase}.webp 1x, /images/mob/team/${data.imgBase}@2x.webp 2x, /images/mob/team/${data.imgBase}@3x.webp 3x
+    `}
+          alt={`${data.name} photo`}
+          loading="lazy"
+          className={`photo-${data.id}`}
+        />
+      </picture>
       <SocialLink
         key={data.link.id}
         id={data.link.id}
@@ -55,17 +59,18 @@ export const TeamCard: React.FC<TeamCardProps> = ({ data }) => {
         ariaLabel={t(data.link.labelKey ?? "")}
         width={data.link.width}
         height={data.link.height}
-        className="team-card-social"
+        className={`team-card-social social-${data.id}`}
       />
 
-      {data.stats?.map((s, i) => (
-        <StatsBadge
-          key={`${data.id}-stat-${i}`}
-          value={s.value}
-          label={t(s.labelKey)}
-          className={s.className}
-        />
-      ))}
+      
     </CardCont>
+    {data.stats?.map((s, i) => (
+      <StatsBadge
+        key={`${data.id}-stat-${i}`}
+        value={s.value}
+        label={t(s.labelKey)}
+        className={`${s.className} ${data.id}`}
+      />
+    ))}</>
   );
 };

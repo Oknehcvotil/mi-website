@@ -39,4 +39,46 @@ export const StatsWrap = styled.div`
     bottom: 50px;
     left: 140px;
   }
+
+  @media (min-width: 768px) {
+    &.badge-left.irina {
+      bottom: 150px;
+      left: 30px;
+    }
+
+    &.badge-right.irina {
+      bottom: 70px;
+      left: 210px;
+      z-index: 25;
+    }
+
+    &.tatyana {
+      bottom: 90px;
+      left: 490px;
+    }
+
+    &.maria {
+      bottom: 125px;
+      left: 25px;
+      z-index: 2;
+
+      span {
+        max-width: 160px;
+      }
+    }
+
+    &.anastasia {
+      left: 280px;
+      bottom: 65px;
+      z-index: 2;
+    }
+
+    &.daria {
+      z-index: 2;
+      max-width: 240px;
+      bottom: 125px;
+      right: 0px;
+      left: auto;
+    }
+  }
 `;

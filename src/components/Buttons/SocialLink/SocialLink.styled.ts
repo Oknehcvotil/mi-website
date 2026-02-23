@@ -34,4 +34,31 @@ export const CustomSocialLink = styled.a`
     width: 35px;
     height: 35px;
   }
+
+  @media (min-width: 768px) {
+    &.team-card-social.social-irina {
+      top: 125px;
+      right: -10px;
+    }
+
+    &.team-card-social.social-tatyana {
+      top: 150px;
+      left: 120px;
+    }
+
+    &.team-card-social.social-maria {
+      top: 50px;
+      left: 200px;
+    }
+
+    &.team-card-social.social-anastasia {
+      top: 25px;
+      left: 240px;
+    }
+
+    &.team-card-social.social-daria {
+      top: -30px;
+      right: 75px;
+    }
+  }
 `;

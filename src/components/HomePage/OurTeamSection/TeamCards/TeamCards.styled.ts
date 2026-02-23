@@ -1,7 +1,32 @@
 import styled from "@emotion/styled";
 
-export const CardCont = styled.article`
+export const CardCont = styled.div`
   position: relative;
+
+  @media (min-width: 768px) {
+    &.card-tatyana {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    &.card-anastasia {
+      position: absolute;
+      bottom: 0;
+      right: 105px;
+    }
+
+    &.card-daria {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    &.card-maria {
+      position: relative;
+      z-index: 2;
+    }
+  }
 `;
 
 export const NameCont = styled.div`
@@ -54,5 +79,32 @@ export const NameCont = styled.div`
     top: 0;
     height: 100%;
     border: 3px solid #a066ff;
+  }
+
+  @media (min-width: 768px) {
+    &.team-irina {
+      top: 120px;
+      left: 290px;
+    }
+
+    &.team-tatyana {
+      left: 8px;
+      top: 145px;
+    }
+
+    &.team-maria {
+      top: 50px;
+      left: 65px;
+    }
+
+    &.team-anastasia {
+      top: 30px;
+      left: 105px;
+    }
+
+    &.team-daria {
+      left: 100px;
+      top: -35px;
+    }
   }
 `;
