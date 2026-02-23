@@ -14,6 +14,7 @@ export const CardCont = styled.div`
       position: absolute;
       bottom: 0;
       right: 105px;
+      z-index: 1;
     }
 
     &.card-daria {
