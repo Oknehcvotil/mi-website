@@ -125,6 +125,13 @@ export const StatsWrap = styled.div`
       left: 460px;
       bottom: 240px;
       max-width: 290px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+
+      span {
+        max-width: 180px;
+      }
     }
 
     &.daria {
