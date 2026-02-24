@@ -15,7 +15,9 @@ export const PsiCustomLink = styled.a`
   font-size: 20px;
   line-height: 150%;
   color: #000;
-  transition: background 0.3s ease, box-shadow 0.2s ease;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.2s ease;
 
   &.psiMi-seciton--btn {
     display: inline-flex;
@@ -41,15 +43,13 @@ export const PsiCustomLink = styled.a`
   }
 
   @media (min-width: 1920px) {
-    height: 50px;
-    padding: 0 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 125px;
-    width: 100%;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 120%;
+    border: 5px solid #138af9;
+    border-radius: 15px;
+    padding: 14px 25px;
+    max-width: 472px;
+    height: 80px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 130%;
   }
 `;

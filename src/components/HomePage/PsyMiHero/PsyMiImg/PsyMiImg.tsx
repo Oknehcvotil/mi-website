@@ -10,16 +10,29 @@ type PsyMiImgProps = {
 };
 
 const PsyMiImg = ({ className, base, alt, variants }: PsyMiImgProps) => {
-  const imgPath = webpSet(`${base}`);
-  
+  const mob = webpSet(base);
+  const tab = webpSet(`${base}-tab`);
+  const desk = webpSet(`${base}-desk`);
+
   return (
     <picture>
-      <source type="image/webp" srcSet={imgPath.srcSet} />
+      <source
+        media="(min-width: 1920px)"
+        type="image/webp"
+        srcSet={desk.srcSet}
+      />
+
+      <source
+        media="(min-width: 768px)"
+        type="image/webp"
+        srcSet={tab.srcSet}
+      />
+
       <Img
         className={className}
         variants={variants}
-        src={imgPath.src}
-        srcSet={imgPath.srcSet}
+        src={mob.src}
+        srcSet={mob.srcSet}
         alt={alt}
         loading="lazy"
         decoding="async"

@@ -23,6 +23,13 @@ const PsyMiHero = () => {
 
   return (
     <PsyMiHeroSection>
+      <PsyMititle variants={fadeUp}>
+        <Trans
+          i18nKey="psyMi.title"
+          t={t}
+          components={{ 1: <span className="color-mask" />, 2: <span /> }}
+        />
+      </PsyMititle>
       <PsyMiContainer>
         <PsiTextCont
           variants={textParent}
@@ -30,14 +37,6 @@ const PsyMiHero = () => {
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <PsyMititle variants={fadeUp}>
-            <Trans
-              i18nKey="psyMi.title"
-              t={t}
-              components={{ 1: <span className="color-mask" />, 2: <span /> }}
-            />
-          </PsyMititle>
-
           <PsyMiLogoCont>
             <picture>
               {/* Desktop 1920+ */}

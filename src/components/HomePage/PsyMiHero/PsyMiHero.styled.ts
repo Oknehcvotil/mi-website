@@ -13,7 +13,16 @@ export const PsyMiContainer = styled.div`
 
   @media (min-width: 768px) {
     max-width: 768px;
-    padding: 0 25px;
+    padding: 0 25px 110px;
+    position: relative;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 1920px;
+    padding: 0 45px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
   }
 `;
 
@@ -25,8 +34,9 @@ export const PsyMititle = styled(motion.h2)`
   text-transform: uppercase;
   text-align: center;
   color: #14111a;
-  margin-bottom: 15px;
+  margin: 0 auto 15px;
   line-height: 110%;
+  max-width: 350px;
 
   span {
     font-size: 18px;
@@ -37,10 +47,21 @@ export const PsyMititle = styled(motion.h2)`
   }
 
   @media (min-width: 768px) {
+    max-width: 720px;
     font-size: 30px;
     margin-bottom: 20px;
     span {
       font-size: 30px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 60px;
+    margin-bottom: 50px;
+    max-width: 1600px;
+
+    span {
+      font-size: 60px;
     }
   }
 `;
@@ -95,10 +116,33 @@ export const PsyMiLead = styled(motion.p)`
   span {
     font-weight: 700;
   }
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+    line-height: 130%;
+    max-width: 479px;
+    margin-bottom: 25px;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 30px;
+    line-height: 130%;
+    max-width: 630px;
+    margin-bottom: 40px;
+  }
 `;
 
 export const PsiTextCont = styled(motion.div)`
   margin-bottom: 15px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    padding-left: 25px;
+  }
+
+  @media (min-width: 1920px) {
+    padding-left: 170px;
+  }
 `;
 
 export const PsyMiImageCont = styled(motion.div)`
@@ -109,4 +153,20 @@ export const PsyMiImageCont = styled(motion.div)`
   line-height: 0;
   padding-left: 20px;
   min-height: 280px;
+
+  @media (min-width: 768px) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-left: 0;
+    min-height: 380px;
+    width: 425px;
+  }
+
+  @media (min-width: 1920px) {
+    position: relative;
+    min-height: 640px;
+    max-width: 975px;
+    width: 100%;
+  }
 `;
