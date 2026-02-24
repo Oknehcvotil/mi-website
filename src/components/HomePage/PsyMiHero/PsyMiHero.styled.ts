@@ -159,7 +159,7 @@ export const PsyMiImageCont = styled(motion.div)`
     bottom: 0;
     right: 0;
     padding-left: 0;
-    min-height: 380px;
+    min-height: 0px;
     width: 425px;
   }
 

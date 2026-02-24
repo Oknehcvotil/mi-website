@@ -39,7 +39,7 @@ const PsyMiHero = () => {
         >
           <PsyMiLogoCont>
             <picture>
-              {/* Desktop 1920+ */}
+              
               <source
                 media="(min-width: 1920px)"
                 srcSet="/images/psy-mi/logo-desk.webp 1x, /images/psy-mi/logo-desk@2x.webp 2x, /images/psy-mi/logo-desk@3x.webp 3x"
