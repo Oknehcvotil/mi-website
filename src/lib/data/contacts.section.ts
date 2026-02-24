@@ -15,6 +15,7 @@ export const socials: ContactSectionSocial[] = [
     labelKey: "socials.linkedin",
     width: "13px",
     height: "11px",
+    className: "linkedin-icon",
   },
   {
     id: "whatsapp",
@@ -22,6 +23,7 @@ export const socials: ContactSectionSocial[] = [
     labelKey: "socials.viber",
     width: "17px",
     height: "17px",
+    className: "whatsapp-icon",
   },
 ];
 

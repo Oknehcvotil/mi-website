@@ -7,6 +7,9 @@ export const ContactSectionSection = styled(motion.section)`
   @media (min-width: 768px) {
     padding: 40px 0;
   }
+  @media (min-width: 1920px) {
+    padding: 80px 0;
+  }
 `;
 
 export const Kicker = styled(motion.h3)`
@@ -28,6 +31,10 @@ export const Kicker = styled(motion.h3)`
     font-size: 20px;
     max-width: 720px;
   }
+
+  @media (min-width: 1920px) {
+    display: none;
+  }
 `;
 
 export const ContactSectionContainer = styled(motion.div)`
@@ -38,6 +45,10 @@ export const ContactSectionContainer = styled(motion.div)`
   @media (min-width: 768px) {
     max-width: 768px;
     display: flex;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 1920px;
   }
 `;
 
@@ -69,6 +80,24 @@ export const ContactLeadContainer = styled(motion.div)`
     .contact-lead {
       margin-bottom: 20px;
       text-transform: lowercase;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    padding: 0 0 0 85px;
+
+    h2 {
+      font-size: 80px;
+      max-width: 810px;
+      line-height: 99px;
+      margin-bottom: 0;
+    }
+
+    .contact-lead {
+      font-size: 40px;
+      line-height: 125%;
+      margin-bottom: 50px;
+      max-width: 810px;
     }
   }
 `;
@@ -142,6 +171,28 @@ export const BulletItem = styled(motion.li)`
       color: #020202;
     }
   }
+
+  @media (min-width: 1920px) {
+    &:not(:last-of-type) {
+      margin-bottom: 25px;
+    }
+
+    .bullet-icon {
+      border: 8px solid #eaeaea;
+      width: 39px;
+      height: 39px;
+
+      &::after {
+        width: 19px;
+        height: 19px;
+      }
+    }
+
+    .bullet-text {
+      font-size: 30px;
+      line-height: 183%;
+    }
+  }
 `;
 
 export const PersonTitle = styled(motion.h3)`
@@ -152,6 +203,10 @@ export const PersonTitle = styled(motion.h3)`
   text-transform: uppercase;
   color: #020202;
   margin-bottom: 10px;
+
+  @media (min-width: 1920px) {
+    font-size: 40px;
+  }
 `;
 
 export const PersonImgCont = styled(motion.div)`
@@ -160,12 +215,21 @@ export const PersonImgCont = styled(motion.div)`
   border-radius: 50%;
   background-color: #a066ff;
   overflow: hidden;
+
+  @media (min-width: 1920px) {
+    width: 123px;
+    height: 123px;
+  }
 `;
 
 export const PersonCont = styled(motion.div)`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  @media (min-width: 1920px) {
+    gap: 25px;
+  }
 `;
 
 export const SubCont = styled(motion.div)`
@@ -185,10 +249,19 @@ export const PersonRole = styled(motion.p)`
     font-weight: 700;
     color: #9d68f3;
   }
+
+  @media (min-width: 1920px) {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
 `;
 
 export const PersonSocials = styled(motion.ul)`
   display: flex;
   align-items: center;
   gap: 5px;
+
+  @media (min-width: 1920px) {
+    gap: 15px;
+  }
 `;

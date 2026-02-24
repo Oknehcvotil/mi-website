@@ -88,4 +88,32 @@ export const CustomSocialLink = styled.a`
       right: 75px;
     }
   }
+
+  @media (min-width: 1920px) {
+    width: 55px;
+    height: 55px;
+
+    &.telegram-icon {
+      svg {
+        width: 27px;
+        height: 24px;
+        margin-right: 3px;
+      }
+    }
+
+    &.linkedin-icon {
+      svg {
+        width: 21px;
+        height: 20px;
+      }
+    }
+
+    &.whatsapp-icon {
+      svg {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 2px;
+      }
+    }
+  }
 `;

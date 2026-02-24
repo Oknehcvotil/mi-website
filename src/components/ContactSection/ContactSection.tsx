@@ -59,7 +59,7 @@ const ContactSection = () => {
                     <span className="bullet-icon" aria-hidden="true"></span>
                     <p className="bullet-text">{item}</p>
                   </BulletItem>
-                )
+                ),
               )}
           </BulletList>
 
@@ -68,13 +68,22 @@ const ContactSection = () => {
             <PersonImgCont variants={popIn}>
               <picture>
                 <source
+                  media="(min-width: 1920px)"
+                  type="image/webp"
+                  srcSet="/images/maria-cco-desk.webp 1x, /images/maria-cco-desk@2x.webp 2x, /images/maria-cco-desk@3x.webp 3x
+    "
+                />
+
+                <source
                   type="image/webp"
                   srcSet="/images/maria-cco.webp 1x, /images/maria-cco@2x.webp 2x, /images/maria-cco@3x.webp 3x"
                 />
+
                 <img
                   src="/images/maria-cco.webp"
                   alt={t("person.photoAlt")}
                   loading="lazy"
+                  decoding="async"
                 />
               </picture>
             </PersonImgCont>
