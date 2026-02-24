@@ -30,4 +30,18 @@ export const BurgerCloseButton = styled.button`
   &:active {
     scale: 0.98;
   }
+
+  @media (min-width: 768px) {
+    &.close-modal {
+      width: 30px;
+      height: 30px;
+      top: 15px;
+      right: 15px;
+
+      svg {
+        width: 11px;
+        height: 11px;
+      }
+    }
+  }
 `;

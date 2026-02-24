@@ -3,6 +3,10 @@ import { motion } from "framer-motion";
 
 export const ContactSectionSection = styled(motion.section)`
   padding: 40px 0 0;
+
+  @media (min-width: 768px) {
+    padding: 40px 0;
+  }
 `;
 
 export const Kicker = styled(motion.h3)`
@@ -19,12 +23,22 @@ export const Kicker = styled(motion.h3)`
   span {
     color: #a066ff;
   }
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+    max-width: 720px;
+  }
 `;
 
 export const ContactSectionContainer = styled(motion.div)`
   max-width: 390px;
   width: 100%;
   margin: 0 auto;
+
+  @media (min-width: 768px) {
+    max-width: 768px;
+    display: flex;
+  }
 `;
 
 export const ContactLeadContainer = styled(motion.div)`
@@ -38,16 +52,32 @@ export const ContactLeadContainer = styled(motion.div)`
     line-height: 1.25;
   }
 
-  p {
+  &.contact-lead {
     font-weight: 400;
     font-size: 18px;
     line-height: 140%;
     margin-bottom: 5px;
   }
+
+  @media (min-width: 768px) {
+    padding: 15px 0 0 25px;
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    &.contact-lead {
+      margin-bottom: 20px;
+    }
+  }
 `;
 
 export const BulletList = styled(motion.ul)`
   margin-bottom: 20px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 25px;
+  }
 `;
 
 export const BulletItem = styled(motion.li)`
@@ -89,6 +119,28 @@ export const BulletItem = styled(motion.li)`
     line-height: 250%;
     color: #020202;
   }
+
+  @media (min-width: 768px) {
+    p {
+      margin-bottom: 0;
+    }
+
+    .bullet-icon {
+      border: 4px solid #eaeaea;
+
+      &::after {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    .bullet-text {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 250%;
+      color: #020202;
+    }
+  }
 `;
 
 export const PersonTitle = styled(motion.h3)`
@@ -126,6 +178,7 @@ export const PersonRole = styled(motion.p)`
   line-height: 119%;
   font-weight: 400;
   color: #020202;
+  margin-bottom: 5px;
 
   span {
     font-weight: 700;
