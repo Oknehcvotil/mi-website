@@ -44,4 +44,19 @@ export const BurgerCloseButton = styled.button`
       }
     }
   }
+
+  @media (min-width: 1920px) {
+    &.close-modal {
+      width: 70px;
+      height: 70px;
+      top: 30px;
+      right: 40px;
+      border: 4px solid #a066ff;
+
+      svg {
+        width: 27px;
+        height: 27px;
+      }
+    }
+  }
 `;

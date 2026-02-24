@@ -33,4 +33,12 @@ export const MessageCont = styled.div`
     line-height: 125%;
     color: #000;
   }
+
+  @media (min-width: 1920px) {
+    padding: 20px;
+
+    p {
+      font-size: 25px;
+    }
+  }
 `;

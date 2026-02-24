@@ -13,6 +13,12 @@ export const FormCont = styled.div`
   width: 100%;
   padding: 20px 10px;
   height: 450px;
+
+  @media (min-width: 1920px) {
+    background-image: url("/images/desktop/background/form-bg.jpg");
+    max-width: 955px;
+    height: 733px;
+  }
 `;
 
 export const FormWrap = styled.div`
@@ -24,6 +30,12 @@ export const FormWrap = styled.div`
   padding: 15px;
   max-width: 350px;
   width: 100%;
+
+  @media (min-width: 1920px) {
+    max-width: 660px;
+    border-radius: 32px;
+    padding: 40px 30px 30px;
+  }
 `;
 
 export const FieldCont = styled.div`
@@ -85,6 +97,45 @@ export const FieldCont = styled.div`
     font-family: "Montserrat";
     padding: 0;
   }
+
+  @media (min-width: 1920px) {
+    margin-bottom: 20px;
+
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+
+    label {
+      font-size: 25px;
+    }
+
+    .react-international-phone-input-container {
+      gap: 8px;
+      padding: 0 16px;
+      min-height: 68.85px;
+      align-items: center;
+    }
+
+    .react-international-phone-input-container
+      .react-international-phone-input {
+      font-size: 25px;
+      font-family: "Montserrat";
+    }
+
+    .react-international-phone-country-selector-button__button-content {
+      img {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+      }
+    }
+
+    .react-international-phone-country-selector-button__dropdown-arrow {
+      border-top: 8px solid #777;
+      border-right: 8px solid transparent;
+      border-left: 8px solid transparent;
+    }
+  }
 `;
 
 export const CustomField = styled(Field)`
@@ -104,6 +155,11 @@ export const CustomField = styled(Field)`
     outline: none;
     box-shadow: none;
   }
+
+  @media (min-width: 1920px) {
+    padding: 18px 16px;
+    font-size: 25px;
+  }
 `;
 
 export const SubmitBtn = styled.button`
@@ -120,7 +176,10 @@ export const SubmitBtn = styled.button`
   color: #fff;
   border-radius: 10px;
   width: 100%;
-  transition: color 0.3s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.3s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
   background: #5427b1;
   min-height: 45px;
   height: 100%;
@@ -148,5 +207,12 @@ export const SubmitBtn = styled.button`
   &:active {
     box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
     transform: scale(0.97);
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 35px;
+    border-radius: 10px;
+    min-height: 80px;
+    height: 100%;
   }
 `;

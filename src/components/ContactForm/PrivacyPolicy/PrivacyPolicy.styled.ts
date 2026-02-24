@@ -16,4 +16,9 @@ export const PolicyCont = styled.div`
     text-align: start;
     cursor: pointer;
   }
+
+  @media (min-width: 1920px) {
+    margin-top: 30px;
+    font-size: 20px;
+  }
 `;

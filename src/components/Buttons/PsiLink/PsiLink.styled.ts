@@ -43,13 +43,19 @@ export const PsiCustomLink = styled.a`
   }
 
   @media (min-width: 1920px) {
-    border: 5px solid #138af9;
-    border-radius: 15px;
-    padding: 14px 25px;
-    max-width: 472px;
-    height: 80px;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 130%;
+    max-width: 128px;
+    height: 50px;
+    padding: 0 15px;
+
+    &.psiMi-seciton--btn {
+      border: 5px solid #138af9;
+      border-radius: 15px;
+      padding: 14px 25px;
+      max-width: 482px;
+      height: 80px;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 130%;
+    }
   }
 `;

@@ -31,6 +31,16 @@ export const PolicyModalCont = styled(motion.div)`
       max-width: 100%;
     }
   }
+
+  @media (min-width: 1920px) {
+    max-width: 1620px;
+    padding: 70px;
+
+    h2 {
+      font-size: 50px;
+      margin-bottom: 25px;
+    }
+  }
 `;
 
 export const TextCont = styled.div`
@@ -74,5 +84,9 @@ export const TextCont = styled.div`
   @media (min-width: 768px) {
     font-size: 13px;
     line-height: 130%;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 28px;
   }
 `;
