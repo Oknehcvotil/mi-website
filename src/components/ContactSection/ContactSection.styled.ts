@@ -52,7 +52,7 @@ export const ContactLeadContainer = styled(motion.div)`
     line-height: 1.25;
   }
 
-  &.contact-lead {
+  .contact-lead {
     font-weight: 400;
     font-size: 18px;
     line-height: 140%;
@@ -66,8 +66,9 @@ export const ContactLeadContainer = styled(motion.div)`
       margin-bottom: 15px;
     }
 
-    &.contact-lead {
+    .contact-lead {
       margin-bottom: 20px;
+      text-transform: lowercase;
     }
   }
 `;
