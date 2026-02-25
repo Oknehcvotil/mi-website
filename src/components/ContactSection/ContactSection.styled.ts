@@ -84,11 +84,12 @@ export const ContactLeadContainer = styled(motion.div)`
   }
 
   @media (min-width: 1920px) {
-    padding: 0 0 0 85px;
+    padding: 0 0 0 80px;
+    margin-right: auto;
 
     h2 {
       font-size: 80px;
-      max-width: 810px;
+      max-width: 860px;
       line-height: 99px;
       margin-bottom: 0;
     }
