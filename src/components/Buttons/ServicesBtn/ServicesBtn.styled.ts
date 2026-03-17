@@ -31,6 +31,10 @@ export const ServButton = styled(NavLink)`
   @media (min-width: 768px) {
     order: 1;
     margin-right: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
   }
 
   @media (min-width: 1920px) {
