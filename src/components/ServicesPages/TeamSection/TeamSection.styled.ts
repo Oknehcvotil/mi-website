@@ -17,6 +17,11 @@ export const TeamCont = styled(motion.div)`
     background: #8a38f5;
     z-index: 4;
   }
+  @media (min-width: 768px) {
+    max-width: 768px;
+    min-height: 430px;
+    overflow: hidden;
+  }
 `;
 
 export const BackgroundWrap = styled(motion.div)`
@@ -57,6 +62,16 @@ export const TeamLeadCont = styled.div`
   a {
     margin: 0 auto;
   }
+
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    max-width: 360px;
+    padding: 0;
+  }
 `;
 
 export const NamesTitle = styled(motion.h2)`
@@ -66,6 +81,11 @@ export const NamesTitle = styled(motion.h2)`
   text-transform: uppercase;
   text-align: center;
   color: #020202;
+
+  @media (min-width: 768px) {
+    font-size: 35px;
+    line-height: 130%;
+  }
 `;
 
 export const PositionText = styled(motion.h3)`
@@ -75,6 +95,13 @@ export const PositionText = styled(motion.h3)`
   text-align: center;
   color: #a066ff;
   margin-bottom: 15px;
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+    line-height: 130%;
+    margin: 0 auto 15px;
+    max-width: 297px;
+  }
 `;
 
 export const LeftImgCont = styled.div`
@@ -104,6 +131,27 @@ export const LeftImgCont = styled.div`
     width: 80%;
     height: auto;
   }
+
+  @media (min-width: 768px) {
+    left: 0;
+    min-height: 430px;
+
+    &.daria {
+      img {
+        bottom: 0;
+        left: 0;
+        width: 420px;
+      }
+    }
+
+    &.irina {
+      img {
+        bottom: 0;
+        left: 0;
+        width: 355px;
+      }
+    }
+  }
 `;
 
 export const RightImgCont = styled.div`
@@ -119,5 +167,25 @@ export const RightImgCont = styled.div`
     bottom: -135px;
     right: -15px;
     width: 80%;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 768px;
+    min-height: 430px;
+
+    img {
+      width: 290px;
+      bottom: 0;
+      right: -8px;
+    }
+
+    &.tatyana,
+    &.tatyana-height {
+      img {
+        width: 280px;
+        bottom: 0;
+        right: -8px;
+      }
+    }
   }
 `;

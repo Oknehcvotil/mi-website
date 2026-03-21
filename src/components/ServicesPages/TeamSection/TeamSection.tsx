@@ -20,8 +20,20 @@ type TeamSectionProps = {
   config: TeamContactConfig;
 };
 
+const getTabletLeftTeamImagePath = (imagePath: string) =>
+  imagePath
+    .replace("/images/mob/team/", "/images/tab/team/")
+    .replace(/([^/]+)$/, "$1-services-page");
+
+const getTabletTeamImagePath = (imagePath: string) =>
+  imagePath.replace("/images/mob/team/", "/images/tab/team/");
+
+const getImageSrc = (imagePath: string) => `${imagePath}.webp`;
+
 const TeamSection = ({ config }: TeamSectionProps) => {
   const { t } = useTranslation(config.translationNs);
+  const leftTabletImg = getTabletLeftTeamImagePath(config.images.leftImg);
+  const rightTabletImg = getTabletTeamImagePath(config.images.rightImg);
 
   return (
     <section>
@@ -31,6 +43,18 @@ const TeamSection = ({ config }: TeamSectionProps) => {
       <TeamCont className={config.className}>
         <LeftImgCont className={config.images.leftClassName}>
           <picture>
+            <source
+              srcSet={`${leftTabletImg}@3x.webp`}
+              media="(min-width: 768px) and (min-resolution: 3dppx)"
+            />
+            <source
+              srcSet={`${leftTabletImg}@2x.webp`}
+              media="(min-width: 768px) and (min-resolution: 2dppx)"
+            />
+            <source
+              srcSet={getImageSrc(leftTabletImg)}
+              media="(min-width: 768px)"
+            />
             <source
               srcSet={`${config.images.leftImg}@3x.webp`}
               media="(min-resolution: 3dppx)"
@@ -44,7 +68,7 @@ const TeamSection = ({ config }: TeamSectionProps) => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.3 }}
-              src={config.images.leftImg}
+              src={getImageSrc(config.images.leftImg)}
               alt={config.images.leftImgAlt ?? "Left portrait"}
               className={config.images.leftClassName}
             />
@@ -85,6 +109,18 @@ const TeamSection = ({ config }: TeamSectionProps) => {
         <RightImgCont className={config.images.rightClassName}>
           <picture>
             <source
+              srcSet={`${rightTabletImg}@3x.webp`}
+              media="(min-width: 768px) and (min-resolution: 3dppx)"
+            />
+            <source
+              srcSet={`${rightTabletImg}@2x.webp`}
+              media="(min-width: 768px) and (min-resolution: 2dppx)"
+            />
+            <source
+              srcSet={getImageSrc(rightTabletImg)}
+              media="(min-width: 768px)"
+            />
+            <source
               srcSet={`${config.images.rightImg}@3x.webp`}
               media="(min-resolution: 3dppx)"
             />
@@ -97,7 +133,7 @@ const TeamSection = ({ config }: TeamSectionProps) => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.3 }}
-              src={`${config.images.rightImg}.webp`}
+              src={getImageSrc(config.images.rightImg)}
               alt={config.images.rightImgAlt ?? "Right portrait"}
               className={config.images.rightClassName}
             />
