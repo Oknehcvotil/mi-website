@@ -14,7 +14,7 @@ function ForCandidates() {
   return (
     <React.Fragment>
       <ServicesHero content={forCandidatesHeroContent} />
-      <PricingSection plans={forCandidatesPlans} />
+      <PricingSection plans={forCandidatesPlans}/>
       <TeamSection config={teamForCandidatesConfig} />
       {/* <CandidatesCasesSection /> */}
       <ContactSection />

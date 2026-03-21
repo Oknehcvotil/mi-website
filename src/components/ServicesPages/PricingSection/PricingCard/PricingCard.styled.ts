@@ -13,6 +13,8 @@ export const CardWrap = styled(motion.li)`
   width: 100%;
   color: #020202;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 
   &.top--sale {
     padding-top: 50px;
@@ -22,7 +24,20 @@ export const CardWrap = styled(motion.li)`
 
   ul {
     margin-bottom: 15px;
+    flex: 1;
   }
+
+  @media (min-width: 768px) {
+    flex: 0 0 calc(50% - 10px);
+    max-width: none;
+  }
+`;
+
+export const CardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
 `;
 
 export const CardTitle = styled.h2`

@@ -6,6 +6,7 @@ import {
   HeroImgCont,
   HeroSectionWrap,
   HeroSubtitle,
+  HeroWrap,
   LeadCont,
   MainHeroTitle,
 } from "./ServicesHero.styled";
@@ -59,33 +60,35 @@ const ServicesHero = ({ content }: ServicesHeroProps) => {
 
         {nav && <HeroNav translationNs={translationNs} nav={nav} />}
 
-        <LeadCont variants={reduce ? undefined : fadeUp}>
-          <h2>{t(sectionTitleKey)}</h2>
-          {leadKey && <p>{t(leadKey)}</p>}
-          <ConsultBtn variant="primary" maxWidth="307px" />
-        </LeadCont>
+        <HeroWrap>
+          <LeadCont variants={reduce ? undefined : fadeUp}>
+            <h2>{t(sectionTitleKey)}</h2>
+            {leadKey && <p>{t(leadKey)}</p>}
+            <ConsultBtn variant="primary" maxWidth="307px" />
+          </LeadCont>
 
-        <HeroImgCont
-          variants={reduce ? undefined : imgVariants}
-          className={`hero-${className}-img--cont`}
-        >
-          <picture>
-            <source
-              srcSet={`${image.basePath}@3x.${image.ext ?? "webp"}`}
-              media="(min-resolution: 3dppx)"
-            />
-            <source
-              srcSet={`${image.basePath}@2x.${image.ext ?? "webp"}`}
-              media="(min-resolution: 2dppx)"
-            />
-            <img
-              src={`${image.basePath}.${image.ext ?? "webp"}`}
-              alt={t(image.altKey)}
-              loading="eager"
-              decoding="async"
-            />
-          </picture>
-        </HeroImgCont>
+          <HeroImgCont
+            variants={reduce ? undefined : imgVariants}
+            className={`hero-${className}-img--cont`}
+          >
+            <picture>
+              <source
+                srcSet={`${image.basePath}@3x.${image.ext ?? "webp"}`}
+                media="(min-resolution: 3dppx)"
+              />
+              <source
+                srcSet={`${image.basePath}@2x.${image.ext ?? "webp"}`}
+                media="(min-resolution: 2dppx)"
+              />
+              <img
+                src={`${image.basePath}.${image.ext ?? "webp"}`}
+                alt={t(image.altKey)}
+                loading="eager"
+                decoding="async"
+              />
+            </picture>
+          </HeroImgCont>
+        </HeroWrap>
       </Container>
     </HeroSectionWrap>
   );

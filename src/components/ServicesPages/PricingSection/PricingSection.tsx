@@ -7,9 +7,10 @@ import { CardsList, PricingSectionWrap } from "./PricingSection.styled";
 
 type PricingSectionProps = {
   plans: Plan[];
+  className?: string;
 };
 
-const PricingSection = ({ plans }: PricingSectionProps) => {
+const PricingSection = ({ plans, className }: PricingSectionProps) => {
   const reduce = useReducedMotion();
 
   return (
@@ -20,7 +21,7 @@ const PricingSection = ({ plans }: PricingSectionProps) => {
       variants={reduce ? undefined : sectionVariants}
     >
       <Container className="pricing-section-container">
-        <CardsList>
+        <CardsList className={className}>
           {plans.map((plan, i) => (
             <PricingCard key={i} plan={plan} />
           ))}

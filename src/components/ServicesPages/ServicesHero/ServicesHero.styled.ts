@@ -20,6 +20,11 @@ export const MainHeroTitle = styled(motion.h1)`
   &.hero-PHD--title {
     margin-bottom: 15px;
   }
+
+  @media (min-width: 768px) {
+    font-size: 35px;
+   
+  }
 `;
 
 export const HeroSubtitle = styled(motion.h3)`
@@ -34,6 +39,23 @@ export const HeroSubtitle = styled(motion.h3)`
 
   &.hero-for-candidates--subtitle {
     margin-bottom: 10px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 35px;
+    margin-bottom: 5px;
+    font-size: 25px;
+
+    &.hero-for-candidates--subtitle {
+      margin-bottom: 20px;
+    }
+  }
+`;
+
+export const HeroWrap = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    padding-bottom: 45px;
   }
 `;
 
@@ -52,6 +74,21 @@ export const LeadCont = styled(motion.div)`
     font-size: 15px;
     line-height: 130%;
     margin-bottom: 15px;
+  }
+
+  @media (min-width: 768px) {
+    margin-right: auto;
+    max-width: 460px;
+
+    h2 {
+      font-family: "Unbounded";
+      font-size: 40px;
+      line-height: 125%;
+    }
+
+    p {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -80,6 +117,10 @@ export const HeroImgCont = styled(motion.div)`
     img {
       max-width: 225px;
     }
+
+    @media (min-width: 768px) {
+      padding: 0;
+    }
   }
 
   &.hero-PHD-img--cont {
@@ -89,5 +130,9 @@ export const HeroImgCont = styled(motion.div)`
     img {
       max-width: 264px;
     }
+  }
+
+  @media (min-width: 768px) {
+    padding: 0;
   }
 `;

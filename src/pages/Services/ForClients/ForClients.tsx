@@ -16,7 +16,10 @@ function ForClients() {
   return (
     <React.Fragment>
       <ServicesHero content={forClientsHeroContent} />
-      <PricingSection plans={forClientsPlan} />
+      <PricingSection
+        plans={forClientsPlan}
+        className="full-width-last full-width-last-clients"
+      />
       <HrConsultingSection />
       <BusinessPsychologySection />
       <TeamSection config={teamForClientsConfig} />

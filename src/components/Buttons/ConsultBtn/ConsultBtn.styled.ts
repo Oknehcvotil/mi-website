@@ -20,7 +20,10 @@ export const ConsultBtnStyled = styled.a<{
   border-radius: 8px;
   max-width: ${({ maxWidth }) => maxWidth || "100%"};
   width: 100%;
-  transition: color 0.3s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.3s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 
   span {
     position: relative;
@@ -58,6 +61,10 @@ export const ConsultBtnStyled = styled.a<{
       box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
       transform: scale(0.97);
     }
+
+    @media (min-width: 768px) {
+    height: 48px;
+  }
 
     @media (min-width: 1920px) {
     height: 80px;
