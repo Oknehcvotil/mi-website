@@ -11,6 +11,16 @@ export const AdditionalServicesList = styled(motion.ul)`
   max-width: 390px;
   width: 100%;
   margin: 0 auto 25px;
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 10px;
+    max-width: 768px;
+    padding: 0 25px;
+    margin: 0 auto 20px;
+  }
 `;
 
 export const AdditionalServicesItems = styled(motion.li)`
@@ -27,4 +37,14 @@ export const AdditionalServicesItems = styled(motion.li)`
   line-height: 129%;
   text-align: center;
   color: #14111a;
+
+  @media (min-width: 768px) {
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 120%;
+  }
 `;

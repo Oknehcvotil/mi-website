@@ -11,6 +11,7 @@ import {
   HrAdditionalCont,
   HrAdditionalTitle,
   HrImgCont,
+  HrLeadCont,
   HrLeadText,
   HrSectionWrap,
   HrTitle,
@@ -18,16 +19,22 @@ import {
 import AdditionalServices from "./AdditionalServices/AdditionalServices";
 import { additionalHrServices } from "../../../lib/data/services.pages";
 import { useState } from "react";
+import { useMediaQuery } from "../../../lib/hooks/useMediaQuery";
 
-const COLLAPSED_COUNT = 3;
+const MOBILE_COLLAPSED_COUNT = 3;
+const TABLET_COLLAPSED_COUNT = 4;
 
 const HrConsultingSection = () => {
   const { t } = useTranslation("servicesForClients");
   const reduce = useReducedMotion();
+  const isTabletUp = useMediaQuery("(min-width: 768px)");
 
   const [expanded, setExpanded] = useState(false);
+  const collapsedCount = isTabletUp
+    ? TABLET_COLLAPSED_COUNT
+    : MOBILE_COLLAPSED_COUNT;
 
-  const canToggle = additionalHrServices.length > COLLAPSED_COUNT;
+  const canToggle = additionalHrServices.length > collapsedCount;
   const buttonText = expanded ? t("servicesCollapse") : t("servicesMore");
 
   return (
@@ -38,40 +45,42 @@ const HrConsultingSection = () => {
         viewport={{ once: true, amount: 0.25 }}
         variants={reduce ? undefined : sectionVariants}
       >
-        <HrLeadText>
-          <HrTitle>{t("hr.title")}</HrTitle>
-          <p>{t("hr.lead")}</p>
+        <HrLeadCont>
+          <HrLeadText>
+            <HrTitle>{t("hr.title")}</HrTitle>
+            <p>{t("hr.lead")}</p>
 
-          <motion.div
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={reduce ? undefined : ctaVariants}
+            >
+              <ConsultBtn variant="primary" maxWidth="307px" />
+            </motion.div>
+          </HrLeadText>
+
+          <HrImgCont
+            aria-hidden="true"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            variants={reduce ? undefined : ctaVariants}
+            variants={reduce ? undefined : illustrationVariants}
           >
-            <ConsultBtn variant="primary" maxWidth="307px" />
-          </motion.div>
-        </HrLeadText>
-
-        <HrImgCont
-          aria-hidden="true"
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={reduce ? undefined : illustrationVariants}
-        >
-          <img
-            src="/images/services/hr-consulting.webp"
-            srcSet="/images/mob/services-pages/hr-consulting.webp 1x, /images/mob/services-pages/hr-consulting@2x.webp 2x, /images/mob/services-pages/hr-consulting@3x.webp 3x"
-            alt="HR consulting icon"
-          />
-        </HrImgCont>
+            <img
+              src="/images/services/hr-consulting.webp"
+              srcSet="/images/mob/services-pages/hr-consulting.webp 1x, /images/mob/services-pages/hr-consulting@2x.webp 2x, /images/mob/services-pages/hr-consulting@3x.webp 3x"
+              alt="HR consulting icon"
+            />
+          </HrImgCont>
+        </HrLeadCont>
 
         <HrAdditionalCont>
           <HrAdditionalTitle>{t("hr.separateTitle")}</HrAdditionalTitle>
 
           <AdditionalServices
             expanded={expanded}
-            collapsedCount={COLLAPSED_COUNT}
+            collapsedCount={collapsedCount}
           />
 
           {canToggle && (
