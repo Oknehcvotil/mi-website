@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import Container from "../../Container/Container";
 import {
   PsyhologyImgCont,
+  PsyhologyInner,
   PsyhologyLeadCont,
   PsyhologyWrap,
 } from "./BusinessPsychologySection.styled";
@@ -22,6 +23,7 @@ const BusinessPsychologySection = () => {
       viewport={{ once: true, amount: 0.25 }}
     >
       <Container>
+        <PsyhologyInner>
         <PsyhologyLeadCont>
           <motion.h2 variants={fadeUp}>{t("psyhology.title")}</motion.h2>
           <motion.p variants={fadeUp}>{t("psyhology.lead")}</motion.p>
@@ -42,6 +44,7 @@ const BusinessPsychologySection = () => {
             loading="lazy"
           />
         </PsyhologyImgCont>
+        </PsyhologyInner>
       </Container>
     </PsyhologyWrap>
   );

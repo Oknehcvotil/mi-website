@@ -16,6 +16,16 @@ export const PsyhologyWrap = styled(motion.section)`
   }
 `;
 
+export const PsyhologyInner = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+`;
+
 export const PsyhologyLeadCont = styled.div`
   font-weight: 400;
   font-size: 15px;
@@ -29,21 +39,30 @@ export const PsyhologyLeadCont = styled.div`
     line-height: 32px;
     margin-bottom: 15px;
   }
+
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 130%;
+    }
+  }
 `;
 
 export const PsyhologyImgCont = styled.div`
   display: none;
 
   @media (min-width: 768px) {
-    display: block;
-
-    padding-top: 20px;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
 
     img {
-      max-width: 250px;
+      max-width: 220px;
       width: 100%;
       height: auto;
       display: block;
