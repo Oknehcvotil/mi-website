@@ -8,6 +8,7 @@ import {
 import Container from "../../Container/Container";
 import {
   ConsultLinkCont,
+  EligibilityCardsCont,
   EligibilityWrap,
 } from "./PhdEligibilitySection.styled";
 import EligibilityCard from "./EligibilityCard/EligibilityCard";
@@ -27,21 +28,23 @@ const PhdEligibilitySection = () => {
       variants={reduce ? undefined : listStagger}
     >
       <Container>
-        <motion.div variants={reduce ? undefined : parent}>
-          <EligibilityCard
-            translationNs={ns}
-            titleKey="zero.title"
-            items={zeroToProItems}
-          />
-        </motion.div>
+        <EligibilityCardsCont>
+          <motion.div variants={reduce ? undefined : parent}>
+            <EligibilityCard
+              translationNs={ns}
+              titleKey="zero.title"
+              items={zeroToProItems}
+            />
+          </motion.div>
 
-        <motion.div variants={reduce ? undefined : parent}>
-          <EligibilityCard
-            translationNs={ns}
-            titleKey="upskill.title"
-            items={upskillItems}
-          />
-        </motion.div>
+          <motion.div variants={reduce ? undefined : parent}>
+            <EligibilityCard
+              translationNs={ns}
+              titleKey="upskill.title"
+              items={upskillItems}
+            />
+          </motion.div>
+        </EligibilityCardsCont>
 
         <ConsultLinkCont variants={reduce ? undefined : parent}>
           <h2>

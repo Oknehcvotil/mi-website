@@ -14,10 +14,20 @@ export const EligibilityTitle = styled.h3`
   span {
     color: #9e2fff;
   }
+
+  @media (min-width: 768px) {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
 `;
 
 export const EligibilityCardList = styled.ul`
   margin-bottom: 30px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    flex: 1;
+  }
 `;
 
 export const EligibilityItem = styled.li`
@@ -46,5 +56,31 @@ export const EligibilityItem = styled.li`
 
   &:not(:last-of-type) {
     margin-bottom: 20px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 340px;
+    width: 100%;
+    height: 85px;
+    font-size: 13px;
+    line-height: 120%;
+    gap: 20px;
+    border-radius: 8px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      max-width: 100%;
+      font-size: 15px;
+      line-height: 130%;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 12px;
+    }
+
+    padding: 12px;
   }
 `;

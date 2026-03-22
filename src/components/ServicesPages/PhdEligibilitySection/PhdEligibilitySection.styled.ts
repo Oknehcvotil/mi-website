@@ -4,6 +4,26 @@ import { motion } from "framer-motion";
 export const EligibilityWrap = styled(motion.section)`
   background-color: rgba(243, 244, 249, 0.62);
   padding: 20px 0 40px 0;
+
+  @media (min-width: 768px) {
+    padding: 40px 0;
+  }
+`;
+
+export const EligibilityCardsCont = styled.div`
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    align-items: stretch;
+    max-width: 768px;
+    margin: 0 auto;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 `;
 
 export const ConsultLinkCont = styled(motion.div)`
@@ -27,6 +47,16 @@ export const ConsultLinkCont = styled(motion.div)`
     span {
       font-weight: 700;
       color: #a066ff;
+    }
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 20px;
+
+    h2 {
+      max-width: none;
+      font-size: 20px;
+      line-height: 130%;
     }
   }
 `;
