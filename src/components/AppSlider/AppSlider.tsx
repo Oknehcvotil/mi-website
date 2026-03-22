@@ -16,10 +16,11 @@ import { ButtonsWrapper, SliderButton, SliderCont } from "./AppSlider.styled";
 type AppSliderProps = {
   className?: string;
   children: ReactNode;
+  breakpoints?: import("swiper/types").SwiperOptions["breakpoints"];
 };
 
 const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
-  { className, children },
+  { className, children, breakpoints },
   ref
 ) {
   const prevRef = useRef<HTMLButtonElement | null>(null);
@@ -39,6 +40,7 @@ const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
         modules={[A11y, Navigation, Pagination]}
         slidesPerView={1}
         spaceBetween={0}
+        breakpoints={breakpoints}
         // ставим пустые объекты — реальные элементы подставим ниже
         navigation={{} as import("swiper/types").NavigationOptions}
         pagination={{ clickable: true }}

@@ -1,5 +1,16 @@
 import styled from "@emotion/styled";
 
+export const CardContainer = styled.div`
+  max-width: 390px;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    max-width: 340px;
+    padding: 0;
+  }
+`;
+
 export const PhdReviewCont = styled.div`
   width: 100%;
   padding: 5px;

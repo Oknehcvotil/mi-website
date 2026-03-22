@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import {
+  CardContainer,
   PhdReviewCont,
   PhdReviewImgCont,
   PhdReviewTextCont,
 } from "./PhdReviewCard.styled";
-import Container from "../../../Container/Container";
 
 type PhdReviewCardProps = {
   translationNs: string;
@@ -12,6 +12,7 @@ type PhdReviewCardProps = {
   reviewKey: string;
   imgSrc: string;
   alt?: string;
+  className?: string;
 };
 
 const PhdReviewCard = ({
@@ -20,13 +21,14 @@ const PhdReviewCard = ({
   reviewKey,
   imgSrc,
   alt,
+  className,
 }: PhdReviewCardProps) => {
   const { t } = useTranslation(translationNs);
 
   const reviews = t(reviewKey, { returnObjects: true }) as string[];
 
   return (
-    <Container>
+    <CardContainer className={className}>
       <PhdReviewCont>
         <PhdReviewImgCont>
           <img
@@ -46,7 +48,7 @@ const PhdReviewCard = ({
           </ul>
         </PhdReviewTextCont>
       </PhdReviewCont>
-    </Container>
+    </CardContainer>
   );
 };
 

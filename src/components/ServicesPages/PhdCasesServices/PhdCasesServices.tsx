@@ -1,5 +1,5 @@
 import { Trans, useTranslation } from "react-i18next";
-import { PhdCasesTitle, PhdCasesWrapper } from "./PhdCasesServices.styled";
+import { PhdCasesTitle, PhdCasesWrapper, PhdSliderPair } from "./PhdCasesServices.styled";
 import { motion } from "framer-motion";
 import {
   blockV,
@@ -9,27 +9,31 @@ import {
 import AppSlider from "../../AppSlider/AppSlider";
 import PhdReviewCard from "./PhdReviewCard/PhdReviewCard";
 import ReqAndResultCard from "./ReqAndResultCard/ReqAndResultCard";
+import { useMediaQuery } from "../../../lib/hooks/useMediaQuery";
 
 const NS = "servicesPHD";
 
 const PhdCasesServices = () => {
   const { t } = useTranslation(NS);
+  const isTablet = useMediaQuery("(min-width: 768px)");
 
-  const Review = (base: string, img: string) => (
-    <PhdReviewCard
-      translationNs={NS}
-      nameKey={`${base}.name`}
-      reviewKey={`${base}.review`}
-      imgSrc={img}
-    />
-  );
-  const ReqRes = (base: "cases.alina" | "cases.iryna") => (
-    <ReqAndResultCard
-      translationNs={NS}
-      reqKey={`${base}.clientRequest`}
-      resultKey={`${base}.result`}
-    />
-  );
+  const allCards = [
+    <PhdReviewCard translationNs={NS} nameKey="cases.alina.name" reviewKey="cases.alina.review" imgSrc="/images/phd-cases/alina" />,
+    <ReqAndResultCard translationNs={NS} reqKey="cases.alina.clientRequest" resultKey="cases.alina.result" />,
+    <PhdReviewCard translationNs={NS} nameKey="cases.iryna.name" reviewKey="cases.iryna.review" imgSrc="/images/phd-cases/iryna" />,
+    <ReqAndResultCard translationNs={NS} reqKey="cases.iryna.clientRequest" resultKey="cases.iryna.result" />,
+    <PhdReviewCard translationNs={NS} nameKey="cases.elizaveta.name" reviewKey="cases.elizaveta.review" imgSrc="/images/phd-cases/elizaveta" className="last-pair-card" />,
+    <PhdReviewCard translationNs={NS} nameKey="cases.olesya.name" reviewKey="cases.olesya.review" imgSrc="/images/phd-cases/olesya" className="last-pair-card" />,
+  ];
+
+  const groupedSlides = isTablet
+    ? allCards.reduce<(typeof allCards)[]>((acc, _, index, arr) => {
+        if (index % 2 === 0) {
+          acc.push(arr.slice(index, index + 2));
+        }
+        return acc;
+      }, [])
+    : allCards.map((card) => [card]);
 
   return (
     <PhdCasesWrapper
@@ -44,12 +48,20 @@ const PhdCasesServices = () => {
 
       <motion.div variants={blockV}>
         <AppSlider>
-          {Review("cases.alina", "/images/phd-cases/alina")}
-          {ReqRes("cases.alina")}
-          {Review("cases.iryna", "/images/phd-cases/iryna")}
-          {ReqRes("cases.iryna")}
-          {Review("cases.elizaveta", "/images/phd-cases/elizaveta")}
-          {Review("cases.olesya", "/images/phd-cases/olesya")}
+          {groupedSlides.map((group, slideIndex) => (
+            <PhdSliderPair
+              key={slideIndex}
+              className={
+                isTablet && slideIndex === groupedSlides.length - 1
+                  ? "last-pair"
+                  : undefined
+              }
+            >
+              {group.map((card, i) => (
+                <div key={i}>{card}</div>
+              ))}
+            </PhdSliderPair>
+          ))}
         </AppSlider>
       </motion.div>
     </PhdCasesWrapper>
