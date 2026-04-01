@@ -15,7 +15,7 @@ export const Header = styled.header<{ isScrolled: boolean }>`
   backdrop-filter: ${({ isScrolled }) => (isScrolled ? "blur(10px)" : "none")};
   transition: all 0.3s ease;
 
-  @media (min-width: 1920px) {
+  @media (min-width: 1024px) {
     position: relative;
   }
 `;
@@ -34,6 +34,12 @@ export const HeaderWrapper = styled(motion.nav)`
     min-height: 65px;
   }
 
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    padding: 0 30px;
+    min-height: 80px;
+  }
+
   @media (min-width: 1920px) {
     max-width: 1920px;
     padding: 0 45px;
@@ -48,7 +54,7 @@ export const BurgerMenuBtn = styled.button`
     margin-right: 30px;
   }
 
-  @media (min-width: 1920px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 `;
@@ -56,13 +62,28 @@ export const BurgerMenuBtn = styled.button`
 export const LogoLink = styled(NavLink)`
   display: none;
 
+  svg {
+    width: 70px;
+    height: auto;
+  }
+
   @media (min-width: 768px) {
     display: block;
     margin-right: 55px;
     order: 2;
   }
 
-  @media (min-width: 1920px) {
+  @media (min-width: 1024px) {
     margin-right: auto;
+
+    svg {
+      width: 100px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    svg {
+      width: 130px;
+    }
   }
 `;

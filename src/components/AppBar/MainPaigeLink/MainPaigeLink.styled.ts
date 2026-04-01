@@ -34,7 +34,12 @@ export const MainLink = styled(NavLink)`
     color: #fff;
   }
 
+  @media (min-width: 1024px) {
+    display: none;
+  }
+
   @media (min-width: 1920px) {
+    display: flex;
     order: 4;
     height: 50px;
     padding: 0 15px;

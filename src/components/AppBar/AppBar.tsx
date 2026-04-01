@@ -12,6 +12,7 @@ import { useMediaQuery } from "../../lib/hooks/useMediaQuery";
 import { useMatch } from "react-router-dom";
 import NavBar from "./NavBar/NavBar";
 import MainPageLink from "./MainPaigeLink/MainPaigeLink";
+import PsiLink from "../Buttons/PsiLink/PsiLink";
 
 type AppBarProps = {
   setMenuIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -23,7 +24,7 @@ function AppBar({ setMenuIsOpen }: AppBarProps) {
   const currentLang = match?.params.lang ?? "en";
 
   const isTablet = useMediaQuery("(min-width: 768px)");
-  const isDesk = useMediaQuery("(min-width: 1920px)");
+  const isDesk = useMediaQuery("(min-width: 1024px)");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,6 +60,9 @@ function AppBar({ setMenuIsOpen }: AppBarProps) {
         <LangSwitcher />
         {isDesk && <MainPageLink />}
         <ServicesBtn />
+
+        {isDesk && <PsiLink className="desk-psi">PSY MI</PsiLink>}
+
         <ConsultBtn
           variant="header"
           maxWidth={isTablet ? "200px" : "140px"}

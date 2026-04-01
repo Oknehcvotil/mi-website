@@ -71,6 +71,16 @@ export const SubMenuTitle = styled.span<{
     }
   }
 
+  @media (min-width: 1024px) {
+    margin: 0;
+    min-height: 40px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
   @media (min-width: 1920px) {
     margin: 0;
     min-height: 50px;
@@ -101,6 +111,35 @@ export const SubMenuList = styled(motion.ul)`
     }
   }
 
+  @media (min-width: 1024px) {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: max-content;
+    max-width: max-content;
+    padding: 20px;
+    border: none;
+    background-color: #fff;
+
+    ::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 4px;
+      border-radius: 10px;
+      pointer-events: none;
+      background: linear-gradient(90deg, #a066ff, #5427b1);
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+  }
+
   @media (min-width: 1920px) {
     position: absolute;
     top: 65px;
@@ -119,9 +158,12 @@ export const SubMenuList = styled(motion.ul)`
       border-radius: 10px;
       pointer-events: none;
       background: linear-gradient(90deg, #a066ff, #5427b1);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
     }
@@ -139,6 +181,11 @@ export const SubLink = styled(NavLink)`
   &:focus,
   &.active {
     font-weight: 700;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 20px;
+    line-height: 120%;
   }
 
   @media (min-width: 1920px) {

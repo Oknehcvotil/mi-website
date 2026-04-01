@@ -37,7 +37,7 @@ export const ServButton = styled(NavLink)`
     padding: 0;
   }
 
-  @media (min-width: 1920px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 `;

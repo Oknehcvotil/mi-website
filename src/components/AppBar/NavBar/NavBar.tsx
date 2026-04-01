@@ -19,7 +19,7 @@ const NavBar = ({ onCloseBurger }: NavBarProps) => {
   const { pathname } = useLocation();
   const match = useMatch("/:lang/*");
   const currentLang = match?.params.lang ?? "en";
-  const isDesk = useMediaQuery("(min-width: 1920px)");
+  const isDesk = useMediaQuery("(min-width: 1024px)");
 
   const [openId, setOpenId] = useState<Section["id"] | null>(null);
 
@@ -50,9 +50,10 @@ const NavBar = ({ onCloseBurger }: NavBarProps) => {
         />
       ))}
 
-      <li>
-        <PsiLink onCloseBurger={onCloseBurger}>PSY MI</PsiLink>
-      </li>
+        <li className="psi-item">
+          <PsiLink onCloseBurger={onCloseBurger}>PSY MI</PsiLink>
+        </li>
+      
 
       {!isDesk && (
         <li>

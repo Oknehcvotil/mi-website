@@ -11,6 +11,13 @@ export const LangCont = styled.div`
     order: 3;
   }
 
+  @media (min-width: 1024px) {
+    min-height: 40px;
+    width: 60px;
+    margin-right: 15px;
+    height: 100%;
+  }
+
   @media (min-width: 1920px) {
     min-height: 50px;
     width: 80px;

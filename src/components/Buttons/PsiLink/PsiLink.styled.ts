@@ -42,10 +42,34 @@ export const PsiCustomLink = styled.a`
     color: #fff;
   }
 
+  &.desk-psi {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 100px;
+    min-height: 40px;
+    border: 2px solid #138af9;
+    border-radius: 8px;
+    padding: 0 10px;
+    font-size: 20px;
+    line-height: 150%;
+
+    &.desk-psi {
+      display: flex;
+      order: 3;
+      margin-right: 15px;
+    }
+  }
+
   @media (min-width: 1920px) {
     max-width: 128px;
     height: 50px;
     padding: 0 15px;
+
+    &.desk-psi {
+      display: none;
+    }
 
     &.psiMi-seciton--btn {
       border: 5px solid #138af9;
