@@ -60,13 +60,13 @@ const SubMenuSection = ({
       role="listbox"
       aria-expanded={isOpen}
       aria-label={t(section.titleKey)}
+      onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
       <SubMenuTitle
         active={active}
         width={section.width}
         justify={section.justify}
-        onMouseEnter={() => setOpen(true)}
         onClick={() => !isOpen && setOpen(true)}
         onKeyDown={onKeyDown}
       >

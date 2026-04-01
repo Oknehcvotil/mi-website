@@ -4,6 +4,17 @@ import { NavLink } from "react-router-dom";
 
 export const SubMenuItem = styled.li`
   position: relative;
+
+  @media (min-width: 1024px) {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 10px;
+    }
+  }
 `;
 
 export const SubMenuTitle = styled.span<{
@@ -113,7 +124,7 @@ export const SubMenuList = styled(motion.ul)`
 
   @media (min-width: 1024px) {
     position: absolute;
-    top: 65px;
+    top: calc(100% + 10px);
     left: 0;
     width: max-content;
     max-width: max-content;
@@ -142,7 +153,7 @@ export const SubMenuList = styled(motion.ul)`
 
   @media (min-width: 1920px) {
     position: absolute;
-    top: 65px;
+    top: calc(100% + 10px);
     left: 0;
     width: max-content;
     max-width: max-content;
