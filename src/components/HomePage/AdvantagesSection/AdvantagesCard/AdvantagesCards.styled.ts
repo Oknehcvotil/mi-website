@@ -67,10 +67,52 @@ export const ListItem = styled(motion.li)`
     }
   }
 
+  @media (min-width: 1024px) {
+    flex-direction: column;
+    padding: 20px 15px;
+    min-height: 240px;
+    height: 240px;
+    gap: 5px;
+    max-width: 230px;
+    width: 100%;
+
+    img {
+      width: 95px;
+      height: auto;
+    }
+
+    &:nth-of-type(3) {
+      max-width: 250px;
+      h3 {
+        font-size: 13px;
+      }
+      span {
+        font-size: 18px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      span {
+        font-size: 15px;
+      }
+    }
+
+    &:nth-of-type(4) {
+      h3 {
+        font-size: 15px;
+      }
+      span {
+        font-size: 18px;
+        display: inline-block;
+        max-width: 235px;
+      }
+    }
+  }
+
   @media (min-width: 1920px) {
     flex-direction: column;
     padding: 25px 30px;
-    min-height: 350px;
+    height: 350px;
     gap: 25px;
     max-width: 418px;
     width: 100%;
@@ -129,6 +171,17 @@ export const AdvText = styled.h3`
 
     span {
       font-size: 25px;
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 100%;
+    font-size: 15px;
+    text-align: center;
+
+    span {
+      font-size: 18px;
       text-align: center;
     }
   }

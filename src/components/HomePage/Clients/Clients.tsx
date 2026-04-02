@@ -8,19 +8,23 @@ import { useMediaQuery } from "../../../lib/hooks/useMediaQuery";
 
 const MOB_COLLAPSED_COUNT = 6;
 const TAB_COLLAPSED_COUNT = 8;
+const DESKTOP_COLLAPSED_COUNT = 10;
 
 const Clients = () => {
   const { t } = useTranslation("home");
   const [expanded, setExpanded] = useState(false);
 
   const isDesk = useMediaQuery("(min-width: 1920px)");
+  const isSmallDesktop = useMediaQuery("(min-width: 1024px)");
   const isTablet = useMediaQuery("(min-width: 768px)");
 
   const collapsedCount = isDesk
     ? clientsLogos.length
-    : isTablet
-      ? TAB_COLLAPSED_COUNT
-      : MOB_COLLAPSED_COUNT;
+    : isSmallDesktop
+      ? DESKTOP_COLLAPSED_COUNT
+      : isTablet
+        ? TAB_COLLAPSED_COUNT
+        : MOB_COLLAPSED_COUNT;
 
   const canToggle = !isDesk && clientsLogos.length > collapsedCount;
 

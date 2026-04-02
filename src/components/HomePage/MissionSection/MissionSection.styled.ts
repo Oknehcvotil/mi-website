@@ -5,6 +5,10 @@ export const Wrap = styled.div`
   padding-top: 20px;
   padding-bottom: 40px;
 
+  @media (min-width: 1024px) {
+    padding: 40px 0 0 0;
+  }
+
   @media (min-width: 1920px) {
     padding: 70px 0 80px;
   }
@@ -67,6 +71,12 @@ export const SectionCont = styled.div`
     padding: 50px 25px;
   }
 
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    height: auto;
+    padding: 0 30px 40px 30px;
+  }
+
   @media (min-width: 1920px) {
     max-width: 1920px;
     height: auto;
@@ -102,6 +112,16 @@ export const PicFrame = styled.div`
 
     img {
       border-radius: 19px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    width: 348px;
+
+    img {
+      border-radius: 19px;
+      width: 321px;
+      height: auto;
     }
   }
 

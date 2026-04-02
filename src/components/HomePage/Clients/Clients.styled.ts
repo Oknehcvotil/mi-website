@@ -6,6 +6,9 @@ export const SectionWrap = styled.div`
   @media (min-width: 768px) {
     padding-bottom: 15px;
   }
+  @media (min-width: 1920px) {
+    padding-bottom: 40px;
+  }
 
   @media (min-width: 1920px) {
     padding-top: 80px;

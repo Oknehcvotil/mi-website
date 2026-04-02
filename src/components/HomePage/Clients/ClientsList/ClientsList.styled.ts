@@ -7,10 +7,15 @@ export const List = styled(motion.ul)`
   justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
 
   @media (min-width: 768px) {
     margin-bottom: 15px;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1919px) {
+    max-width: 828px;
+    gap: 12px;
   }
 
   @media (min-width: 1920px) {
@@ -33,9 +38,24 @@ export const ListItem = styled(motion.li)`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 6px 10px;
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 34px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
 
   @media (min-width: 768px) {
     flex-basis: calc((100% - 48px) / 4);
+  }
+
+  @media (min-width: 1024px) and (max-width: 1919px) {
+    flex-basis: auto;
+    width: 156px;
   }
 
   @media (min-width: 1920px) {
@@ -43,6 +63,10 @@ export const ListItem = styled(motion.li)`
     width: 100%;
     min-height: 97px;
     grid-column: span 2;
+
+    img {
+      max-height: 52px;
+    }
 
     &:nth-of-type(7) {
       grid-column: 2 / span 2;
