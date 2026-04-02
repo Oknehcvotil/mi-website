@@ -17,8 +17,13 @@ export const Wrapper = styled(motion.div)`
     padding: 0 25px;
 
     &.case-info-card-container {
-      margin: 0 ;
+      margin: 0;
     }
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    padding: 0 30px;
   }
 
   @media (min-width: 1920px) {

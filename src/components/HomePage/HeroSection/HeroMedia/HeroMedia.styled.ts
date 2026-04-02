@@ -21,6 +21,13 @@ export const HeroPictCont = styled(motion.div)`
     max-width: 768px;
   }
 
+  @media (min-width: 1024px) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 840px;
+  }
+
   @media (min-width: 1920px) {
     position: absolute;
     bottom: 0;

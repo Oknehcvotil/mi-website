@@ -12,6 +12,13 @@ export const Wrapper = styled(motion.div)`
     max-width: 768px;
   }
 
+  @media (min-width: 1024px) {
+    max-width: 870px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
   @media (min-width: 1920px) {
     max-width: 925px;
     margin: 0;
@@ -31,6 +38,7 @@ export const HeroTitle = styled(motion.h1)<{ lang: string }>`
     font-size: 40px;
     line-height: 50px;
   }
+
   @media (min-width: 1920px) {
     font-weight: 400;
     font-size: 50px;
@@ -75,6 +83,10 @@ export const SubTitle = styled(motion.p)`
     margin-bottom: 40px;
   }
 
+  @media (min-width: 768px) {
+    max-width: 405px;
+  }
+
   @media (min-width: 1920px) {
     font-size: 32px;
     max-width: 760px;
@@ -89,7 +101,7 @@ export const BtnWrapper = styled(motion.div)`
     justify-content: center;
   }
 
-  @media (min-width: 1920px) {
+  @media (min-width: 1024px) {
     justify-content: flex-start;
   }
 `;

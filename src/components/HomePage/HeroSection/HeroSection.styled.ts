@@ -1,8 +1,10 @@
 import styled from "@emotion/styled";
 export const HeroSectionWrap = styled.div`
-  @media (min-width: 1920px) {
+  @media (min-width: 1024px) {
     position: relative;
+  }
 
+  @media (min-width: 1920px) {
     &::after {
       content: "";
       position: absolute;
@@ -18,11 +20,18 @@ export const HeroSectionWrap = styled.div`
 
 export const HeroCont = styled.div`
   padding-top: 105px;
+
+  @media (min-width: 1024px) {
+    padding: 40px 0 190px 50px;
+    display: flex;
+    max-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+  }
+
   @media (min-width: 1920px) {
     padding: 110px 0 180px 100px;
     display: flex;
     max-width: 1920px;
-    margin: 0 auto;
-    position: relative;
   }
 `;
