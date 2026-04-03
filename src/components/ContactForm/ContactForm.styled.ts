@@ -14,6 +14,12 @@ export const FormCont = styled.div`
   padding: 20px 10px;
   height: 450px;
 
+  @media (min-width: 1024px) {
+    background-image: url("/images/laptop/background/form-bg.jpg");
+    max-width: 500px;
+    height: 440px;
+  }
+
   @media (min-width: 1920px) {
     background-image: url("/images/desktop/background/form-bg.jpg");
     max-width: 955px;

@@ -47,6 +47,11 @@ export const ContactSectionContainer = styled(motion.div)`
     display: flex;
   }
 
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    display: flex;
+  }
+
   @media (min-width: 1920px) {
     max-width: 1920px;
   }
@@ -80,6 +85,16 @@ export const ContactLeadContainer = styled(motion.div)`
     .contact-lead {
       margin-bottom: 20px;
       text-transform: lowercase;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 40px 0 0 25px;
+    margin-right: auto;
+
+    h2 {
+      max-width: 325px;
+      font-size: 32px;
     }
   }
 
