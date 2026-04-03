@@ -30,6 +30,17 @@ export const ConsultBtnStyled = styled.a<{
     z-index: 1;
   }
 
+  &.hero-services--btn {
+    max-width: 307px;
+    width: 100%;
+
+    @media (min-width: 1920px) {
+      max-width: 605px;
+      font-size: 35px;
+      padding: 0;
+    }
+  }
+
   ${({ variant }) =>
     variant === "primary" &&
     `

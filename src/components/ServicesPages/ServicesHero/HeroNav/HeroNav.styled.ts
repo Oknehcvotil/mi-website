@@ -3,6 +3,10 @@ import { motion } from "framer-motion";
 
 export const HeroNavWrap = styled(motion.nav)`
   margin-bottom: 20px;
+
+  @media (min-width: 1920px) {
+    margin-bottom: 100px;
+  }
 `;
 
 export const HeroNavList = styled(motion.ul)`
@@ -11,6 +15,10 @@ export const HeroNavList = styled(motion.ul)`
   justify-content: center;
   flex-wrap: wrap;
   gap: 7px;
+
+  @media (min-width: 1920px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const HeroNavLink = styled.a`
@@ -24,11 +32,21 @@ export const HeroNavLink = styled.a`
   color: #020202;
   border-radius: 8px;
   border: 2px solid #a066ff;
-  transition: color 0.3s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.3s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 
   &:hover,
   &:focus {
     background: linear-gradient(180deg, #a066ff 0%, #5427b1 100%);
     color: #fff;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 25px;
+    line-height: 120%;
+    border-radius: 8px;
+    padding: 8px 15px;
   }
 `;

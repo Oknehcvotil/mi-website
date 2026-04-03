@@ -18,6 +18,14 @@ import {
 } from "../../../lib/animations/services/animations.hero";
 import ConsultBtn from "../../Buttons/ConsultBtn/ConsultBtn";
 
+const withDensitySet = (basePath: string, ext: string) =>
+  `${basePath}.${ext} 1x, ${basePath}@2x.${ext} 2x, ${basePath}@3x.${ext} 3x`;
+
+const replaceImageViewport = (
+  basePath: string,
+  viewport: "laptop" | "desktop",
+) => basePath.replace("/images/mob/", `/images/${viewport}/`);
+
 const ServicesHero = ({ content }: ServicesHeroProps) => {
   const {
     id,
@@ -33,6 +41,9 @@ const ServicesHero = ({ content }: ServicesHeroProps) => {
 
   const { t } = useTranslation(translationNs);
   const reduce = useReducedMotion();
+  const imageExt = image.ext ?? "webp";
+  const laptopBasePath = replaceImageViewport(image.basePath, "laptop");
+  const desktopBasePath = replaceImageViewport(image.basePath, "desktop");
 
   return (
     <HeroSectionWrap id={id}>
@@ -64,24 +75,27 @@ const ServicesHero = ({ content }: ServicesHeroProps) => {
           <LeadCont variants={reduce ? undefined : fadeUp}>
             <h2>{t(sectionTitleKey)}</h2>
             {leadKey && <p>{t(leadKey)}</p>}
-            <ConsultBtn variant="primary" maxWidth="307px" />
+            <ConsultBtn
+              variant="primary"
+              className={`hero-services--btn`}
+            />
           </LeadCont>
 
           <HeroImgCont
             variants={reduce ? undefined : imgVariants}
-            className={`hero-${className}-img--cont`}
           >
             <picture>
               <source
-                srcSet={`${image.basePath}@3x.${image.ext ?? "webp"}`}
-                media="(min-resolution: 3dppx)"
+                media="(min-width: 1920px)"
+                srcSet={withDensitySet(desktopBasePath, imageExt)}
               />
               <source
-                srcSet={`${image.basePath}@2x.${image.ext ?? "webp"}`}
-                media="(min-resolution: 2dppx)"
+                media="(min-width: 1024px)"
+                srcSet={withDensitySet(laptopBasePath, imageExt)}
               />
               <img
-                src={`${image.basePath}.${image.ext ?? "webp"}`}
+                src={`${image.basePath}.${imageExt}`}
+                srcSet={withDensitySet(image.basePath, imageExt)}
                 alt={t(image.altKey)}
                 loading="eager"
                 decoding="async"

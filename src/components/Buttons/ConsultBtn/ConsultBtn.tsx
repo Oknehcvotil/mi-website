@@ -7,6 +7,7 @@ type ConsultBtnProps = {
   onClick?: () => void;
   maxWidth?: string;
   order?: number;
+  className?: string;
 };
 
 function ConsultBtn({
@@ -14,6 +15,7 @@ function ConsultBtn({
   onClick,
   maxWidth,
   order,
+  className,
 }: ConsultBtnProps) {
   const { t } = useTranslation();
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
@@ -23,6 +25,7 @@ function ConsultBtn({
       href="#contact"
       variant={variant}
       order={order}
+      className={className}
       onClick={(e) => {
         setActiveSection("Contact");
         setTimeOfLastClick(Date.now());
