@@ -29,5 +29,18 @@ export const Wrapper = styled(motion.div)`
   @media (min-width: 1920px) {
     max-width: 1920px;
     padding: 0 45px;
+
+    &.hero-services--cont {
+      padding: 0 115px;
+    }
+
+    &.pricing-section-container {
+      padding: 0 115px;
+    }
+
+    svg{
+      width:13px;
+      height:11px;
+    }
   }
 `;

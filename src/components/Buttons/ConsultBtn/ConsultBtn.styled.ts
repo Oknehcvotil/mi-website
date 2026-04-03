@@ -41,6 +41,22 @@ export const ConsultBtnStyled = styled.a<{
     }
   }
 
+  &.services-pricing--card {
+    @media (min-width: 1024px) {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    @media (min-width: 1920px) {
+      font-weight: 700;
+      font-size: 25px;
+      text-align: center;
+      width: 370px;
+      height: 65px;
+      margin: 0 auto;
+    }
+  }
+
   ${({ variant }) =>
     variant === "primary" &&
     `

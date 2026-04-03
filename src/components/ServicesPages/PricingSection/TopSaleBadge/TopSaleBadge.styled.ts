@@ -14,4 +14,13 @@ export const BadgeWrap = styled.div`
   font-size: 15px;
   text-transform: uppercase;
   color: #fff;
+
+  @media (min-width: 1920px) {
+    font-size: 20px;
+
+    svg{
+      width: 24px;
+      height: 24px;
+    }
+  }
 `;

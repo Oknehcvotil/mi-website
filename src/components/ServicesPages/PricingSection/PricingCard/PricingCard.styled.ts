@@ -25,11 +25,38 @@ export const CardWrap = styled(motion.li)`
   ul {
     margin-bottom: 15px;
     flex: 1;
+
+    @media (min-width: 1920px) {
+      margin-bottom: 55px;
+    }
   }
 
   @media (min-width: 768px) {
     flex: 0 0 calc(50% - 10px);
     max-width: none;
+  }
+
+  @media (min-width: 1024px) {
+    flex: 1 1 calc((100% - 32px) / 3);
+    max-width: calc((100% - 32px) / 3);
+    min-width: 0;
+    padding: 40px 15px 25px;
+
+
+    &.top--sale {
+      padding-top: 40px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    flex: 1 1 calc((100% - 40px) / 3);
+    max-width: calc((100% - 40px) / 3);
+    min-width: 0;
+    padding: 65px 50px;
+
+    &.top--sale {
+      padding-top: 65px;
+    }
   }
 `;
 
@@ -59,6 +86,32 @@ export const CardTitle = styled.h2`
     font-size: 30px;
     line-height: 117%;
   }
+
+  @media (min-width: 1024px) {
+    font-size: 45px;
+    line-height: 100%;
+
+    &.for-clients {
+      font-size: 45px;
+    }
+
+    &:not(.top--sale) {
+      font-size: 45px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 70px;
+    margin-bottom: 35px;
+
+    &.for-clients {
+      font-size: 70px;
+    }
+
+    &:not(.top--sale) {
+      font-size: 70px;
+    }
+  }
 `;
 
 export const FeaturesItems = styled.li`
@@ -86,6 +139,14 @@ export const FeaturesItems = styled.li`
     text-decoration: line-through;
     color: rgba(255, 255, 255, 0.54);
     text-decoration-skip-ink: none;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 20px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
   }
 `;
 
@@ -121,5 +182,11 @@ export const CheckBox = styled.div`
   &.top--sale.disabled {
     opacity: 0.85;
     background-color: rgba(255, 255, 255, 0.54);
+  }
+
+  @media (min-width: 1920px) {
+    flex: 0 0 22px;
+    inline-size: 22px;
+    block-size: 22px;
   }
 `;

@@ -4,6 +4,10 @@ import { motion } from "framer-motion";
 export const PricingSectionWrap = styled(motion.section)`
   padding: 30px;
   background-color: #f3f4f9;
+
+  @media (min-width: 1920px) {
+    padding: 75px 0;
+  }
 `;
 
 export const CardsList = styled.ul`
@@ -11,6 +15,7 @@ export const CardsList = styled.ul`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
   gap: 40px;
 
   @media (min-width: 768px) {
@@ -21,12 +26,19 @@ export const CardsList = styled.ul`
     justify-content: center;
   }
 
-  &.full-width-last > li:last-child {
-    flex: 0 0 100%;
+  @media (min-width: 1024px) {
+    flex-wrap: nowrap;
+    gap: 16px;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1920px) {
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
     &.full-width-last > li:last-child {
+      flex: 0 0 100%;
       max-width: 100%;
     }
 

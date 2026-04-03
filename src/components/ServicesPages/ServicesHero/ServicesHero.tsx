@@ -52,6 +52,7 @@ const ServicesHero = ({ content }: ServicesHeroProps) => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.45 }}
+        className={"hero-services--cont"}
       >
         <MainHeroTitle
           className={`hero-${className}--title`}

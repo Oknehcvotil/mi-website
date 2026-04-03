@@ -51,7 +51,7 @@ const PricingCard = ({ plan }: PricingCardProps) => {
           ))}
         </ul>
 
-        <ConsultBtn variant="secondary" />
+        <ConsultBtn variant="secondary" className={"services-pricing--card"} />
       </CardContent>
     </CardWrap>
   );
