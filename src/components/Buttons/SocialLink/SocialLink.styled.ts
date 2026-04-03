@@ -89,6 +89,33 @@ export const CustomSocialLink = styled.a`
     }
   }
 
+  @media (min-width: 1024px) {
+    &.team-card-social.social-irina {
+      top: 120px;
+      right: -40px;
+    }
+
+    &.team-card-social.social-tatyana {
+      top: 150px;
+      left: -40px;
+    }
+
+    &.team-card-social.social-maria {
+      top: 50px;
+      left: 25px;
+    }
+
+    &.team-card-social.social-anastasia {
+      top: 30px;
+      left: 0;
+    }
+
+    &.team-card-social.social-daria {
+      top: -40px;
+      right: 175px;
+    }
+  }
+
   @media (min-width: 1920px) {
     width: 55px;
     height: 55px;

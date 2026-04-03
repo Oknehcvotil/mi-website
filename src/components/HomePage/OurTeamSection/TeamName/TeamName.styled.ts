@@ -79,6 +79,43 @@ export const NameCont = styled.div`
     }
   }
 
+  @media (min-width: 1024px) {
+    &::before {
+      left: unset;
+      right: -8px;
+    }
+
+    &.team-irina {
+      top: 120px;
+      left: 425px;
+
+      &::before {
+        right: unset;
+        left: -10px;
+      }
+    }
+
+    &.team-tatyana {
+      left: 8px;
+      top: 145px;
+    }
+
+    &.team-maria {
+      top: 50px;
+      left: 65px;
+    }
+
+    &.team-anastasia {
+      top: 30px;
+      left: 45px;
+    }
+
+    &.team-daria {
+      left: 295px;
+      top: -40px;
+    }
+  }
+
   @media (min-width: 1920px) {
     font-weight: 500;
     line-height: 112%;
@@ -115,6 +152,7 @@ export const NameCont = styled.div`
 
     &::before {
       left: -15px;
+      right: unset;
     }
   }
 `;
