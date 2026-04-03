@@ -29,11 +29,70 @@ export const CardsList = styled.ul`
   @media (min-width: 1024px) {
     flex-wrap: nowrap;
     gap: 16px;
+
+    &[data-pricing-scope="phd"] {
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    &[data-pricing-scope="phd"] > li {
+      flex: 1 1 calc((100% - 30px) / 4);
+      max-width: calc((100% - 30px) / 4);
+      min-width: 0;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1919px) {
+    &[data-pricing-scope="phd"] .phd-pricing-card-title,
+    &[data-pricing-scope="phd"] .phd-pricing-card-title.top--sale,
+    &[data-pricing-scope="phd"] .phd-pricing-card-title:not(.top--sale) {
+      font-size: 32px;
+    }
+
+    &[data-pricing-scope="phd"] .phd-pricing-card-text,
+    &[data-pricing-scope="phd"] .phd-pricing-card-text p {
+      font-size: 10px;
+    }
+
+    &[data-pricing-scope="phd"] .phd-pricing-card-button,
+    &[data-pricing-scope="phd"] .phd-pricing-card-button span {
+      font-size: 13px;
+    }
   }
 
   @media (min-width: 1920px) {
     flex-wrap: nowrap;
     gap: 20px;
+
+    &[data-pricing-scope="phd"] {
+      gap: 15px;
+    }
+
+    &[data-pricing-scope="phd"] > li {
+      flex: 1 1 calc((100% - 45px) / 4);
+      max-width: calc((100% - 45px) / 4);
+    }
+
+    &[data-pricing-scope="phd"] > li.phd-pricing-card {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    &[data-pricing-scope="phd"] .phd-pricing-card-title,
+    &[data-pricing-scope="phd"] .phd-pricing-card-title.top--sale,
+    &[data-pricing-scope="phd"] .phd-pricing-card-title:not(.top--sale) {
+      font-size: 50px;
+    }
+
+    &[data-pricing-scope="phd"] .phd-pricing-card-text,
+    &[data-pricing-scope="phd"] .phd-pricing-card-text p {
+      font-size: 15px;
+    }
+
+    &[data-pricing-scope="phd"] .phd-pricing-card-button,
+    &[data-pricing-scope="phd"] .phd-pricing-card-button span {
+      font-size: 22px;
+    }
   }
 
   @media (min-width: 768px) and (max-width: 1023px) {

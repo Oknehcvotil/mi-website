@@ -14,44 +14,72 @@ import ConsultBtn from "../../../Buttons/ConsultBtn/ConsultBtn";
 
 type PricingCardProps = {
   plan: Plan;
+  sectionClassName?: string;
 };
 
-const PricingCard = ({ plan }: PricingCardProps) => {
+const PricingCard = ({ plan, sectionClassName }: PricingCardProps) => {
   const { translationNs, titleKey, features, topSale, className } = plan;
   const { t } = useTranslation(translationNs);
   const reduce = useReducedMotion();
 
+  const sharedClassName = className ?? "";
+  const isPhdPricingCard = sectionClassName?.includes("phd-pricing-layout");
+  const cardClassName = [
+    sharedClassName,
+    isPhdPricingCard && "phd-pricing-card",
+  ]
+    .filter(Boolean)
+    .join(" ");
+  const titleClassName = [
+    sharedClassName,
+    isPhdPricingCard && "phd-pricing-card-title",
+  ]
+    .filter(Boolean)
+    .join(" ");
+  const textClassName = isPhdPricingCard ? "phd-pricing-card-text" : "";
+  const buttonClassName = [
+    "services-pricing--card",
+    sharedClassName,
+    isPhdPricingCard && "phd-pricing-card-button",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
     <CardWrap
-      className={className}
+      className={cardClassName}
       variants={reduce ? undefined : childVariants}
     >
-      <CardContent className={`${className}`}>
+      <CardContent className={sharedClassName}>
         {topSale && <TopSaleBadge>{t("topSale")}</TopSaleBadge>}
 
-        <CardTitle className={className}>{t(titleKey)}</CardTitle>
+        <CardTitle className={titleClassName}>{t(titleKey)}</CardTitle>
 
         <ul>
           {features.map((f, i) => (
             <FeaturesItems
               key={i}
-              className={`${className ?? ""} ${f.className ?? ""}`}
+              className={[sharedClassName, textClassName, f.className]
+                .filter(Boolean)
+                .join(" ")}
               data-disabled={f.disabled ? "true" : "false"}
               aria-disabled={f.disabled || undefined}
             >
-              <CheckBox className={`${className ?? ""} ${f.className ?? ""}`}>
+              <CheckBox
+                className={`${sharedClassName} ${f.className ?? ""}`.trim()}
+              >
                 <svg width={9} height={8}>
                   <use href="/icons/sprite.svg#icon-check"></use>
                 </svg>
               </CheckBox>
-              <p>
+              <p className={textClassName}>
                 <Trans t={t} i18nKey={f.key} components={{ 1: <span /> }} />
               </p>
             </FeaturesItems>
           ))}
         </ul>
 
-        <ConsultBtn variant="secondary" className={"services-pricing--card"} />
+        <ConsultBtn variant="secondary" className={buttonClassName} />
       </CardContent>
     </CardWrap>
   );

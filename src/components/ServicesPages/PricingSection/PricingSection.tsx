@@ -12,6 +12,7 @@ type PricingSectionProps = {
 
 const PricingSection = ({ plans, className }: PricingSectionProps) => {
   const reduce = useReducedMotion();
+  const isPhdLayout = className?.split(/\s+/).includes("phd-pricing-layout");
 
   return (
     <PricingSectionWrap
@@ -21,9 +22,16 @@ const PricingSection = ({ plans, className }: PricingSectionProps) => {
       variants={reduce ? undefined : sectionVariants}
     >
       <Container className="pricing-section-container">
-        <CardsList className={className}>
+        <CardsList
+          className={className}
+          data-pricing-scope={isPhdLayout ? "phd" : undefined}
+        >
           {plans.map((plan, i) => (
-            <PricingCard key={i} plan={plan} />
+            <PricingCard
+              key={i}
+              plan={plan}
+              sectionClassName={isPhdLayout ? "phd-pricing-layout" : undefined}
+            />
           ))}
         </CardsList>
       </Container>

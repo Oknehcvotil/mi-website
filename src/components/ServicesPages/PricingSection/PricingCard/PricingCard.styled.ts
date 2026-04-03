@@ -98,6 +98,8 @@ export const CardTitle = styled.h2`
     &:not(.top--sale) {
       font-size: 45px;
     }
+
+    
   }
 
   @media (min-width: 1920px) {

@@ -11,7 +11,7 @@ function PhdRecruiting() {
     <React.Fragment>
       <ServicesHero content={forPHDHeroContent} />
       <PhdEligibilitySection />
-      <PricingSection plans={PHDPlans} />
+      <PricingSection plans={PHDPlans} className="phd-pricing-layout" />
       <PhdCasesServices />
       <ContactSection />
     </React.Fragment>
