@@ -9,15 +9,7 @@ export const SectionWrap = styled(motion.div)`
 
   @media (min-width: 1920px) {
     padding-top: 0;
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 70px;
-      width: 100%;
-      background: #5427b1;
-    }
+   
   }
 `;
 
@@ -57,6 +49,11 @@ export const SliderCont = styled(motion.div)`
     max-width: 768px;
     background-image: url("/images/tab/background/team-bg.jpg");
     background-position: center calc(100% - 40px);
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    background-image: url("/images/laptop/background/team-bg.jpg");
   }
 
   @media (min-width: 1920px) {

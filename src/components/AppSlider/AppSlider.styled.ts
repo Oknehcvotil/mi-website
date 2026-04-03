@@ -104,6 +104,12 @@ export const ButtonsWrapper = styled.div`
 
     gap: 35px;
   }
+
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+
+    gap: 35px;
+  }
 `;
 
 export const SliderButton = styled.button`

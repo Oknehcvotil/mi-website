@@ -10,6 +10,21 @@ export const SectionDesktop = styled(motion.div)`
     width: 100%;
     margin: 0 auto;
     position: relative;
+
+    background-image: url("/images/desktop/background/team-bg.jpg");
+    background-size: contain;
+    background-position: center calc(100% - 65px);
+    background-repeat: no-repeat;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 70px;
+      width: 100%;
+      background: #5427b1;
+    }
   }
 `;
 

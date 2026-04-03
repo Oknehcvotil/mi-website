@@ -19,6 +19,11 @@ export const List = styled.ul`
     align-items: stretch;
   }
 
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(2, 477px);
+    gap: 20px;
+  }
+
   @media (min-width: 1920px) {
     grid-template-columns: repeat(2, 820px);
     gap: 30px;
@@ -60,6 +65,19 @@ export const ServicesItems = styled(motion.li)`
       h3 {
         max-width: 100px;
       }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &:nth-of-type(3) {
+      h3 {
+        max-width: 100%;
+      }
+    }
+
+    &:last-of-type {
+      width: 100%;
+      max-width: 720px;
     }
   }
 
