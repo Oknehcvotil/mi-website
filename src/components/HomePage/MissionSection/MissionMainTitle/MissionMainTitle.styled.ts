@@ -25,15 +25,7 @@ export const TitleCont = styled(motion.div)<{ lang: string }>`
     ${({ lang }) =>
       lang !== "en" &&
       `
-    &::after {
-      content: "";
-      height: 4px;
-      position: absolute;
-      top: 21px;
-      left: 35%;
-      background: #fff;
-      width: 70%;
-    }
+      height: 60px;
   `}
 
     ${({ lang }) =>
@@ -51,23 +43,35 @@ export const TitleCont = styled(motion.div)<{ lang: string }>`
   `}
   }
 
-  @media (min-width: 1920px) {
+  @media (min-width: 1024px) {
     max-width: 100%;
     flex-direction: row;
 
+    ${({ lang }) =>
+      lang === "en" &&
+      `
+    height: 56px;
+
     &::after {
       content: "";
-      height: ${({ lang }) => (lang === "en" ? "8px" : "7px")};
-      position: absolute;
-      top: 42px;
-      left: 34%;
-      background: #fff;
-      width: 70%;
+      display: none;
+    }
+  `}
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 100%;
+    flex-direction: row;
+    height: 124px;
+
+    &::after {
+      content: "";
+      display: none;
     }
   }
 `;
 
-export const Title = styled(motion.h2)<{ lang: string }>`
+export const Title = styled(motion.div)<{ lang: string }>`
   font-weight: 800;
   font-size: ${({ lang }) => (lang === "en" ? "66px" : "90px")};
   line-height: 70%;
@@ -89,6 +93,10 @@ export const Title = styled(motion.h2)<{ lang: string }>`
     justify-content: ${({ lang }) => (lang === "en" ? "center" : "flex-start")};
     line-height: normal;
     overflow: visible;
+  }
+
+  @media (min-width: 1024px) {
+    justify-content: flex-start;
   }
 
   @media (min-width: 1920px) {
@@ -143,6 +151,21 @@ export const TitleText = styled(motion.p)<{ lang: string }>`
       lang === "en" &&
       `
     margin-top: -21px;
+  `}
+  }
+
+  @media (min-width: 1024px) {
+    background: linear-gradient(90deg, #a066ff 0%, #5427b1 100%);
+    display: flex;
+    align-items: center;
+
+    max-width: ${({ lang }) => (lang === "en" ? "400px" : "433px")};
+
+    ${({ lang }) =>
+      lang === "en" &&
+      `
+    margin-top: 0;
+    margin-left: -8px;
   `}
   }
 
