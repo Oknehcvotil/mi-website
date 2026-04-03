@@ -17,6 +17,12 @@ export const PsyMiContainer = styled.div`
     position: relative;
   }
 
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    padding: 0 30px 50px;
+    position: relative;
+  }
+
   @media (min-width: 1920px) {
     max-width: 1920px;
     padding: 0 45px;
@@ -96,13 +102,14 @@ export const PsyMiLogoCont = styled.div`
     }
   }
 
-  @media (min-width: 1920px) {
-    gap: 45px;
-    margin-bottom: 85px;
+  @media (min-width: 1024px) {
+    padding-left: 120px;
+    margin-bottom: 10px;
+  }
 
-    strong {
-      font-size: 59px;
-    }
+  @media (min-width: 1920px) {
+    padding-left: 0px;
+    margin-bottom: 20px;
   }
 `;
 
