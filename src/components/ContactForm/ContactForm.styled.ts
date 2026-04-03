@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
 import { Field } from "formik";
+import { motion } from "framer-motion";
 
-export const FormCont = styled.div`
+export const FormCont = styled(motion.div)`
   background-image: url("/images/mob/background/form-bg.jpg");
   background-size: contain;
   background-position: center;
@@ -27,7 +28,7 @@ export const FormCont = styled.div`
   }
 `;
 
-export const FormWrap = styled.div`
+export const FormWrap = styled(motion.div)`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -44,7 +45,7 @@ export const FormWrap = styled.div`
   }
 `;
 
-export const FieldCont = styled.div`
+export const FieldCont = styled(motion.div)`
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
@@ -168,7 +169,7 @@ export const CustomField = styled(Field)`
   }
 `;
 
-export const SubmitBtn = styled.button`
+export const SubmitBtn = styled(motion.button)`
   position: relative;
   overflow: hidden;
   display: flex;
