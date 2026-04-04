@@ -28,7 +28,8 @@ const AdditionalServices = ({
 
   return (
     <AdditionalServicesList
-      layout // важно: плавно меняет высоту/раскладку
+      className={expanded ? "is-expanded" : undefined}
+      layout 
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
@@ -38,7 +39,7 @@ const AdditionalServices = ({
         {visible.map((s, i) => (
           <AdditionalServicesItems
             key={s.key}
-            layout // чтобы элементы “разъезжались” плавно
+            layout 
             custom={i}
             variants={reduce ? undefined : itemVariants}
             initial="hidden"

@@ -21,6 +21,99 @@ export const AdditionalServicesList = styled(motion.ul)`
     padding: 0 25px;
     margin: 0 auto 20px;
   }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 1024px;
+    padding: 0 30px;
+
+    &.is-expanded {
+      grid-template-columns: repeat(16, minmax(0, 1fr));
+      row-gap: 10px;
+
+      > li:nth-of-type(-n + 4) {
+        grid-column: span 4;
+      }
+
+      > li:nth-of-type(5) {
+        grid-column: 2 / span 4;
+      }
+
+      > li:nth-of-type(6) {
+        grid-column: 6 / span 5;
+      }
+
+      > li:nth-of-type(7) {
+        grid-column: 11 / span 4;
+      }
+
+      > li:nth-of-type(8) {
+        grid-column: 3 / span 4;
+      }
+
+      > li:nth-of-type(9) {
+        grid-column: 7 / span 5;
+      }
+
+      > li:nth-of-type(10) {
+        grid-column: 12 / span 4;
+      }
+    }
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 1920px;
+    padding: 0 45px;
+
+    &.is-expanded {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      row-gap: 10px;
+
+      > li {
+        justify-self: center;
+      }
+
+      > li:nth-of-type(1) {
+        grid-column: 1 / span 6;
+      }
+
+      > li:nth-of-type(2) {
+        grid-column: 7 / span 6;
+      }
+
+      > li:nth-of-type(3) {
+        grid-column: 1 / span 5;
+      }
+
+      > li:nth-of-type(4) {
+        grid-column: 6 / span 3;
+      }
+
+      > li:nth-of-type(5) {
+        grid-column: 9 / span 4;
+      }
+
+      > li:nth-of-type(6) {
+        grid-column: 1 / span 5;
+      }
+
+      > li:nth-of-type(7) {
+        grid-column: 6 / span 3;
+      }
+
+      > li:nth-of-type(8) {
+        grid-column: 9 / span 4;
+      }
+
+      > li:nth-of-type(9) {
+        grid-column: 3 / span 4;
+      }
+
+      > li:nth-of-type(10) {
+        grid-column: 7 / span 4;
+      }
+    }
+  }
 `;
 
 export const AdditionalServicesItems = styled(motion.li)`
@@ -46,5 +139,17 @@ export const AdditionalServicesItems = styled(motion.li)`
     padding: 10px;
     font-size: 12px;
     line-height: 120%;
+  }
+
+  @media (min-width: 1024px) {
+    min-height: 42px;
+    padding: 8px 10px;
+    font-size: 11px;
+    line-height: 118%;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 28px;
+    line-height: 129%;
   }
 `;

@@ -28,13 +28,16 @@ const HrConsultingSection = () => {
   const { t } = useTranslation("servicesForClients");
   const reduce = useReducedMotion();
   const isTabletUp = useMediaQuery("(min-width: 768px)");
+  const isDesktopWide = useMediaQuery("(min-width: 1920px)");
 
   const [expanded, setExpanded] = useState(false);
+  const isExpandedView = expanded || isDesktopWide;
   const collapsedCount = isTabletUp
     ? TABLET_COLLAPSED_COUNT
     : MOBILE_COLLAPSED_COUNT;
 
-  const canToggle = additionalHrServices.length > collapsedCount;
+  const canToggle =
+    !isDesktopWide && additionalHrServices.length > collapsedCount;
   const buttonText = expanded ? t("servicesCollapse") : t("servicesMore");
 
   return (
@@ -56,7 +59,11 @@ const HrConsultingSection = () => {
               viewport={{ once: true }}
               variants={reduce ? undefined : ctaVariants}
             >
-              <ConsultBtn variant="primary" maxWidth="307px" />
+              <ConsultBtn
+                variant="primary"
+                maxWidth="307px"
+                className="hr-consulting-btn"
+              />
             </motion.div>
           </HrLeadText>
 
@@ -67,11 +74,21 @@ const HrConsultingSection = () => {
             viewport={{ once: true }}
             variants={reduce ? undefined : illustrationVariants}
           >
-            <img
-              src="/images/services/hr-consulting.webp"
-              srcSet="/images/mob/services-pages/hr-consulting.webp 1x, /images/mob/services-pages/hr-consulting@2x.webp 2x, /images/mob/services-pages/hr-consulting@3x.webp 3x"
-              alt="HR consulting icon"
-            />
+            <picture>
+              <source
+                media="(min-width: 1920px)"
+                srcSet="/images/desktop/services-pages/hr-consulting.webp 1x, /images/desktop/services-pages/hr-consulting@2x.webp 2x, /images/desktop/services-pages/hr-consulting@3x.webp 3x"
+              />
+              <source
+                media="(min-width: 1024px)"
+                srcSet="/images/laptop/services-pages/hr-consulting.webp 1x, /images/laptop/services-pages/hr-consulting@2x.webp 2x, /images/laptop/services-pages/hr-consulting@3x.webp 3x"
+              />
+              <img
+                src="/images/mob/services-pages/hr-consulting.webp"
+                srcSet="/images/mob/services-pages/hr-consulting.webp 1x, /images/mob/services-pages/hr-consulting@2x.webp 2x, /images/mob/services-pages/hr-consulting@3x.webp 3x"
+                alt="HR consulting icon"
+              />
+            </picture>
           </HrImgCont>
         </HrLeadCont>
 
@@ -79,7 +96,7 @@ const HrConsultingSection = () => {
           <HrAdditionalTitle>{t("hr.separateTitle")}</HrAdditionalTitle>
 
           <AdditionalServices
-            expanded={expanded}
+            expanded={isExpandedView}
             collapsedCount={collapsedCount}
           />
 

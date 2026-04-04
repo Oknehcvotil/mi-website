@@ -57,6 +57,13 @@ export const ConsultBtnStyled = styled.a<{
     }
   }
 
+  &.hr-consulting-btn {
+    @media (min-width: 1920px) {
+      width: 100%;
+      max-width: 620px;
+    }
+  }
+
   ${({ variant }) =>
     variant === "primary" &&
     `
