@@ -18,6 +18,11 @@ export const ConstructorTitle = styled.h2`
   @media (min-width: 768px) {
     font-size: 40px;
   }
+
+  @media (min-width: 1920px) {
+    font-size: 80px;
+    margin-bottom: 30px;
+  }
 `;
 
 export const ConstructorLead = styled.p`
@@ -33,6 +38,16 @@ export const ConstructorLead = styled.p`
     font-size: 20px;
     line-height: 130%;
     max-width: none;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 720px;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 45px;
+    margin-bottom: 75px;
+    max-width: 1510px;
   }
 `;
 
@@ -50,6 +65,12 @@ export const ConstuctorContainer = styled(motion.div)`
   @media (min-width: 768px) {
     max-width: 630px;
     background-image: url("/images/tab/background/constructor-bg.svg");
+  }
+
+  @media (min-width: 1920px) {
+    background-image: url("/images/desktop/background/constructor-bg.svg");
+    max-width: 1200px;
+    height: 270px;
   }
 `;
 
@@ -114,6 +135,36 @@ export const ConstructorItems = styled(motion.li)<{ lang: string }>`
       top: 18px;
       right: 3px;
       font-size: 20px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 40px;
+
+    &.recruitment--item {
+      top: 40px;
+      left: ${({ lang }) => (lang === "en" ? "180px" : "185px")};
+
+      span {
+        position: absolute;
+        bottom: -130px;
+        left: -110px;
+      }
+    }
+
+    &.hr--item {
+      max-width: none;
+      left: 335px;
+      top: 170px;
+      width: 100%;
+    }
+
+    &.psychology-item {
+      max-width: 340px;
+      width: 100%;
+      top: 20px;
+      right: 15px;
+      font-size: 40px;
     }
   }
 `;

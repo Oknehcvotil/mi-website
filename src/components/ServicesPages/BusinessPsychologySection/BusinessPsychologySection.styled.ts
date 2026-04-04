@@ -14,6 +14,14 @@ export const PsyhologyWrap = styled(motion.section)`
     height: 17px;
     background: #8a38f5;
   }
+
+  @media (min-width: 1920px) {
+    padding: 110px 0 80px;
+    &::before {
+      content: "";
+      height: 36px;
+    }
+  }
 `;
 
 export const PsyhologyInner = styled.div`
@@ -23,6 +31,10 @@ export const PsyhologyInner = styled.div`
     align-items: center;
     justify-content: space-between;
     gap: 30px;
+  }
+
+  @media (min-width: 1920px) {
+    gap: 60px;
   }
 `;
 
@@ -50,6 +62,19 @@ export const PsyhologyLeadCont = styled.div`
       line-height: 130%;
     }
   }
+
+  @media (min-width: 1920px) {
+    h2 {
+      font-size: 80px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 40px;
+      line-height: 130%;
+      max-width: 990px;
+    }
+  }
 `;
 
 export const PsyhologyImgCont = styled.div`
@@ -57,16 +82,28 @@ export const PsyhologyImgCont = styled.div`
 
   @media (min-width: 768px) {
     display: flex;
+    flex: 0 0 220px;
+    width: 220px;
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
 
+    picture {
+      display: block;
+      width: 100%;
+    }
+
     img {
-      max-width: 220px;
       width: 100%;
       height: auto;
       display: block;
       object-fit: contain;
     }
+  }
+
+  @media (min-width: 1920px) {
+    margin-right: auto;
+    flex-basis: 510px;
+    width: 510px;
   }
 `;

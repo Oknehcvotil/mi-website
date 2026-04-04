@@ -24,26 +24,40 @@ const BusinessPsychologySection = () => {
     >
       <Container>
         <PsyhologyInner>
-        <PsyhologyLeadCont>
-          <motion.h2 variants={fadeUp}>{t("psyhology.title")}</motion.h2>
-          <motion.p variants={fadeUp}>{t("psyhology.lead")}</motion.p>
-        </PsyhologyLeadCont>
-        <PsyhologyImgCont>
-          <source
-            srcSet="/images/mob/services-pages/users.webp@3x.webp"
-            media="(min-resolution: 3dppx)"
-          />
-          <source
-            srcSet="/images/mob/services-pages/users.webp@2x.webp"
-            media="(min-resolution: 2dppx)"
-          />
-          <motion.img
-            variants={imgAppear}
-            src="/images/mob/services-pages/users.webp"
-            alt={t("psyhology.alt")}
-            loading="lazy"
-          />
-        </PsyhologyImgCont>
+          <PsyhologyLeadCont>
+            <motion.h2 variants={fadeUp}>{t("psyhology.title")}</motion.h2>
+            <motion.p variants={fadeUp}>{t("psyhology.lead")}</motion.p>
+          </PsyhologyLeadCont>
+          <PsyhologyImgCont>
+            <picture>
+              <source
+                srcSet="/images/desktop/services-pages/users@3x.webp"
+                media="(min-width: 1920px) and (min-resolution: 3dppx)"
+              />
+              <source
+                srcSet="/images/desktop/services-pages/users@2x.webp"
+                media="(min-width: 1920px) and (min-resolution: 2dppx)"
+              />
+              <source
+                srcSet="/images/desktop/services-pages/users.webp"
+                media="(min-width: 1920px)"
+              />
+              <source
+                srcSet="/images/mob/services-pages/users@3x.webp"
+                media="(min-resolution: 3dppx)"
+              />
+              <source
+                srcSet="/images/mob/services-pages/users@2x.webp"
+                media="(min-resolution: 2dppx)"
+              />
+              <motion.img
+                variants={imgAppear}
+                src="/images/mob/services-pages/users.webp"
+                alt={t("psyhology.alt")}
+                loading="lazy"
+              />
+            </picture>
+          </PsyhologyImgCont>
         </PsyhologyInner>
       </Container>
     </PsyhologyWrap>
