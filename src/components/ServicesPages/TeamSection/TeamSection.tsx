@@ -142,7 +142,11 @@ const TeamSection = ({ config }: TeamSectionProps) => {
             {t("teamContact.subtitle")}
           </PositionText>
 
-          <ConsultBtn variant="primary" maxWidth="307px" className="services-team-section--consult-btn"/>
+          <ConsultBtn
+            variant="primary"
+            maxWidth="307px"
+            className="services-team-section--consult-btn"
+          />
         </TeamLeadCont>
 
         <RightImgCont className={config.images.rightClassName}>
