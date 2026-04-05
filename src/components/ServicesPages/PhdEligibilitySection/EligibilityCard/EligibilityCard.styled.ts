@@ -83,4 +83,8 @@ export const EligibilityItem = styled.li`
 
     padding: 12px;
   }
+
+  @media (min-width: 1024px) {
+    max-width: none;
+  }
 `;

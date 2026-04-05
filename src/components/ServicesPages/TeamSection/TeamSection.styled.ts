@@ -28,6 +28,17 @@ export const TeamCont = styled(motion.div)`
     min-height: 480px;
     overflow: hidden;
   }
+
+  @media (min-width: 1920px) {
+    max-width: 1920px;
+    min-height: 730px;
+    overflow: hidden;
+
+    &:not(.for-candidates):after {
+      content: "";
+      height: 36px;
+    }
+  }
 `;
 
 export const BackgroundWrap = styled(motion.div)`
@@ -82,6 +93,13 @@ export const TeamLeadCont = styled.div`
   @media (min-width: 1024px) {
     top: 120px;
   }
+
+  @media (min-width: 1920px) {
+    font-size: 50px;
+    line-height: 130%;
+    max-width: none;
+    top: 175px;
+  }
 `;
 
 export const NamesTitle = styled(motion.h2)`
@@ -95,6 +113,10 @@ export const NamesTitle = styled(motion.h2)`
   @media (min-width: 768px) {
     font-size: 35px;
     line-height: 130%;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 80px;
   }
 `;
 
@@ -111,6 +133,13 @@ export const PositionText = styled(motion.h3)`
     line-height: 130%;
     margin: 0 auto 15px;
     max-width: 297px;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 35px;
+    line-height: 130%;
+    margin: 0 auto 45px;
+    max-width: none;
   }
 `;
 
@@ -177,9 +206,32 @@ export const LeftImgCont = styled.div`
 
     &.irina {
       img {
-        bottom: 17px;
+        bottom: 7px;
         left: 0;
         width: 355px;
+      }
+    }
+  }
+
+  @media (min-width: 1920px) {
+    left: 0;
+    min-height: 650px;
+    max-width: 800px;
+
+    &.daria {
+      min-height: 650px;
+      img {
+        bottom: 0;
+        left: 0;
+        width: 760px;
+      }
+    }
+
+    &.irina {
+      img {
+        bottom: 36px;
+        left: 0;
+        width: 740px;
       }
     }
   }
@@ -235,6 +287,25 @@ export const RightImgCont = styled.div`
         width: 280px;
         bottom: 0;
         right: 0;
+      }
+    }
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 1920px;
+    min-height: 730px;
+
+    img {
+      bottom: 0;
+      right: 0px;
+    }
+
+    &.tatyana,
+    &.tatyana-height {
+      img {
+        width: 555px;
+        bottom: 0;
+        right: 50px;
       }
     }
   }

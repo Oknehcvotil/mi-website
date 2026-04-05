@@ -59,4 +59,10 @@ export const ConsultLinkCont = styled(motion.div)`
       line-height: 130%;
     }
   }
+
+  @media (min-width: 1024px) {
+    h2 {
+      max-width: 730px;
+    }
+  }
 `;
