@@ -51,7 +51,7 @@ const PhdEligibilitySection = () => {
             <Trans t={t} i18nKey="cta.note" components={{ 1: <span /> }} />
           </h2>
 
-          <ConsultBtn maxWidth="307px" />
+          <ConsultBtn variant="primary"  maxWidth="307px" />
         </ConsultLinkCont>
       </Container>
     </EligibilityWrap>

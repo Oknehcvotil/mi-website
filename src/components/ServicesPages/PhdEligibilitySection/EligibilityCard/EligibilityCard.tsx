@@ -33,7 +33,9 @@ const EligibilityCard = ({
         <Trans t={t} i18nKey={titleKey} components={{ 1: <span /> }} />
       </EligibilityTitle>
 
-      <EligibilityCardList>
+      <EligibilityCardList
+        className={titleKey === "zero.title" ? "zero-to-pro" : undefined}
+      >
         {items.map(({ key, icon, width, height }) => (
           <EligibilityItem key={key}>
             <svg width={width} height={height}>

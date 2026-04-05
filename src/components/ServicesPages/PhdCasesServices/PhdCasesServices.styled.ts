@@ -11,6 +11,12 @@ export const PhdCasesWrapper = styled(motion.section)`
     padding-right: 25px;
     box-sizing: border-box;
   }
+
+  @media (min-width: 1920px) {
+    max-width: 1920px;
+    padding-top: 80px;
+    padding-bottom: 0;
+  }
 `;
 
 export const PhdSliderPair = styled.div`
@@ -56,5 +62,10 @@ export const PhdCasesTitle = styled(motion.h2)`
 
   @media (min-width: 768px) {
     font-size: 40px;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 80px;
+    margin-bottom: 65px;
   }
 `;

@@ -112,6 +112,8 @@ export const ConsultBtnStyled = styled.a<{
     padding: 0 35px;
     font-size: 35px;
     line-height: 143%;
+      width: 100%;
+      max-width: 620px;
   }
 
   `};
