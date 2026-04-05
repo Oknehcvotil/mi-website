@@ -28,12 +28,27 @@ const getTabletLeftTeamImagePath = (imagePath: string) =>
 const getTabletTeamImagePath = (imagePath: string) =>
   imagePath.replace("/images/mob/team/", "/images/tab/team/");
 
+const getLaptopLeftTeamImagePath = (imagePath: string) =>
+  imagePath
+    .replace("/images/mob/team/", "/images/laptop/team/")
+    .replace(/([^/]+)$/, "$1-services-page");
+
+const getLaptopTeamImagePath = (imagePath: string) =>
+  imagePath.replace("/images/mob/team/", "/images/laptop/team/");
+
+const getDesktopTeamImagePath = (imagePath: string) =>
+  imagePath.replace("/images/mob/team/", "/images/desktop/team/");
+
 const getImageSrc = (imagePath: string) => `${imagePath}.webp`;
 
 const TeamSection = ({ config }: TeamSectionProps) => {
   const { t } = useTranslation(config.translationNs);
   const leftTabletImg = getTabletLeftTeamImagePath(config.images.leftImg);
   const rightTabletImg = getTabletTeamImagePath(config.images.rightImg);
+  const leftLaptopImg = getLaptopLeftTeamImagePath(config.images.leftImg);
+  const rightLaptopImg = getLaptopTeamImagePath(config.images.rightImg);
+  const leftDesktopImg = getDesktopTeamImagePath(config.images.leftImg);
+  const rightDesktopImg = getDesktopTeamImagePath(config.images.rightImg);
 
   return (
     <section>
@@ -43,6 +58,30 @@ const TeamSection = ({ config }: TeamSectionProps) => {
       <TeamCont className={config.className}>
         <LeftImgCont className={config.images.leftClassName}>
           <picture>
+            <source
+              srcSet={`${leftDesktopImg}@3x.webp`}
+              media="(min-width: 1920px) and (min-resolution: 3dppx)"
+            />
+            <source
+              srcSet={`${leftDesktopImg}@2x.webp`}
+              media="(min-width: 1920px) and (min-resolution: 2dppx)"
+            />
+            <source
+              srcSet={getImageSrc(leftDesktopImg)}
+              media="(min-width: 1920px)"
+            />
+            <source
+              srcSet={`${leftLaptopImg}@3x.webp`}
+              media="(min-width: 1024px) and (min-resolution: 3dppx)"
+            />
+            <source
+              srcSet={`${leftLaptopImg}@2x.webp`}
+              media="(min-width: 1024px) and (min-resolution: 2dppx)"
+            />
+            <source
+              srcSet={getImageSrc(leftLaptopImg)}
+              media="(min-width: 1024px)"
+            />
             <source
               srcSet={`${leftTabletImg}@3x.webp`}
               media="(min-width: 768px) and (min-resolution: 3dppx)"
@@ -108,6 +147,30 @@ const TeamSection = ({ config }: TeamSectionProps) => {
 
         <RightImgCont className={config.images.rightClassName}>
           <picture>
+            <source
+              srcSet={`${rightDesktopImg}@3x.webp`}
+              media="(min-width: 1920px) and (min-resolution: 3dppx)"
+            />
+            <source
+              srcSet={`${rightDesktopImg}@2x.webp`}
+              media="(min-width: 1920px) and (min-resolution: 2dppx)"
+            />
+            <source
+              srcSet={getImageSrc(rightDesktopImg)}
+              media="(min-width: 1920px)"
+            />
+            <source
+              srcSet={`${rightLaptopImg}@3x.webp`}
+              media="(min-width: 1024px) and (min-resolution: 3dppx)"
+            />
+            <source
+              srcSet={`${rightLaptopImg}@2x.webp`}
+              media="(min-width: 1024px) and (min-resolution: 2dppx)"
+            />
+            <source
+              srcSet={getImageSrc(rightLaptopImg)}
+              media="(min-width: 1024px)"
+            />
             <source
               srcSet={`${rightTabletImg}@3x.webp`}
               media="(min-width: 768px) and (min-resolution: 3dppx)"

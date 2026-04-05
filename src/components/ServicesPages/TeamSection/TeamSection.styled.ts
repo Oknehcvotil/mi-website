@@ -22,6 +22,12 @@ export const TeamCont = styled(motion.div)`
     min-height: 430px;
     overflow: hidden;
   }
+
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    min-height: 480px;
+    overflow: hidden;
+  }
 `;
 
 export const BackgroundWrap = styled(motion.div)`
@@ -71,6 +77,10 @@ export const TeamLeadCont = styled.div`
     z-index: 5;
     max-width: 360px;
     padding: 0;
+  }
+
+  @media (min-width: 1024px) {
+    top: 120px;
   }
 `;
 
@@ -152,6 +162,27 @@ export const LeftImgCont = styled.div`
       }
     }
   }
+
+  @media (min-width: 1024px) {
+    left: 0;
+    min-height: 480px;
+
+    &.daria {
+      img {
+        bottom: 0;
+        left: 0;
+        width: 420px;
+      }
+    }
+
+    &.irina {
+      img {
+        bottom: 17px;
+        left: 0;
+        width: 355px;
+      }
+    }
+  }
 `;
 
 export const RightImgCont = styled.div`
@@ -185,6 +216,25 @@ export const RightImgCont = styled.div`
         width: 280px;
         bottom: 0;
         right: -8px;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    min-height: 480px;
+
+    img {
+      bottom: 0;
+      right: 0px;
+    }
+
+    &.tatyana,
+    &.tatyana-height {
+      img {
+        width: 280px;
+        bottom: 0;
+        right: 0;
       }
     }
   }
