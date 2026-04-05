@@ -37,10 +37,5 @@ export const Wrapper = styled(motion.div)`
     &.pricing-section-container {
       padding: 0 115px;
     }
-
-    svg{
-      width:13px;
-      height:11px;
-    }
   }
 `;

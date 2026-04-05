@@ -36,6 +36,7 @@ export const footerSocials: ContactSectionSocial[] = [
     height: "18px",
     desktopWidth: "34px",
     desktopHeight: "34px",
+    className: "instagram-icon",
   },
   {
     id: "telegram",
@@ -55,6 +56,7 @@ export const footerSocials: ContactSectionSocial[] = [
     height: "21px",
     desktopWidth: "21px",
     desktopHeight: "39px",
+    className: "facebook-icon",
   },
   {
     id: "linkedin",
@@ -64,5 +66,6 @@ export const footerSocials: ContactSectionSocial[] = [
     height: "12px",
     desktopWidth: "26px",
     desktopHeight: "39px",
+    className: "linkedin-icon",
   },
 ];

@@ -142,5 +142,26 @@ export const CustomSocialLink = styled.a`
         margin-bottom: 2px;
       }
     }
+
+    &.instagram-icon {
+      svg {
+        width: 34px;
+        height: 34px;
+      }
+    }
+
+    &.facebook-icon {
+      svg {
+        width: 21px;
+        height: 39px;
+      }
+    }
+
+    &.linkedin-icon {
+      svg {
+        width: 26px;
+        height: 24px;
+      }
+    }
   }
 `;
