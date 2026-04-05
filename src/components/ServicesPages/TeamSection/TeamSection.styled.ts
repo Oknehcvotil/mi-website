@@ -215,7 +215,7 @@ export const LeftImgCont = styled.div`
 
   @media (min-width: 1920px) {
     left: 0;
-    min-height: 650px;
+    min-height: 680px;
     max-width: 800px;
 
     &.daria {
