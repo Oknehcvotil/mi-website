@@ -12,11 +12,16 @@ import {
   CasesHeroLead,
   CasesHeroSubtitle,
   CasesHeroTitle,
+  CasesHeroWrap,
   HeroSectionWrap,
 } from "./CasesHero.styled";
 import { motion, useReducedMotion } from "framer-motion";
 import Container from "../../Container/Container";
 import ConsultBtn from "../../Buttons/ConsultBtn/ConsultBtn";
+import {
+  replaceImageViewport,
+  withDensitySet,
+} from "../../../lib/helpers/helpers";
 
 export type CasesHeroProps = {
   caseConfig: CasesHeroConfig;
@@ -25,8 +30,11 @@ export type CasesHeroProps = {
 const CasesHero = ({ caseConfig }: CasesHeroProps) => {
   const { translationNs, image, nav, id, className } = caseConfig;
   const { t } = useTranslation(translationNs);
-  const imgAlt = image.altKey ? t(image.altKey) : t(`subTitle`);
   const reduce = useReducedMotion();
+  const imageExt = image.ext ?? "webp";
+  const imgAlt = image.altKey ? t(image.altKey) : t("subTitle");
+  const laptopBasePath = replaceImageViewport(image.basePath, "laptop");
+  const desktopBasePath = replaceImageViewport(image.basePath, "desktop");
 
   return (
     <HeroSectionWrap
@@ -36,7 +44,7 @@ const CasesHero = ({ caseConfig }: CasesHeroProps) => {
       viewport={{ once: true, amount: 0.3 }}
       variants={sectionV}
     >
-      <Container>
+      <Container className={`cases-hero-${className}`}>
         <CasesHeroTitle
           variants={titleV}
           className={`cases-hero-${className}--title`}
@@ -46,33 +54,36 @@ const CasesHero = ({ caseConfig }: CasesHeroProps) => {
         {nav && nav.length > 0 && (
           <CasesNav nav={nav} ns={translationNs} className={className} />
         )}
-        <motion.div variants={reduce ? undefined : fadeUp}>
-          <CasesHeroSubtitle>{t("subTitle")}</CasesHeroSubtitle>
-          <CasesHeroLead className={`cases-hero-${className}--lead`}>
-            {t("lead")}
-          </CasesHeroLead>
-          <ConsultBtn variant="primary" maxWidth="307px" />
-        </motion.div>
+        <CasesHeroWrap>
+          <motion.div variants={reduce ? undefined : fadeUp}>
+            <CasesHeroSubtitle>{t("subTitle")}</CasesHeroSubtitle>
+            <CasesHeroLead className={`cases-hero-${className}--lead`}>
+              {t("lead")}
+            </CasesHeroLead>
+            <ConsultBtn variant="primary" maxWidth="307px" />
+          </motion.div>
 
-        <CasesHeroImgCont className={`cases-hero-${className}-img--cont`}>
-          <picture>
-            <source
-              srcSet={`${image.src}@3x.${image.ext ?? "webp"}`}
-              media="(min-resolution: 3dppx)"
-            />
-            <source
-              srcSet={`${image.src}@2x.${image.ext ?? "webp"}`}
-              media="(min-resolution: 2dppx)"
-            />
-            <motion.img
-              src={`${image.src}.${image.ext ?? "webp"}`}
-              alt={t(imgAlt)}
-              loading="eager"
-              decoding="async"
-              variants={imageV}
-            />
-          </picture>
-        </CasesHeroImgCont>
+          <CasesHeroImgCont className={`cases-hero-${className}-img--cont`}>
+            <picture>
+              <source
+                media="(min-width: 1920px)"
+                srcSet={withDensitySet(desktopBasePath, imageExt)}
+              />
+              <source
+                media="(min-width: 768px)"
+                srcSet={withDensitySet(laptopBasePath, imageExt)}
+              />
+              <motion.img
+                src={`${image.basePath}.${imageExt}`}
+                srcSet={withDensitySet(image.basePath, imageExt)}
+                alt={imgAlt}
+                loading="eager"
+                decoding="async"
+                variants={imageV}
+              />
+            </picture>
+          </CasesHeroImgCont>
+        </CasesHeroWrap>
       </Container>
     </HeroSectionWrap>
   );

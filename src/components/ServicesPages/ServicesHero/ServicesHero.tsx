@@ -17,14 +17,10 @@ import {
   imgVariants,
 } from "../../../lib/animations/services/animations.hero";
 import ConsultBtn from "../../Buttons/ConsultBtn/ConsultBtn";
-
-const withDensitySet = (basePath: string, ext: string) =>
-  `${basePath}.${ext} 1x, ${basePath}@2x.${ext} 2x, ${basePath}@3x.${ext} 3x`;
-
-const replaceImageViewport = (
-  basePath: string,
-  viewport: "laptop" | "desktop",
-) => basePath.replace("/images/mob/", `/images/${viewport}/`);
+import {
+  replaceImageViewport,
+  withDensitySet,
+} from "../../../lib/helpers/helpers";
 
 const ServicesHero = ({ content }: ServicesHeroProps) => {
   const {
@@ -76,15 +72,10 @@ const ServicesHero = ({ content }: ServicesHeroProps) => {
           <LeadCont variants={reduce ? undefined : fadeUp}>
             <h2>{t(sectionTitleKey)}</h2>
             {leadKey && <p>{t(leadKey)}</p>}
-            <ConsultBtn
-              variant="primary"
-              className={`hero-services--btn`}
-            />
+            <ConsultBtn variant="primary" className={`hero-services--btn`} />
           </LeadCont>
 
-          <HeroImgCont
-            variants={reduce ? undefined : imgVariants}
-          >
+          <HeroImgCont variants={reduce ? undefined : imgVariants}>
             <picture>
               <source
                 media="(min-width: 1920px)"

@@ -21,6 +21,12 @@ export const CasesHeroNavList = styled(motion.ul)`
     justify-content: center;
     gap: 7px;
   }
+
+  @media (min-width: 768px) {
+    max-width: none;
+    justify-content: center;
+    gap: 15px;
+  }
 `;
 
 export const CasesNavLink = styled(NavLink)`
@@ -34,7 +40,10 @@ export const CasesNavLink = styled(NavLink)`
   color: #020202;
   border-radius: 8px;
   border: 2px solid #a066ff;
-  transition: color 0.3s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.3s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 
   &:hover,
   &:focus,

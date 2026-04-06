@@ -5,6 +5,6 @@ export const businessCasesConfig: CasesHeroConfig = {
   className: "business",
   id: "business-consulting",
   image: {
-    src: "/images/mob/services-pages/users",
+    basePath: "/images/mob/services-pages/users",
   },
 };

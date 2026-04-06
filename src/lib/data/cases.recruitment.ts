@@ -1,5 +1,5 @@
 import type { CasesHeroConfig } from "../types/cases.hero.types";
-import type { CasesItem, NoVideoCasesItem } from "../types/cases.types"
+import type { CasesItem, NoVideoCasesItem } from "../types/cases.types";
 
 export const recruitmentCasesConfig: CasesHeroConfig = {
   translationNs: "casesRecruitment",
@@ -14,7 +14,7 @@ export const recruitmentCasesConfig: CasesHeroConfig = {
     { hash: "recruitment/other", labelKey: "Other" },
   ],
   image: {
-    src: "/images/mob/services-pages/services-hero-for-clients",
+    basePath: "/images/mob/services-pages/services-hero-for-clients",
   },
 };
 

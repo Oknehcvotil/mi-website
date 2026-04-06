@@ -4,7 +4,7 @@ export type NavItem = {
 };
 
 type HeroImage = {
-  src: string;
+  basePath: string;
   altKey?: string;
   ext?: "webp" | "png" | "jpg" | "jpeg";
 };

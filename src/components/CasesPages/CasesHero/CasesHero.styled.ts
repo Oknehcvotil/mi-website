@@ -3,7 +3,20 @@ import { motion } from "framer-motion";
 
 export const HeroSectionWrap = styled(motion.section)`
   padding-top: 105px;
+
+  @media (min-width: 768px) {
+    padding-top: 80px;
+  }
 `;
+
+export const CasesHeroWrap = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  `;
 
 export const CasesHeroTitle = styled(motion.h1)`
   font-family: "Unbounded";
@@ -22,6 +35,14 @@ export const CasesHeroTitle = styled(motion.h1)`
   &.cases-hero-business--title {
     margin-bottom: 20px;
   }
+
+  @media (min-width: 768px) {
+    font-size: 35px;
+
+    &.cases-hero-business--title {
+      margin-bottom: 40px;
+    }
+  }
 `;
 
 export const CasesHeroSubtitle = styled.h2`
@@ -31,6 +52,10 @@ export const CasesHeroSubtitle = styled.h2`
   line-height: 32px;
   color: #020202;
   margin-bottom: 15px;
+
+  @media (min-width: 768px) {
+    font-size: 40px;
+  }
 `;
 
 export const CasesHeroLead = styled.p`
@@ -45,6 +70,17 @@ export const CasesHeroLead = styled.p`
 
   &.cases-hero-hr--lead {
     max-width: 290px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+    line-height: 130%;
+    max-width: 465px;
+    margin-bottom: 15px;
+
+    &.cases-hero-hr--lead {
+      max-width: 485px;
+    }
   }
 `;
 
@@ -80,6 +116,30 @@ export const CasesHeroImgCont = styled.div`
 
     img {
       max-width: 205px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    &.cases-hero-recruitment-img--cont {
+      img {
+        max-width: 267px;
+      }
+    }
+
+    &.cases-hero-business-img--cont {
+      padding: 0;
+
+      img {
+        max-width: 210px;
+      }
+    }
+
+    &.cases-hero-hr-img--cont {
+      padding: 0;
+
+      img {
+        max-width: 245px;
+      }
     }
   }
 `;
