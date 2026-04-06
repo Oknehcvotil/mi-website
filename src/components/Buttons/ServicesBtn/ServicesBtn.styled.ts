@@ -20,7 +20,9 @@ export const ServButton = styled(NavLink, {
   color: ${({ $isActive }) => ($isActive ? "#fff" : "#020202")};
   margin-right: 15px;
   background: ${({ $isActive }) =>
-    $isActive ? "linear-gradient(90deg, #a066ff 0%, #5427b1 100%)" : "transparent"};
+    $isActive
+      ? "linear-gradient(90deg, #a066ff 0%, #5427b1 100%)"
+      : "transparent"};
   box-shadow: ${({ $isActive }) =>
     $isActive ? "0 4px 4px 0 rgba(0, 0, 0, 0.25)" : "none"};
 
