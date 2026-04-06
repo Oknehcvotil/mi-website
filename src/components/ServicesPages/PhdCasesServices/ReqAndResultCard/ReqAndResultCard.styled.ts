@@ -4,6 +4,7 @@ export const ReqAndResultWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   min-height: 385px;
 `;
 
@@ -21,6 +22,10 @@ export const ReqAndResultCardWrap = styled.div`
     transform: rotate(-5deg);
     opacity: 0.4;
     pointer-events: none;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 980px;
   }
 `;
 
@@ -45,6 +50,17 @@ export const ReqAndResultCardCont = styled.div`
     line-height: 190%;
     text-transform: uppercase;
   }
+
+  @media (min-width: 1920px) {
+    padding: 40px 80px;
+    max-width: 980px;
+
+    h4 {
+      font-size: 35px;
+      line-height: 109%;
+      margin-bottom: 20px;
+    }
+  }
 `;
 
 export const ReqCont = styled.div`
@@ -64,6 +80,14 @@ export const ReqCont = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  @media (min-width: 1920px) {
+    padding: 10px 20px;
+    p {
+      font-size: 25px;
+      line-height: 140%;
+    }
+  }
 `;
 
 export const ResultCont = styled.div`
@@ -78,5 +102,13 @@ export const ResultCont = styled.div`
     font-size: 12px;
     line-height: 130%;
     color: #020202;
+  }
+
+  @media (min-width: 1920px) {
+    padding: 10px 20px;
+    p {
+      font-size: 25px;
+      line-height: 140%;
+    }
   }
 `;

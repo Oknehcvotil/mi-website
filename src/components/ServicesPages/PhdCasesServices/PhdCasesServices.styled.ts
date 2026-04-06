@@ -16,6 +16,8 @@ export const PhdCasesWrapper = styled(motion.section)`
     max-width: 1920px;
     padding-top: 80px;
     padding-bottom: 0;
+    padding-left: 75px;
+    padding-right: 75px;
   }
 `;
 
@@ -26,8 +28,13 @@ export const PhdSliderPair = styled.div`
     align-items: center;
     gap: 16px;
 
+    > .phd-slider-card {
+      display: flex;
+      height: auto;
+    }
+
     &.last-pair {
-      align-items: stretch;
+      align-items: center;
 
       > div {
         display: flex;
@@ -35,12 +42,34 @@ export const PhdSliderPair = styled.div`
 
       .last-pair-card {
         display: flex;
-        height: 100%;
       }
 
       .last-pair-card > div {
         width: 100%;
-        height: 100%;
+      }
+    }
+  }
+
+  @media (min-width: 1920px) {
+    justify-content: space-around;
+    gap: 0;
+
+    > .phd-slider-card.review {
+      flex: 0 0 740px;
+      max-width: 740px;
+    }
+
+    > .phd-slider-card.request-result {
+      flex: 0 0 980px;
+      max-width: 980px;
+    }
+
+    &.last-pair {
+      justify-content: space-around;
+
+      > .phd-slider-card.review {
+        flex: 0 0 740px;
+        max-width: 740px;
       }
     }
   }

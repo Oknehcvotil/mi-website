@@ -1,5 +1,9 @@
 import { Trans, useTranslation } from "react-i18next";
-import { PhdCasesTitle, PhdCasesWrapper, PhdSliderPair } from "./PhdCasesServices.styled";
+import {
+  PhdCasesTitle,
+  PhdCasesWrapper,
+  PhdSliderPair,
+} from "./PhdCasesServices.styled";
 import { motion } from "framer-motion";
 import {
   blockV,
@@ -18,12 +22,72 @@ const PhdCasesServices = () => {
   const isTablet = useMediaQuery("(min-width: 768px)");
 
   const allCards = [
-    <PhdReviewCard translationNs={NS} nameKey="cases.alina.name" reviewKey="cases.alina.review" imgSrc="/images/phd-cases/alina" />,
-    <ReqAndResultCard translationNs={NS} reqKey="cases.alina.clientRequest" resultKey="cases.alina.result" />,
-    <PhdReviewCard translationNs={NS} nameKey="cases.iryna.name" reviewKey="cases.iryna.review" imgSrc="/images/phd-cases/iryna" />,
-    <ReqAndResultCard translationNs={NS} reqKey="cases.iryna.clientRequest" resultKey="cases.iryna.result" />,
-    <PhdReviewCard translationNs={NS} nameKey="cases.elizaveta.name" reviewKey="cases.elizaveta.review" imgSrc="/images/phd-cases/elizaveta" className="last-pair-card" />,
-    <PhdReviewCard translationNs={NS} nameKey="cases.olesya.name" reviewKey="cases.olesya.review" imgSrc="/images/phd-cases/olesya" className="last-pair-card" />,
+    {
+      type: "review",
+      card: (
+        <PhdReviewCard
+          translationNs={NS}
+          nameKey="cases.alina.name"
+          reviewKey="cases.alina.review"
+          imgSrc="/images/phd-cases/alina"
+        />
+      ),
+    },
+    {
+      type: "request-result",
+      card: (
+        <ReqAndResultCard
+          translationNs={NS}
+          reqKey="cases.alina.clientRequest"
+          resultKey="cases.alina.result"
+        />
+      ),
+    },
+    {
+      type: "review",
+      card: (
+        <PhdReviewCard
+          translationNs={NS}
+          nameKey="cases.iryna.name"
+          reviewKey="cases.iryna.review"
+          imgSrc="/images/phd-cases/iryna"
+        />
+      ),
+    },
+    {
+      type: "request-result",
+      card: (
+        <ReqAndResultCard
+          translationNs={NS}
+          reqKey="cases.iryna.clientRequest"
+          resultKey="cases.iryna.result"
+        />
+      ),
+    },
+    {
+      type: "review",
+      card: (
+        <PhdReviewCard
+          translationNs={NS}
+          nameKey="cases.elizaveta.name"
+          reviewKey="cases.elizaveta.review"
+          imgSrc="/images/phd-cases/elizaveta"
+          className="last-pair-card"
+        />
+      ),
+    },
+    {
+      type: "review",
+      card: (
+        <PhdReviewCard
+          translationNs={NS}
+          nameKey="cases.olesya.name"
+          reviewKey="cases.olesya.review"
+          imgSrc="/images/phd-cases/olesya"
+          className="last-pair-card"
+        />
+      ),
+    },
   ];
 
   const groupedSlides = isTablet
@@ -57,8 +121,10 @@ const PhdCasesServices = () => {
                   : undefined
               }
             >
-              {group.map((card, i) => (
-                <div key={i}>{card}</div>
+              {group.map(({ card, type }, i) => (
+                <div key={i} className={`phd-slider-card ${type}`}>
+                  {card}
+                </div>
               ))}
             </PhdSliderPair>
           ))}
