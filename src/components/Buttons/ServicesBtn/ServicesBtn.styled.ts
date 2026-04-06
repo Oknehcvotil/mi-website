@@ -1,7 +1,13 @@
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
 
-export const ServButton = styled(NavLink)`
+type ServButtonProps = {
+  $isActive?: boolean;
+};
+
+export const ServButton = styled(NavLink, {
+  shouldForwardProp: (prop) => prop !== "$isActive",
+})<ServButtonProps>`
   border: 2px solid #a066ff;
   border-radius: 8px;
   padding: 12px 9px;
@@ -11,8 +17,12 @@ export const ServButton = styled(NavLink)`
   font-weight: 500;
   font-size: 14px;
   line-height: 100%;
-  color: #020202;
+  color: ${({ $isActive }) => ($isActive ? "#fff" : "#020202")};
   margin-right: 15px;
+  background: ${({ $isActive }) =>
+    $isActive ? "linear-gradient(90deg, #a066ff 0%, #5427b1 100%)" : "transparent"};
+  box-shadow: ${({ $isActive }) =>
+    $isActive ? "0 4px 4px 0 rgba(0, 0, 0, 0.25)" : "none"};
 
   &:hover,
   &:focus,
