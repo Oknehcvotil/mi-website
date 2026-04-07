@@ -12,9 +12,10 @@ import { NavBarList } from "./NavBar.styled";
 
 type NavBarProps = {
   onCloseBurger?: () => void;
+  isBurgerOpen?: boolean;
 };
 
-const NavBar = ({ onCloseBurger }: NavBarProps) => {
+const NavBar = ({ onCloseBurger, isBurgerOpen }: NavBarProps) => {
   const { t } = useTranslation("common", { keyPrefix: "links" });
   const { pathname } = useLocation();
   const match = useMatch("/:lang/*");
@@ -22,10 +23,38 @@ const NavBar = ({ onCloseBurger }: NavBarProps) => {
   const isDesk = useMediaQuery("(min-width: 1024px)");
 
   const [openId, setOpenId] = useState<Section["id"] | null>(null);
+  const [openMobileIds, setOpenMobileIds] = useState<Section["id"][]>([]);
 
   useEffect(() => {
     setOpenId(null);
+    setOpenMobileIds([]);
   }, [pathname]);
+
+  useEffect(() => {
+    if (isDesk) {
+      setOpenMobileIds([]);
+      return;
+    }
+
+    if (isBurgerOpen === false) {
+      setOpenMobileIds([]);
+    }
+  }, [isDesk, isBurgerOpen]);
+
+  const handleSetOpen = (sectionId: Section["id"], next: boolean) => {
+    if (isDesk) {
+      setOpenId(next ? sectionId : null);
+      return;
+    }
+
+    setOpenMobileIds((current) => {
+      if (!next) {
+        return current.filter((id) => id !== sectionId);
+      }
+
+      return current.includes(sectionId) ? current : [...current, sectionId];
+    });
+  };
 
   const sections = NAV_SECTIONS;
 
@@ -42,18 +71,19 @@ const NavBar = ({ onCloseBurger }: NavBarProps) => {
           key={section.id}
           section={section}
           currentLang={currentLang}
-          isOpen={openId === section.id}
-          setOpen={(next) => setOpenId(next ? section.id : null)}
+          isOpen={
+            isDesk ? openId === section.id : openMobileIds.includes(section.id)
+          }
+          setOpen={(next) => handleSetOpen(section.id, next)}
           onSelect={onCloseBurger}
           t={t}
           pathname={pathname}
         />
       ))}
 
-        <li className="psi-item">
-          <PsiLink onCloseBurger={onCloseBurger}>PSY MI</PsiLink>
-        </li>
-      
+      <li className="psi-item">
+        <PsiLink onCloseBurger={onCloseBurger}>PSY MI</PsiLink>
+      </li>
 
       {!isDesk && (
         <li>

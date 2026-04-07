@@ -70,14 +70,22 @@ const SubMenuSection = ({
   pathname,
 }: SubMenuSectionProps) => {
   const active = pathname.startsWith(`/${currentLang}${section.basePath}`);
-  const isDesk = useMediaQuery("(min-width: 1920px)");
+  const isWideDesktop = useMediaQuery("(min-width: 1920px)");
+  const isDesktopNav = useMediaQuery("(min-width: 1024px)");
   const reduce = useReducedMotion();
 
   const onKeyDown: React.KeyboardEventHandler = (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      setOpen(!isOpen);
-    } else if (e.key === "Escape") {
+
+      if (!isDesktopNav) {
+        setOpen(!isOpen);
+      } else if (!isOpen) {
+        setOpen(true);
+      } else {
+        setOpen(false);
+      }
+    } else if (e.key === "Escape" && isDesktopNav) {
       setOpen(false);
     }
   };
@@ -86,20 +94,29 @@ const SubMenuSection = ({
       role="listbox"
       aria-expanded={isOpen}
       aria-label={t(section.titleKey)}
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={() => isDesktopNav && setOpen(true)}
+      onMouseLeave={() => isDesktopNav && setOpen(false)}
     >
       <SubMenuTitle
         active={active}
         width={section.width}
         justify={section.justify}
-        onClick={() => !isOpen && setOpen(true)}
+        onClick={() => {
+          if (!isDesktopNav) {
+            setOpen(!isOpen);
+            return;
+          }
+
+          if (!isOpen) {
+            setOpen(true);
+          }
+        }}
         onKeyDown={onKeyDown}
       >
         {t(section.titleKey)}
         <motion.svg
-          width={isDesk ? 15 : 9}
-          height={isDesk ? 9 : 7}
+          width={isWideDesktop ? 15 : 9}
+          height={isWideDesktop ? 9 : 7}
           aria-hidden
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={

@@ -174,7 +174,7 @@ function BurgerMenu({ isOpen, onClose }: BurgerMenuProps) {
       >
         <BurgerCloseBtn onClose={onClose} />
         <NavCont>
-          <NavBar onCloseBurger={onClose} />
+          <NavBar onCloseBurger={onClose} isBurgerOpen={isOpen} />
         </NavCont>
       </BurgerCont>
     </BurgerLayuot>,
