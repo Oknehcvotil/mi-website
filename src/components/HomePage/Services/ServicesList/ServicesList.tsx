@@ -9,25 +9,18 @@ import { useMatch } from "react-router-dom";
 import { servicesLinks } from "../../../../lib/data/home.page";
 import { servicesIcons } from "../../../../lib/data/home.page";
 import { useMediaQuery } from "../../../../lib/hooks/useMediaQuery";
-
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    scale: 0.5,
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delay: 0.02 * index,
-    },
-  }),
-};
+import { motion, useReducedMotion } from "framer-motion";
+import {
+  servicesCardItemVariants,
+  servicesCardVariants,
+  servicesListVariants,
+} from "../../../../lib/animations/home/animations.services";
 
 const ServicesList = () => {
   const { t } = useTranslation("home");
   const match = useMatch("/:lang/*");
   const currentLang = match?.params.lang ?? "en";
+  const reduce = !!useReducedMotion();
 
   const isDesk = useMediaQuery("(min-width: 1920px)");
 
@@ -38,7 +31,7 @@ const ServicesList = () => {
   const button = t("services.button");
 
   return (
-    <List>
+    <List variants={reduce ? undefined : servicesListVariants}>
       {subTitles.map((title, i) => {
         const icon = servicesIcons[i];
         const size = isDesk ? icon.desk : icon.mob;
@@ -46,13 +39,9 @@ const ServicesList = () => {
         return (
           <ServicesItems
             key={i}
-            variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            custom={i}
+            variants={reduce ? undefined : servicesCardVariants}
           >
-            <TitleCont>
+            <TitleCont variants={reduce ? undefined : servicesCardItemVariants}>
               <svg width={size.w} height={size.h}>
                 <use href={`/icons/sprite.svg#${icon.name}`} />
               </svg>
@@ -60,9 +49,14 @@ const ServicesList = () => {
               <h3>{title}</h3>
             </TitleCont>
 
-            <p>{texts[i]}</p>
+            <motion.p variants={reduce ? undefined : servicesCardItemVariants}>
+              {texts[i]}
+            </motion.p>
 
-            <ServicesLink to={`/${currentLang}${servicesLinks[i]}`}>
+            <ServicesLink
+              to={`/${currentLang}${servicesLinks[i]}`}
+              variants={reduce ? undefined : servicesCardItemVariants}
+            >
               {button}
             </ServicesLink>
           </ServicesItems>

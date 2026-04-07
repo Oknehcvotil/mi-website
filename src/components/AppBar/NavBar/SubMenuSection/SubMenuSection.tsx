@@ -1,7 +1,13 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { SubMenuList, SubLink, SubMenuTitle, SubMenuItem } from "./SubMenuSection.styled";
+import {
+  SubMenuList,
+  SubLink,
+  SubMenuTitle,
+  SubMenuItem,
+} from "./SubMenuSection.styled";
 import { type Section } from "../../../../lib/types/nav.types";
 import { useMediaQuery } from "../../../../lib/hooks/useMediaQuery";
+import { useReducedMotion, type Variants } from "framer-motion";
 
 type SubMenuSectionProps = {
   section: Section;
@@ -13,26 +19,45 @@ type SubMenuSectionProps = {
   pathname: string;
 };
 
-const listVariants = {
+const listVariants: Variants = {
   closed: {
     opacity: 0,
-    scaleY: 0.85,
-    transition: { when: "afterChildren", staggerDirection: -1 },
+    y: -6,
+    scale: 0.985,
+    filter: "blur(4px)",
+    transition: {
+      duration: 0.1,
+      ease: [0.4, 0, 0.2, 1],
+      when: "afterChildren",
+      staggerChildren: 0.012,
+      staggerDirection: -1,
+    },
   },
   open: {
     opacity: 1,
-    scaleY: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
     transition: {
       duration: 0.12,
+      ease: [0.22, 1, 0.36, 1],
       when: "beforeChildren",
-      staggerChildren: 0.03,
+      staggerChildren: 0.016,
     },
   },
 };
 
-const itemVariants = {
-  closed: { opacity: 0, y: -6 },
-  open: { opacity: 1, y: 0, transition: { duration: 0.14 } },
+const itemVariants: Variants = {
+  closed: {
+    opacity: 0,
+    y: -4,
+    transition: { duration: 0.08, ease: [0.4, 0, 0.2, 1] },
+  },
+  open: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.1, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
 const SubMenuSection = ({
@@ -46,6 +71,7 @@ const SubMenuSection = ({
 }: SubMenuSectionProps) => {
   const active = pathname.startsWith(`/${currentLang}${section.basePath}`);
   const isDesk = useMediaQuery("(min-width: 1920px)");
+  const reduce = useReducedMotion();
 
   const onKeyDown: React.KeyboardEventHandler = (e) => {
     if (e.key === "Enter" || e.key === " ") {
@@ -76,7 +102,11 @@ const SubMenuSection = ({
           height={isDesk ? 9 : 7}
           aria-hidden
           animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.18 }}
+          transition={
+            reduce
+              ? { duration: 0 }
+              : { type: "spring", stiffness: 460, damping: 30 }
+          }
         >
           <use href="/icons/sprite.svg#icon-select-arrow" />
         </motion.svg>
@@ -85,10 +115,10 @@ const SubMenuSection = ({
       <AnimatePresence initial={false}>
         {isOpen && (
           <SubMenuList
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={listVariants}
+            initial={reduce ? false : "closed"}
+            animate="open"
+            exit="closed"
+            variants={reduce ? undefined : listVariants}
           >
             {section.items.map((it, idx) => (
               <motion.li key={it.to} custom={idx} variants={itemVariants}>

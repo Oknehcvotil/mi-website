@@ -1,27 +1,44 @@
 import { useTranslation } from "react-i18next";
 import { Title, TitleCont, TitleText } from "./MissionMainTitle.styled";
-import { useRef } from "react";
-import { useInView } from "framer-motion";
+import type { Variants } from "framer-motion";
+import {
+  missionTitleTextVariants,
+  missionTitleVariants,
+  missionTitleWrapVariants,
+} from "../../../../lib/animations/home/animations.mission";
 
-const easeIn: [number, number, number, number] = [0.22, 1, 0.36, 1];
+type MissionMainTitleProps = {
+  useOwnViewportAnimation?: boolean;
+  containerVariants?: Variants;
+  titleVariants?: Variants;
+  textVariants?: Variants;
+};
 
-const MissionMainTitle = () => {
+const MissionMainTitle = ({
+  useOwnViewportAnimation = true,
+  containerVariants = missionTitleWrapVariants,
+  titleVariants = missionTitleVariants,
+  textVariants = missionTitleTextVariants,
+}: MissionMainTitleProps) => {
   const { t, i18n } = useTranslation("home");
   const lang = i18n.language;
-
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
     <TitleCont
       lang={lang}
-      ref={ref}
-      initial={{ opacity: 0 }}
-      animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-      transition={{ duration: 0.6, ease: easeIn }}
+      variants={containerVariants}
+      initial={useOwnViewportAnimation ? "hidden" : undefined}
+      whileInView={useOwnViewportAnimation ? "show" : undefined}
+      viewport={
+        useOwnViewportAnimation ? { once: true, margin: "-50px" } : undefined
+      }
     >
-      <Title lang={lang}>{t("missionTitle")}</Title>
-      <TitleText lang={lang}>{t("missionTitleText")}</TitleText>
+      <Title lang={lang} variants={titleVariants}>
+        {t("missionTitle")}
+      </Title>
+      <TitleText lang={lang} variants={textVariants}>
+        {t("missionTitleText")}
+      </TitleText>
     </TitleCont>
   );
 };

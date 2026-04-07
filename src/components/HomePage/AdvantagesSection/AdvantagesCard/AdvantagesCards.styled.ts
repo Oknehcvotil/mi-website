@@ -148,7 +148,9 @@ export const ListItem = styled(motion.li)`
   }
 `;
 
-export const AdvText = styled.h3`
+export const IconWrap = styled(motion.div)``;
+
+export const AdvText = styled(motion.h3)`
   font-family: "Montserrat";
   font-weight: 400;
   font-size: 15px;

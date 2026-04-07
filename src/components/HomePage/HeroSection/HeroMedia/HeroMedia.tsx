@@ -1,4 +1,6 @@
-import { imageIn } from "../../../../lib/animations/home/animations.hero";
+import { useReducedMotion } from "framer-motion";
+import { useMediaQuery } from "../../../../lib/hooks/useMediaQuery";
+import { createHeroMediaVariants } from "../../../../lib/animations/home/animations.hero";
 import { HeroPictCont, HeroImage } from "./HeroMedia.styled";
 
 type HeroMediaProps = {
@@ -6,8 +8,12 @@ type HeroMediaProps = {
 };
 
 const HeroMedia = ({ alt = "MI Agency team" }: HeroMediaProps) => {
+  const reduce = !!useReducedMotion();
+  const isMobile = useMediaQuery("(max-width: 767px)");
+  const mediaVariants = createHeroMediaVariants(isMobile, reduce);
+
   return (
-    <HeroPictCont variants={imageIn}>
+    <HeroPictCont variants={mediaVariants}>
       <picture>
         <source
           media="(min-width: 1920px)"

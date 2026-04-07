@@ -13,6 +13,23 @@ import { useMatch } from "react-router-dom";
 import NavBar from "./NavBar/NavBar";
 import MainPageLink from "./MainPaigeLink/MainPaigeLink";
 import PsiLink from "../Buttons/PsiLink/PsiLink";
+import type { Variants } from "framer-motion";
+import { useReducedMotion } from "framer-motion";
+
+const headerVariants: Variants = {
+  hidden: {
+    y: -32,
+    opacity: 0,
+  },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
 
 type AppBarProps = {
   setMenuIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -22,6 +39,7 @@ function AppBar({ setMenuIsOpen }: AppBarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const match = useMatch("/:lang/*");
   const currentLang = match?.params.lang ?? "en";
+  const reduce = useReducedMotion();
 
   const isTablet = useMediaQuery("(min-width: 768px)");
   const isDesk = useMediaQuery("(min-width: 1024px)");
@@ -38,8 +56,9 @@ function AppBar({ setMenuIsOpen }: AppBarProps) {
   return (
     <Header isScrolled={isScrolled}>
       <HeaderWrapper
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={reduce ? undefined : "hidden"}
+        animate={reduce ? undefined : "show"}
+        variants={reduce ? undefined : headerVariants}
       >
         <BurgerMenuBtn type="button" onClick={() => setMenuIsOpen(true)}>
           <svg width={40} height={40}>

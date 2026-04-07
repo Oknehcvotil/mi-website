@@ -1,8 +1,10 @@
 import { Trans, useTranslation } from "react-i18next";
 import { useReducedMotion } from "framer-motion";
 import {
-  container,
-  textUp,
+  createHeroButtonVariants,
+  createHeroTextGroupVariants,
+  createHeroTextVariants,
+  createHeroTitleVariants,
 } from "../../../../lib/animations/home/animations.hero";
 import {
   Wrapper,
@@ -17,19 +19,19 @@ import { useMediaQuery } from "../../../../lib/hooks/useMediaQuery";
 
 const HeroText = () => {
   const { t, i18n } = useTranslation("home");
-  const reduce = useReducedMotion();
+  const reduce = !!useReducedMotion();
   const lang = i18n.language;
   const isDesk = useMediaQuery("(min-width: 1920px)");
+  const isMobile = useMediaQuery("(max-width: 767px)");
+
+  const groupVariants = createHeroTextGroupVariants(isMobile, reduce);
+  const titleVariants = createHeroTitleVariants(reduce);
+  const textVariants = createHeroTextVariants(reduce);
+  const buttonVariants = createHeroButtonVariants(reduce);
 
   return (
-    <Wrapper
-      variants={container}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ amount: 0.5, once: true }}
-      animate={reduce ? "show" : undefined}
-    >
-      <HeroTitle variants={textUp} lang={lang}>
+    <Wrapper variants={groupVariants}>
+      <HeroTitle variants={titleVariants} lang={lang}>
         <Trans
           t={t}
           i18nKey="heroTitle"
@@ -37,9 +39,9 @@ const HeroText = () => {
         />
       </HeroTitle>
 
-      <SubTitle variants={textUp}>{t("subtitle")}</SubTitle>
+      <SubTitle variants={textVariants}>{t("subtitle")}</SubTitle>
 
-      <BtnWrapper variants={textUp}>
+      <BtnWrapper variants={buttonVariants}>
         <ConsultBtn variant="primary" maxWidth={isDesk ? "610px" : "307px"} />
       </BtnWrapper>
     </Wrapper>

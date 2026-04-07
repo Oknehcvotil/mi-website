@@ -2,13 +2,26 @@ import { advantagesCards } from "../../../lib/data/home.page";
 import Container from "../../Container/Container";
 import AdvantagesCard from "./AdvantagesCard/AdvantagesCard";
 import { AdvSection, AdvList } from "./AdvantagesSection.styled";
-import { itemIn } from "../../../lib/animations/home/animations.advantages";
+import {
+  itemIn,
+  listVariants,
+  sectionVariants,
+} from "../../../lib/animations/home/animations.advantages";
+import { useReducedMotion } from "framer-motion";
 
 const AdvantagesSection = () => {
+  const reduce = !!useReducedMotion();
+
   return (
-    <AdvSection>
+    <AdvSection
+      variants={reduce ? undefined : sectionVariants}
+      initial={reduce ? undefined : "hidden"}
+      whileInView={reduce ? undefined : "show"}
+      viewport={{ once: true, amount: 0.2 }}
+      animate={reduce ? "show" : undefined}
+    >
       <Container>
-        <AdvList>
+        <AdvList variants={reduce ? undefined : listVariants}>
           {advantagesCards.map((c, idx) => (
             <AdvantagesCard
               key={idx}

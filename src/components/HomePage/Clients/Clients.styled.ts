@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
-export const SectionWrap = styled.div`
+export const SectionWrap = styled(motion.section)`
   padding-top: 40px;
 
   @media (min-width: 768px) {
@@ -16,7 +17,7 @@ export const SectionWrap = styled.div`
   }
 `;
 
-export const Title = styled.h2`
+export const Title = styled(motion.h2)`
   line-height: 100%;
   font-family: "Unbounded";
   font-weight: 700;
@@ -35,7 +36,7 @@ export const Title = styled.h2`
   }
 `;
 
-export const CollapsBtn = styled.button`
+export const CollapsBtn = styled(motion.button)`
   font-weight: 500;
   font-size: 20px;
   line-height: 75%;
@@ -44,14 +45,6 @@ export const CollapsBtn = styled.button`
   align-items: center;
   gap: 5px;
   margin: 0 auto;
-
-  svg {
-    transition: transform 0.25s ease;
-  }
-
-  &[aria-expanded="true"] svg {
-    transform: rotate(180deg);
-  }
 
   @media (min-width: 1920px) {
     display: none;

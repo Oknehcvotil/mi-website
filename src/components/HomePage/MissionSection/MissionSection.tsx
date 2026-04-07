@@ -6,34 +6,46 @@ import {
   PicFrame,
 } from "./MissionSection.styled";
 import MissionMainTitle from "./MissionMainTitle/MissionMainTitle";
-// import { useTranslation } from "react-i18next";
-// import ValuesGrid from "./ValuesGrid/ValuesGrid";
 import { statsCards } from "../../../lib/data/home.page";
-import { container } from "../../../lib/animations/home/animations.stats";
 import { StatsItemCard } from "../StatsSection/StatsItemCard/StatsItemCard";
 import { useMediaQuery } from "../../../lib/hooks/useMediaQuery";
+import { useReducedMotion } from "framer-motion";
+import {
+  missionContentVariants,
+  missionImageVariants,
+  missionSectionVariants,
+  missionStatsItemVariants,
+  missionStatsListVariants,
+} from "../../../lib/animations/home/animations.mission";
 
 const MissionSection = () => {
-  // const { t } = useTranslation("home");
   const isDesk = useMediaQuery("(min-width: 1920px)");
+  const reduce = !!useReducedMotion();
 
   return (
-    <Wrap>
+    <Wrap
+      variants={reduce ? undefined : missionSectionVariants}
+      initial={reduce ? undefined : "hidden"}
+      whileInView={reduce ? undefined : "show"}
+      viewport={{ once: true, amount: 0.18 }}
+      animate={reduce ? "show" : undefined}
+    >
       <Container style={isDesk ? { marginBottom: 110 } : { marginBottom: 16 }}>
-        <MissionMainTitle />
+        <MissionMainTitle useOwnViewportAnimation={false} />
       </Container>
-      <SectionCont>
-        <StatsList
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-        >
+      <SectionCont variants={reduce ? undefined : missionContentVariants}>
+        <StatsList variants={reduce ? undefined : missionStatsListVariants}>
           {statsCards.map((c, idx) => (
-            <StatsItemCard key={idx} value={c.value} labelKey={c.label} />
+            <StatsItemCard
+              key={idx}
+              value={c.value}
+              labelKey={c.label}
+              variants={reduce ? undefined : missionStatsItemVariants}
+              useOwnViewportAnimation={false}
+            />
           ))}
         </StatsList>
-        <PicFrame>
+        <PicFrame variants={reduce ? undefined : missionImageVariants}>
           <picture>
             {/* Desktop 1920+ WEBP */}
             <source

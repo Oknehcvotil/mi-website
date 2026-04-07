@@ -16,6 +16,12 @@ import {
 } from "./CountrySelector.styled";
 import { useMediaQuery } from "../../../../lib/hooks/useMediaQuery";
 import i18n from "../../../../i18n/i18n";
+import { useReducedMotion } from "framer-motion";
+import {
+  geographyCountriesListVariants,
+  geographyCountryItemVariants,
+  geographySelectorVariants,
+} from "../../../../lib/animations/home/animations.geography";
 
 type CountrySelectorProps = {
   countries: Country[];
@@ -36,6 +42,7 @@ const CountrySelector = ({
   const countryLabels = t("map.countries", { returnObjects: true }) as string[];
 
   const isTablet = useMediaQuery("(min-width: 768px)");
+  const reduce = !!useReducedMotion();
 
   const selectedSafe: CountryId = useMemo(() => {
     const hasSelected = countries.some((c) => c.id === selected);
@@ -74,16 +81,25 @@ const CountrySelector = ({
   };
 
   return (
-    <SelectorCont ref={rootRef} className={`selector-cont--${i18n.language}`}>
+    <SelectorCont
+      ref={rootRef}
+      className={`selector-cont--${i18n.language}`}
+      variants={reduce ? undefined : geographySelectorVariants}
+    >
       {isTablet ? (
         <>
           <CountriesTitle className={`countries-title--${i18n.language}`}>
             {t("map.countriesTitle")}
           </CountriesTitle>
           <span className="rail" aria-hidden />
-          <TabList>
+          <TabList
+            variants={reduce ? undefined : geographyCountriesListVariants}
+          >
             {countries.map((c) => (
-              <li key={c.id}>
+              <motion.li
+                key={c.id}
+                variants={reduce ? undefined : geographyCountryItemVariants}
+              >
                 <TabBtn
                   type="button"
                   data-active={c.id === selected}
@@ -91,7 +107,7 @@ const CountrySelector = ({
                 >
                   {countryLabels[countries.findIndex((cc) => cc.id === c.id)]}
                 </TabBtn>
-              </li>
+              </motion.li>
             ))}
           </TabList>
         </>

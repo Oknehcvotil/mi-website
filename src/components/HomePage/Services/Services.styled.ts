@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
-export const SectionWrap = styled.div`
+export const SectionWrap = styled(motion.section)`
   padding: 40px 0;
 
   @media (min-width: 1920px) {
@@ -8,7 +9,7 @@ export const SectionWrap = styled.div`
   }
 `;
 
-export const Title = styled.h2`
+export const Title = styled(motion.h2)`
   line-height: 100%;
   font-family: "Unbounded";
   font-weight: 700;

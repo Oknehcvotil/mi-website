@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import type {
   CountryId,
   MapKey,
@@ -10,6 +11,12 @@ import { useTranslation } from "react-i18next";
 import { FLAG_SRC, CLIENTS } from "../../../../lib/data/geo";
 
 import { MapCont, MapImage, MapPoint } from "./Map.styled";
+import {
+  geographyMapImageVariants,
+  geographyMapVariants,
+  geographyPinVariants,
+  geographyPinsVariants,
+} from "../../../../lib/animations/home/animations.geography";
 
 type Props = {
   selected: CountryId;
@@ -27,7 +34,7 @@ function pickKey(width: number): MapKey {
   return "desk";
 }
 
-const Map =({
+const Map = ({
   selected,
   onSelect,
   maps,
@@ -38,27 +45,26 @@ const Map =({
 }: Props) => {
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const { i18n } = useTranslation("home");
- const [width, setWidth] = useState<number>(
-   typeof window !== "undefined" ? window.innerWidth : 0
- );
+  const reduce = !!useReducedMotion();
+  const [width, setWidth] = useState<number>(
+    typeof window !== "undefined" ? window.innerWidth : 0,
+  );
 
- useEffect(() => {
-   const onResize = () => setWidth(window.innerWidth);
-   window.addEventListener("resize", onResize, { passive: true });
-   return () => window.removeEventListener("resize", onResize);
- }, []);
+  useEffect(() => {
+    const onResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", onResize, { passive: true });
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
- const key: MapKey = pickKey(width);
- const mapDef: MapDef = maps[key];
+  const key: MapKey = pickKey(width);
+  const mapDef: MapDef = maps[key];
   const pts = pointsPx[key];
-
 
   const { t } = useTranslation("home");
 
   const countryLabel = t(`country.${selected}`);
   const client = CLIENTS[selected];
   const flagBase = FLAG_SRC[selected];
-
 
   useEffect(() => {
     const found = pts[selected];
@@ -70,14 +76,16 @@ const Map =({
   }, [pts, selected, onPointPixels]);
 
   return (
-    <MapCont ref={wrapRef}>
+    <MapCont ref={wrapRef} variants={reduce ? undefined : geographyMapVariants}>
       <MapImage
         src={mapDef.src}
         alt={alt}
+        variants={reduce ? undefined : geographyMapImageVariants}
         style={{ width: "100%", height: "auto", display: "block" }}
       />
 
-      <div
+      <motion.div
+        variants={reduce ? undefined : geographyPinsVariants}
         style={{
           position: "absolute",
           inset: 0,
@@ -88,13 +96,14 @@ const Map =({
             key={id}
             x={p.x}
             y={p.y}
+            variants={reduce ? undefined : geographyPinVariants}
             onClick={() => onSelect(id as CountryId)}
             aria-label={id}
             type="button"
             className={`${id} point.lang-${i18n.language}`}
           />
         ))}
-      </div>
+      </motion.div>
 
       <MapPopup
         visible={popupPx !== null}
@@ -107,6 +116,6 @@ const Map =({
       />
     </MapCont>
   );
-}
+};
 
 export default Map;

@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
-export const AdvSection = styled.div`
+export const AdvSection = styled(motion.section)`
   padding: 30px 0;
   background: rgba(243, 244, 249, 0.62);
 
@@ -17,7 +18,7 @@ export const AdvSection = styled.div`
   }
 `;
 
-export const AdvList = styled.ul`
+export const AdvList = styled(motion.ul)`
   display: flex;
   align-items: center;
   justify-content: center;

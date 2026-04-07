@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
-export const FooterWrap = styled.footer`
+export const FooterWrap = styled(motion.footer)`
   padding: 20px 0;
   margin-top: auto;
 

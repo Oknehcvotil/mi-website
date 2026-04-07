@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
-export const MapCont = styled.div`
+export const MapCont = styled(motion.div)`
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -19,12 +20,12 @@ export const MapCont = styled.div`
   }
 `;
 
-export const MapImage = styled.img`
+export const MapImage = styled(motion.img)`
   max-width: 100%;
   height: 225px;
 `;
 
-export const MapPoint = styled.button<{ x: number; y: number }>`
+export const MapPoint = styled(motion.button)<{ x: number; y: number }>`
   position: absolute;
   left: ${({ x }) => x + 16}px;
   top: ${({ y }) => y + 40}px;

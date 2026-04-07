@@ -1,6 +1,11 @@
 import { type Variants } from "framer-motion";
 import { Trans, useTranslation } from "react-i18next";
-import { ListItem, AdvText } from "./AdvantagesCards.styled";
+import { ListItem, AdvText, IconWrap } from "./AdvantagesCards.styled";
+import {
+  iconIn,
+  textIn,
+} from "../../../../lib/animations/home/animations.advantages";
+import { useReducedMotion } from "framer-motion";
 
 type AdvantagesCardProps = {
   img: {
@@ -13,20 +18,15 @@ type AdvantagesCardProps = {
 
 const AdvantagesCard = ({ img, title, variants }: AdvantagesCardProps) => {
   const { t } = useTranslation("home");
+  const reduce = !!useReducedMotion();
 
   return (
-    <ListItem
-      variants={variants}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.5 }}
-      aria-label={title}
-    >
-      <div>
+    <ListItem variants={variants} aria-label={title}>
+      <IconWrap variants={reduce ? undefined : iconIn}>
         <img src={`/images/mob/${img.mob}.svg`} alt={img.alt} />
-      </div>
+      </IconWrap>
 
-      <AdvText>
+      <AdvText variants={reduce ? undefined : textIn}>
         <Trans t={t} i18nKey={title} components={{ 1: <span /> }} />
       </AdvText>
     </ListItem>

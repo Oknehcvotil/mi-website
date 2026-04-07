@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
-export const Wrap = styled.div`
+export const Wrap = styled(motion.section)`
   display: none;
 
   @media (min-width: 380px) {
@@ -19,7 +20,7 @@ export const Wrap = styled.div`
   }
 `;
 
-export const GeographyTytle = styled.h2<{ lang: string }>`
+export const GeographyTytle = styled(motion.h2)<{ lang: string }>`
   line-height: 100%;
   font-family: "Unbounded";
   font-weight: 700;
@@ -53,7 +54,7 @@ export const MapSection = styled.div`
   flex-direction: column;
 `;
 
-export const MapCont = styled.div`
+export const MapCont = styled(motion.div)`
   @media (min-width: 768px) {
     display: flex;
     align-items: center;

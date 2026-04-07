@@ -6,10 +6,17 @@ import Map from "./Map/Map";
 import CountrySelector from "./CountrySelector/CountrySelector";
 import { COUNTRIES, MAPS, POINTS_PX } from "../../../lib/data/geo";
 import { useAutoRotateCountry } from "../../../lib/hooks/useAutoRotateCountry";
+import { useReducedMotion } from "framer-motion";
+import {
+  geographyContentVariants,
+  geographySectionVariants,
+  geographyTitleVariants,
+} from "../../../lib/animations/home/animations.geography";
 
 const GeographySection = () => {
   const { t, i18n } = useTranslation("home");
   const lang = i18n.language;
+  const reduce = !!useReducedMotion();
 
   const [selected, setSelected] = useState<CountryId>("ukraine");
   const [popupPx, setPopupPx] = useState<{ x: number; y: number } | null>(null);
@@ -20,17 +27,26 @@ const GeographySection = () => {
     countries,
     selected,
     onSelect: setSelected,
-    delay: 5000,   
-    pauseAfterManual: 7000, 
+    delay: 5000,
+    pauseAfterManual: 7000,
   });
 
   return (
-    <Wrap>
-      <GeographyTytle lang={lang}>
+    <Wrap
+      variants={reduce ? undefined : geographySectionVariants}
+      initial={reduce ? undefined : "hidden"}
+      whileInView={reduce ? undefined : "show"}
+      viewport={{ once: true, amount: 0.2 }}
+      animate={reduce ? "show" : undefined}
+    >
+      <GeographyTytle
+        lang={lang}
+        variants={reduce ? undefined : geographyTitleVariants}
+      >
         <Trans t={t} i18nKey="map.title" components={{ 1: <span /> }} />
       </GeographyTytle>
 
-      <MapCont>
+      <MapCont variants={reduce ? undefined : geographyContentVariants}>
         <CountrySelector
           countries={countries}
           selected={selected}

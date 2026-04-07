@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-export const Wrap = styled.div`
+export const Wrap = styled(motion.section)`
   padding-top: 20px;
   padding-bottom: 40px;
 
@@ -14,7 +14,7 @@ export const Wrap = styled.div`
   }
 `;
 
-export const SectionCont = styled.div`
+export const SectionCont = styled(motion.div)`
   background-image: image-set(
     url("/images/mob/background/mission-bg.webp") type("image/webp") 1x,
     url("/images/mob/background/mission-bg@2x.webp") type("image/webp") 2x,
@@ -98,7 +98,7 @@ export const StatsList = styled(motion.ul)`
   }
 `;
 
-export const PicFrame = styled.div`
+export const PicFrame = styled(motion.div)`
   display: none;
 
   @media (min-width: 768px) {

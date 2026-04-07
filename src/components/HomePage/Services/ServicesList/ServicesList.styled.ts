@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { HashLink } from "react-router-hash-link";
 
-export const List = styled.ul`
+export const List = styled(motion.ul)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -106,7 +106,7 @@ export const ServicesItems = styled(motion.li)`
   }
 `;
 
-export const TitleCont = styled.div`
+export const TitleCont = styled(motion.div)`
   display: flex;
   align-items: center;
   gap: 20px;
@@ -132,7 +132,7 @@ export const TitleCont = styled.div`
   }
 `;
 
-export const ServicesLink = styled(HashLink)`
+export const ServicesLink = styled(motion(HashLink))`
   cursor: pointer;
   font-weight: 700;
   font-size: 17px;

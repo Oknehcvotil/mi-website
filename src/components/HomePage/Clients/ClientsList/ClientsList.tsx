@@ -1,15 +1,12 @@
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, useInView, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
 import { clientsLogos } from "../../../../lib/data/home.page";
 import { List, ListItem } from "./ClientsList.styled";
-
-const fadeInAnimationVariants = {
-  initial: { opacity: 0, y: 18 },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: 0.04 * index },
-  }),
-};
+import {
+  itemVariants,
+  layoutTransition,
+  listVariants,
+} from "../../../../lib/animations/home/animations.clients";
 
 type ClientsListProps = {
   expanded: boolean;
@@ -17,21 +14,32 @@ type ClientsListProps = {
 };
 
 const ClientsList = ({ expanded, collapsedCount }: ClientsListProps) => {
+  const reduce = !!useReducedMotion();
+  const listRef = useRef<HTMLUListElement | null>(null);
+  const isInView = useInView(listRef, { once: true, amount: 0.18 });
   const visible = expanded
     ? clientsLogos
     : clientsLogos.slice(0, collapsedCount);
 
   return (
-    <AnimatePresence mode="popLayout" initial={false}>
-      <List layout>
+    <List
+      ref={listRef}
+      layout
+      transition={reduce ? undefined : { layout: layoutTransition }}
+      variants={reduce ? undefined : listVariants}
+      initial={reduce ? undefined : "hidden"}
+      animate={reduce ? undefined : isInView ? "show" : "hidden"}
+    >
+      <AnimatePresence mode="popLayout" initial={false}>
         {visible.map((logo, i) => (
           <ListItem
             layout
-            key={logo} 
-            variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
+            transition={reduce ? undefined : { layout: layoutTransition }}
+            key={logo}
+            variants={reduce ? undefined : itemVariants}
+            initial={reduce ? undefined : "hidden"}
+            animate={reduce ? undefined : isInView ? "show" : "hidden"}
+            exit={reduce ? undefined : "exit"}
             custom={i}
           >
             <img
@@ -46,8 +54,8 @@ const ClientsList = ({ expanded, collapsedCount }: ClientsListProps) => {
             />
           </ListItem>
         ))}
-      </List>
-    </AnimatePresence>
+      </AnimatePresence>
+    </List>
   );
 };
 

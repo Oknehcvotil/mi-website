@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-export const SelectorCont = styled.div`
+export const SelectorCont = styled(motion.div)`
   max-width: 340px;
   margin: 0 auto 28px;
   width: 100%;
@@ -195,7 +195,7 @@ export const SelectBtn = styled.button`
   }
 `;
 
-export const CountriesTitle = styled.p`
+export const CountriesTitle = styled(motion.p)`
   font-family: "Unbounded";
   font-weight: 600;
   font-size: 20px;
@@ -249,7 +249,7 @@ export const CountriesTitle = styled.p`
   }
 `;
 
-export const TabList = styled.ul`
+export const TabList = styled(motion.ul)`
   position: relative;
   margin: 0;
   display: flex;

@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
+
 export const HeroSectionWrap = styled.div`
   @media (min-width: 1024px) {
     position: relative;
@@ -18,7 +20,7 @@ export const HeroSectionWrap = styled.div`
   }
 `;
 
-export const HeroCont = styled.div`
+export const HeroCont = styled(motion.div)`
   padding-top: 105px;
 
   @media (min-width: 1024px) {
