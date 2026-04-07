@@ -11,12 +11,7 @@ import { Navigation, Pagination, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import {
-  ButtonsWrapper,
-  SliderButton,
-  SliderCont,
-  SliderPair,
-} from "./AppSlider.styled";
+import { ButtonsWrapper, SliderButton, SliderCont } from "./AppSlider.styled";
 import { useMediaQuery } from "../../lib/hooks/useMediaQuery";
 import CardsWrapper from "../CasesPages/CardsWrapper/CardsWrapper";
 
@@ -56,9 +51,7 @@ const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
       {pairOnTablet ? (
         <CardsWrapper isSingle={group.length === 1}>{group}</CardsWrapper>
       ) : (
-        <SliderPair className={group.length === 1 ? "single" : undefined}>
-          {group}
-        </SliderPair>
+        group
       )}
     </SwiperSlide>
   ));
