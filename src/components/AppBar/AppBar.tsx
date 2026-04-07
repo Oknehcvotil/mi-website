@@ -45,12 +45,30 @@ function AppBar({ setMenuIsOpen }: AppBarProps) {
   const isDesk = useMediaQuery("(min-width: 1024px)");
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+    let rafId = 0;
+
+    const updateScrolledState = () => {
+      const nextIsScrolled = window.scrollY > 50;
+      setIsScrolled((prev) =>
+        prev === nextIsScrolled ? prev : nextIsScrolled,
+      );
+      rafId = 0;
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      if (rafId !== 0) return;
+      rafId = window.requestAnimationFrame(updateScrolledState);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId !== 0) {
+        window.cancelAnimationFrame(rafId);
+      }
+    };
   }, []);
 
   return (

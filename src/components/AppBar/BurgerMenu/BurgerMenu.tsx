@@ -115,10 +115,7 @@ function BurgerMenu({ isOpen, onClose }: BurgerMenuProps) {
         if (hashChanged && newHash) {
           const target = document.getElementById(newHash.slice(1));
           if (target) {
-            const nearTop = Math.abs(target.getBoundingClientRect().top) < 2;
-            if (!nearTop) {
-              target.scrollIntoView({ behavior: "smooth", block: "start" });
-            }
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
           }
         } else if (pathChanged) {
           window.scrollTo({ top: 0, left: 0, behavior: "auto" });
