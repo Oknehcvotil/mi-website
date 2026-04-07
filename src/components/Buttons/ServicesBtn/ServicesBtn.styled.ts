@@ -8,6 +8,9 @@ type ServButtonProps = {
 export const ServButton = styled(NavLink, {
   shouldForwardProp: (prop) => prop !== "$isActive",
 })<ServButtonProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid #a066ff;
   border-radius: 8px;
   padding: 12px 9px;
@@ -43,9 +46,6 @@ export const ServButton = styled(NavLink, {
   @media (min-width: 768px) {
     order: 1;
     margin-right: 175px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 0;
   }
 
