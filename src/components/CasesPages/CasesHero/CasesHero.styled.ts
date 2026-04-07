@@ -7,6 +7,10 @@ export const HeroSectionWrap = styled(motion.section)`
   @media (min-width: 768px) {
     padding-top: 80px;
   }
+
+  @media (min-width: 1024px) {
+    padding-top: 40px;
+  }
 `;
 
 export const CasesHeroWrap = styled.div`
@@ -22,7 +26,7 @@ export const CasesHeroTitle = styled(motion.h1)`
   font-family: "Unbounded";
   font-weight: 700;
   font-size: 30px;
-  line-height: 37px;
+  line-height: 130%;
   text-transform: uppercase;
   text-align: center;
   background: linear-gradient(90deg, #a066ff 0%, #5427b1 100%);
@@ -43,6 +47,15 @@ export const CasesHeroTitle = styled(motion.h1)`
       margin-bottom: 40px;
     }
   }
+
+  @media (min-width: 1920px) {
+    font-size: 80px;
+    margin-bottom: 15px;
+
+    &.cases-hero-business--title {
+      margin-bottom: 60px;
+    }
+  }
 `;
 
 export const CasesHeroSubtitle = styled.h2`
@@ -55,6 +68,10 @@ export const CasesHeroSubtitle = styled.h2`
 
   @media (min-width: 768px) {
     font-size: 40px;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 60px;
   }
 `;
 
@@ -80,6 +97,17 @@ export const CasesHeroLead = styled.p`
 
     &.cases-hero-hr--lead {
       max-width: 485px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 30px;
+    line-height: 130%;
+    max-width: 850px;
+    margin-bottom: 25px;
+
+    &.cases-hero-hr--lead {
+      max-width: 850px;
     }
   }
 `;
@@ -139,6 +167,30 @@ export const CasesHeroImgCont = styled.div`
 
       img {
         max-width: 245px;
+      }
+    }
+  }
+
+  @media (min-width: 1920px) {
+    &.cases-hero-recruitment-img--cont {
+      img {
+        max-width: 425px;
+      }
+    }
+
+    &.cases-hero-business-img--cont {
+      padding: 0;
+
+      img {
+        max-width: 420px;
+      }
+    }
+
+    &.cases-hero-hr-img--cont {
+      padding: 0;
+
+      img {
+        max-width: 452px;
       }
     }
   }

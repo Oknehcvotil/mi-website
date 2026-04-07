@@ -44,7 +44,7 @@ const CasesHero = ({ caseConfig }: CasesHeroProps) => {
       viewport={{ once: true, amount: 0.3 }}
       variants={sectionV}
     >
-      <Container className={`cases-hero-${className}`}>
+      <Container className={`cases-hero cases-hero-${className}`}>
         <CasesHeroTitle
           variants={titleV}
           className={`cases-hero-${className}--title`}

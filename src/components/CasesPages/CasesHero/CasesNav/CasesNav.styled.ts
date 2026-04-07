@@ -51,4 +51,10 @@ export const CasesNavLink = styled(NavLink)`
     background: linear-gradient(180deg, #a066ff 0%, #5427b1 100%);
     color: #fff;
   }
+
+  @media (min-width: 1920px) {
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 120%;
+  }
 `;

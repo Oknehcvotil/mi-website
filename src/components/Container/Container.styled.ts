@@ -6,6 +6,12 @@ export const Wrapper = styled(motion.div)`
   padding: 0 15px;
   margin: 0 auto;
 
+  &.cases-hero {
+    @media (min-width: 1920px) {
+      padding: 0 200px;
+    }
+  }
+
   &.footer-cont {
     display: flex;
     align-items: center;
@@ -36,6 +42,10 @@ export const Wrapper = styled(motion.div)`
 
     &.pricing-section-container {
       padding: 0 115px;
+    }
+
+    &.cases-hero {
+        padding: 0 200px;
     }
   }
 `;
