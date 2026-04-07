@@ -95,8 +95,24 @@ export const ImgWrap = styled.div`
   gap: 15px;
   margin-bottom: 5px;
 
+  picture {
+    flex: 0 0 auto;
+    line-height: 0;
+  }
+
+  img {
+    display: block;
+    flex-shrink: 0;
+  }
+
   @media (min-width: 1920px) {
     margin-bottom: 40px;
+
+    img {
+      max-width: none;
+      width: auto;
+      height: auto;
+    }
   }
 `;
 
