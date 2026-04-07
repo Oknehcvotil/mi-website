@@ -11,9 +11,13 @@ export const Header = styled.header<{ isScrolled: boolean }>`
   isolation: isolate;
 
   background: ${({ isScrolled }) =>
-    isScrolled ? "rgba(255, 255, 255, 0.6)" : "transparent"};
+    isScrolled ? "rgba(248, 248, 251, 0.88)" : "transparent"};
+  -webkit-backdrop-filter: ${({ isScrolled }) =>
+    isScrolled ? "blur(10px)" : "none"};
   backdrop-filter: ${({ isScrolled }) => (isScrolled ? "blur(10px)" : "none")};
-  transition: all 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    backdrop-filter 0.3s ease;
 
   @media (min-width: 1024px) {
     position: relative;
