@@ -24,6 +24,11 @@ const NavBar = ({ onCloseBurger, isBurgerOpen }: NavBarProps) => {
 
   const [openId, setOpenId] = useState<Section["id"] | null>(null);
   const [openMobileIds, setOpenMobileIds] = useState<Section["id"][]>([]);
+  const sections = NAV_SECTIONS;
+  const activeSectionId =
+    sections.find((section) =>
+      pathname.startsWith(`/${currentLang}${section.basePath}`),
+    )?.id ?? null;
 
   useEffect(() => {
     setOpenId(null);
@@ -36,10 +41,15 @@ const NavBar = ({ onCloseBurger, isBurgerOpen }: NavBarProps) => {
       return;
     }
 
+    if (isBurgerOpen) {
+      setOpenMobileIds(activeSectionId ? [activeSectionId] : []);
+      return;
+    }
+
     if (isBurgerOpen === false) {
       setOpenMobileIds([]);
     }
-  }, [isDesk, isBurgerOpen]);
+  }, [activeSectionId, isDesk, isBurgerOpen]);
 
   const handleSetOpen = (sectionId: Section["id"], next: boolean) => {
     if (isDesk) {
@@ -55,8 +65,6 @@ const NavBar = ({ onCloseBurger, isBurgerOpen }: NavBarProps) => {
       return current.includes(sectionId) ? current : [...current, sectionId];
     });
   };
-
-  const sections = NAV_SECTIONS;
 
   return (
     <NavBarList>
