@@ -16,6 +16,8 @@ type BurgerMenuProps = {
 
 type ScrollState = {
   scrollY: number;
+  openedPathname: string;
+  openedSearch: string;
   openedHash: string;
   removedId: string | null;
   hashTarget: HTMLElement | null;
@@ -40,6 +42,8 @@ function BurgerMenu({ isOpen, onClose }: BurgerMenuProps) {
     const scrollY = window.scrollY;
     const sbw = window.innerWidth - document.documentElement.clientWidth;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    const openedPathname = window.location.pathname;
+    const openedSearch = window.location.search;
     const openedHash = window.location.hash;
 
     let removedId: string | null = null;
@@ -63,6 +67,8 @@ function BurgerMenu({ isOpen, onClose }: BurgerMenuProps) {
 
     scrollStateRef.current = {
       scrollY,
+      openedPathname,
+      openedSearch,
       openedHash,
       removedId,
       hashTarget,
@@ -101,6 +107,9 @@ function BurgerMenu({ isOpen, onClose }: BurgerMenuProps) {
 
       const newHash = window.location.hash;
       const hashChanged = newHash !== state.openedHash;
+      const pathChanged =
+        window.location.pathname !== state.openedPathname ||
+        window.location.search !== state.openedSearch;
 
       requestAnimationFrame(() => {
         if (hashChanged && newHash) {
@@ -111,6 +120,8 @@ function BurgerMenu({ isOpen, onClose }: BurgerMenuProps) {
               target.scrollIntoView({ behavior: "smooth", block: "start" });
             }
           }
+        } else if (pathChanged) {
+          window.scrollTo({ top: 0, left: 0, behavior: "auto" });
         } else {
           window.scrollTo(0, state.scrollY);
         }
