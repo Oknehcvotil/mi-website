@@ -19,13 +19,13 @@ const IGamingCases = () => {
       variants={sectionV}
     >
       <motion.div variants={blockV}>
-        <AppSlider>
+        <AppSlider pairOnTablet>
           {igamingItems.map((item, i) =>
             item.type === "msg" ? (
               <CasesMessage key={`m-${i}`} translationNs={NS} {...item} />
             ) : (
               <CaseInfoCard key={`c-${i}`} translationNs={NS} {...item} />
-            )
+            ),
           )}
         </AppSlider>
       </motion.div>

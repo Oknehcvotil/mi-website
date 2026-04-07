@@ -20,7 +20,7 @@ const MarketingCases = () => {
       variants={sectionV}
     >
       <motion.div variants={blockV}>
-        <AppSlider>
+        <AppSlider pairOnTablet>
           {marketingItems.map((item, i) => {
             if (item.type === "video")
               return (

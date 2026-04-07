@@ -21,9 +21,20 @@ export const CandidatesCasesTitle = styled(motion.h1)`
 `;
 
 export const MergedCasesCont = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 10px;
-`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+
+    &.single {
+      justify-content: center;
+    }
+  }
+`;

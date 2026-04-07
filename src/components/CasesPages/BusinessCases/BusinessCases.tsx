@@ -16,7 +16,7 @@ const BusinessCases = () => {
       variants={sectionV}
     >
       <motion.div variants={blockV}>
-        <AppSlider>
+        <AppSlider pairOnTablet>
           <CasesMessage
             translationNs="casesBusiness"
             imgSrc="/images/cases-pages/business/kitrum-case"

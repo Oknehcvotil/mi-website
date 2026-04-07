@@ -20,7 +20,7 @@ const WebCases = () => {
       variants={sectionV}
     >
       <motion.div variants={blockV}>
-        <AppSlider>
+        <AppSlider pairOnTablet>
           {webItems.map((item, i) => {
             switch (item.type) {
               case "video":

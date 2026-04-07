@@ -11,25 +11,50 @@ import { Navigation, Pagination, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { ButtonsWrapper, SliderButton, SliderCont } from "./AppSlider.styled";
+import {
+  ButtonsWrapper,
+  SliderButton,
+  SliderCont,
+  SliderPair,
+} from "./AppSlider.styled";
+import { useMediaQuery } from "../../lib/hooks/useMediaQuery";
 
 type AppSliderProps = {
   className?: string;
   children: ReactNode;
   breakpoints?: import("swiper/types").SwiperOptions["breakpoints"];
+  pairOnTablet?: boolean;
 };
 
 const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
-  { className, children, breakpoints },
-  ref
+  { className, children, breakpoints, pairOnTablet = false },
+  ref,
 ) {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
   const pagRef = useRef<HTMLDivElement | null>(null);
+  const isTablet = useMediaQuery("(min-width: 768px)");
 
-  const slides = Children.toArray(children).map((child, i) => (
+  const slideChildren = Children.toArray(children).map((child) =>
+    isValidElement(child) ? child : <>{child}</>,
+  );
+
+  const groupedSlides =
+    pairOnTablet && isTablet
+      ? slideChildren.reduce<ReactNode[][]>((acc, _child, index, array) => {
+          if (index % 2 === 0) {
+            acc.push(array.slice(index, index + 2));
+          }
+
+          return acc;
+        }, [])
+      : slideChildren.map((child) => [child]);
+
+  const slides = groupedSlides.map((group, i) => (
     <SwiperSlide key={i}>
-      {isValidElement(child) ? child : <>{child}</>}
+      <SliderPair className={group.length === 1 ? "single" : undefined}>
+        {group}
+      </SliderPair>
     </SwiperSlide>
   ));
 

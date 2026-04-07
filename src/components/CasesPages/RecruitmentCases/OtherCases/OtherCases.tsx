@@ -18,7 +18,7 @@ const OtherCases = () => {
       variants={sectionV}
     >
       <motion.div variants={blockV}>
-        <AppSlider>
+        <AppSlider pairOnTablet>
           {othersItems.map((item, i) => {
             switch (item.type) {
               case "video":

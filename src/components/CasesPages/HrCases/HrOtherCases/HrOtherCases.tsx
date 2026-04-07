@@ -19,7 +19,7 @@ const HrOtherCases = () => {
       variants={sectionV}
     >
       <motion.div variants={blockV}>
-        <AppSlider>
+        <AppSlider pairOnTablet>
           {hrOthersItems.map((item, i) => {
             switch (item.type) {
               case "case":
