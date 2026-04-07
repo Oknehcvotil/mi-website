@@ -18,6 +18,7 @@ import {
   SliderPair,
 } from "./AppSlider.styled";
 import { useMediaQuery } from "../../lib/hooks/useMediaQuery";
+import CardsWrapper from "../CasesPages/CardsWrapper/CardsWrapper";
 
 type AppSliderProps = {
   className?: string;
@@ -52,9 +53,13 @@ const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
 
   const slides = groupedSlides.map((group, i) => (
     <SwiperSlide key={i}>
-      <SliderPair className={group.length === 1 ? "single" : undefined}>
-        {group}
-      </SliderPair>
+      {pairOnTablet ? (
+        <CardsWrapper isSingle={group.length === 1}>{group}</CardsWrapper>
+      ) : (
+        <SliderPair className={group.length === 1 ? "single" : undefined}>
+          {group}
+        </SliderPair>
+      )}
     </SwiperSlide>
   ));
 
@@ -66,11 +71,9 @@ const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
         slidesPerView={1}
         spaceBetween={0}
         breakpoints={breakpoints}
-        // ставим пустые объекты — реальные элементы подставим ниже
         navigation={{} as import("swiper/types").NavigationOptions}
         pagination={{ clickable: true }}
         onBeforeInit={(swiper) => {
-          // подсовываем реальные DOM-элементы
           (
             swiper.params.navigation as import("swiper/types").NavigationOptions
           ).prevEl = prevRef.current;
@@ -88,7 +91,6 @@ const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
           }
         }}
         onInit={(swiper) => {
-          // гарантируем корректную инициализацию
           swiper.navigation.init();
           swiper.navigation.update();
           swiper.pagination.init();
@@ -125,32 +127,9 @@ const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
           </SliderButton>
         </ButtonsWrapper>
       </Swiper>
-
-      {/* Контролы — классы остаются для твоих стилей */}
     </SliderCont>
   );
 });
 
 export default AppSlider;
 
-{
-  /* <ButtonsWrapper className="app-slider-controls">
-  <SliderButton ref={prevRef} type="button" aria-label="Previous slide">
-    <svg width={13} height={22}>
-      <use href="/icons/sprite.svg#icon-slider-arrow" />
-    </svg>
-  </SliderButton>
-
-  <div
-    ref={paginationRef}
-    className="app-slider-dots"
-    aria-label="Pagination"
-  />
-
-  <SliderButton ref={nextRef} type="button" aria-label="Next slide">
-    <svg width={13} height={22}>
-      <use href="/icons/sprite.svg#icon-slider-arrow" />
-    </svg>
-  </SliderButton>
-</ButtonsWrapper>; */
-}

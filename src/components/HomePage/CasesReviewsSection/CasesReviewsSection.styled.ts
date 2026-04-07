@@ -83,14 +83,12 @@ export const CardsWrapper = styled.div`
     gap: 25px;
     max-width: 768px;
     margin: 0 auto;
-    padding: 0 25px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   @media (min-width: 1920px) {
     max-width: 1920px;
-    padding: 0 45px;
     gap: 110px;
   }
 `;

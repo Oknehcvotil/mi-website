@@ -22,11 +22,18 @@ export const PhdCasesWrapper = styled(motion.section)`
 `;
 
 export const PhdSliderPair = styled.div`
+  @media (min-width: 1920px) {
+    max-width: 1920px;
+    gap: 110px;
+  }
   @media (min-width: 768px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 16px;
+    max-width: 768px;
+    margin: 0 auto;
+    justify-content: space-around;
 
     > .phd-slider-card {
       display: flex;
@@ -52,7 +59,8 @@ export const PhdSliderPair = styled.div`
 
   @media (min-width: 1920px) {
     justify-content: space-around;
-    gap: 0;
+    max-width: 1920px;
+    gap:30px;
 
     > .phd-slider-card.review {
       flex: 0 0 740px;

@@ -7,7 +7,6 @@ import {
 import {
   CandidatesCasesTitle,
   CandidatesSectionWrap,
-  MergedCasesCont,
 } from "./CandidatesCases.styled";
 import AppSlider from "../../AppSlider/AppSlider";
 import VideoReviewCard from "../../VideoReviewCard/VideoReviewCard";
@@ -15,6 +14,7 @@ import CasesMessage from "../../CasesMessage/CasesMessage";
 import { casesCandidatesList } from "../../../lib/data/cases.candidates";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "../../../lib/hooks/useMediaQuery";
+import CardsWrapper from "../CardsWrapper/CardsWrapper";
 
 const CandidatesCases = () => {
   const ns = "casesCandidates";
@@ -113,14 +113,14 @@ const CandidatesCases = () => {
       <motion.div variants={blockV}>
         <AppSlider>
           {slides.map((group, slideIndex) => (
-            <MergedCasesCont
+            <CardsWrapper
               key={`slide-${slideIndex}`}
-              className={group.length === 1 ? "single" : undefined}
+              isSingle={group.length === 1}
             >
               {group.map((item, itemIndex) =>
                 renderSlideItem(item, slideIndex, itemIndex),
               )}
-            </MergedCasesCont>
+            </CardsWrapper>
           ))}
         </AppSlider>
       </motion.div>

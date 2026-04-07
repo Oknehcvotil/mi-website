@@ -19,6 +19,7 @@ const ItCases = () => {
     >
       <motion.div variants={blockV}>
         <AppSlider pairOnTablet>
+          
           {itItems.map((item, i) => {
             switch (item.type) {
               case "video":
@@ -49,3 +50,4 @@ const ItCases = () => {
 };
 
 export default ItCases;
+
