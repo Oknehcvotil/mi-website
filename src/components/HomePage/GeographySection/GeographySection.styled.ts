@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 
 export const Wrap = styled(motion.section)`
   display: none;
-  width: 100%;
-  overflow-x: hidden;
 
   @media (min-width: 380px) {
     display: block;
@@ -57,9 +55,6 @@ export const MapSection = styled.div`
 `;
 
 export const MapCont = styled(motion.div)`
-  width: 100%;
-  overflow-x: hidden;
-
   @media (min-width: 768px) {
     display: flex;
     align-items: center;

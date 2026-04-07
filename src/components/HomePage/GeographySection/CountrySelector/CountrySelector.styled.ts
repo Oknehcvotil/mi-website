@@ -21,6 +21,10 @@ export const SelectorCont = styled(motion.div)`
     max-width: 180px;
     margin: 0 auto 0 0;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-left: 20px;
 
     &.selector-cont--en {
       max-width: 188px;
@@ -65,6 +69,8 @@ export const SelectorCont = styled(motion.div)`
     max-width: 410px;
     margin: 0 auto 0 0;
     flex-direction: column;
+
+    padding-left: 100px;
 
     &.selector-cont--en {
       max-width: 400px;
@@ -206,6 +212,13 @@ export const CountriesTitle = styled(motion.p)`
   margin-bottom: 15px;
   position: relative;
 
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    margin-left: 22px;
+    text-align: center;
+    align-self: center;
+  }
+
   &.countries-title--ua {
     &::after {
       content: "";
@@ -259,6 +272,14 @@ export const TabList = styled(motion.ul)`
 
   li + li {
     margin-top: 8px;
+  }
+
+  @media (min-width: 768px) {
+    align-items: center;
+    justify-content: center;
+    padding-left: 22px;
+    width: 100%;
+    z-index: 1;
   }
 `;
 
