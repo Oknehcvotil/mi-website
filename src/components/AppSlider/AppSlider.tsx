@@ -132,4 +132,3 @@ const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
 });
 
 export default AppSlider;
-

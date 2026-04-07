@@ -22,6 +22,10 @@ export const Wrapper = styled(motion.div)`
     max-width: 768px;
     padding: 0 25px;
 
+    &.cases-message {
+      padding: 0;
+    }
+    
     &.case-info-card-container {
       margin: 0;
     }
@@ -45,7 +49,7 @@ export const Wrapper = styled(motion.div)`
     }
 
     &.cases-hero {
-        padding: 0 200px;
+      padding: 0 200px;
     }
   }
 `;

@@ -1,4 +1,5 @@
 import { type ReactNode } from "react";
+import { createPortal } from "react-dom";
 import { overlayVariants } from "../../lib/animations/animations.burger";
 import { ModalLayuot } from "./ModalOverlay.styled";
 import { useBodyScrollLock } from "../../lib/hooks/useBodyScrollLock";
@@ -16,7 +17,11 @@ const ModalOverlay = ({
 }: ModalOverlayProps) => {
   useBodyScrollLock(isModalOpen);
 
-  return (
+  if (typeof document === "undefined") {
+    return null;
+  }
+
+  return createPortal(
     <ModalLayuot
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
@@ -26,9 +31,9 @@ const ModalOverlay = ({
       animate={isModalOpen ? "open" : "closed"}
     >
       {children}
-    </ModalLayuot>
+    </ModalLayuot>,
+    document.body,
   );
 };
 
 export default ModalOverlay;
- 

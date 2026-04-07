@@ -3,6 +3,54 @@ import { motion } from "framer-motion";
 
 export const CandidatesSectionWrap = styled(motion.section)`
   padding-top: 105px;
+
+  @media (min-width: 768px) {
+    article.candidates-cases-video {
+      width: 340px;
+      max-width: 340px;
+    }
+
+    div.candidates-cases-video-meta {
+      width: 340px;
+      max-width: 340px;
+    }
+
+    .candidates-message-card {
+      width: 100%;
+      max-width: 350px;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    .candidates-message-card .candidates-message-card {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    article.candidates-cases-video {
+      width: 725px;
+      max-width: 725px;
+      height: 555px;
+      aspect-ratio: auto;
+    }
+
+    div.candidates-cases-video-meta {
+      width: 725px;
+      max-width: 725px;
+    }
+
+    .candidates-message-card {
+      max-width: 725px;
+    }
+
+    .candidates-message-card.candidates-message-card {
+      max-width: 725px;
+    }
+  }
 `;
 
 export const CandidatesCasesTitle = styled(motion.h1)`
@@ -20,21 +68,21 @@ export const CandidatesCasesTitle = styled(motion.h1)`
   margin-bottom: 30px;
 `;
 
-export const MergedCasesCont = styled.div`
+export const PairCasesColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   gap: 10px;
+  min-width: 0;
 
   @media (min-width: 768px) {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
+    width: 350px;
+    max-width: 350px;
+  }
 
-    &.single {
-      justify-content: center;
-    }
+  @media (min-width: 1920px) {
+    width: 725px;
+    max-width: 725px;
+    gap: 20px;
   }
 `;

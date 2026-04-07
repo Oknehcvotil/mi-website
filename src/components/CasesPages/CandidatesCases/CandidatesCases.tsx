@@ -7,6 +7,7 @@ import {
 import {
   CandidatesCasesTitle,
   CandidatesSectionWrap,
+  PairCasesColumn,
 } from "./CandidatesCases.styled";
 import AppSlider from "../../AppSlider/AppSlider";
 import VideoReviewCard from "../../VideoReviewCard/VideoReviewCard";
@@ -23,24 +24,11 @@ const CandidatesCases = () => {
 
   const slides = isTablet
     ? casesCandidatesList.reduce<(typeof casesCandidatesList)[]>(
-        (acc, item) => {
-          if (item.kind === "pair") {
-            acc.push([item]);
-            return acc;
+        (acc, _item, index, array) => {
+          if (index % 2 === 0) {
+            acc.push(array.slice(index, index + 2));
           }
 
-          const lastGroup = acc.at(-1);
-
-          if (
-            lastGroup &&
-            lastGroup.length === 1 &&
-            lastGroup[0].kind !== "pair"
-          ) {
-            lastGroup.push(item);
-            return acc;
-          }
-
-          acc.push([item]);
           return acc;
         },
         [],
@@ -52,6 +40,13 @@ const CandidatesCases = () => {
     slideIndex: number,
     itemIndex: number,
   ) => {
+    const withCandidatesMessageClass = (value?: string | string[]) =>
+      Array.isArray(value)
+        ? [...value, "candidates-message-card"]
+        : value
+          ? [value, "candidates-message-card"]
+          : ["candidates-message-card"];
+
     if (item.kind === "video") {
       return (
         <VideoReviewCard
@@ -61,6 +56,10 @@ const CandidatesCases = () => {
           author={item.author}
           position={item.position}
           className="vertical"
+          classes={{
+            root: "candidates-cases-video",
+            meta: "candidates-cases-video-meta",
+          }}
           withBorders={false}
           posterOverride={item.posterOverride}
         />
@@ -68,24 +67,24 @@ const CandidatesCases = () => {
     }
 
     if (item.kind === "pair") {
-      return [
-        <CasesMessage
-          key={`p-${slideIndex}-${itemIndex}-left`}
-          translationNs={ns}
-          imgSrc={item.left.img}
-          titleKey={item.left.title}
-          textKey={item.left.items}
-          className={item.left.className}
-        />,
-        <CasesMessage
-          key={`p-${slideIndex}-${itemIndex}-right`}
-          translationNs={ns}
-          imgSrc={item.right.img}
-          titleKey={item.right.title}
-          textKey={item.right.items}
-          className={item.right.className}
-        />,
-      ];
+      return (
+        <PairCasesColumn key={`p-${slideIndex}-${itemIndex}`}>
+          <CasesMessage
+            translationNs={ns}
+            imgSrc={item.left.img}
+            titleKey={item.left.title}
+            textKey={item.left.items}
+            className={withCandidatesMessageClass(item.left.className)}
+          />
+          <CasesMessage
+            translationNs={ns}
+            imgSrc={item.right.img}
+            titleKey={item.right.title}
+            textKey={item.right.items}
+            className={withCandidatesMessageClass(item.right.className)}
+          />
+        </PairCasesColumn>
+      );
     }
 
     return (
@@ -95,7 +94,7 @@ const CandidatesCases = () => {
         imgSrc={item.card.img}
         titleKey={item.card.title}
         textKey={item.card.items}
-        className={item.card.className}
+        className={withCandidatesMessageClass(item.card.className)}
       />
     );
   };

@@ -16,5 +16,6 @@ export const StyledCardsWrapper = styled.div<{ $isSingle?: boolean }>`
     max-width: 1920px;
     gap: 110px;
     padding-top: 100px;
+    padding-bottom: 100px;
   }
 `;

@@ -172,6 +172,4 @@ export const Name = styled.p`
 
 export const Position = styled.p`
   margin-top: 10px;
-
-  max-width: 400px;
 `;

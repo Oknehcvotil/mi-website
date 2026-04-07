@@ -37,7 +37,7 @@ const CasesMessage = ({
   const merged = cx(className);
 
   return (
-    <Container>
+    <Container className={"cases-message"}>
       <CasesMessageWrap className={merged}>
         <CasesImgCont>
           <img
@@ -47,7 +47,7 @@ const CasesMessage = ({
             loading="lazy"
           />
         </CasesImgCont>
-        <CasesMessageTextCard>
+        <CasesMessageTextCard className={merged}>
           <CasesMessageTitle>{t(`${titleKey}`)}</CasesMessageTitle>
           <CasesMessageList className={merged}>
             {items.map((text, i) => (

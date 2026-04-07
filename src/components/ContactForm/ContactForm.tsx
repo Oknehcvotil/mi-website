@@ -88,7 +88,7 @@ const ContactForm = () => {
       .test(
         "is-valid-phone",
         t("form.errors.phone"),
-        (value) => (value ? value.length > 6 : false), // можно сделать кастомную проверку
+        (value) => (value ? value.length > 6 : false), 
       ),
   });
 
@@ -98,8 +98,6 @@ const ContactForm = () => {
   ) => {
     try {
       console.log("Форма отправлена:", values);
-
-      // await axios.post("/api/contact", values);
 
       resetForm();
       setSuccess(true);

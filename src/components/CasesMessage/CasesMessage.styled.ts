@@ -3,6 +3,8 @@ import styled from "@emotion/styled";
 export const CasesMessageWrap = styled.div`
   position: relative;
   padding-left: 40px;
+  min-width: 0;
+  box-sizing: border-box;
 `;
 
 export const CasesMessageTextCard = styled.div`
@@ -11,7 +13,16 @@ export const CasesMessageTextCard = styled.div`
   background-position: center;
   background-size: 100% 100%;
   width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   padding: 20px 15px 20px 35px;
+
+  @media (min-width: 1920px) {
+    max-width: 650px;
+    padding: 40px 40px 40px 60px;
+  }
+
+
 `;
 
 export const CasesMessageTitle = styled.h3`
@@ -21,6 +32,11 @@ export const CasesMessageTitle = styled.h3`
   letter-spacing: -0.03em;
   color: #a066ff;
   margin-bottom: 10px;
+
+  @media (min-width: 1920px) {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
 `;
 
 export const CasesMessageList = styled.ul`
@@ -30,7 +46,9 @@ export const CasesMessageList = styled.ul`
   color: #000;
   list-style: disc outside;
   padding-left: 1.25rem;
+  min-width: 0;
   overflow-wrap: break-word;
+  word-break: break-word;
   hyphens: auto;
 
   &.not-list {
@@ -54,6 +72,10 @@ export const CasesMessageList = styled.ul`
     span {
       font-weight: 700;
     }
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 23px;
   }
 `;
 
@@ -84,4 +106,10 @@ export const MessageTime = styled.span`
   position: absolute;
   right: 20px;
   bottom: 5px;
+
+  @media (min-width: 1920px) {
+    right: 60px;
+    font-size: 20px;
+    bottom: 15px;
+  }
 `;
