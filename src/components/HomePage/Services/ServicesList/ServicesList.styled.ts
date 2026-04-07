@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { HashLink } from "react-router-hash-link";
 
+const MotionHashLink = motion.create(HashLink);
+
 export const List = styled(motion.ul)`
   display: flex;
   flex-direction: column;
@@ -132,7 +134,7 @@ export const TitleCont = styled(motion.div)`
   }
 `;
 
-export const ServicesLink = styled(motion(HashLink))`
+export const ServicesLink = styled(MotionHashLink)`
   cursor: pointer;
   font-weight: 700;
   font-size: 17px;
