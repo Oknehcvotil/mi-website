@@ -2,7 +2,7 @@ import { useSectionInView } from "../../../lib/hooks/useSectionInView";
 import AdvantagesSection from "../AdvantagesSection/AdvantagesSection";
 // import Competencies from "../Competencies/Competencies";
 import HeroSection from "../HeroSection/HeroSection";
-// import MissionSection from "../MissionSection/MissionSection";
+import MissionSection from "../MissionSection/MissionSection";
 // import StatsSection from "../StatsSection/StatsSection";
 
 const AboutUsSection = () => {
@@ -13,7 +13,7 @@ const AboutUsSection = () => {
       <HeroSection />
       <AdvantagesSection />
       {/* <Competencies /> */}
-      {/* <MissionSection /> */}
+      <MissionSection />
       {/* <StatsSection /> */}
     </section>
   );
