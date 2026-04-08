@@ -8,7 +8,7 @@ export const BurgerLayuot = styled(motion.div)`
   z-index: 1000;
   overscroll-behavior: none;
 
-  @media (min-width: 1920px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 `;
