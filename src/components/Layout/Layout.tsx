@@ -34,11 +34,7 @@ const Layout = () => {
       {/* <PrivacyModal /> */}
 
       <Suspense fallback={<LoaderM />}>
-        <main
-          style={{
-            overflowX: "hidden",
-          }}
-        >
+        <main>
           <ScrollToTop />
           <Outlet />
         </main>
