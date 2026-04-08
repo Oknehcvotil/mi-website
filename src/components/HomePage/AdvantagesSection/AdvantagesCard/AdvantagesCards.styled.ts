@@ -14,6 +14,12 @@ export const ListItem = styled(motion.li)`
   padding: 25px 15px;
   background-color: #fff;
   margin: 0;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
 
   &:nth-of-type(3) {
     span {
@@ -32,6 +38,20 @@ export const ListItem = styled(motion.li)`
     display: inline-block;
     width: 68px;
     height: auto;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover,
+    &:focus-within {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 28px rgba(133, 149, 184, 0.14);
+      border-color: #bcc8de;
+    }
+
+    &:hover > div,
+    &:focus-within > div {
+      transform: translateY(-2px) scale(1.02);
+    }
   }
 
   @media (min-width: 768px) {
@@ -148,7 +168,10 @@ export const ListItem = styled(motion.li)`
   }
 `;
 
-export const IconWrap = styled(motion.div)``;
+export const IconWrap = styled(motion.div)`
+  transition: transform 0.28s ease;
+  transform-origin: center;
+`;
 
 export const AdvText = styled(motion.h3)`
   font-family: "Montserrat";
@@ -158,6 +181,7 @@ export const AdvText = styled(motion.h3)`
   max-width: 236px;
   width: 100%;
   color: #020202;
+  text-wrap: balance;
 
   span {
     font-weight: 700;

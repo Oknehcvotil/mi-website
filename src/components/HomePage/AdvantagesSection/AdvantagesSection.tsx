@@ -27,6 +27,7 @@ const AdvantagesSection = () => {
               key={idx}
               img={c.img}
               title={c.title}
+              index={idx}
               variants={itemIn}
             />
           ))}
