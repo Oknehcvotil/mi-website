@@ -38,12 +38,38 @@ export const ServicesItems = styled(motion.li)`
   padding: 20px;
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.5);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+
+  svg {
+    transition: transform 0.28s ease;
+    transform-origin: center;
+  }
 
   p {
     font-weight: 400;
     font-size: 15px;
     line-height: 147%;
     margin-bottom: 10px;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover,
+    &:focus-within {
+      transform: translateY(-4px);
+      border-color: #bcb8c4;
+      box-shadow:
+        0 16px 28px rgba(141, 141, 141, 0.1),
+        0 6px 12px rgba(0, 0, 0, 0.12),
+        inset -3px -2px 10px rgba(0, 0, 0, 0.16);
+    }
+
+    &:hover svg,
+    &:focus-within svg {
+      transform: scale(1.04);
+    }
   }
 
   @media (min-width: 768px) {
