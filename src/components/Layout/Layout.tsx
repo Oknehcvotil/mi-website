@@ -36,10 +36,7 @@ const Layout = () => {
       <Suspense fallback={<LoaderM />}>
         <main
           style={{
-            width: "100%",
-            maxWidth: "100%",
             overflowX: "hidden",
-            position: "relative",
           }}
         >
           <ScrollToTop />
