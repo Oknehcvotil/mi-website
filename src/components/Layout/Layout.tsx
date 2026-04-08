@@ -34,7 +34,14 @@ const Layout = () => {
       {/* <PrivacyModal /> */}
 
       <Suspense fallback={<LoaderM />}>
-        <main>
+        <main
+          style={{
+            width: "100%",
+            maxWidth: "100%",
+            overflowX: "hidden",
+            position: "relative",
+          }}
+        >
           <ScrollToTop />
           <Outlet />
         </main>
