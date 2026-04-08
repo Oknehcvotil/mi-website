@@ -6,6 +6,7 @@ import LoaderM from "../Loader/LoaderM";
 import AppFooter from "../AppFooter/AppFooter";
 import ActiveSectionContextProvider from "../../context/ActiveSectionContextProvider";
 import ScrollToTop from "../ScrollToTop/ScrollToTop";
+import SeoMeta from "../SeoMeta/SeoMeta";
 
 const Layout = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -29,6 +30,7 @@ const Layout = () => {
 
   return (
     <ActiveSectionContextProvider>
+      <SeoMeta />
       <AppBar setMenuIsOpen={setMenuIsOpen} />
       <BurgerMenu isOpen={menuIsOpen} onClose={closeMenu} />
       {/* <PrivacyModal /> */}

@@ -1,0 +1,73 @@
+{
+  "home": {
+    "title": "MI Agency | Recruitment, HR Consulting & Career Services",
+    "description": "MI Agency helps businesses and professionals with recruitment, HR consulting, business psychology, and career growth services."
+  },
+  "fallback": {
+    "title": "MI Agency | HR & Recruiting Solutions",
+    "description": "MI Agency provides modern HR and recruiting solutions for businesses and candidates."
+  },
+  "imageAlt": "MI Agency HR and recruiting services",
+  "pages": {
+    "services/for-clients": {
+      "title": "Services for Clients | MI Agency",
+      "description": "Recruitment, HR consulting, and business psychology services for companies that want to grow systematically."
+    },
+    "services/for-candidates": {
+      "title": "Services for Candidates | MI Agency",
+      "description": "Career consulting, interview preparation, and professional positioning services for candidates."
+    },
+    "services/phd-recruiting": {
+      "title": "PHD in Recruiting Course | MI Agency",
+      "description": "The PHD in Recruiting course for professionals who want to master modern recruiting from basics to advanced tools."
+    },
+    "cases/recruitment/it": {
+      "title": "IT Recruitment Cases | MI Agency",
+      "description": "Examples of completed IT recruitment projects delivered by the MI Agency team."
+    },
+    "cases/recruitment/web": {
+      "title": "Web Recruitment Cases | MI Agency",
+      "description": "Recruitment case studies for web-focused roles and digital teams from MI Agency."
+    },
+    "cases/recruitment/marketing": {
+      "title": "Marketing Recruitment Cases | MI Agency",
+      "description": "Successful recruitment case studies for marketing teams and growth-focused businesses."
+    },
+    "cases/recruitment/fintech": {
+      "title": "Fintech Recruitment Cases | MI Agency",
+      "description": "Real-world recruitment case studies for fintech companies and fast-growing teams."
+    },
+    "cases/recruitment/igaming": {
+      "title": "iGaming Recruitment Cases | MI Agency",
+      "description": "Talent search and assessment case studies for iGaming businesses by MI Agency."
+    },
+    "cases/recruitment/other": {
+      "title": "Other Recruitment Cases | MI Agency",
+      "description": "A selection of MI Agency recruitment case studies across industries and business areas."
+    },
+    "cases/hr-consulting/it": {
+      "title": "IT HR Consulting Cases | MI Agency",
+      "description": "HR consulting case studies for IT companies covering processes, teams, adaptation, and growth."
+    },
+    "cases/hr-consulting/web": {
+      "title": "Web HR Consulting Cases | MI Agency",
+      "description": "Examples of HR consulting projects for web teams and digital businesses from MI Agency."
+    },
+    "cases/hr-consulting/marketing": {
+      "title": "Marketing HR Consulting Cases | MI Agency",
+      "description": "HR consulting case studies for marketing teams, team processes, and collaboration growth."
+    },
+    "cases/hr-consulting/other": {
+      "title": "Other HR Consulting Cases | MI Agency",
+      "description": "HR consulting case studies for businesses from different industries, structures, and team models."
+    },
+    "cases/business-psychology": {
+      "title": "Business Psychology Cases | MI Agency",
+      "description": "Practical business psychology case studies for teams, leaders, and healthy work environments."
+    },
+    "cases/for-candidates": {
+      "title": "Cases for Candidates | MI Agency",
+      "description": "Candidate case studies focused on employment, career transitions, and professional positioning."
+    }
+  }
+}

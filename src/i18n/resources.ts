@@ -10,6 +10,7 @@ import en_casesRecruitment from "../locales/en/casesRecruitment.json";
 import en_casesBusiness from "../locales/en/casesBusiness.json";
 import en_casesHr from "../locales/en/casesHr.json";
 import en_casesCandidates from "../locales/en/casesCandidates.json";
+import en_seo from "../locales/en/seo.json";
 
 import ua_common from "../locales/ua/common.json";
 import ua_header from "../locales/ua/header.json";
@@ -23,6 +24,7 @@ import ua_casesRecruitment from "../locales/ua/casesRecruitment.json";
 import ua_casesBusiness from "../locales/ua/casesBusiness.json";
 import ua_casesHr from "../locales/ua/casesHr.json";
 import ua_casesCandidates from "../locales/ua/casesCandidates.json";
+import ua_seo from "../locales/ua/seo.json";
 
 export const resources = {
   en: {
@@ -38,6 +40,7 @@ export const resources = {
     casesBusiness: en_casesBusiness,
     casesHr: en_casesHr,
     casesCandidates: en_casesCandidates,
+    seo: en_seo,
   },
   ua: {
     common: ua_common,
@@ -52,6 +55,7 @@ export const resources = {
     casesBusiness: ua_casesBusiness,
     casesHr: ua_casesHr,
     casesCandidates: ua_casesCandidates,
+    seo: ua_seo,
   },
 } as const;
 
@@ -68,4 +72,5 @@ export const NAMESPACES = [
   "casesBusiness",
   "casesHr",
   "casesCandidates",
+  "seo",
 ] as const;

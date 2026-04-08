@@ -1,0 +1,73 @@
+{
+  "home": {
+    "title": "MI Agency | Рекрутинг, HR консалтинг та кар'єрні послуги",
+    "description": "MI Agency допомагає бізнесу з рекрутингом, HR консалтингом, бізнес-психологією та розвитком кар'єри."
+  },
+  "fallback": {
+    "title": "MI Agency | HR та Recruiting Solutions",
+    "description": "MI Agency надає сучасні HR та recruiting рішення для бізнесу та кандидатів."
+  },
+  "imageAlt": "MI Agency HR та recruiting послуги",
+  "pages": {
+    "services/for-clients": {
+      "title": "Послуги для бізнесу | MI Agency",
+      "description": "Рекрутинг, HR консалтинг і бізнес-психологія для компаній, які хочуть системно зростати."
+    },
+    "services/for-candidates": {
+      "title": "Послуги для кандидатів | MI Agency",
+      "description": "Кар'єрні консультації, підготовка до співбесіди та професійне позиціонування для кандидатів."
+    },
+    "services/phd-recruiting": {
+      "title": "PHD in Recruiting | MI Agency",
+      "description": "Курс PHD in Recruiting для тих, хто хоче опанувати сучасний рекрутинг від бази до advanced інструментів."
+    },
+    "cases/recruitment/it": {
+      "title": "Кейси рекрутингу в IT | MI Agency",
+      "description": "Приклади реалізованих recruitment-проєктів у сфері IT від команди MI Agency."
+    },
+    "cases/recruitment/web": {
+      "title": "Кейси рекрутингу у Web | MI Agency",
+      "description": "Кейси підбору фахівців для web-напряму та digital-команд від MI Agency."
+    },
+    "cases/recruitment/marketing": {
+      "title": "Кейси рекрутингу в маркетингу | MI Agency",
+      "description": "Приклади успішного підбору спеціалістів для marketing-напряму від MI Agency."
+    },
+    "cases/recruitment/fintech": {
+      "title": "Кейси рекрутингу у Fintech | MI Agency",
+      "description": "Реальні recruitment-кейси для fintech-компаній та швидкозростаючих команд."
+    },
+    "cases/recruitment/igaming": {
+      "title": "Кейси рекрутингу в iGaming | MI Agency",
+      "description": "Кейси пошуку та оцінки talent-профілів для iGaming-бізнесу від MI Agency."
+    },
+    "cases/recruitment/other": {
+      "title": "Інші кейси рекрутингу | MI Agency",
+      "description": "Добірка recruitment-кейсів MI Agency з різних індустрій та бізнес-напрямів."
+    },
+    "cases/hr-consulting/it": {
+      "title": "Кейси HR консалтингу в IT | MI Agency",
+      "description": "HR consulting кейси для IT-компаній: процеси, команди, адаптація та розвиток."
+    },
+    "cases/hr-consulting/web": {
+      "title": "Кейси HR консалтингу у Web | MI Agency",
+      "description": "Приклади HR consulting проєктів для web-команд та digital-бізнесу від MI Agency."
+    },
+    "cases/hr-consulting/marketing": {
+      "title": "Кейси HR консалтингу в маркетингу | MI Agency",
+      "description": "Приклади HR рішень для marketing-команд, побудови процесів і розвитку співпраці."
+    },
+    "cases/hr-consulting/other": {
+      "title": "Інші кейси HR консалтингу | MI Agency",
+      "description": "Кейси з HR консалтингу для бізнесів різних сфер: структура, процеси та команда."
+    },
+    "cases/business-psychology": {
+      "title": "Кейси з бізнес-психології | MI Agency",
+      "description": "Практичні кейси з бізнес-психології для команд, лідерів і здорового робочого середовища."
+    },
+    "cases/for-candidates": {
+      "title": "Кейси для кандидатів | MI Agency",
+      "description": "Кейси для кандидатів: працевлаштування, кар'єрні переходи та професійне позиціонування."
+    }
+  }
+}
