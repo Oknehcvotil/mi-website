@@ -1,5 +1,5 @@
 import { useSectionInView } from "../../../lib/hooks/useSectionInView";
-import AdvantagesSection from "../AdvantagesSection/AdvantagesSection";
+// import AdvantagesSection from "../AdvantagesSection/AdvantagesSection";
 // import Competencies from "../Competencies/Competencies";
 import HeroSection from "../HeroSection/HeroSection";
 import MissionSection from "../MissionSection/MissionSection";
