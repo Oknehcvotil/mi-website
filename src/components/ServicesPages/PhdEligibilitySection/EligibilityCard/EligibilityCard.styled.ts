@@ -1,6 +1,18 @@
+import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
-export const EligibilityTitle = styled.h3`
+const iconFloat = keyframes`
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+`;
+
+export const EligibilityTitle = styled(motion.h3)`
   font-family: "Unbounded";
   font-weight: 700;
   font-size: 20px;
@@ -27,7 +39,7 @@ export const EligibilityTitle = styled.h3`
   }
 `;
 
-export const EligibilityCardList = styled.ul`
+export const EligibilityCardList = styled(motion.ul)`
   margin-bottom: 30px;
 
   @media (min-width: 768px) {
@@ -54,7 +66,7 @@ export const EligibilityCardList = styled.ul`
   }
 `;
 
-export const EligibilityItem = styled.li`
+export const EligibilityItem = styled(motion.li)`
   border: 2px solid;
   border-radius: 10px;
   padding: 15px 20px;
@@ -68,9 +80,33 @@ export const EligibilityItem = styled.li`
   display: flex;
   align-items: center;
   gap: 10px;
+  overflow: hidden;
+  transition:
+    transform 0.32s ease,
+    box-shadow 0.32s ease,
+    border-color 0.32s ease,
+    background 0.32s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 20%,
+        rgba(160, 102, 255, 0.12) 50%,
+        rgba(255, 255, 255, 0) 80%
+      );
+    transform: translateX(-140%);
+    transition: transform 0.7s ease;
+    pointer-events: none;
+  }
 
   svg {
     flex-shrink: 0;
+    color: #8345f5;
+    animation: ${iconFloat} 4.6s ease-in-out infinite;
   }
 
   p {
@@ -80,6 +116,20 @@ export const EligibilityItem = styled.li`
 
   &:not(:last-of-type) {
     margin-bottom: 20px;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover,
+    &:focus-within {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.82);
+      border-color: rgba(160, 102, 255, 0.42);
+      box-shadow: 0 14px 28px rgba(84, 39, 177, 0.1);
+
+      &::before {
+        transform: translateX(140%);
+      }
+    }
   }
 
   @media (min-width: 768px) {
@@ -126,6 +176,18 @@ export const EligibilityItem = styled.li`
     p {
       font-size: 16px;
       line-height: 130%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    &::before {
+      transition: none;
+    }
+
+    svg {
+      animation: none;
     }
   }
 `;

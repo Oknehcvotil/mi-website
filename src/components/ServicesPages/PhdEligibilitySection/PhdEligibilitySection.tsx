@@ -2,8 +2,11 @@ import { useTranslation, Trans } from "react-i18next";
 import { useReducedMotion, motion } from "framer-motion";
 import ConsultBtn from "../../Buttons/ConsultBtn/ConsultBtn";
 import {
-  listStagger,
-  parent,
+  columnVariants,
+  ctaButtonVariants,
+  ctaTextVariants,
+  ctaVariants,
+  sectionVariants,
 } from "../../../lib/animations/services/animations.phdlEligibility";
 import Container from "../../Container/Container";
 import {
@@ -25,11 +28,11 @@ const PhdEligibilitySection = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.1 }}
-      variants={reduce ? undefined : listStagger}
+      variants={reduce ? undefined : sectionVariants}
     >
       <Container>
         <EligibilityCardsCont>
-          <motion.div variants={reduce ? undefined : parent}>
+          <motion.div variants={reduce ? undefined : columnVariants} custom={-1}>
             <EligibilityCard
               translationNs={ns}
               titleKey="zero.title"
@@ -37,7 +40,7 @@ const PhdEligibilitySection = () => {
             />
           </motion.div>
 
-          <motion.div variants={reduce ? undefined : parent}>
+          <motion.div variants={reduce ? undefined : columnVariants} custom={1}>
             <EligibilityCard
               translationNs={ns}
               titleKey="upskill.title"
@@ -46,12 +49,14 @@ const PhdEligibilitySection = () => {
           </motion.div>
         </EligibilityCardsCont>
 
-        <ConsultLinkCont variants={reduce ? undefined : parent}>
-          <h2>
+        <ConsultLinkCont variants={reduce ? undefined : ctaVariants}>
+          <motion.h2 variants={reduce ? undefined : ctaTextVariants}>
             <Trans t={t} i18nKey="cta.note" components={{ 1: <span /> }} />
-          </h2>
+          </motion.h2>
 
-          <ConsultBtn variant="primary"  maxWidth="307px" />
+          <motion.div variants={reduce ? undefined : ctaButtonVariants}>
+            <ConsultBtn variant="primary" maxWidth="307px" />
+          </motion.div>
         </ConsultLinkCont>
       </Container>
     </EligibilityWrap>
