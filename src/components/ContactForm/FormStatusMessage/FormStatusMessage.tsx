@@ -1,17 +1,17 @@
 // icon - success;
 
 import { useTranslation } from "react-i18next";
-import { MessageCont } from "./SuccessMessage.styled";
+import { MessageCont } from "./FormStatusMessage.styled";
 
-type SuccessMessageProps = {
+type FormStatusMessageProps = {
   message?: string;
   variant?: "error" | "success";
 };
 
-const SuccessMessage = ({
+const FormStatusMessage = ({
   message,
   variant = "success",
-}: SuccessMessageProps) => {
+}: FormStatusMessageProps) => {
   const { t } = useTranslation();
   const iconId = variant === "error" ? "icon-error" : "icon-success";
   const fallbackMessage =
@@ -29,4 +29,4 @@ const SuccessMessage = ({
   );
 };
 
-export default SuccessMessage;
+export default FormStatusMessage;

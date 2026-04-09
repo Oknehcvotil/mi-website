@@ -14,7 +14,7 @@ import {
 } from "./ContactForm.styled";
 import CustomErrorMessage from "./CustomErrorMessage/CustomErrorMessage";
 import { useTranslation } from "react-i18next";
-import SuccessMessage from "./SuccessMessage/SuccessMessage";
+import FormStatusMessage from "./FormStatusMessage/FormStatusMessage";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
 import { useReducedMotion } from "framer-motion";
 import {
@@ -137,7 +137,7 @@ const ContactForm = () => {
         </Formik>
 
         {submitStatus && (
-          <SuccessMessage
+          <FormStatusMessage
             message={submitStatus.message}
             variant={submitStatus.type}
           />
