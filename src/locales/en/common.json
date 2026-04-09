@@ -27,7 +27,12 @@
       "email": "email@example.com"
     },
     "submitButton": "Send",
-    "successMessage": "Your application has been sent!"
+    "sendingButton": "Sending...",
+    "successMessage": "Your application has been sent!",
+    "errorMessage": "Something went wrong. Please try again later.",
+    "errorNetwork": "Unable to connect to the server. Please try again later.",
+    "errorRateLimit": "Too many requests. Please try again later.",
+    "errorInvalidData": "Please check the entered data and try again."
   },
   "privacyPolicy": {
     "text": "By clicking “Submit”, you ",

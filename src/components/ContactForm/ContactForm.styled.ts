@@ -223,3 +223,33 @@ export const SubmitBtn = styled(motion.button)`
     height: 100%;
   }
 `;
+
+export const SubmitBtnContent = styled.span`
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+`;
+
+export const SubmitBtnSpinner = styled.span`
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: submit-spin 0.8s linear infinite;
+
+  @keyframes submit-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (min-width: 1920px) {
+    width: 26px;
+    height: 26px;
+    border-width: 3px;
+  }
+`;

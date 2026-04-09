@@ -9,14 +9,18 @@ import {
   FormCont,
   FormWrap,
   SubmitBtn,
+  SubmitBtnContent,
+  SubmitBtnSpinner,
 } from "./ContactForm.styled";
 import CustomErrorMessage from "./CustomErrorMessage/CustomErrorMessage";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SuccessMessage from "./SuccessMessage/SuccessMessage";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
 import type { Variants } from "framer-motion";
 import { useReducedMotion } from "framer-motion";
+
+const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3001";
 
 const formShellVariants: Variants = {
   hidden: {
@@ -73,45 +77,143 @@ const formItemVariants: Variants = {
   },
 };
 
+type FormValues = {
+  name: string;
+  phone: string;
+  email: string;
+  website: string;
+};
+
+type SubmitStatus = {
+  message: string;
+  type: "error" | "success";
+};
+
+type ContactApiResponse = {
+  message?: string;
+  success?: boolean;
+};
+
 const ContactForm = () => {
   const { t } = useTranslation();
-  const [success, setSuccess] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus | null>(null);
   const reduce = useReducedMotion();
+  const statusTimeoutRef = useRef<number | null>(null);
+
+  const clearStatusTimeout = () => {
+    if (statusTimeoutRef.current !== null) {
+      window.clearTimeout(statusTimeoutRef.current);
+      statusTimeoutRef.current = null;
+    }
+  };
+
+  const showSubmitStatus = (status: SubmitStatus) => {
+    clearStatusTimeout();
+    setSubmitStatus(status);
+    statusTimeoutRef.current = window.setTimeout(() => {
+      setSubmitStatus(null);
+      statusTimeoutRef.current = null;
+    }, 4000);
+  };
+
+  useEffect(
+    () => () => {
+      clearStatusTimeout();
+    },
+    [],
+  );
 
   const validationSchema = Yup.object({
     name: Yup.string().required(t("form.errors.name")),
     email: Yup.string()
       .email(t("form.errors.email"))
-      .required(t("form.errors.name")),
+      .required(t("form.errors.email")),
     phone: Yup.string()
       .required(t("form.errors.phone"))
-      .test(
-        "is-valid-phone",
-        t("form.errors.phone"),
-        (value) => (value ? value.length > 6 : false), 
+      .test("is-valid-phone", t("form.errors.phone"), (value) =>
+        value ? value.length > 6 : false,
       ),
+    website: Yup.string(),
   });
 
+  const getSubmitErrorMessage = (status?: number) => {
+    if (status === 429) {
+      return t("form.errorRateLimit");
+    }
+
+    if (status === 400) {
+      return t("form.errorInvalidData");
+    }
+
+    return t("form.errorMessage");
+  };
+
   const handleSubmit = async (
-    values: { name: string; phone: string; email: string },
-    { resetForm }: { resetForm: () => void },
+    values: FormValues,
+    {
+      resetForm,
+      setSubmitting,
+    }: {
+      resetForm: () => void;
+      setSubmitting: (isSubmitting: boolean) => void;
+    },
   ) => {
+    clearStatusTimeout();
+    setSubmitStatus(null);
+
     try {
-      console.log("Форма отправлена:", values);
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      const contentType = response.headers.get("content-type") ?? "";
+      const data = contentType.includes("application/json")
+        ? ((await response.json()) as ContactApiResponse)
+        : null;
+
+      if (!response.ok || !data?.success) {
+        console.error("Form request failed:", {
+          message: data?.message,
+          status: response.status,
+        });
+        throw new Error(getSubmitErrorMessage(response.status));
+      }
 
       resetForm();
-      setSuccess(true);
-
-      setTimeout(() => setSuccess(false), 2000);
+      showSubmitStatus({
+        message: t("form.successMessage"),
+        type: "success",
+      });
     } catch (error: unknown) {
+      const fallbackMessage =
+        error instanceof TypeError && error.message === "Failed to fetch"
+          ? t("form.errorNetwork")
+          : t("form.errorMessage");
+
       if (error && typeof error === "object" && "message" in error) {
+        showSubmitStatus({
+          message: String(
+            (error as { message: string }).message || fallbackMessage,
+          ),
+          type: "error",
+        });
         console.error(
           "Error submitting form:",
           (error as { message: string }).message,
         );
       } else {
+        showSubmitStatus({
+          message: fallbackMessage,
+          type: "error",
+        });
         console.error("Error submitting form:", error);
       }
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -124,12 +226,27 @@ const ContactForm = () => {
     >
       <FormWrap variants={reduce ? undefined : formCardVariants}>
         <Formik
-          initialValues={{ name: "", phone: "", email: "" }}
+          initialValues={{ name: "", phone: "", email: "", website: "" }}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
         >
-          {({ setFieldValue, values }) => (
+          {({ setFieldValue, values, isSubmitting, handleChange }) => (
             <Form>
+              <input
+                type="text"
+                name="website"
+                value={values.website}
+                onChange={handleChange}
+                autoComplete="off"
+                tabIndex={-1}
+                style={{
+                  position: "absolute",
+                  left: "-9999px",
+                  opacity: 0,
+                  pointerEvents: "none",
+                }}
+              />
+
               <FieldCont variants={reduce ? undefined : formItemVariants}>
                 <label htmlFor="name">
                   {t("form.labels.name")} <span>*</span>
@@ -154,7 +271,7 @@ const ContactForm = () => {
                   inputProps={{
                     id: "phone",
                     name: "phone",
-                    autoComplete: "name",
+                    autoComplete: "tel",
                     required: true,
                   }}
                 />
@@ -177,14 +294,26 @@ const ContactForm = () => {
 
               <SubmitBtn
                 type="submit"
+                disabled={isSubmitting}
                 variants={reduce ? undefined : formItemVariants}
               >
-                <span>{t("form.submitButton")}</span>
+                <SubmitBtnContent>
+                  {isSubmitting && <SubmitBtnSpinner aria-hidden="true" />}
+                  {isSubmitting
+                    ? t("form.sendingButton")
+                    : t("form.submitButton")}
+                </SubmitBtnContent>
               </SubmitBtn>
             </Form>
           )}
         </Formik>
-        {success && <SuccessMessage />}
+
+        {submitStatus && (
+          <SuccessMessage
+            message={submitStatus.message}
+            variant={submitStatus.type}
+          />
+        )}
         <PrivacyPolicy />
       </FormWrap>
     </FormCont>
