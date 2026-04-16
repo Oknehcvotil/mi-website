@@ -64,8 +64,8 @@ export const CustomSocialLink = styled.a`
 
   @media (min-width: 768px) {
     &.team-card-social.social-irina {
-      top: 125px;
-      right: -10px;
+      top: 30px;
+      right: 230px;
     }
 
     &.team-card-social.social-tatyana {
@@ -75,12 +75,12 @@ export const CustomSocialLink = styled.a`
 
     &.team-card-social.social-maria {
       top: 50px;
-      left: 200px;
+      left: 260px;
     }
 
     &.team-card-social.social-anastasia {
-      top: 25px;
-      left: 240px;
+      top: 30px;
+      left: 430px;
     }
 
     &.team-card-social.social-daria {
@@ -92,7 +92,8 @@ export const CustomSocialLink = styled.a`
   @media (min-width: 1024px) {
     &.team-card-social.social-irina {
       top: 120px;
-      right: -40px;
+      right: -20px;
+      z-index: 2;
     }
 
     &.team-card-social.social-tatyana {
@@ -100,19 +101,19 @@ export const CustomSocialLink = styled.a`
       left: -40px;
     }
 
-    &.team-card-social.social-maria {
-      top: 50px;
-      left: 25px;
+    &.team-card-social.social-anastasia {
+      top: 180px;
+      left: -40px;
     }
 
-    &.team-card-social.social-anastasia {
-      top: 30px;
-      left: 0;
+    &.team-card-social.social-maria {
+      top: 170px;
+      left: 80px;
     }
 
     &.team-card-social.social-daria {
-      top: -40px;
-      right: 175px;
+      top: 80px;
+      right: 90px;
     }
   }
 

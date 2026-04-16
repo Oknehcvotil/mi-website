@@ -58,8 +58,8 @@ export const StatsWrap = styled.div`
     }
 
     &.maria {
-      bottom: 125px;
-      left: 25px;
+      bottom: 95px;
+      left: 100px;
       z-index: 2;
 
       span {
@@ -68,7 +68,7 @@ export const StatsWrap = styled.div`
     }
 
     &.anastasia {
-      left: 280px;
+      left: 470px;
       bottom: 65px;
       z-index: 2;
     }
@@ -77,7 +77,7 @@ export const StatsWrap = styled.div`
       z-index: 2;
       max-width: 240px;
       bottom: 125px;
-      right: 0px;
+      right: 115px;
       left: auto;
     }
   }
@@ -100,8 +100,8 @@ export const StatsWrap = styled.div`
     }
 
     &.maria {
-      bottom: 90px;
-      left: 15px;
+      bottom: 130px;
+      left: 235px;
       z-index: 2;
 
       span {
@@ -110,8 +110,8 @@ export const StatsWrap = styled.div`
     }
 
     &.anastasia {
-      left: 360px;
-      bottom: 125px;
+      left: 740px;
+      bottom: 90px;
       z-index: 2;
     }
 
@@ -119,7 +119,7 @@ export const StatsWrap = styled.div`
       z-index: 2;
       max-width: 240px;
       bottom: 90px;
-      right: 90px;
+      right: 220px;
       left: auto;
     }
   }

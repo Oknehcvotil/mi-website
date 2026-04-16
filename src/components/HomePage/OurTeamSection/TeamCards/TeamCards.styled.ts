@@ -12,24 +12,30 @@ export const CardCont = styled.div`
 
     &.card-anastasia {
       position: absolute;
-      bottom: 0;
-      right: 105px;
+      bottom: 30px;
+      right: -30px;
       z-index: 1;
     }
 
     &.card-daria {
       position: absolute;
       bottom: 0;
-      right: 0;
+      right: 105px;
     }
 
     &.card-maria {
       position: relative;
       z-index: 2;
+      padding-left: 60px;
     }
   }
 
   @media (min-width: 1024px) {
+    &.card-maria {
+      padding-left: 190px;
+      margin-bottom: 30px;
+    }
+
     &.card-irina {
       padding-left: 85px;
     }
@@ -42,9 +48,15 @@ export const CardCont = styled.div`
 
     &.card-anastasia {
       position: absolute;
-      bottom: 0;
-      right: 255px;
-      z-index: 1;
+      bottom: 15px;
+      right: 35px;
+      z-index: 0;
+    }
+
+    &.card-daria {
+      position: absolute;
+      bottom: 30px;
+      right: 130px;
     }
   }
 `;

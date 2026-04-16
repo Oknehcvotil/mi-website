@@ -54,23 +54,23 @@ export const NameCont = styled.div`
 
   @media (min-width: 768px) {
     &.team-irina {
-      top: 120px;
-      left: 290px;
+      top: 30px;
+      right: 230px;
     }
 
     &.team-tatyana {
-      left: 8px;
+      left: 18px;
       top: 145px;
     }
 
     &.team-maria {
       top: 50px;
-      left: 65px;
+      left: 130px;
     }
 
     &.team-anastasia {
       top: 30px;
-      left: 105px;
+      left: 300px;
     }
 
     &.team-daria {
@@ -87,7 +87,8 @@ export const NameCont = styled.div`
 
     &.team-irina {
       top: 120px;
-      left: 425px;
+      left: 410px;
+      right: unset;
 
       &::before {
         right: unset;
@@ -101,18 +102,18 @@ export const NameCont = styled.div`
     }
 
     &.team-maria {
-      top: 50px;
-      left: 65px;
+      top: 170px;
+      left: 130px;
     }
 
     &.team-anastasia {
-      top: 30px;
-      left: 45px;
+      top: 175px;
+      left: 10px;
     }
 
     &.team-daria {
-      left: 295px;
-      top: -40px;
+      left: 390px;
+      top: 80px;
     }
   }
 

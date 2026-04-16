@@ -19,8 +19,8 @@ const OurTeamSection = () => {
   const isTablet = useMediaQuery("(min-width: 768px)");
 
   const tabletSlides = [
-    [teamCards[0], teamCards[2]].filter(Boolean), // 1 + 3
-    [teamCards[3], teamCards[1], teamCards[4]].filter(Boolean), // 2 + 4 + 5
+    [teamCards[0], teamCards[1]].filter(Boolean), // 1 + 3
+    [teamCards[2], teamCards[3]].filter(Boolean), // 2 + 4 + 5
   ].filter((g) => g.length);
 
   const slides = isTablet ? tabletSlides : teamCards.map((card) => [card]);

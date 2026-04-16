@@ -38,7 +38,7 @@ export const TeamCardContent = styled.div`
 
   &.card-content-irina {
     top: 110px;
-    left: 900px;
+    left: 700px;
   }
 
   &.card-content-tatyana {
@@ -47,17 +47,17 @@ export const TeamCardContent = styled.div`
   }
 
   &.card-content-maria {
-    top: 160px;
-    right: 430px;
+    top: 150px;
+    right: 555px;
   }
 
   &.card-content-anastasia {
-    top: 140px;
-    left: 500px;
+    top: 160px;
+    left: 165px;
   }
 
   &.card-content-daria {
     top: 190px;
-    right: 100px;
+    right: 170px;
   }
 `;

@@ -114,20 +114,6 @@ export const teamCards = [
     },
   },
   {
-    id: "tatyana",
-    name: "Tatyana",
-    role: "Chief Human Resources Officer",
-    imgBase: "tatyana-human-resourses",
-    stats: [{ value: "15+", labelKey: "teamStats.specialists" }],
-    link: {
-      id: "linkedin",
-      href: "https://www.linkedin.com/in/tatyana-ryazantseva-freedom/",
-      labelKey: "socials.linkedin",
-      width: "13px",
-      height: "11px",
-    },
-  },
-  {
     id: "maria",
     name: "Maria",
     role: "Сhief Customer Officer",
