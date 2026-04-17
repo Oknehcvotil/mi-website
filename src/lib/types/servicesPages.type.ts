@@ -14,17 +14,14 @@ export type Plan = {
 };
 
 export type TeamContactImages = {
-  leftImg: string;
-  rightImg: string;
-  leftImgAlt?: string;
-  rightImgAlt?: string;
-  leftClassName?: string;
-  rightClassName?: string;
+  personImg: string;
+  personAlt?: string;
+  personClassName?: string;
 };
 
 export type TeamContactConfig = {
   className?: string;
   id?: string;
   translationNs: string;
-  images: TeamContactImages;
+  image: TeamContactImages;
 };
