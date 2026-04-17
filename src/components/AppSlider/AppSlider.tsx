@@ -7,6 +7,11 @@ import {
 } from "react";
 import { Swiper, SwiperSlide, type SwiperRef } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper/modules";
+import type {
+  NavigationOptions,
+  PaginationOptions,
+  SwiperOptions,
+} from "swiper/types";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -15,11 +20,50 @@ import { ButtonsWrapper, SliderButton, SliderCont } from "./AppSlider.styled";
 import { useMediaQuery } from "../../lib/hooks/useMediaQuery";
 import CardsWrapper from "../CasesPages/CardsWrapper/CardsWrapper";
 
+type SlideGroup = ReactNode[];
+
 type AppSliderProps = {
   className?: string;
   children: ReactNode;
-  breakpoints?: import("swiper/types").SwiperOptions["breakpoints"];
+  breakpoints?: SwiperOptions["breakpoints"];
   pairOnTablet?: boolean;
+};
+
+const getGroupedSlides = (
+  slideChildren: ReactNode[],
+  shouldPairSlides: boolean,
+): SlideGroup[] => {
+  if (!shouldPairSlides) {
+    return slideChildren.map((child) => [child]);
+  }
+
+  return slideChildren.reduce<SlideGroup[]>((acc, _child, index, array) => {
+    if (index % 2 === 0) {
+      acc.push(array.slice(index, index + 2));
+    }
+
+    return acc;
+  }, []);
+};
+
+const setNavigationElements = (
+  navigation: NavigationOptions | boolean | undefined,
+  prevEl: HTMLButtonElement | null,
+  nextEl: HTMLButtonElement | null,
+) => {
+  if (!navigation || navigation === true) return;
+
+  navigation.prevEl = prevEl;
+  navigation.nextEl = nextEl;
+};
+
+const setPaginationElement = (
+  pagination: PaginationOptions | boolean | undefined,
+  el: HTMLDivElement | null,
+) => {
+  if (!pagination || pagination === true) return;
+
+  pagination.el = el;
 };
 
 const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
@@ -35,16 +79,10 @@ const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
     isValidElement(child) ? child : <>{child}</>,
   );
 
-  const groupedSlides =
-    pairOnTablet && isTablet
-      ? slideChildren.reduce<ReactNode[][]>((acc, _child, index, array) => {
-          if (index % 2 === 0) {
-            acc.push(array.slice(index, index + 2));
-          }
-
-          return acc;
-        }, [])
-      : slideChildren.map((child) => [child]);
+  const groupedSlides = getGroupedSlides(
+    slideChildren,
+    pairOnTablet && isTablet,
+  );
 
   const slides = groupedSlides.map((group, i) => (
     <SwiperSlide key={i}>
@@ -64,24 +102,15 @@ const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
         slidesPerView={1}
         spaceBetween={0}
         breakpoints={breakpoints}
-        navigation={{} as import("swiper/types").NavigationOptions}
+        navigation={{} as NavigationOptions}
         pagination={{ clickable: true }}
         onBeforeInit={(swiper) => {
-          (
-            swiper.params.navigation as import("swiper/types").NavigationOptions
-          ).prevEl = prevRef.current;
-          (
-            swiper.params.navigation as import("swiper/types").NavigationOptions
-          ).nextEl = nextRef.current;
-          if (
-            swiper.params.pagination &&
-            typeof swiper.params.pagination === "object"
-          ) {
-            (
-              swiper.params
-                .pagination as import("swiper/types").PaginationOptions
-            ).el = pagRef.current;
-          }
+          setNavigationElements(
+            swiper.params.navigation,
+            prevRef.current,
+            nextRef.current,
+          );
+          setPaginationElement(swiper.params.pagination, pagRef.current);
         }}
         onInit={(swiper) => {
           swiper.navigation.init();
