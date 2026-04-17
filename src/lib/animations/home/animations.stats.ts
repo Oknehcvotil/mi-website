@@ -1,7 +1,7 @@
 import { type Variants } from "framer-motion";
 
 export const container: Variants = {
-  hidden: { opacity: 1 }, // не мерцаем списком, анимируем только дети
+  hidden: { opacity: 1 },
   show: {
     opacity: 1,
     transition: { staggerChildren: 0.08, delayChildren: 0.05 },

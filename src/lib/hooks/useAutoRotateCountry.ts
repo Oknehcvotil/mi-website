@@ -5,8 +5,8 @@ type UseAutoRotateCountryArgs = {
   countries: Country[];
   selected: CountryId;
   onSelect: (id: CountryId) => void;
-  delay?: number; // интервал автосмены
-  pauseAfterManual?: number; // пауза после ручного выбора
+  delay?: number; 
+  pauseAfterManual?: number; 
 };
 
 export const useAutoRotateCountry = ({
