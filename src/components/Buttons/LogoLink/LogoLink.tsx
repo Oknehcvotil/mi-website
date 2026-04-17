@@ -1,4 +1,5 @@
-import { Link, useMatch } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useCurrentLang } from "../../../lib/hooks/useCurrentLang";
 import { StyledLogo } from "./LogoLink.styled";
 
 type LogoLinkProps = {
@@ -7,8 +8,7 @@ type LogoLinkProps = {
 };
 
 const LogoLink = ({ width = 100, height = 42 }: LogoLinkProps) => {
-  const match = useMatch("/:lang/*");
-  const currentLang = match?.params.lang ?? "en";
+  const currentLang = useCurrentLang();
 
   return (
     <Link to={`/${currentLang}`}>

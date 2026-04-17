@@ -5,10 +5,10 @@ import {
   ServicesLink,
   TitleCont,
 } from "./ServicesList.styled";
-import { useMatch } from "react-router-dom";
 import { servicesLinks } from "../../../../lib/data/home.page";
 import { servicesIcons } from "../../../../lib/data/home.page";
 import { useMediaQuery } from "../../../../lib/hooks/useMediaQuery";
+import { useCurrentLang } from "../../../../lib/hooks/useCurrentLang";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   servicesCardItemVariants,
@@ -18,11 +18,10 @@ import {
 
 const ServicesList = () => {
   const { t } = useTranslation("home");
-  const match = useMatch("/:lang/*");
-  const currentLang = match?.params.lang ?? "en";
+  const currentLang = useCurrentLang();
   const reduce = !!useReducedMotion();
 
-  const isDesk = useMediaQuery("(min-width: 1920px)");
+  const isWideDesktop = useMediaQuery("(min-width: 1920px)");
 
   const subTitles = t("services.subTitiles", {
     returnObjects: true,
@@ -34,7 +33,7 @@ const ServicesList = () => {
     <List variants={reduce ? undefined : servicesListVariants}>
       {subTitles.map((title, i) => {
         const icon = servicesIcons[i];
-        const size = isDesk ? icon.desk : icon.mob;
+        const size = isWideDesktop ? icon.desk : icon.mob;
 
         return (
           <ServicesItems

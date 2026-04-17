@@ -15,13 +15,12 @@ import {
   sectionV,
   titleV,
 } from "../../../lib/animations/home/animations.swipers";
-import { useMatch } from "react-router-dom";
 import { useMediaQuery } from "../../../lib/hooks/useMediaQuery";
+import { useCurrentLang } from "../../../lib/hooks/useCurrentLang";
 
 const CasesReviewsSection = () => {
   const { t } = useTranslation("home");
-  const match = useMatch("/:lang/*");
-  const currentLang = match?.params.lang ?? "en";
+  const currentLang = useCurrentLang();
 
   const isTablet = useMediaQuery("(min-width: 768px)");
 

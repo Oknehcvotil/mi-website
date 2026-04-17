@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { MainLink } from "./MainPaigeLink.styled";
-import { useMatch } from "react-router-dom";
+import { useCurrentLang } from "../../../lib/hooks/useCurrentLang";
 
 type MainPageLinkProps = {
   onCloseBurger?: () => void;
@@ -8,8 +8,7 @@ type MainPageLinkProps = {
 
 const MainPageLink = ({ onCloseBurger }: MainPageLinkProps) => {
   const { t } = useTranslation("common", { keyPrefix: "links" });
-  const match = useMatch("/:lang/*");
-  const currentLang = match?.params.lang ?? "en";
+  const currentLang = useCurrentLang();
 
   return (
     <MainLink to={`/${currentLang}`} end onClick={() => onCloseBurger?.()}>

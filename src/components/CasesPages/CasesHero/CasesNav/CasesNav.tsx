@@ -5,7 +5,7 @@ import {
   CasesHeroNavWrap,
   CasesNavLink,
 } from "./CasesNav.styled";
-import { useMatch } from "react-router-dom";
+import { useCurrentLang } from "../../../../lib/hooks/useCurrentLang";
 import {
   navItemV,
   navListV,
@@ -20,8 +20,7 @@ type CasesNavProps = {
 
 const CasesNav = ({ nav, ns, className }: CasesNavProps) => {
   const { t } = useTranslation(ns);
-  const match = useMatch("/:lang/*");
-  const currentLang = match?.params.lang ?? "en";
+  const currentLang = useCurrentLang();
 
   return (
     <CasesHeroNavWrap>
