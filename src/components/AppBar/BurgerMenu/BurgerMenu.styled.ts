@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-export const BurgerLayuot = styled(motion.div)`
+export const BurgerLayout = styled(motion.div)`
   position: fixed;
   inset: 0;
   background-color: rgba(217, 217, 217, 0.4);
