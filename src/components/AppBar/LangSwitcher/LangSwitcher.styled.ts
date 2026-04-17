@@ -26,7 +26,7 @@ export const LangCont = styled.div`
   }
 `;
 
-export const LangList = styled(motion.ul)`
+export const LangList = styled(motion.ul)<{ $open: boolean }>`
   overflow: hidden;
   position: absolute;
   width: 55px;
@@ -39,6 +39,17 @@ export const LangList = styled(motion.ul)`
   align-items: center;
   cursor: pointer;
   z-index: 250;
+  background-color: ${({ $open }) =>
+    $open ? "rgba(248, 248, 251, 0.92)" : "transparent"};
+  -webkit-backdrop-filter: ${({ $open }) =>
+    $open ? "blur(10px)" : "none"};
+  backdrop-filter: ${({ $open }) => ($open ? "blur(10px)" : "none")};
+  box-shadow: ${({ $open }) =>
+    $open ? "0 10px 24px rgba(160, 102, 255, 0.12)" : "none"};
+  transition:
+    background-color 0.18s ease,
+    backdrop-filter 0.18s ease,
+    box-shadow 0.18s ease;
 
   &:hover {
     height: 70px;

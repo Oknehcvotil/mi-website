@@ -1,47 +1,52 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { useLang } from "../../../lib/hooks/useLang";
 import { SUPPORTED_LANGS, type Lang } from "../../../i18n/i18n";
-import { type Variants, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { LangCont, LangList } from "./LangSwitcher.styled";
 import { useMediaQuery } from "../../../lib/hooks/useMediaQuery";
-
-const listVariants = (isDesk: boolean): Variants => ({
-  closed: { height: 40 },
-  open: { height: isDesk ? 95 : 70 },
-});
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: -6, pointerEvents: "none" },
-  visible: { opacity: 1, y: 0, pointerEvents: "auto" },
-};
+import {
+  getLangListVariants,
+  langItemVariants,
+  langListTransition,
+} from "../../../lib/animations/animations.appBar";
 
 const LABEL: Record<Lang, string> = { en: "EN", ua: "UA" };
+
+const getOtherLang = (currentLang: Lang): Lang =>
+  SUPPORTED_LANGS.find((lang) => lang !== currentLang) ?? "en";
 
 const LangSwitcher = () => {
   const { lang, switchLang } = useLang();
   const [open, setOpen] = useState(false);
-  const isDesk = useMediaQuery("(min-width: 1920px)");
+  const isWideDesktop = useMediaQuery("(min-width: 1920px)");
+  const otherLang = getOtherLang(lang);
+  const arrowWidth = isWideDesktop ? 12 : 9;
+  const arrowHeight = isWideDesktop ? 8 : 7;
 
-  const otherLang = useMemo<Lang>(
-    () => (SUPPORTED_LANGS.find((l) => l !== lang) ?? "en") as Lang,
-    [lang]
-  );
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const handleClick = () => {
+    if (!open) {
+      setOpen(true);
+    }
+  };
+  const handleSwitchLang = () => {
+    switchLang(otherLang);
+    setOpen(false);
+  };
 
   return (
     <LangCont>
       <LangList
+        $open={open}
         role="listbox"
-        onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(false)}
-        onClick={() => {
-          if (!open) {
-            setOpen(true);
-          }
-        }}
-        variants={listVariants(isDesk)}
+        onMouseEnter={handleOpen}
+        onMouseLeave={handleClose}
+        onClick={handleClick}
+        variants={getLangListVariants(isWideDesktop)}
         initial="closed"
         animate={open ? "open" : "closed"}
-        transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+        transition={langListTransition}
       >
         <li>
           <button
@@ -52,8 +57,8 @@ const LangSwitcher = () => {
           >
             {LABEL[lang]}
             <motion.svg
-              width={isDesk ? 12 : 9}
-              height={isDesk ? 8 : 7}
+              width={arrowWidth}
+              height={arrowHeight}
               animate={{ rotate: open ? 180 : 0 }}
             >
               <use href="/icons/sprite.svg#icon-select-arrow"></use>
@@ -61,7 +66,7 @@ const LangSwitcher = () => {
           </button>
         </li>
         <motion.li
-          variants={itemVariants}
+          variants={langItemVariants}
           initial="hidden"
           animate={open ? "visible" : "hidden"}
         >
@@ -69,10 +74,7 @@ const LangSwitcher = () => {
             type="button"
             role="option"
             aria-selected={false}
-            onClick={() => {
-              switchLang(otherLang);
-              setOpen(false);
-            }}
+            onClick={handleSwitchLang}
           >
             {LABEL[otherLang]}
           </button>
