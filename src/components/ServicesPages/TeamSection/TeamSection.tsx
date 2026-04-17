@@ -1,8 +1,11 @@
 import { useTranslation } from "react-i18next";
 import type { TeamContactConfig } from "../../../lib/types/servicesPages.type";
 import {
+  buttonRevealVariants,
   fadeUpVariants,
-  rightInVariants,
+  portraitRevealVariants,
+  teamSectionVariants,
+  titleRevealVariants,
 } from "../../../lib/animations/services/animations.team";
 import { motion } from "framer-motion";
 import {
@@ -41,40 +44,33 @@ const TeamSection = ({ config }: TeamSectionProps) => {
       {/* <BackgroundWrap>
         <BackgroundText>team team team team team team</BackgroundText>
       </BackgroundWrap> */}
-      <TeamCont className={config.className}>
+      <TeamCont
+        className={config.className}
+        variants={teamSectionVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+      >
         <TeamLeadCont className={`${config.className}-lead`}>
-          <motion.p
-            variants={fadeUpVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-          >
+          <motion.p variants={fadeUpVariants}>
             {t("teamContact.overline")}
           </motion.p>
 
-          <NamesTitle
-            variants={fadeUpVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-          >
+          <NamesTitle variants={titleRevealVariants}>
             {t("teamContact.title")}
           </NamesTitle>
 
-          <PositionText
-            variants={fadeUpVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-          >
+          <PositionText variants={fadeUpVariants}>
             {t("teamContact.subtitle")}
           </PositionText>
 
-          <ConsultBtn
-            variant="primary"
-            maxWidth="307px"
-            className="services-team-section--consult-btn"
-          />
+          <motion.div variants={buttonRevealVariants}>
+            <ConsultBtn
+              variant="primary"
+              maxWidth="307px"
+              className="services-team-section--consult-btn"
+            />
+          </motion.div>
         </TeamLeadCont>
 
         <PersonImgCont className={config.image.personClassName}>
@@ -124,10 +120,7 @@ const TeamSection = ({ config }: TeamSectionProps) => {
               media="(min-resolution: 2dppx)"
             />
             <motion.img
-              variants={rightInVariants}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.3 }}
+              variants={portraitRevealVariants}
               src={getImageSrc(config.image.personImg)}
               alt={config.image.personAlt}
               className={config.image.personClassName}
