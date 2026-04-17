@@ -1,4 +1,5 @@
-import { motion, AnimatePresence } from "framer-motion";
+import type { KeyboardEventHandler } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   SubMenuList,
   SubLink,
@@ -7,7 +8,11 @@ import {
 } from "./SubMenuSection.styled";
 import { type Section } from "../../../../lib/types/nav.types";
 import { useMediaQuery } from "../../../../lib/hooks/useMediaQuery";
-import { useReducedMotion, type Variants } from "framer-motion";
+import {
+  subMenuArrowTransition,
+  subMenuItemVariants,
+  subMenuListVariants,
+} from "../../../../lib/animations/animations.appBar";
 
 type SubMenuSectionProps = {
   section: Section;
@@ -19,46 +24,16 @@ type SubMenuSectionProps = {
   pathname: string;
 };
 
-const listVariants: Variants = {
-  closed: {
-    opacity: 0,
-    y: -6,
-    scale: 0.985,
-    filter: "blur(4px)",
-    transition: {
-      duration: 0.1,
-      ease: [0.4, 0, 0.2, 1],
-      when: "afterChildren",
-      staggerChildren: 0.012,
-      staggerDirection: -1,
-    },
-  },
-  open: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    filter: "blur(0px)",
-    transition: {
-      duration: 0.12,
-      ease: [0.22, 1, 0.36, 1],
-      when: "beforeChildren",
-      staggerChildren: 0.016,
-    },
-  },
-};
+const getArrowSize = (isWideDesktop: boolean) => ({
+  width: isWideDesktop ? 15 : 9,
+  height: isWideDesktop ? 9 : 7,
+});
 
-const itemVariants: Variants = {
-  closed: {
-    opacity: 0,
-    y: -4,
-    transition: { duration: 0.08, ease: [0.4, 0, 0.2, 1] },
-  },
-  open: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.1, ease: [0.22, 1, 0.36, 1] },
-  },
-};
+const isActiveSection = (
+  pathname: string,
+  currentLang: string,
+  basePath: string,
+) => pathname.startsWith(`/${currentLang}${basePath}`);
 
 const SubMenuSection = ({
   section,
@@ -69,61 +44,71 @@ const SubMenuSection = ({
   t,
   pathname,
 }: SubMenuSectionProps) => {
-  const active = pathname.startsWith(`/${currentLang}${section.basePath}`);
+  const active = isActiveSection(pathname, currentLang, section.basePath);
   const isWideDesktop = useMediaQuery("(min-width: 1920px)");
-  const isDesktopNav = useMediaQuery("(min-width: 1024px)");
+  const isLaptopUp = useMediaQuery("(min-width: 1024px)");
   const reduce = useReducedMotion();
+  const arrowSize = getArrowSize(isWideDesktop);
 
-  const onKeyDown: React.KeyboardEventHandler = (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
+  const handleMouseEnter = () => {
+    if (isLaptopUp) {
+      setOpen(true);
+    }
+  };
 
-      if (!isDesktopNav) {
-        setOpen(!isOpen);
-      } else if (!isOpen) {
-        setOpen(true);
-      } else {
-        setOpen(false);
-      }
-    } else if (e.key === "Escape" && isDesktopNav) {
+  const handleMouseLeave = () => {
+    if (isLaptopUp) {
       setOpen(false);
     }
   };
+
+  const handleClick = () => {
+    if (!isLaptopUp) {
+      setOpen(!isOpen);
+      return;
+    }
+
+    if (!isOpen) {
+      setOpen(true);
+    }
+  };
+
+  const handleKeyDown: KeyboardEventHandler = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+
+      if (!isLaptopUp) {
+        setOpen(!isOpen);
+      } else {
+        setOpen(!isOpen);
+      }
+    } else if (e.key === "Escape" && isLaptopUp) {
+      setOpen(false);
+    }
+  };
+
   return (
     <SubMenuItem
       role="listbox"
       aria-expanded={isOpen}
       aria-label={t(section.titleKey)}
-      onMouseEnter={() => isDesktopNav && setOpen(true)}
-      onMouseLeave={() => isDesktopNav && setOpen(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <SubMenuTitle
         active={active}
         width={section.width}
         justify={section.justify}
-        onClick={() => {
-          if (!isDesktopNav) {
-            setOpen(!isOpen);
-            return;
-          }
-
-          if (!isOpen) {
-            setOpen(true);
-          }
-        }}
-        onKeyDown={onKeyDown}
+        onClick={handleClick}
+        onKeyDown={handleKeyDown}
       >
         {t(section.titleKey)}
         <motion.svg
-          width={isWideDesktop ? 15 : 9}
-          height={isWideDesktop ? 9 : 7}
+          width={arrowSize.width}
+          height={arrowSize.height}
           aria-hidden
           animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={
-            reduce
-              ? { duration: 0 }
-              : { type: "spring", stiffness: 460, damping: 30 }
-          }
+          transition={reduce ? { duration: 0 } : subMenuArrowTransition}
         >
           <use href="/icons/sprite.svg#icon-select-arrow" />
         </motion.svg>
@@ -135,10 +120,10 @@ const SubMenuSection = ({
             initial={reduce ? false : "closed"}
             animate="open"
             exit="closed"
-            variants={reduce ? undefined : listVariants}
+            variants={reduce ? undefined : subMenuListVariants}
           >
             {section.items.map((it, idx) => (
-              <motion.li key={it.to} custom={idx} variants={itemVariants}>
+              <motion.li key={it.to} custom={idx} variants={subMenuItemVariants}>
                 <SubLink to={`/${currentLang}${it.to}`} onClick={onSelect}>
                   {t(it.labelKey)}
                 </SubLink>

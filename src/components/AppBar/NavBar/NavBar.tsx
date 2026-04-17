@@ -1,4 +1,4 @@
-import { useMatch, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import ConsultBtn from "../../Buttons/ConsultBtn/ConsultBtn";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
@@ -8,6 +8,7 @@ import { NAV_SECTIONS } from "../../../lib/data/nav.section";
 import PsiLink from "../../Buttons/PsiLink/PsiLink";
 import MainPageLink from "../MainPaigeLink/MainPaigeLink";
 import { useMediaQuery } from "../../../lib/hooks/useMediaQuery";
+import { useCurrentLang } from "../../../lib/hooks/useCurrentLang";
 import { NavBarList } from "./NavBar.styled";
 
 type NavBarProps = {
@@ -15,20 +16,37 @@ type NavBarProps = {
   isBurgerOpen?: boolean;
 };
 
+type SectionId = Section["id"];
+
+const getActiveSectionId = (
+  pathname: string,
+  currentLang: string,
+): SectionId | null =>
+  NAV_SECTIONS.find((section) =>
+    pathname.startsWith(`/${currentLang}${section.basePath}`),
+  )?.id ?? null;
+
+const getNextOpenMobileIds = (
+  current: SectionId[],
+  sectionId: SectionId,
+  next: boolean,
+) => {
+  if (!next) {
+    return current.filter((id) => id !== sectionId);
+  }
+
+  return current.includes(sectionId) ? current : [...current, sectionId];
+};
+
 const NavBar = ({ onCloseBurger, isBurgerOpen }: NavBarProps) => {
   const { t } = useTranslation("common", { keyPrefix: "links" });
   const { pathname } = useLocation();
-  const match = useMatch("/:lang/*");
-  const currentLang = match?.params.lang ?? "en";
-  const isDesk = useMediaQuery("(min-width: 1024px)");
+  const currentLang = useCurrentLang();
+  const isLaptopUp = useMediaQuery("(min-width: 1024px)");
 
-  const [openId, setOpenId] = useState<Section["id"] | null>(null);
-  const [openMobileIds, setOpenMobileIds] = useState<Section["id"][]>([]);
-  const sections = NAV_SECTIONS;
-  const activeSectionId =
-    sections.find((section) =>
-      pathname.startsWith(`/${currentLang}${section.basePath}`),
-    )?.id ?? null;
+  const [openId, setOpenId] = useState<SectionId | null>(null);
+  const [openMobileIds, setOpenMobileIds] = useState<SectionId[]>([]);
+  const activeSectionId = getActiveSectionId(pathname, currentLang);
 
   useEffect(() => {
     setOpenId(null);
@@ -36,7 +54,7 @@ const NavBar = ({ onCloseBurger, isBurgerOpen }: NavBarProps) => {
   }, [pathname]);
 
   useEffect(() => {
-    if (isDesk) {
+    if (isLaptopUp) {
       setOpenMobileIds([]);
       return;
     }
@@ -49,38 +67,36 @@ const NavBar = ({ onCloseBurger, isBurgerOpen }: NavBarProps) => {
     if (isBurgerOpen === false) {
       setOpenMobileIds([]);
     }
-  }, [activeSectionId, isDesk, isBurgerOpen]);
+  }, [activeSectionId, isLaptopUp, isBurgerOpen]);
 
-  const handleSetOpen = (sectionId: Section["id"], next: boolean) => {
-    if (isDesk) {
+  const handleSetOpen = (sectionId: SectionId, next: boolean) => {
+    if (isLaptopUp) {
       setOpenId(next ? sectionId : null);
       return;
     }
 
-    setOpenMobileIds((current) => {
-      if (!next) {
-        return current.filter((id) => id !== sectionId);
-      }
-
-      return current.includes(sectionId) ? current : [...current, sectionId];
-    });
+    setOpenMobileIds((current) =>
+      getNextOpenMobileIds(current, sectionId, next),
+    );
   };
 
   return (
     <NavBarList>
-      {!isDesk && (
+      {!isLaptopUp && (
         <li>
           <MainPageLink onCloseBurger={onCloseBurger} />
         </li>
       )}
 
-      {sections.map((section) => (
+      {NAV_SECTIONS.map((section) => (
         <SubMenuSection
           key={section.id}
           section={section}
           currentLang={currentLang}
           isOpen={
-            isDesk ? openId === section.id : openMobileIds.includes(section.id)
+            isLaptopUp
+              ? openId === section.id
+              : openMobileIds.includes(section.id)
           }
           setOpen={(next) => handleSetOpen(section.id, next)}
           onSelect={onCloseBurger}
@@ -93,7 +109,7 @@ const NavBar = ({ onCloseBurger, isBurgerOpen }: NavBarProps) => {
         <PsiLink onCloseBurger={onCloseBurger}>PSY MI</PsiLink>
       </li>
 
-      {!isDesk && (
+      {!isLaptopUp && (
         <li>
           <ConsultBtn variant="primary" onClick={onCloseBurger} />
         </li>
