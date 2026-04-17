@@ -1,4 +1,4 @@
-import { type Dispatch, type SetStateAction, useState, useEffect } from "react";
+import { type Dispatch, type SetStateAction } from "react";
 import {
   BurgerMenuBtn,
   Header,
@@ -9,67 +9,25 @@ import ConsultBtn from "../Buttons/ConsultBtn/ConsultBtn";
 import LangSwitcher from "./LangSwitcher/LangSwitcher";
 import ServicesBtn from "../Buttons/ServicesBtn/ServicesBtn";
 import { useMediaQuery } from "../../lib/hooks/useMediaQuery";
-import { useMatch } from "react-router-dom";
 import NavBar from "./NavBar/NavBar";
 import MainPageLink from "./MainPaigeLink/MainPaigeLink";
 import PsiLink from "../Buttons/PsiLink/PsiLink";
-import type { Variants } from "framer-motion";
 import { useReducedMotion } from "framer-motion";
-
-const headerVariants: Variants = {
-  hidden: {
-    y: -32,
-    opacity: 0,
-  },
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
+import { headerVariants } from "../../lib/animations/animations.appBar";
+import { useCurrentLang } from "../../lib/hooks/useCurrentLang";
+import { useHeaderScrolled } from "../../lib/hooks/useHeaderScrolled";
 
 type AppBarProps = {
   setMenuIsOpen: Dispatch<SetStateAction<boolean>>;
 };
 
 function AppBar({ setMenuIsOpen }: AppBarProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const match = useMatch("/:lang/*");
-  const currentLang = match?.params.lang ?? "en";
+  const isScrolled = useHeaderScrolled();
+  const currentLang = useCurrentLang();
   const reduce = useReducedMotion();
 
   const isTablet = useMediaQuery("(min-width: 768px)");
-  const isDesk = useMediaQuery("(min-width: 1024px)");
-
-  useEffect(() => {
-    let rafId = 0;
-
-    const updateScrolledState = () => {
-      const nextIsScrolled = window.scrollY > 50;
-      setIsScrolled((prev) =>
-        prev === nextIsScrolled ? prev : nextIsScrolled,
-      );
-      rafId = 0;
-    };
-
-    const handleScroll = () => {
-      if (rafId !== 0) return;
-      rafId = window.requestAnimationFrame(updateScrolledState);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (rafId !== 0) {
-        window.cancelAnimationFrame(rafId);
-      }
-    };
-  }, []);
+  const isLaptopUp = useMediaQuery("(min-width: 1024px)");
 
   return (
     <Header isScrolled={isScrolled}>
@@ -84,10 +42,10 @@ function AppBar({ setMenuIsOpen }: AppBarProps) {
           </svg>
         </BurgerMenuBtn>
 
-        {isDesk && <NavBar />}
+        {isLaptopUp && <NavBar />}
 
         <LogoLink to={`/${currentLang}`} end>
-          <svg width={isDesk ? 130 : 70} height={isDesk ? 55 : 30}>
+          <svg viewBox="0 0 76 32">
             <use
               href="/icons/sprite.svg#icon-main-logo"
               xlinkHref="/icons/sprite.svg#icon-main-logo"
@@ -95,15 +53,15 @@ function AppBar({ setMenuIsOpen }: AppBarProps) {
           </svg>
         </LogoLink>
         <LangSwitcher />
-        {isDesk && <MainPageLink />}
+        {isLaptopUp && <MainPageLink />}
         <ServicesBtn />
 
-        {isDesk && <PsiLink className="desk-psi">PSY MI</PsiLink>}
+        {isLaptopUp && <PsiLink className="desk-psi">PSY MI</PsiLink>}
 
         <ConsultBtn
           variant="header"
           maxWidth={isTablet ? "200px" : "140px"}
-          order={isDesk ? 5 : isTablet ? 4 : 0}
+          order={isLaptopUp ? 5 : isTablet ? 4 : 0}
         />
       </HeaderWrapper>
     </Header>
