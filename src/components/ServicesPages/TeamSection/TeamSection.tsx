@@ -7,6 +7,10 @@ import {
   teamSectionVariants,
   titleRevealVariants,
 } from "../../../lib/animations/services/animations.team";
+import {
+  getImageSrc,
+  getResponsiveSources,
+} from "../../../lib/helpers/teamImages";
 import { motion } from "framer-motion";
 import {
   NamesTitle,
@@ -21,23 +25,12 @@ type TeamSectionProps = {
   config: TeamContactConfig;
 };
 
-const getTabletTeamImagePath = (imagePath: string) =>
-  imagePath.replace("/images/mob/team/", "/images/tab/team/");
-
-const getLaptopTeamImagePath = (imagePath: string) =>
-  imagePath.replace("/images/mob/team/", "/images/laptop/team/");
-
-const getDesktopTeamImagePath = (imagePath: string) =>
-  imagePath.replace("/images/mob/team/", "/images/desktop/team/");
-
-const getImageSrc = (imagePath: string) => `${imagePath}.webp`;
-
 const TeamSection = ({ config }: TeamSectionProps) => {
-  const { t } = useTranslation(config.translationNs);
-
-  const personTabletImg = getTabletTeamImagePath(config.image.personImg);
-  const personLaptopImg = getLaptopTeamImagePath(config.image.personImg);
-  const personDesktopImg = getDesktopTeamImagePath(config.image.personImg);
+  const { className, image, translationNs } = config;
+  const { personAlt, personClassName, personImg } = image;
+  const { t } = useTranslation(translationNs);
+  const leadClassName = className ? `${className}-lead` : undefined;
+  const responsiveSources = getResponsiveSources(personImg);
 
   return (
     <section>
@@ -45,13 +38,13 @@ const TeamSection = ({ config }: TeamSectionProps) => {
         <BackgroundText>team team team team team team</BackgroundText>
       </BackgroundWrap> */}
       <TeamCont
-        className={config.className}
+        className={className}
         variants={teamSectionVariants}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}
       >
-        <TeamLeadCont className={`${config.className}-lead`}>
+        <TeamLeadCont className={leadClassName}>
           <motion.p variants={fadeUpVariants}>
             {t("teamContact.overline")}
           </motion.p>
@@ -73,57 +66,16 @@ const TeamSection = ({ config }: TeamSectionProps) => {
           </motion.div>
         </TeamLeadCont>
 
-        <PersonImgCont className={config.image.personClassName}>
+        <PersonImgCont className={personClassName}>
           <picture>
-            <source
-              srcSet={`${personDesktopImg}@3x.webp`}
-              media="(min-width: 1920px) and (min-resolution: 3dppx)"
-            />
-            <source
-              srcSet={`${personDesktopImg}@2x.webp`}
-              media="(min-width: 1920px) and (min-resolution: 2dppx)"
-            />
-            <source
-              srcSet={getImageSrc(personDesktopImg)}
-              media="(min-width: 1920px)"
-            />
-            <source
-              srcSet={`${personLaptopImg}@3x.webp`}
-              media="(min-width: 1024px) and (min-resolution: 3dppx)"
-            />
-            <source
-              srcSet={`${personLaptopImg}@2x.webp`}
-              media="(min-width: 1024px) and (min-resolution: 2dppx)"
-            />
-            <source
-              srcSet={getImageSrc(personLaptopImg)}
-              media="(min-width: 1024px)"
-            />
-            <source
-              srcSet={`${personTabletImg}@3x.webp`}
-              media="(min-width: 768px) and (min-resolution: 3dppx)"
-            />
-            <source
-              srcSet={`${personTabletImg}@2x.webp`}
-              media="(min-width: 768px) and (min-resolution: 2dppx)"
-            />
-            <source
-              srcSet={getImageSrc(personTabletImg)}
-              media="(min-width: 768px)"
-            />
-            <source
-              srcSet={`${config.image.personImg}@3x.webp`}
-              media="(min-resolution: 3dppx)"
-            />
-            <source
-              srcSet={`${config.image.personImg}@2x.webp`}
-              media="(min-resolution: 2dppx)"
-            />
+            {responsiveSources.map(({ media, srcSet }) => (
+              <source key={`${media}-${srcSet}`} srcSet={srcSet} media={media} />
+            ))}
             <motion.img
               variants={portraitRevealVariants}
-              src={getImageSrc(config.image.personImg)}
-              alt={config.image.personAlt}
-              className={config.image.personClassName}
+              src={getImageSrc(personImg)}
+              alt={personAlt}
+              className={personClassName}
             />
           </picture>
         </PersonImgCont>
