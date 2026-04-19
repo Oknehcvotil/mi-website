@@ -83,6 +83,7 @@ const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
     slideChildren,
     pairOnTablet && isTablet,
   );
+  const hasMultipleSlides = groupedSlides.length > 1;
 
   const slides = groupedSlides.map((group, i) => (
     <SwiperSlide key={i}>
@@ -102,9 +103,13 @@ const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
         slidesPerView={1}
         spaceBetween={0}
         breakpoints={breakpoints}
-        navigation={{} as NavigationOptions}
+        navigation={hasMultipleSlides ? ({} as NavigationOptions) : false}
         pagination={{ clickable: true }}
         onBeforeInit={(swiper) => {
+          if (!hasMultipleSlides) {
+            return;
+          }
+
           setNavigationElements(
             swiper.params.navigation,
             prevRef.current,
@@ -113,8 +118,11 @@ const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
           setPaginationElement(swiper.params.pagination, pagRef.current);
         }}
         onInit={(swiper) => {
-          swiper.navigation.init();
-          swiper.navigation.update();
+          if (hasMultipleSlides) {
+            swiper.navigation.init();
+            swiper.navigation.update();
+          }
+
           swiper.pagination.init();
           swiper.pagination.render();
           swiper.pagination.update();
@@ -122,31 +130,35 @@ const AppSlider = forwardRef<SwiperRef, AppSliderProps>(function AppSlider(
       >
         {slides}
         <ButtonsWrapper className="app-slider-controls" slot="container-end">
-          <SliderButton
-            slot="container-end"
-            className="app-prev"
-            type="button"
-            aria-label="Previous slide"
-            ref={prevRef}
-          >
-            <svg width={13} height={22}>
-              <use href="/icons/sprite.svg#icon-slider-arrow" />
-            </svg>
-          </SliderButton>
+          {hasMultipleSlides && (
+            <SliderButton
+              slot="container-end"
+              className="app-prev"
+              type="button"
+              aria-label="Previous slide"
+              ref={prevRef}
+            >
+              <svg width={13} height={22}>
+                <use href="/icons/sprite.svg#icon-slider-arrow" />
+              </svg>
+            </SliderButton>
+          )}
 
           <div slot="container-end" className="app-pagination" ref={pagRef} />
 
-          <SliderButton
-            slot="container-end"
-            className="app-next"
-            type="button"
-            aria-label="Next slide"
-            ref={nextRef}
-          >
-            <svg width={13} height={22} style={{ transform: "scaleX(-1)" }}>
-              <use href="/icons/sprite.svg#icon-slider-arrow" />
-            </svg>
-          </SliderButton>
+          {hasMultipleSlides && (
+            <SliderButton
+              slot="container-end"
+              className="app-next"
+              type="button"
+              aria-label="Next slide"
+              ref={nextRef}
+            >
+              <svg width={13} height={22} style={{ transform: "scaleX(-1)" }}>
+                <use href="/icons/sprite.svg#icon-slider-arrow" />
+              </svg>
+            </SliderButton>
+          )}
         </ButtonsWrapper>
       </Swiper>
     </SliderCont>
