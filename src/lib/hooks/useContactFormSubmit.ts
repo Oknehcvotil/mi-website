@@ -22,6 +22,21 @@ type ContactApiResponse = {
   success?: boolean;
 };
 
+const getErrorMessage = (
+  error: unknown,
+  fallbackMessage: string,
+): string => {
+  if (error && typeof error === "object" && "message" in error) {
+    const message = error.message;
+
+    if (typeof message === "string" && message.trim()) {
+      return message;
+    }
+  }
+
+  return fallbackMessage;
+};
+
 export function useContactFormSubmit() {
   const { t } = useTranslation();
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus | null>(null);
@@ -108,25 +123,13 @@ export function useContactFormSubmit() {
           error instanceof TypeError && error.message === "Failed to fetch"
             ? t("form.errorNetwork")
             : t("form.errorMessage");
+        const message = getErrorMessage(error, fallbackMessage);
 
-        if (error && typeof error === "object" && "message" in error) {
-          showSubmitStatus({
-            message: String(
-              (error as { message: string }).message || fallbackMessage,
-            ),
-            type: "error",
-          });
-          console.error(
-            "Error submitting form:",
-            (error as { message: string }).message,
-          );
-        } else {
-          showSubmitStatus({
-            message: fallbackMessage,
-            type: "error",
-          });
-          console.error("Error submitting form:", error);
-        }
+        showSubmitStatus({
+          message,
+          type: "error",
+        });
+        console.error("Error submitting form:", error);
       } finally {
         setSubmitting(false);
       }

@@ -47,6 +47,7 @@ const ContactForm = () => {
 
   return (
     <FormCont
+      id="contact"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.35 }}

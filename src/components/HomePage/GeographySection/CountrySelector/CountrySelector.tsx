@@ -43,6 +43,17 @@ const CountrySelector = ({
 
   const isTablet = useMediaQuery("(min-width: 768px)");
   const reduce = !!useReducedMotion();
+  const countryLabelsById = useMemo(
+    () =>
+      countries.reduce(
+        (acc, country, index) => {
+          acc[country.id] = countryLabels[index] ?? country.id;
+          return acc;
+        },
+        {} as Record<CountryId, string>,
+      ),
+    [countries, countryLabels],
+  );
 
   const selectedSafe: CountryId = useMemo(() => {
     const hasSelected = countries.some((c) => c.id === selected);
@@ -105,7 +116,7 @@ const CountrySelector = ({
                   data-active={c.id === selected}
                   onClick={() => onSelect(c.id)}
                 >
-                  {countryLabels[countries.findIndex((cc) => cc.id === c.id)]}
+                  {countryLabelsById[c.id]}
                 </TabBtn>
               </motion.li>
             ))}
@@ -134,11 +145,7 @@ const CountrySelector = ({
                     onClick={toggleOpen}
                     onKeyDown={onActiveKeyDown}
                   >
-                    {
-                      countryLabels[
-                        countries.findIndex((c) => c.id === active.id)
-                      ]
-                    }
+                    {countryLabelsById[active.id]}
                     <div className="arrow-cont">
                       <motion.svg
                         width={7}
@@ -162,11 +169,7 @@ const CountrySelector = ({
                         type="button"
                         onClick={() => handleSelect(c.id)}
                       >
-                        {
-                          countryLabels[
-                            countries.findIndex((cc) => cc.id === c.id)
-                          ]
-                        }
+                        {countryLabelsById[c.id]}
                       </SelectBtn>
                     </motion.li>
                   ))}

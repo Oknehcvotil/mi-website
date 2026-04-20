@@ -7,26 +7,19 @@ import AppFooter from "../AppFooter/AppFooter";
 import ActiveSectionContextProvider from "../../context/ActiveSectionContextProvider";
 import ScrollToTop from "../ScrollToTop/ScrollToTop";
 import SeoMeta from "../SeoMeta/SeoMeta";
+import { useMediaQuery } from "../../lib/hooks/useMediaQuery";
 
 const Layout = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const isDesktopWide = useMediaQuery("(min-width: 1920px)");
 
-  const closeMenu = () => {
-    setMenuIsOpen(!menuIsOpen);
-  };
+  const closeMenu = () => setMenuIsOpen(false);
 
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 1920px)");
-
-    if (mq.matches && menuIsOpen) setMenuIsOpen(false);
-
-    const handler = (e: MediaQueryListEvent) => {
-      if (e.matches) setMenuIsOpen(false);
-    };
-
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, [menuIsOpen, setMenuIsOpen]);
+    if (isDesktopWide && menuIsOpen) {
+      setMenuIsOpen(false);
+    }
+  }, [isDesktopWide, menuIsOpen]);
 
   return (
     <ActiveSectionContextProvider>
