@@ -42,12 +42,13 @@ export const MainHeroTitle = styled(motion.h1)`
 export const HeroSubtitle = styled(motion.h3)`
   font-weight: 700;
   font-size: 20px;
-  line-height: 200%;
+  line-height: 130%;
   text-align: center;
   background: linear-gradient(90deg, #a066ff 0%, #5427b1 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
 
   &.hero-for-candidates--subtitle {
     margin-bottom: 10px;
