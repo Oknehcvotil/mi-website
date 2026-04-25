@@ -19,9 +19,16 @@ export type TeamContactImages = {
   personClassName?: string;
 };
 
+type StatItem = {
+  value: string;
+  labelKey: string;
+  className?: string;
+};
+
 export type TeamContactConfig = {
   className?: string;
   id?: string;
   translationNs: string;
   image: TeamContactImages;
+  stats?: StatItem[];
 };

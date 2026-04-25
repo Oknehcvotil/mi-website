@@ -238,12 +238,25 @@ export const additionalHrServices = [
 ] as const;
 
 export const teamForClientsConfig: TeamContactConfig = {
+  className: "irina",
   translationNs: "servicesForClients",
   image: {
     personImg: "/images/mob/team/irina-ceo-services-page",
     personAlt: "Irina portrait",
     personClassName: "irina",
   },
+  stats: [
+    {
+      value: "10+",
+      labelKey: "teamContact.yearsInBiz",
+      className: "badge-left",
+    },
+    {
+      value: "9+",
+      labelKey: "teamContact.yearsInHR",
+      className: "badge-right",
+    },
+  ],
 };
 
 export const teamForCandidatesConfig: TeamContactConfig = {
@@ -265,7 +278,6 @@ export const constructorItems = [
   { key: "constructor.hrConsulting", className: "hr--item" },
   { key: "constructor.businessPsychology", className: "psychology-item" },
 ];
-
 
 export const candidatesCasescards = [
   {

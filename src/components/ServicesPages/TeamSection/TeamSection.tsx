@@ -18,15 +18,17 @@ import {
   PersonImgCont,
   TeamCont,
   TeamLeadCont,
+  StatsCont,
 } from "./TeamSection.styled";
 import ConsultBtn from "../../Buttons/ConsultBtn/ConsultBtn";
+import StatsBadge from "../../HomePage/OurTeamSection/StatsBadge/StatsBadge";
 
 type TeamSectionProps = {
   config: TeamContactConfig;
 };
 
 const TeamSection = ({ config }: TeamSectionProps) => {
-  const { className, image, translationNs } = config;
+  const { className, image, translationNs, stats } = config;
   const { personAlt, personClassName, personImg } = image;
   const { t } = useTranslation(translationNs);
   const leadClassName = className ? `${className}-lead` : undefined;
@@ -69,15 +71,31 @@ const TeamSection = ({ config }: TeamSectionProps) => {
         <PersonImgCont className={personClassName}>
           <picture>
             {responsiveSources.map(({ media, srcSet }) => (
-              <source key={`${media}-${srcSet}`} srcSet={srcSet} media={media} />
+              <source
+                key={`${media}-${srcSet}`}
+                srcSet={srcSet}
+                media={media}
+              />
             ))}
             <motion.img
               variants={portraitRevealVariants}
               src={getImageSrc(personImg)}
               alt={personAlt}
               className={personClassName}
+              loading="lazy"
+              decoding="async"
             />
           </picture>
+          <StatsCont className={`stats-cont-${className}`}>
+            {stats?.map((s, i) => (
+              <StatsBadge
+                key={`stat-${i}`}
+                value={s.value}
+                label={t(s.labelKey)}
+                className={`services-stat-${s.className}`}
+              />
+            ))}
+          </StatsCont>
         </PersonImgCont>
       </TeamCont>
     </section>

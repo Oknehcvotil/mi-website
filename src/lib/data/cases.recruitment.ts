@@ -20,6 +20,19 @@ export const recruitmentCasesConfig: CasesHeroConfig = {
 
 export const itItems: CasesItem[] = [
   {
+    type: "msg",
+    imgSrc: "/images/cases-pages/recruiment/option-one-person",
+    titleKey: "it.optionOne.title",
+    textKey: "it.optionOne.items",
+  },
+  {
+    type: "case",
+    keyPrefix: "it.optionOne",
+    logos: [
+      { src: "/images/clients-logos/option-one", width: 140, height: 50 },
+    ],
+  },
+  {
     type: "video",
     props: {
       youtubeUrl: "https://youtu.be/-4jIAKCsQYQ ",
@@ -44,19 +57,6 @@ export const itItems: CasesItem[] = [
     type: "case",
     keyPrefix: "it.nauda",
     logos: [{ src: "/images/clients-logos/nauda", width: 145, height: 35 }],
-  },
-  {
-    type: "msg",
-    imgSrc: "/images/cases-pages/recruiment/option-one-person",
-    titleKey: "it.optionOne.title",
-    textKey: "it.optionOne.items",
-  },
-  {
-    type: "case",
-    keyPrefix: "it.optionOne",
-    logos: [
-      { src: "/images/clients-logos/option-one", width: 140, height: 50 },
-    ],
   },
   {
     type: "msg",

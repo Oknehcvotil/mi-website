@@ -25,11 +25,17 @@ export const PsyhologyWrap = styled(motion.section)`
 `;
 
 export const PsyhologyInner = styled.div`
+  overflow: hidden;
+  position: relative;
+
   @media (min-width: 768px) {
     display: flex;
-    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  @media (min-width: 1024px) {
     align-items: center;
-    justify-content: space-between;
     gap: 30px;
   }
 
@@ -53,6 +59,10 @@ export const PsyhologyLeadCont = styled.div`
   }
 
   @media (min-width: 768px) {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+
     h2 {
       font-size: 40px;
     }
@@ -81,12 +91,10 @@ export const PsyhologyImgCont = styled.div`
   display: none;
 
   @media (min-width: 768px) {
-    display: flex;
-    flex: 0 0 220px;
-    width: 220px;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    flex: 0 0 280px;
+    width: 280px;
+    margin-left: auto;
 
     picture {
       display: block;
@@ -95,15 +103,18 @@ export const PsyhologyImgCont = styled.div`
 
     img {
       width: 100%;
-      height: auto;
       display: block;
       object-fit: contain;
     }
   }
 
+  @media (min-width: 1024px) {
+    flex-basis: 374px;
+    width: 374px;
+  }
+
   @media (min-width: 1920px) {
-    margin-right: auto;
-    flex-basis: 510px;
-    width: 510px;
+    flex-basis: 672px;
+    width: 672px;
   }
 `;

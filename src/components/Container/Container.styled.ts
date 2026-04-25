@@ -25,15 +25,23 @@ export const Wrapper = styled(motion.div)`
     &.cases-message {
       padding: 0;
     }
-    
+
     &.case-info-card-container {
       margin: 0;
+    }
+
+    &.services-business-psy--section {
+      padding: 0 0 0 25px;
     }
   }
 
   @media (min-width: 1024px) {
     max-width: 1024px;
     padding: 0 30px;
+
+    &.services-business-psy--section {
+      padding: 0 0 0 30px;
+    }
   }
 
   @media (min-width: 1920px) {
@@ -50,6 +58,10 @@ export const Wrapper = styled(motion.div)`
 
     &.cases-hero {
       padding: 0 200px;
+    }
+
+    &.services-business-psy--section {
+      padding: 0 0 0 45px;
     }
   }
 `;

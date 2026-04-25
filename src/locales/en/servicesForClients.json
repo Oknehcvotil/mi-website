@@ -25,7 +25,7 @@
     "psychPortrait": "Testing and psychological portrait of the candidate",
     "coordinateInterviewOffer": "Interview coordination and Job Offer preparation",
     "onboardingGuide14": "Guide for adapting a new employee (14 days)",
-    "guarantee45": "Replacement guarantee — 45 days",
+    "guarantee45": "Replacement guarantee — 60 days",
     "formVacancyProfile": "Job profile creation",
     "fastSearch": "Quick search and selection of relevant candidates",
     "basicCheck": "Checking basic hard & soft skills",
@@ -45,7 +45,8 @@
   },
   "hr": {
     "title": "HR consulting",
-    "lead": "A package of services that optimize all HR processes of your Company.",
+    "subtitle": "Ready HR structure for your business in 3 months",
+    "lead": "We develop a full-fledged HR processes structure from scratch or adapt existing processes to your needs with a guarantee of positive impact on the overall business situation",
     "separateTitle": "Can be ordered separately:",
     "srv": {
       "audit": "Analysis and recommendations on the functioning of HR processes",

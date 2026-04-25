@@ -69,10 +69,11 @@ export const ContactLeadContainer = styled(motion.div)`
   }
 
   .contact-lead {
-    font-weight: 400;
+    text-transform: lowercase;
     font-size: 18px;
-    line-height: 140%;
-    margin-bottom: 5px;
+    line-height: 130%;
+    color: #020202;
+    margin-bottom: 20px;
   }
 
   @media (min-width: 768px) {
@@ -80,11 +81,6 @@ export const ContactLeadContainer = styled(motion.div)`
 
     h2 {
       margin-bottom: 15px;
-    }
-
-    .contact-lead {
-      margin-bottom: 20px;
-      text-transform: lowercase;
     }
   }
 
@@ -102,6 +98,7 @@ export const ContactLeadContainer = styled(motion.div)`
     padding: 0 0 0 80px;
     margin-right: auto;
 
+
     h2 {
       font-size: 80px;
       max-width: 860px;
@@ -111,8 +108,7 @@ export const ContactLeadContainer = styled(motion.div)`
 
     .contact-lead {
       font-size: 40px;
-      line-height: 125%;
-      margin-bottom: 50px;
+      margin-bottom: 55px;
       max-width: 810px;
     }
   }

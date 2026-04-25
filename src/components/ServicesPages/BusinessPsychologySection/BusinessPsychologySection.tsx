@@ -22,7 +22,7 @@ const BusinessPsychologySection = () => {
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
     >
-      <Container>
+      <Container className="services-business-psy--section">
         <PsyhologyInner>
           <PsyhologyLeadCont>
             <motion.h2 variants={fadeUp}>{t("psyhology.title")}</motion.h2>
@@ -31,28 +31,19 @@ const BusinessPsychologySection = () => {
           <PsyhologyImgCont>
             <picture>
               <source
-                srcSet="/images/desktop/services-pages/users@3x.webp"
-                media="(min-width: 1920px) and (min-resolution: 3dppx)"
-              />
-              <source
-                srcSet="/images/desktop/services-pages/users@2x.webp"
-                media="(min-width: 1920px) and (min-resolution: 2dppx)"
-              />
-              <source
-                srcSet="/images/desktop/services-pages/users.webp"
                 media="(min-width: 1920px)"
+                srcSet="/images/desktop/services-pages/business-psy.webp 1x, /images/desktop/services-pages/business-psy@2x.webp 2x, /images/desktop/services-pages/business-psy@3x.webp 3x"
               />
+
               <source
-                srcSet="/images/mob/services-pages/users@3x.webp"
-                media="(min-resolution: 3dppx)"
+                media="(min-width: 1024px)"
+                srcSet="/images/laptop/services-pages/business-psy.png 1x, /images/laptop/services-pages/business-psy@2x.png 2x, /images/laptop/services-pages/business-psy@3x.png 3x"
               />
-              <source
-                srcSet="/images/mob/services-pages/users@2x.webp"
-                media="(min-resolution: 2dppx)"
-              />
+
               <motion.img
                 variants={imgAppear}
-                src="/images/mob/services-pages/users.webp"
+                src="/images/mob/services-pages/business-psy.webp"
+                srcSet="/images/mob/services-pages/business-psy.webp 1x, /images/mob/services-pages/business-psy@2x.webp 2x, /images/mob/services-pages/business-psy@3x.webp 3x"
                 alt={t("psyhology.alt")}
                 loading="lazy"
               />

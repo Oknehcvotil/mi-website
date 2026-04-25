@@ -40,6 +40,16 @@ export const StatsWrap = styled.div`
     left: 140px;
   }
 
+  &.services-stat-badge-left {
+    left: 25px;
+    bottom: 120px;
+  }
+
+  &.services-stat-badge-right {
+    left: 140px;
+    bottom: 40px;
+  }
+
   @media (min-width: 768px) {
     &.badge-left.irina {
       bottom: 150px;
@@ -79,6 +89,16 @@ export const StatsWrap = styled.div`
       bottom: 125px;
       right: 115px;
       left: auto;
+    }
+
+    &.services-stat-badge-left {
+      left: 25px;
+      bottom: 125px;
+    }
+
+    &.services-stat-badge-right {
+      left: 230px;
+      bottom: 50px;
     }
   }
 
@@ -121,6 +141,15 @@ export const StatsWrap = styled.div`
       bottom: 90px;
       right: 220px;
       left: auto;
+    }
+
+    &.services-stat-badge-left {
+      left: 65px;
+    }
+
+    &.services-stat-badge-right {
+      left: 280px;
+      bottom: 50px;
     }
   }
 
@@ -180,6 +209,20 @@ export const StatsWrap = styled.div`
       right: 80px;
       bottom: 150px;
       max-width: 290px;
+    }
+
+    &.services-stat-badge-left {
+      justify-content: flex-start;
+      left: 190px;
+      bottom: 250px;
+      max-width: 350px;
+    }
+
+    &.services-stat-badge-right {
+      justify-content: flex-start;
+      max-width: 280px;
+      left: 285px;
+      bottom: 85px;
     }
   }
 `;

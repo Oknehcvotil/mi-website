@@ -6,8 +6,6 @@ import {
   ContactLeadContainer,
   Kicker,
   ContactSectionSection,
-  BulletItem,
-  BulletList,
   PersonTitle,
   PersonImgCont,
   PersonCont,
@@ -30,7 +28,6 @@ const ContactSection = () => {
   return (
     <ContactSectionSection
       ref={ref}
-      
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.35 }}
@@ -41,6 +38,16 @@ const ContactSection = () => {
       <ContactSectionContainer variants={parent}>
         <ContactLeadContainer variants={parent}>
           <motion.h2
+            id="contact-title"
+            className="contact-title"
+            variants={fadeUp}
+          >
+            {t("title")}
+          </motion.h2>
+          <motion.p className="contact-lead" variants={fadeUp}>
+            {t("lead")}
+          </motion.p>
+          {/* <motion.h2
             id="contact-title"
             className="contact-title"
             variants={fadeUp}
@@ -61,7 +68,7 @@ const ContactSection = () => {
                   </BulletItem>
                 ),
               )}
-          </BulletList>
+          </BulletList> */}
 
           <PersonTitle variants={fadeUp}>{t("contactTitle")}</PersonTitle>
           <PersonCont variants={popIn}>

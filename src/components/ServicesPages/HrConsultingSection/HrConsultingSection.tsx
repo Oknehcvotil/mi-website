@@ -51,6 +51,7 @@ const HrConsultingSection = () => {
         <HrLeadCont>
           <HrLeadText>
             <HrTitle>{t("hr.title")}</HrTitle>
+            <h4>{t("hr.subtitle")}</h4>
             <p>{t("hr.lead")}</p>
 
             <motion.div

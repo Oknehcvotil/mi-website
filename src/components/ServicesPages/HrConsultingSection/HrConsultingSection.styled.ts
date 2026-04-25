@@ -25,7 +25,7 @@ export const HrTitle = styled.h2`
   font-family: "Unbounded";
   font-weight: 500;
   font-size: 26px;
-  line-height: 32px;
+  line-height: 130%;
   color: #020202;
   margin-bottom: 15px;
 
@@ -64,6 +64,14 @@ export const HrLeadText = styled.div`
   max-width: 390px;
   padding: 0 15px;
   margin: 0 auto;
+
+  h4 {
+    font-size: 15px;
+    line-height: 130%;
+    margin-bottom: 15px;
+    color: #8a38f5;
+  }
+
   p {
     margin-bottom: 20px;
   }
@@ -75,8 +83,16 @@ export const HrLeadText = styled.div`
     width: 100%;
     margin-right: auto;
     padding: 0;
+
+    h4 {
+      font-size: 15px;
+      line-height: 130%;
+      margin-bottom: 15px;
+      color: #8a38f5;
+    }
+
     p {
-      font-size: 20px;
+      font-size: 15px;
       line-height: 130%;
     }
   }
@@ -86,9 +102,15 @@ export const HrLeadText = styled.div`
   }
 
   @media (min-width: 1920px) {
-    max-width: 750px;
+    max-width: 1115px;
+    h4 {
+      font-size: 35px;
+      margin-bottom: 35px;
+      color: #8a38f5;
+    }
+
     p {
-      font-size: 40px;
+      font-size: 35px;
       line-height: 130%;
       margin-bottom: 60px;
     }

@@ -158,4 +158,73 @@ export const PositionText = styled(motion.h3)`
   }
 `;
 
-export const PersonImgCont = styled.div``;
+export const PersonImgCont = styled.div`
+  position: relative;
+
+  picture {
+    display: block;
+  }
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  img.irina {
+    width: 390px;
+    aspect-ratio: 390 / 460;
+  }
+
+  img.daria {
+    width: 390px;
+    aspect-ratio: 390 / 460;
+  }
+
+  @media (min-width: 768px) {
+    img.irina {
+      width: 483px;
+      aspect-ratio: 483 / 446;
+    }
+
+    img.daria {
+      width: 537px;
+      aspect-ratio: 537 / 404;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    img.irina {
+      width: 565px;
+      aspect-ratio: 565 / 479;
+      margin-left: 20px;
+    }
+
+    img.daria {
+      width: 591px;
+      aspect-ratio: 591 / 427;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    img.irina {
+      width: 824px;
+      aspect-ratio: 824 / 660;
+      margin-left: 115px;
+    }
+
+    img.daria {
+      width: 916px;
+      aspect-ratio: 916 / 651;
+    }
+  }
+`;
+
+export const StatsCont = styled.div`
+  display: none;
+
+  &.stats-cont-irina {
+    display: block;
+    position: absolute;
+    width: 100%;
+  }
+`;
