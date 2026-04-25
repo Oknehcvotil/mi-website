@@ -111,7 +111,7 @@ export const SubMenuList = styled(motion.ul)`
   padding: 13px 17px;
   border: 2px solid #a066ff;
   border-radius: 8px;
-  max-width: 270px;
+  max-width: 310px;
   width: 100%;
 
   li {
