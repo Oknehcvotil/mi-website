@@ -153,6 +153,48 @@ export const StatsWrap = styled.div`
     }
   }
 
+  @media (min-width: 1280px) {
+    &.badge-left.irina {
+      left: 170px;
+    }
+
+    &.badge-right.irina {
+      left: 385px;
+    }
+
+    &.tatyana {
+      bottom: 120px;
+      left: 560px;
+    }
+
+    &.maria {
+      left: 270px;
+    }
+
+    &.anastasia {
+      left: 850px;
+      bottom: 60px;
+      z-index: 2;
+    }
+
+    &.daria {
+      z-index: 2;
+      max-width: 240px;
+      bottom: 140px;
+      right: 255px;
+      left: auto;
+    }
+
+    &.services-stat-badge-left {
+      left: 65px;
+    }
+
+    &.services-stat-badge-right {
+      left: 280px;
+      bottom: 50px;
+    }
+  }
+
   @media (min-width: 1920px) {
     padding: 5px 0px 5px 15px;
     width: 100%;

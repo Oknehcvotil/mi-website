@@ -31,6 +31,11 @@ export const HeroCont = styled(motion.div)`
     position: relative;
   }
 
+  @media (min-width: 1280px) {
+    padding: 40px 0 190px 50px;
+    max-width: 1280px;
+  }
+
   @media (min-width: 1920px) {
     padding: 110px 0 180px 100px;
     display: flex;

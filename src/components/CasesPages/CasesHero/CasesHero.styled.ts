@@ -50,6 +50,14 @@ export const CasesHeroTitle = styled(motion.h1)`
     }
   }
 
+  @media (min-width: 1280px) {
+    font-size: 40px;
+
+    &.cases-hero-business--title {
+      margin-bottom: 40px;
+    }
+  }
+
   @media (min-width: 1920px) {
     font-size: 80px;
     margin-bottom: 15px;
@@ -107,6 +115,13 @@ export const CasesHeroLead = styled.p`
   @media (min-width: 1024px) {
     &.cases-hero-hr--lead {
       max-width: 730px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 730px;
+    &.cases-hero-hr--lead {
+      max-width: 750px;
     }
   }
 

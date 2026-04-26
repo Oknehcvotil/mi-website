@@ -87,6 +87,10 @@ export const SubTitle = styled(motion.p)`
     max-width: 405px;
   }
 
+  @media (min-width: 1280px) {
+    max-width: 610px;
+  }
+
   @media (min-width: 1920px) {
     font-size: 32px;
     max-width: 760px;

@@ -38,6 +38,12 @@ export const TeamCard: React.FC<TeamCardProps> = ({ data }) => {
         <TeamName id={data.id} name={data.name} role={data.role} />
         <picture>
           <source
+            media="(min-width: 1280px)"
+            srcSet={`/images/macbook/team/${data.imgBase}.webp 1x, /images/macbook/team/${data.imgBase}@2x.webp 2x, /images/macbook/team/${data.imgBase}@3x.webp 3x
+    `}
+          />
+
+          <source
             media="(min-width: 1024px)"
             srcSet={`/images/laptop/team/${data.imgBase}.webp 1x, /images/laptop/team/${data.imgBase}@2x.webp 2x, /images/laptop/team/${data.imgBase}@3x.webp 3x
     `}

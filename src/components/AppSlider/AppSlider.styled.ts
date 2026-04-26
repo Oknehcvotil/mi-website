@@ -110,6 +110,10 @@ export const ButtonsWrapper = styled.div`
 
     gap: 35px;
   }
+
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+  }
 `;
 
 export const SliderPair = styled.div`

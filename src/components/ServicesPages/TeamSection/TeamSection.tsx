@@ -19,6 +19,7 @@ import {
   TeamCont,
   TeamLeadCont,
   StatsCont,
+  TeamSectionWrapper,
 } from "./TeamSection.styled";
 import ConsultBtn from "../../Buttons/ConsultBtn/ConsultBtn";
 import StatsBadge from "../../HomePage/OurTeamSection/StatsBadge/StatsBadge";
@@ -35,7 +36,7 @@ const TeamSection = ({ config }: TeamSectionProps) => {
   const responsiveSources = getResponsiveSources(personImg);
 
   return (
-    <section>
+    <TeamSectionWrapper className={className}>
       {/* <BackgroundWrap>
         <BackgroundText>team team team team team team</BackgroundText>
       </BackgroundWrap> */}
@@ -98,7 +99,7 @@ const TeamSection = ({ config }: TeamSectionProps) => {
           </StatsCont>
         </PersonImgCont>
       </TeamCont>
-    </section>
+    </TeamSectionWrapper>
   );
 };
 

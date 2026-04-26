@@ -1,12 +1,8 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-export const TeamCont = styled(motion.div)`
-  max-width: 390px;
-  width: 100%;
+export const TeamSectionWrapper = styled.section`
   position: relative;
-  margin: 0 auto;
-
   &:not(.for-candidates):after {
     content: "";
     position: absolute;
@@ -17,6 +13,13 @@ export const TeamCont = styled(motion.div)`
     background: #8a38f5;
     z-index: 4;
   }
+`;
+
+export const TeamCont = styled(motion.div)`
+  max-width: 390px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
 
   @media (min-width: 768px) {
     max-width: 768px;

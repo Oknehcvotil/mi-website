@@ -22,6 +22,7 @@ export const Kicker = styled(motion.h3)`
   max-width: 340px;
   width: 100%;
   margin: 0 auto 15px;
+  line-height: 130%;
 
   span {
     color: #a066ff;
@@ -30,6 +31,12 @@ export const Kicker = styled(motion.h3)`
   @media (min-width: 768px) {
     font-size: 20px;
     max-width: 720px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 25px;
+    max-width: 1140px;
+    margin-bottom: 25px;
   }
 
   @media (min-width: 1920px) {
@@ -50,6 +57,10 @@ export const ContactSectionContainer = styled(motion.div)`
   @media (min-width: 1024px) {
     max-width: 1024px;
     display: flex;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 1280px;
   }
 
   @media (min-width: 1920px) {
@@ -94,10 +105,25 @@ export const ContactLeadContainer = styled(motion.div)`
     }
   }
 
+  @media (min-width: 1280px) {
+    padding: 80px 0 0 55px;
+    margin-right: auto;
+
+    h2 {
+      max-width: 325px;
+      font-size: 35px;
+    }
+
+    .contact-lead {
+      font-size: 22px;
+      margin-bottom: 35px;
+      max-width: 585px;
+    }
+  }
+
   @media (min-width: 1920px) {
     padding: 0 0 0 80px;
     margin-right: auto;
-
 
     h2 {
       font-size: 80px;
@@ -216,6 +242,10 @@ export const PersonTitle = styled(motion.h3)`
   color: #020202;
   margin-bottom: 10px;
 
+  @media (min-width: 1280px) {
+    font-size: 25px;
+  }
+
   @media (min-width: 1920px) {
     font-size: 40px;
   }
@@ -228,9 +258,24 @@ export const PersonImgCont = styled(motion.div)`
   background-color: #a066ff;
   overflow: hidden;
 
+  @media (min-width: 1280px) {
+    width: 92px;
+    height: 92px;
+
+    img {
+      width: 92px;
+      height: 92px;
+    }
+  }
+
   @media (min-width: 1920px) {
     width: 123px;
     height: 123px;
+
+    img {
+      width: auto;
+      height: auto;
+    }
   }
 `;
 
@@ -262,6 +307,11 @@ export const PersonRole = styled(motion.p)`
     color: #9d68f3;
   }
 
+  @media (min-width: 1280px) {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
   @media (min-width: 1920px) {
     font-size: 30px;
     margin-bottom: 15px;
@@ -272,6 +322,10 @@ export const PersonSocials = styled(motion.ul)`
   display: flex;
   align-items: center;
   gap: 5px;
+
+  @media (min-width: 1280px) {
+    gap: 10px;
+  }
 
   @media (min-width: 1920px) {
     gap: 15px;

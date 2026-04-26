@@ -54,6 +54,16 @@ export const Wrapper = styled(motion.div)`
     }
   }
 
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+    padding: 0 35px;
+
+    &.phd-eligibility {
+      max-width: 1024px;
+      padding: 0 30px;
+    }
+  }
+
   @media (min-width: 1920px) {
     max-width: 1920px;
     padding: 0 45px;
@@ -72,6 +82,11 @@ export const Wrapper = styled(motion.div)`
 
     &.services-business-psy--section {
       padding: 0 0 0 45px;
+    }
+
+    &.phd-eligibility {
+      max-width: 1920px;
+      padding: 0 45px;
     }
   }
 `;

@@ -63,7 +63,7 @@ const CasesHero = ({ caseConfig }: CasesHeroProps) => {
           <CasesHeroImgCont className={`cases-hero-${className}-img--cont`}>
             <picture>
               <source
-                media="(min-width: 1920px)"
+                media="(min-width: 1280px)"
                 srcSet={`/images/desktop/services-pages/${image.basePath}.webp 1x, /images/desktop/services-pages/${image.basePath}@2x.webp 2x, /images/desktop/services-pages/${image.basePath}@3x.webp 3x`}
               />
 

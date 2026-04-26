@@ -21,6 +21,12 @@ export const FormCont = styled(motion.div)`
     height: 440px;
   }
 
+  @media (min-width: 1280px) {
+    background-image: url("/images/macbook/background/form-bg.jpg");
+    max-width: 630px;
+    height: 440px;
+  }
+
   @media (min-width: 1920px) {
     background-image: url("/images/desktop/background/form-bg.jpg");
     max-width: 955px;
@@ -37,6 +43,12 @@ export const FormWrap = styled(motion.div)`
   padding: 15px;
   max-width: 350px;
   width: 100%;
+
+  @media (min-width: 1280px) {
+    max-width: 410px;
+    border-radius: 32px;
+    padding: 20px 15px 15px;
+  }
 
   @media (min-width: 1920px) {
     max-width: 660px;

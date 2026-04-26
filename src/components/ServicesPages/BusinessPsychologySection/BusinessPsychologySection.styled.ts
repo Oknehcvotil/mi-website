@@ -73,6 +73,17 @@ export const PsyhologyLeadCont = styled.div`
     }
   }
 
+  @media (min-width: 1280px) {
+    h2 {
+      font-size: 45px;
+    }
+
+    p {
+      font-size: 23px;
+      max-width: 730px;
+    }
+  }
+
   @media (min-width: 1920px) {
     h2 {
       font-size: 80px;

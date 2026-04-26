@@ -23,6 +23,11 @@ export const Title = styled(motion.h2)`
     color: #a066ff;
   }
 
+  @media (min-width: 1280px) {
+    margin-bottom: 25px;
+    font-size: 40px;
+  }
+
   @media (min-width: 1920px) {
     margin-bottom: 30px;
     font-size: 80px;

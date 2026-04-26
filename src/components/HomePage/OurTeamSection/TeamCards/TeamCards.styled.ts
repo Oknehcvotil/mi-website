@@ -59,4 +59,27 @@ export const CardCont = styled.div`
       right: 130px;
     }
   }
+
+  @media (min-width: 1280px) {
+    &.card-irina {
+      padding-left: 145px;
+    }
+
+    &.card-anastasia {
+      bottom: -30px;
+      right: 180px;
+    }
+
+    &.card-maria {
+      padding-left: 280px;
+      margin-bottom: 30px;
+    }
+
+    &.card-daria {
+      position: absolute;
+      bottom: 30px;
+      right: 110px;
+      z-index: 2;
+    }
+  }
 `;

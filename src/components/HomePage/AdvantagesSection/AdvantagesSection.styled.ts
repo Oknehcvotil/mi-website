@@ -6,10 +6,6 @@ export const AdvSection = styled(motion.section)`
   background: rgba(243, 244, 249, 0.62);
 
   @media (min-width: 768px) {
-    padding: 40px 0;
-  }
-
-  @media (min-width: 768px) {
     padding: 40px 0 20px;
   }
 
@@ -27,6 +23,12 @@ export const AdvList = styled(motion.ul)`
 
   @media (min-width: 768px) {
     gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 1280px) {
+    gap: 15px;
     flex-direction: row;
     flex-wrap: wrap;
   }

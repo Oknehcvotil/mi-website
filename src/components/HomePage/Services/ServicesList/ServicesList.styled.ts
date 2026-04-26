@@ -26,6 +26,11 @@ export const List = styled(motion.ul)`
     gap: 20px;
   }
 
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(2, 580px);
+    gap: 25px;
+  }
+
   @media (min-width: 1920px) {
     grid-template-columns: repeat(2, 820px);
     gap: 30px;

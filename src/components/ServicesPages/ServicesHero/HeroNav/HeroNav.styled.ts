@@ -16,6 +16,10 @@ export const HeroNavList = styled(motion.ul)`
   flex-wrap: wrap;
   gap: 7px;
 
+  @media (min-width: 1280px) {
+    margin-bottom: 20px;
+  }
+
   @media (min-width: 1920px) {
     margin-bottom: 20px;
   }
@@ -41,6 +45,12 @@ export const HeroNavLink = styled.a`
   &:focus {
     background: linear-gradient(180deg, #a066ff 0%, #5427b1 100%);
     color: #fff;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 8px 12px;
   }
 
   @media (min-width: 1920px) {

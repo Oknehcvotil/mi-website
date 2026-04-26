@@ -77,6 +77,10 @@ export const SectionCont = styled(motion.div)`
     padding: 0 30px 40px 30px;
   }
 
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+  }
+
   @media (min-width: 1920px) {
     max-width: 1920px;
     height: auto;
@@ -91,6 +95,10 @@ export const StatsList = styled(motion.ul)`
 
   @media (min-width: 768px) {
     margin-right: 35px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-right: 65px;
   }
 
   @media (min-width: 1920px) {
@@ -121,6 +129,17 @@ export const PicFrame = styled(motion.div)`
     img {
       border-radius: 19px;
       width: 321px;
+      height: auto;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    width: 435px;
+    height: 580px;
+
+    img {
+      border-radius: 19px;
+      width: 398px;
       height: auto;
     }
   }

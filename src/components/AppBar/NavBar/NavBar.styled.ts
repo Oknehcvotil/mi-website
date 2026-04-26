@@ -8,6 +8,11 @@ export const NavBarList = styled.ul`
     margin-right: 65px;
   }
 
+  @media (min-width: 1280px) {
+    gap: 30px;
+    margin-right: 175px;
+  }
+
   @media (min-width: 1920px) {
     gap: 50px;
     margin-right: 230px;

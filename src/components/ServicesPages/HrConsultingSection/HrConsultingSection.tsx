@@ -28,7 +28,7 @@ const HrConsultingSection = () => {
   const { t } = useTranslation("servicesForClients");
   const reduce = useReducedMotion();
   const isTabletUp = useMediaQuery("(min-width: 768px)");
-  const isDesktopWide = useMediaQuery("(min-width: 1920px)");
+  const isDesktopWide = useMediaQuery("(min-width: 1280px)");
 
   const [expanded, setExpanded] = useState(false);
   const isExpandedView = expanded || isDesktopWide;

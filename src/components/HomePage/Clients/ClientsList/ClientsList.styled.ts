@@ -13,8 +13,14 @@ export const List = styled(motion.ul)`
     margin-bottom: 15px;
   }
 
-  @media (min-width: 1024px) and (max-width: 1919px) {
+  @media (min-width: 1024px) and (max-width: 1279px) {
     max-width: 828px;
+    gap: 12px;
+  }
+
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    width: 100%;
+    max-width: 100%;
     gap: 12px;
   }
 
@@ -53,9 +59,14 @@ export const ListItem = styled(motion.li)`
     flex-basis: calc((100% - 48px) / 4);
   }
 
-  @media (min-width: 1024px) and (max-width: 1919px) {
+  @media (min-width: 1024px) and (max-width: 1279px) {
     flex-basis: auto;
     width: 156px;
+  }
+
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    flex-basis: calc((100% - 60px) / 6);
+    width: calc((100% - 60px) / 6);
   }
 
   @media (min-width: 1920px) {

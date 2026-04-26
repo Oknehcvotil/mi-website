@@ -75,7 +75,7 @@ const ContactSection = () => {
             <PersonImgCont variants={popIn}>
               <picture>
                 <source
-                  media="(min-width: 1920px)"
+                  media="(min-width: 1280px)"
                   type="image/webp"
                   srcSet="/images/maria-cco-desk.webp 1x, /images/maria-cco-desk@2x.webp 2x, /images/maria-cco-desk@3x.webp 3x
     "

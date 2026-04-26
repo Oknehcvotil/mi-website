@@ -15,6 +15,7 @@ import {
 const MOB_COLLAPSED_COUNT = 6;
 const TAB_COLLAPSED_COUNT = 8;
 const DESKTOP_COLLAPSED_COUNT = 10;
+const WIDE_DESKTOP_COLLAPSED_COUNT = 12;
 
 const Clients = () => {
   const { t } = useTranslation("home");
@@ -22,11 +23,14 @@ const Clients = () => {
   const reduce = !!useReducedMotion();
 
   const isDesk = useMediaQuery("(min-width: 1920px)");
+  const isWideDesktop = useMediaQuery("(min-width: 1280px)");
   const isSmallDesktop = useMediaQuery("(min-width: 1024px)");
   const isTablet = useMediaQuery("(min-width: 768px)");
 
   const collapsedCount = isDesk
     ? clientsLogos.length
+    : isWideDesktop
+      ? WIDE_DESKTOP_COLLAPSED_COUNT
     : isSmallDesktop
       ? DESKTOP_COLLAPSED_COUNT
       : isTablet

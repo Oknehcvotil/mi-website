@@ -116,6 +116,11 @@ export const EligibilityCardsCont = styled.div`
     gap: 32px;
   }
 
+  @media (min-width: 1280px) {
+    max-width: 815px;
+    gap: 32px;
+  }
+
   @media (min-width: 1920px) {
     max-width: 1720px;
     gap: 96px;
@@ -166,6 +171,13 @@ export const ConsultLinkCont = styled(motion.div)`
   @media (min-width: 1024px) {
     h2 {
       max-width: 730px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    h2 {
+      max-width: 100%;
+      font-size: 23px;
     }
   }
 

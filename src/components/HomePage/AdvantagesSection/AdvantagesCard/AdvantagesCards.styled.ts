@@ -87,6 +87,39 @@ export const ListItem = styled(motion.li)`
     }
   }
 
+  @media (min-width: 768px) {
+    flex-direction: column;
+    padding: 25px 10px;
+    min-height: 300px;
+    gap: 15px;
+
+    img {
+      display: inline-block;
+      width: 125px;
+      height: auto;
+    }
+
+    &:nth-of-type(3) {
+      span {
+        font-size: 20px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      span {
+        font-size: 23px;
+      }
+    }
+
+    &:nth-of-type(4) {
+      span {
+        font-size: 25px;
+        display: inline-block;
+        max-width: 200px;
+      }
+    }
+  }
+
   @media (min-width: 1024px) {
     flex-direction: column;
     padding: 20px 15px;
@@ -94,6 +127,48 @@ export const ListItem = styled(motion.li)`
     height: 240px;
     gap: 5px;
     max-width: 230px;
+    width: 100%;
+
+    img {
+      width: 95px;
+      height: auto;
+    }
+
+    &:nth-of-type(3) {
+      max-width: 250px;
+      h3 {
+        font-size: 13px;
+      }
+      span {
+        font-size: 18px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      span {
+        font-size: 15px;
+      }
+    }
+
+    &:nth-of-type(4) {
+      h3 {
+        font-size: 15px;
+      }
+      span {
+        font-size: 18px;
+        display: inline-block;
+        max-width: 235px;
+      }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    flex-direction: column;
+    padding: 20px 15px;
+    min-height: 240px;
+    height: 240px;
+    gap: 5px;
+    max-width: 290px;
     width: 100%;
 
     img {

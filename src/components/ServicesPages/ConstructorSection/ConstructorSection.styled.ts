@@ -19,6 +19,10 @@ export const ConstructorTitle = styled.h2`
     font-size: 40px;
   }
 
+  @media (min-width: 1280px) {
+    font-size: 45px;
+  }
+
   @media (min-width: 1920px) {
     font-size: 80px;
     margin-bottom: 30px;
@@ -42,6 +46,12 @@ export const ConstructorLead = styled.p`
 
   @media (min-width: 1024px) {
     max-width: 720px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 23px;
+    max-width: 1150px;
+    margin-bottom: 40px;
   }
 
   @media (min-width: 1920px) {

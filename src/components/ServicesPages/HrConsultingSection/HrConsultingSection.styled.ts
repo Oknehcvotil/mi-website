@@ -33,6 +33,10 @@ export const HrTitle = styled.h2`
     font-size: 40px;
   }
 
+  @media (min-width: 1280px) {
+    font-size: 45px;
+  }
+
   @media (min-width: 1920px) {
     font-size: 80px;
     margin-bottom: 30px;
@@ -52,6 +56,11 @@ export const HrLeadCont = styled.div`
   @media (min-width: 1024px) {
     max-width: 1024px;
     padding: 0 30px;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+    padding: 0 65px;
   }
 
   @media (min-width: 1920px) {
@@ -99,6 +108,26 @@ export const HrLeadText = styled.div`
 
   @media (min-width: 1024px) {
     max-width: none;
+  }
+
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    margin: 0;
+    width: 100%;
+    margin-right: auto;
+    padding-bottom: 15px;
+
+    h4 {
+      font-size: 23px;
+      line-height: 130%;
+      margin-bottom: 15px;
+      color: #8a38f5;
+    }
+
+    p {
+      font-size: 23px;
+      line-height: 130%;
+      max-width: 845px;
+    }
   }
 
   @media (min-width: 1920px) {
@@ -155,6 +184,10 @@ export const HrImgCont = styled(motion.div)`
 export const HrAdditionalCont = styled.div`
   background: #f3f4f9;
   padding: 20px 0 30px;
+
+  @media (min-width: 1280px) {
+    padding: 20px 0 50px;
+  }
 
   @media (min-width: 1920px) {
     padding: 60px 0 70px;

@@ -100,6 +100,10 @@ export const ValueText = styled.h3`
     -webkit-text-fill-color: transparent;
   }
 
+  @media (min-width: 1280px) {
+    font-size: 105px;
+  }
+
   @media (min-width: 1920px) {
     font-size: 180px;
   }
@@ -124,6 +128,10 @@ export const LabelText = styled.p`
     span {
       left: 0px;
     }
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 20px;
   }
 
   @media (min-width: 1920px) {

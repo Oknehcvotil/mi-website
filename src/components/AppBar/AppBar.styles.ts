@@ -44,6 +44,11 @@ export const HeaderWrapper = styled(motion.nav)`
     min-height: 80px;
   }
 
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+    padding: 0 35px;
+  }
+
   @media (min-width: 1920px) {
     max-width: 1920px;
     padding: 0 45px;

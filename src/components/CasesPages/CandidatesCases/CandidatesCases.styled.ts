@@ -79,6 +79,11 @@ export const CandidatesCasesTitle = styled(motion.h1)`
     max-width: 1024px;
   }
 
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+    font-size: 40px;
+  }
+
   @media (min-width: 1920px) {
     max-width: 1920px;
     font-size: 80px;

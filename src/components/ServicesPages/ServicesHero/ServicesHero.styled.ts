@@ -29,6 +29,10 @@ export const MainHeroTitle = styled(motion.h1)`
     font-size: 35px;
   }
 
+  @media (min-width: 1280px) {
+    font-size: 40px;
+  }
+
   @media (min-width: 1920px) {
     font-size: 80px;
     line-height: 99px;
@@ -62,6 +66,10 @@ export const HeroSubtitle = styled(motion.h3)`
     &.hero-for-candidates--subtitle {
       margin-bottom: 20px;
     }
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 30px;
   }
 
   @media (min-width: 1920px) {
@@ -129,6 +137,19 @@ export const LeadCont = styled(motion.div)`
 
     p {
       font-size: 20px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    h2 {
+      font-size: 45px;
+      line-height: 125%;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 23px;
+      line-height: 130%;
     }
   }
 

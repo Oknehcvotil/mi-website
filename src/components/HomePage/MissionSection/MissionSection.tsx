@@ -61,6 +61,20 @@ const MissionSection = () => {
               srcSet="/images/desktop/mission-team.jpg 1x, /images/desktop/mission-team@2x.jpg 2x, /images/desktop/mission-team@3x.jpg 3x"
             />
 
+            {/* Mac laptop WEBP */}
+            <source
+              media="(min-width: 1024px)"
+              type="image/webp"
+              srcSet="/images/macbook/mission-team.webp 1x, /images/macbook/mission-team@2x.webp 2x, /images/macbook/mission-team@3x.webp 3x"
+            />
+
+            {/* Mac JPG fallback */}
+            <source
+              media="(min-width: 1024px)"
+              type="image/jpeg"
+              srcSet="/images/macbook/mission-team.jpg 1x, /images/macbook/mission-team@2x.jpg 2x, /images/macbook/mission-team@3x.jpg 3x"
+            />
+
             {/* Desktop laptop WEBP */}
             <source
               media="(min-width: 1024px)"

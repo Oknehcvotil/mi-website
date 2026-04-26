@@ -61,6 +61,15 @@ export const PsyMititle = styled(motion.h2)`
     }
   }
 
+  @media (min-width: 1280px) {
+    max-width: 760px;
+    font-size: 35px;
+    margin-bottom: 35px;
+    span {
+      font-size: 35px;
+    }
+  }
+
   @media (min-width: 1920px) {
     font-size: 60px;
     margin-bottom: 50px;

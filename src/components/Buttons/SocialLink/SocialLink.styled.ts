@@ -20,6 +20,11 @@ export const CustomSocialLink = styled.a`
     width: 35px;
     height: 35px;
 
+    @media (min-width: 1280px) {
+      width: 38px;
+      height: 38px;
+    }
+
     @media (min-width: 1920px) {
       width: 67px;
       height: 67px;
@@ -114,6 +119,68 @@ export const CustomSocialLink = styled.a`
     &.team-card-social.social-daria {
       top: 80px;
       right: 90px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    width: 38px;
+    height: 38px;
+
+    &.telegram-icon {
+      svg {
+        width: 19px;
+        height: 16px;
+        margin-right: 3px;
+      }
+    }
+
+    &.linkedin-icon {
+      svg {
+        width: 15px;
+        height: 14px;
+        
+      }
+    }
+
+    &.instagram-icon {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &.whatsapp-icon {
+      svg {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 1px;
+      }
+    }
+
+    &.team-card-social.social-irina {
+      top: 180px;
+      right: 345px;
+      z-index: 2;
+    }
+
+    &.team-card-social.social-tatyana {
+      top: 150px;
+      left: -40px;
+    }
+
+    &.team-card-social.social-anastasia {
+      top: 180px;
+      left: 360px;
+    }
+
+    &.team-card-social.social-maria {
+      top: 145px;
+      left: 200px;
+    }
+
+    &.team-card-social.social-daria {
+      top: 80px;
+      right: 60px;
     }
   }
 

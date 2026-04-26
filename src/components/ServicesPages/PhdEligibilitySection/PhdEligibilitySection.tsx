@@ -30,7 +30,7 @@ const PhdEligibilitySection = () => {
       viewport={{ once: true, amount: 0.1 }}
       variants={reduce ? undefined : sectionVariants}
     >
-      <Container>
+      <Container className="phd-eligibility">
         <EligibilityCardsCont>
           <motion.div variants={reduce ? undefined : columnVariants} custom={-1}>
             <EligibilityCard

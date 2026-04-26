@@ -9,7 +9,6 @@ export const SectionWrap = styled(motion.div)`
 
   @media (min-width: 1920px) {
     padding-top: 0;
-   
   }
 `;
 
@@ -56,6 +55,11 @@ export const SliderCont = styled(motion.div)`
     background-image: url("/images/laptop/background/team-bg.jpg");
   }
 
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+    background-image: url("/images/macbook/background/team-bg.jpg");
+  }
+
   @media (min-width: 1920px) {
     display: none;
   }
@@ -63,6 +67,7 @@ export const SliderCont = styled(motion.div)`
 
 export const Slide = styled.article`
   position: relative;
+
   @media (min-width: 768px) {
     display: flex;
   }

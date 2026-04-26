@@ -32,6 +32,11 @@ export const EligibilityTitle = styled(motion.h3)`
     margin-bottom: 20px;
   }
 
+  @media (min-width: 1280px) {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
   @media (min-width: 1920px) {
     font-size: 40px;
     line-height: 130%;
