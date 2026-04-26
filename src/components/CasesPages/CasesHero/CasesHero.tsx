@@ -18,10 +18,6 @@ import {
 import { motion, useReducedMotion } from "framer-motion";
 import Container from "../../Container/Container";
 import ConsultBtn from "../../Buttons/ConsultBtn/ConsultBtn";
-import {
-  replaceImageViewport,
-  withDensitySet,
-} from "../../../lib/helpers/helpers";
 
 export type CasesHeroProps = {
   caseConfig: CasesHeroConfig;
@@ -31,10 +27,7 @@ const CasesHero = ({ caseConfig }: CasesHeroProps) => {
   const { translationNs, image, nav, id, className } = caseConfig;
   const { t } = useTranslation(translationNs);
   const reduce = useReducedMotion();
-  const imageExt = image.ext ?? "webp";
   const imgAlt = image.altKey ? t(image.altKey) : t("subTitle");
-  const laptopBasePath = replaceImageViewport(image.basePath, "laptop");
-  const desktopBasePath = replaceImageViewport(image.basePath, "desktop");
 
   return (
     <HeroSectionWrap
@@ -67,15 +60,21 @@ const CasesHero = ({ caseConfig }: CasesHeroProps) => {
             <picture>
               <source
                 media="(min-width: 1920px)"
-                srcSet={withDensitySet(desktopBasePath, imageExt)}
+                srcSet={`/images/desktop/services-pages/${image.basePath}.webp 1x, /images/desktop/services-pages/${image.basePath}@2x.webp 2x, /images/desktop/services-pages/${image.basePath}@3x.webp 3x`}
               />
+
+              <source
+                media="(min-width: 1024px)"
+                srcSet={`/images/laptop/services-pages/${image.basePath}.webp 1x, /images/laptop/services-pages/${image.basePath}@2x.webp 2x, /images/laptop/services-pages/${image.basePath}@3x.webp 3x`}
+              />
+
               <source
                 media="(min-width: 768px)"
-                srcSet={withDensitySet(laptopBasePath, imageExt)}
+                srcSet={`/images/mob/services-pages/${image.basePath}.webp 1x, /images/mob/services-pages/${image.basePath}@2x.webp 2x, /images/mob/services-pages/${image.basePath}@3x.webp 3x`}
               />
               <motion.img
-                src={`${image.basePath}.${imageExt}`}
-                srcSet={withDensitySet(image.basePath, imageExt)}
+                src={`/images/mob/services-pages/${image.basePath}.webp`}
+                srcSet={`/images/mob/services-pages/${image.basePath}.webp 1x, /images/mob/services-pages/${image.basePath}@2x.webp 2x, /images/mob/services-pages/${image.basePath}@3x.webp 3x`}
                 alt={imgAlt}
                 loading="eager"
                 decoding="async"

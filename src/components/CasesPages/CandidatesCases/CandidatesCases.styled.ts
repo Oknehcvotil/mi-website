@@ -57,7 +57,7 @@ export const CandidatesCasesTitle = styled(motion.h1)`
   font-family: "Unbounded";
   font-weight: 700;
   font-size: 30px;
-  line-height: 37px;
+  line-height: 130%;
   text-transform: uppercase;
   text-align: center;
   background: linear-gradient(90deg, #a066ff 0%, #5427b1 100%);
@@ -65,7 +65,24 @@ export const CandidatesCasesTitle = styled(motion.h1)`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  margin-bottom: 30px;
+  max-width: 390px;
+  margin: 0 auto 30px;
+  padding: 0 15px;
+
+  @media (min-width: 768px) {
+    max-width: 768px;
+    margin: 0 auto 40px;
+    font-size: 35px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 1920px;
+    font-size: 80px;
+  }
 `;
 
 export const PairCasesColumn = styled.div`
