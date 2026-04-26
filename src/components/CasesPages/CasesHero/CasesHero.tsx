@@ -13,6 +13,7 @@ import {
   CasesHeroSubtitle,
   CasesHeroTitle,
   CasesHeroWrap,
+  CasesHrSubtitle,
   HeroSectionWrap,
 } from "./CasesHero.styled";
 import { motion, useReducedMotion } from "framer-motion";
@@ -50,6 +51,9 @@ const CasesHero = ({ caseConfig }: CasesHeroProps) => {
         <CasesHeroWrap>
           <motion.div variants={reduce ? undefined : fadeUp}>
             <CasesHeroSubtitle>{t("subTitle")}</CasesHeroSubtitle>
+            <CasesHrSubtitle className={`cases-hero-subTitle-${className}`}>
+              {t("additional")}
+            </CasesHrSubtitle>
             <CasesHeroLead className={`cases-hero-${className}--lead`}>
               {t("lead")}
             </CasesHeroLead>

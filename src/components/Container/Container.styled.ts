@@ -33,6 +33,11 @@ export const Wrapper = styled(motion.div)`
     &.services-business-psy--section {
       padding: 0 0 0 25px;
     }
+
+    &.cases-hero-business {
+      position: relative;
+      overflow: hidden;
+    }
   }
 
   @media (min-width: 1024px) {
@@ -41,6 +46,11 @@ export const Wrapper = styled(motion.div)`
 
     &.services-business-psy--section {
       padding: 0 0 0 30px;
+    }
+
+    &.cases-hero-business {
+      position: relative;
+      overflow: visible;
     }
   }
 

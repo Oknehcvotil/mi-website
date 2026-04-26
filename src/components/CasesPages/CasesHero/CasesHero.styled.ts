@@ -64,7 +64,7 @@ export const CasesHeroSubtitle = styled.h2`
   font-family: "Unbounded";
   font-weight: 500;
   font-size: 26px;
-  line-height: 32px;
+  line-height: 130%;
   color: #020202;
   margin-bottom: 15px;
 
@@ -88,6 +88,7 @@ export const CasesHeroLead = styled.p`
   margin-right: auto;
 
   &.cases-hero-hr--lead {
+    font-size: 15px;
     max-width: 290px;
   }
 
@@ -98,7 +99,14 @@ export const CasesHeroLead = styled.p`
     margin-bottom: 15px;
 
     &.cases-hero-hr--lead {
-      max-width: 485px;
+      max-width: 475px;
+      font-size: 20px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &.cases-hero-hr--lead {
+      max-width: 730px;
     }
   }
 
@@ -109,7 +117,8 @@ export const CasesHeroLead = styled.p`
     margin-bottom: 25px;
 
     &.cases-hero-hr--lead {
-      max-width: 850px;
+      max-width: 1115px;
+      font-size: 35px;
     }
   }
 `;
@@ -132,11 +141,12 @@ export const CasesHeroImgCont = styled.div`
     }
 
     &.cases-hero-business-img--cont {
+      position: absolute;
+      top: 85px;
+      right: -30px;
       padding: 0;
-
-      img {
-        max-width: 290px;
-      }
+      height: 175px;
+      width: 291px;
     }
 
     &.cases-hero-hr-img--cont {
@@ -144,6 +154,21 @@ export const CasesHeroImgCont = styled.div`
 
       img {
         max-width: 245px;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &.cases-hero-business-img--cont {
+      position: static;
+      top: 0;
+      right: 0;
+      flex-basis: 318px;
+      width: 318px;
+      height: auto;
+
+      img {
+        max-width: 318px;
       }
     }
   }
@@ -157,9 +182,11 @@ export const CasesHeroImgCont = styled.div`
 
     &.cases-hero-business-img--cont {
       padding: 0;
+      flex-basis: 586px;
+      width: 586px;
 
       img {
-        max-width: 420px;
+        max-width: 586px;
       }
     }
 
@@ -170,5 +197,27 @@ export const CasesHeroImgCont = styled.div`
         max-width: 452px;
       }
     }
+  }
+`;
+
+export const CasesHrSubtitle = styled.h3`
+  display: none;
+
+  &.cases-hero-subTitle-hr {
+    display: block;
+  }
+
+  font-size: 15px;
+  line-height: 130%;
+  color: #8a38f5;
+  margin-bottom: 15px;
+
+  @media (min-width: 1024px) {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 35px;
   }
 `;

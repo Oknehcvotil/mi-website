@@ -4,6 +4,14 @@ import { NavLink } from "react-router-dom";
 
 export const CasesHeroNavWrap = styled.nav`
   margin-bottom: 10px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 1920px) {
+    margin-bottom: 50px;
+  }
 `;
 
 export const CasesHeroNavList = styled(motion.ul)`
