@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 
+
 export const NameCont = styled.div`
   position: absolute;
   top: 20px;
@@ -79,83 +80,7 @@ export const NameCont = styled.div`
     }
   }
 
-  @media (min-width: 1024px) {
-    &::before {
-      left: unset;
-      right: -8px;
-    }
-
-    &.team-irina {
-      top: 120px;
-      left: 410px;
-      right: unset;
-
-      &::before {
-        right: unset;
-        left: -10px;
-      }
-    }
-
-    &.team-tatyana {
-      left: 8px;
-      top: 145px;
-    }
-
-    &.team-maria {
-      top: 170px;
-      left: 130px;
-    }
-
-    &.team-anastasia {
-      top: 175px;
-      left: 10px;
-    }
-
-    &.team-daria {
-      left: 390px;
-      top: 80px;
-    }
-  }
-
-  @media (min-width: 1920px) {
-    font-weight: 500;
-    line-height: 112%;
-    position: relative;
-    max-width: 240px;
-    gap: 0;
-
-    p {
-      font-size: 20px;
-    }
-
-    &.team-irina,
-    &.team-tatyana,
-    &.team-maria,
-    &.team-anastasia,
-    &.team-daria {
-      top: 0;
-      left: 0;
-      max-width: 190px;
-    }
-
-    &.team-maria {
-      max-width: 160px;
-    }
-
-    &.team-anastasia {
-      max-width: 170px;
-    }
-
-    h3 {
-      font-weight: 700;
-      font-size: 26px;
-    }
-
-    &::before {
-      left: -15px;
-      right: unset;
-    }
-  }
+  
 
   @media (min-width: 1024px) {
     &::before {
@@ -195,7 +120,7 @@ export const NameCont = styled.div`
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1280px) {
     &::before {
       left: unset;
       right: -8px;
