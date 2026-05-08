@@ -59,6 +59,32 @@ export const StatsItem = styled(motion.li)`
     }
   }
 
+  @media (min-width: 1280px) {
+    position: relative;
+    margin-bottom: 30px;
+
+    &:nth-of-type(2) {
+      p {
+        max-width: 200px;
+      }
+    }
+
+    &:nth-of-type(3) {
+      margin-bottom: 25px;
+      p {
+        max-width: 220px;
+      }
+    }
+
+    &:last-of-type {
+      h3 {
+        margin-left: 95px;
+      }
+      align-items: center;
+      margin-bottom: 0;
+    }
+  }
+
   @media (min-width: 1920px) {
     margin-bottom: 10px;
     max-width: 100%;
@@ -132,10 +158,18 @@ export const LabelText = styled.p`
 
   @media (min-width: 1280px) {
     font-size: 20px;
+
+    span {
+      left: -10px;
+    }
   }
 
   @media (min-width: 1920px) {
     font-size: 35px;
     max-width: 400px;
+
+    span {
+      left: 0px;
+    }
   }
 `;

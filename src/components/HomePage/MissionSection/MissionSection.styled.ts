@@ -98,7 +98,7 @@ export const StatsList = styled(motion.ul)`
   }
 
   @media (min-width: 1280px) {
-    margin-right: 65px;
+    margin-right: 110px;
   }
 
   @media (min-width: 1920px) {
@@ -133,13 +133,13 @@ export const PicFrame = styled(motion.div)`
     }
   }
 
-  @media (min-width: 1024px) {
-    width: 435px;
+  @media (min-width: 1280px) {
+    width: 540px;
     height: 580px;
 
     img {
       border-radius: 19px;
-      width: 398px;
+      width: 507px;
       height: auto;
     }
   }
