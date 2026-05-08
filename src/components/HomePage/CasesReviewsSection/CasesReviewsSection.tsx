@@ -8,6 +8,7 @@ import {
 } from "./CasesReviewsSection.styled";
 import VideoReviewCard from "../../VideoReviewCard/VideoReviewCard";
 import CaseInfoCard from "../../CaseInfoCard/CaseInfoCard";
+import CasesMessage from "../../CasesMessage/CasesMessage";
 import AppSlider from "../../AppSlider/AppSlider";
 import { casesReviewsSlides } from "../../../lib/data/home.page";
 import {
@@ -58,6 +59,16 @@ const CasesReviewsSection = () => {
                     author={slide.author}
                     position={slide.position}
                     posterOverride={slide.posterOverride}
+                  />
+                ) : slide.type === "msg" ? (
+                  <CasesMessage
+                    key={i}
+                    translationNs="reviews"
+                    titleKey={slide.titleKey}
+                    textKey={slide.textKey}
+                    imgSrc={slide.imgSrc}
+                    alt={slide.alt}
+                    className={slide.className}
                   />
                 ) : (
                   <CaseInfoCard

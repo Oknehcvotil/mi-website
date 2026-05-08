@@ -34,5 +34,69 @@
       "title": "Closing date:",
       "text": "Up to 4 weeks"
     }
+  },
+  "annaKutsenko": {
+    "name": "Anna Kutsenko",
+    "position": "Coach and Influencer",
+    "logo": "Anna Kutsenko",
+    "vacancies": {
+      "title": "Vacancies:",
+      "items": ["SMM Manager", "Assistant"]
+    },
+    "terms": {
+      "title": "Closing date:",
+      "text": "Up to 4 weeks"
+    }
+  },
+  "gambeat": {
+    "title": "GAMBEAT review",
+    "items": [
+      "We were looking for an affiliate manager who understands the gambling industry and has experience in similar campaigns.",
+      "MI specialists provided a profile candidate within a month. The person adapted quickly and is now confidently closing the direction.",
+      "It is especially valuable that they did not “throw” everyone at us in a row — it was clear that each option underwent filtering and preliminary evaluation.",
+      "This is exactly the approach we were looking for."
+    ],
+    "vacancies": {
+      "title": "Vacancies:",
+      "items": ["Affiliate manager"]
+    },
+    "terms": {
+      "title": "Closing date:",
+      "text": "Up to 4 weeks"
+    }
+  },
+  "kitrum": {
+    "title": "Feedback Vlad Kitaynyk CEO & Founder",
+    "items": [
+      "We were looking for an assistant who would not just complete operational tasks, but would fit into the corporate culture and pace of the team.",
+      "After the first brief, within a few days we were shown candidates who had passed the preliminary selection and test — without unnecessary calls.",
+      "One of the finalists approached us so organically that we quickly made a decision. And the vacancy was closed in 3 weeks.",
+      "It’s great that the process was not “blind” — thanks to psychological testing we received not just a resume, but a clear understanding of who we were dealing with and an understanding of how to approach the motivation and management of the candidate.Everything was done promptly, without unnecessary fuss — this is exactly what an HR partner should be like."
+    ],
+    "vacancies": {
+      "title": "Vacancies:",
+      "items": ["Assistant"]
+    },
+    "terms": {
+      "title": "Closing date:",
+      "text": "Up to 4 weeks"
+    }
+  },
+  "majinx": {
+    "title": "Feedback Ruslan CEO & Founder",
+    "items": [
+      "We needed a BDM with specific experience in Web3, fundraising and strategic partnerships.",
+      "The MI Agency team immediately offered a selection of relevant candidates who had already passed the preliminary assessment.",
+      "In the end, we chose one of the specialists who got involved from day one and quickly started to deliver results.",
+      "We were pleasantly surprised by how deeply the team immersed themselves in the request and accompanied us at every stage."
+    ],
+    "vacancies": {
+      "title": "Vacancies:",
+      "items": ["Business Development Manager"]
+    },
+    "terms": {
+      "title": "Closing date:",
+      "text": "Up to 4 weeks"
+    }
   }
 }

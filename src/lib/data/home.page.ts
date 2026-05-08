@@ -148,16 +148,54 @@ export const teamCards = [
   },
 ];
 
-export const casesReviewsSlides = [
+type CasesReviewsLogo = {
+  src: string;
+  width?: number;
+  height?: number;
+  deskWidth?: number;
+  deskHeight?: number;
+  alt?: string;
+};
+
+type CasesReviewVideoSlide = {
+  type: "video";
+  youtubeUrl: string;
+  author: string;
+  position?: string;
+  posterOverride?: string;
+};
+
+type CasesReviewInfoSlide = {
+  type: "info" | "case";
+  logos?: CasesReviewsLogo[];
+  logoTitle?: string;
+  keyPrefix: string;
+};
+
+type CasesReviewMessageSlide = {
+  type: "msg";
+  titleKey: string;
+  textKey: string;
+  imgSrc: string;
+  alt?: string;
+  className?: string | string[];
+};
+
+export type CasesReviewsSlide =
+  | CasesReviewVideoSlide
+  | CasesReviewInfoSlide
+  | CasesReviewMessageSlide;
+
+export const casesReviewsSlides: CasesReviewsSlide[] = [
   {
-    type: "video" as const,
+    type: "video",
     youtubeUrl: "https://youtube.com/shorts/myU6HcqN5iM?feature=share",
     posterOverride: "/images/youtube-posters/bushe-youtube-poster.webp",
     author: "bohdanBushe.name",
     position: "bohdanBushe.position",
   },
   {
-    type: "info" as const,
+    type: "info",
     logos: [
       {
         src: "/images/clients-logos/ci-crypto",
@@ -170,30 +208,97 @@ export const casesReviewsSlides = [
     keyPrefix: "bohdanBushe",
   },
   {
-    type: "video" as const,
+    type: "video",
     youtubeUrl: "https://youtu.be/_5POb89UuGk",
     author: "vitaliyMartynenko.name",
     position: "vitaliyMartynenko.position",
   },
   {
-    type: "info" as const,
-    logos: [{ src: "/images/clients-logos/crypto", width: 175, height: 55, deskWidth: 465, deskHeight: 140 }],
+    type: "info",
+    logos: [
+      {
+        src: "/images/clients-logos/crypto",
+        width: 175,
+        height: 55,
+        deskWidth: 465,
+        deskHeight: 140,
+      },
+    ],
     keyPrefix: "vitaliyMartynenko",
   },
   {
-    type: "video" as const,
+    type: "video",
     youtubeUrl: "https://youtu.be/xHpPy2hAaZI",
     posterOverride: "/images/youtube-posters/andriy-jmil-youtube-poster.webp",
     author: "andriyJmil.name",
     position: "andriyJmil.position",
   },
   {
-    type: "info" as const,
+    type: "info",
     logos: [
-      { src: "/images/clients-logos/cbet", width: 55, height: 45, deskWidth: 170, deskHeight: 140 },
-      { src: "/images/clients-logos/spendy", width: 105, height: 15, deskWidth: 320, deskHeight: 40 },
+      {
+        src: "/images/clients-logos/cbet",
+        width: 55,
+        height: 45,
+        deskWidth: 170,
+        deskHeight: 140,
+      },
+      {
+        src: "/images/clients-logos/spendy",
+        width: 105,
+        height: 15,
+        deskWidth: 320,
+        deskHeight: 40,
+      },
     ],
     keyPrefix: "andriyJmil",
+  },
+  {
+    type: "video",
+    youtubeUrl: "https://youtu.be/HVRd0PENPDY?is=aEnJJzvxw6T4DoI4",
+    author: "annaKutsenko.name",
+    position: "annaKutsenko.position",
+  },
+  {
+    type: "info",
+    logoTitle: "annaKutsenko.logo",
+    keyPrefix: "annaKutsenko",
+  },
+  {
+    type: "msg",
+    imgSrc: "/images/cases-pages/recruiment/kitrum-person",
+    titleKey: "kitrum.title",
+    textKey: "kitrum.items",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    keyPrefix: "kitrum",
+    logos: [{ src: "/images/clients-logos/kitrum", width: 135, height: 40 }],
+  },
+  {
+    type: "msg",
+    titleKey: "gambeat.title",
+    textKey: "gambeat.items",
+    imgSrc: "/images/cases-pages/recruiment/gambeat-person",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    keyPrefix: "gambeat",
+    logos: [{ src: "/images/clients-logos/gambeat", width: 190, height: 40 }],
+  },
+  {
+    type: "msg",
+    imgSrc: "/images/cases-pages/recruiment/majinx-person",
+    titleKey: "majinx.title",
+    textKey: "majinx.items",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    keyPrefix: "majinx",
+    logos: [{ src: "/images/clients-logos/majinx", width: 160, height: 40 }],
   },
 ];
 
