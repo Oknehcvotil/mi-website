@@ -7,6 +7,14 @@ export const SectionWrap = styled(motion.div)`
   background: #f8f8fb;
   width: 100%;
 
+  @media (min-width: 768px) {
+    padding-top: 50px;
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: 0;
+  }
+
   @media (min-width: 1920px) {
     padding-top: 0;
   }
@@ -18,6 +26,22 @@ export const TitleWrap = styled(motion.div)`
   width: 100%;
   min-height: 70px;
   margin-top: 20px;
+
+  @media (min-width: 768px) {
+    position: absolute;
+    overflow: visible;
+    min-height: 120px;
+    height: 100%;
+    top: 0;
+  }
+
+  @media (min-width: 1024px) {
+    top: 15px;
+  }
+  @media (min-width: 1920px) {
+    margin-top: 0;
+    top: 15px;
+  }
 `;
 
 export const TitleText = styled.h2`
@@ -32,7 +56,19 @@ export const TitleText = styled.h2`
   text-transform: uppercase;
   color: #ebecf4;
   max-width: fit-content;
-  overflow: hidden;
+  overflow-y: hidden;
+
+  @media (min-width: 768px) {
+    font-size: 100px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 105px;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 170px;
+  }
 `;
 
 export const SliderCont = styled(motion.div)`

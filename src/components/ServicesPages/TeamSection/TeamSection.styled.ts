@@ -13,6 +13,22 @@ export const TeamSectionWrapper = styled.section`
     background: #8a38f5;
     z-index: 4;
   }
+
+  @media (min-width: 768px) {
+    padding-top: 70px;
+
+    &.irina {
+      padding-top: 50px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    padding-top: 50px;
+
+    &.irina {
+      padding-top: 0px;
+    }
+  }
 `;
 
 export const TeamCont = styled(motion.div)`
@@ -46,16 +62,21 @@ export const TeamCont = styled(motion.div)`
 `;
 
 export const BackgroundWrap = styled(motion.div)`
-  position: relative;
+  display: none;
   overflow: hidden;
   width: 100%;
   min-height: 100px;
+
+  @media (min-width: 768px) {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+  }
 `;
 
 export const BackgroundText = styled.p`
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   white-space: nowrap;
   margin: 0;
   line-height: 1;
@@ -65,6 +86,10 @@ export const BackgroundText = styled.p`
   color: #ebecf4;
   max-width: fit-content;
   overflow: hidden;
+
+  @media (min-width: 1920px) {
+    font-size: 170px;
+  }
 `;
 
 export const TeamLeadCont = styled.div`
@@ -110,7 +135,7 @@ export const TeamLeadCont = styled.div`
     font-size: 50px;
     line-height: 130%;
     max-width: 850px;
-    top: 100px;
+    top: 160px;
     right: 300px;
 
     &.for-candidates-lead {

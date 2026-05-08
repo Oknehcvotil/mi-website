@@ -15,6 +15,14 @@ export const PsyhologyWrap = styled(motion.section)`
     background: #8a38f5;
   }
 
+  @media (min-width: 1280px) {
+    padding-bottom: 0px;
+    &::before {
+      content: "";
+      height: 36px;
+    }
+  }
+
   @media (min-width: 1920px) {
     padding: 110px 0 80px;
     &::before {

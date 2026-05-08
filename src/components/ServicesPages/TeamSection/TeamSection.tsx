@@ -20,6 +20,8 @@ import {
   TeamLeadCont,
   StatsCont,
   TeamSectionWrapper,
+  BackgroundWrap,
+  BackgroundText,
 } from "./TeamSection.styled";
 import ConsultBtn from "../../Buttons/ConsultBtn/ConsultBtn";
 import StatsBadge from "../../HomePage/OurTeamSection/StatsBadge/StatsBadge";
@@ -37,9 +39,14 @@ const TeamSection = ({ config }: TeamSectionProps) => {
 
   return (
     <TeamSectionWrapper className={className}>
-      {/* <BackgroundWrap>
-        <BackgroundText>team team team team team team</BackgroundText>
-      </BackgroundWrap> */}
+      <BackgroundWrap>
+        <BackgroundText>
+          team team team team team team team team team team team team team team
+          team team team team team team team team team team team team team team
+          team team team team team team team team team team team team team team
+          team team team team team team team team team team team team team team
+        </BackgroundText>
+      </BackgroundWrap>
       <TeamCont
         className={className}
         variants={teamSectionVariants}

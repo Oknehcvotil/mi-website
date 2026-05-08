@@ -1,8 +1,8 @@
 import { teamCards } from "../../../lib/data/home.page";
 import AppSlider from "../../AppSlider/AppSlider";
 import {
-  // TitleWrap,
-  // TitleText,
+  TitleWrap,
+  TitleText,
   SectionWrap,
   Slide,
   SliderCont,
@@ -11,6 +11,7 @@ import { TeamCard } from "./TeamCards/TeamCards";
 import {
   blockV,
   sectionV,
+  titleV,
 } from "../../../lib/animations/home/animations.swipers";
 import { useMediaQuery } from "../../../lib/hooks/useMediaQuery";
 import TeamDesktop from "./TeamDesktop/TeamDesktop";
@@ -32,9 +33,9 @@ const OurTeamSection = () => {
       viewport={{ once: true, amount: 0.3 }}
       variants={sectionV}
     >
-      {/* <TitleWrap variants={titleV}>
+      <TitleWrap variants={titleV}>
         <TitleText>OUR MI TEAM</TitleText>
-      </TitleWrap> */}
+      </TitleWrap>
       <SliderCont variants={blockV}>
         <AppSlider className="team-slider">
           {slides.map((group, idx) => (
