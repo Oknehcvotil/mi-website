@@ -23,6 +23,12 @@ export const Card = styled.article`
     margin-bottom: 15px;
   }
 
+  @media (min-width: 1280px) {
+    height: 385px;
+    max-width: 295px;
+    border: 8px solid #000;
+  }
+
   @media (min-width: 1920px) {
     height: 725px;
     max-width: 555px;

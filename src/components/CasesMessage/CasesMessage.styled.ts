@@ -17,12 +17,10 @@ export const CasesMessageTextCard = styled.div`
   box-sizing: border-box;
   padding: 20px 15px 20px 35px;
 
-  @media (min-width: 1920px) {
+   @media (min-width: 1920px) {
     max-width: 650px;
     padding: 40px 40px 40px 60px;
   }
-
-
 `;
 
 export const CasesMessageTitle = styled.h3`
