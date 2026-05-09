@@ -62,6 +62,10 @@ export const Wrapper = styled(motion.div)`
       max-width: 1024px;
       padding: 0 30px;
     }
+
+    &.cases-hero-hr {
+      padding: 0 60px;
+    }
   }
 
   @media (min-width: 1920px) {
@@ -78,6 +82,10 @@ export const Wrapper = styled(motion.div)`
 
     &.cases-hero {
       padding: 0 200px;
+    }
+
+    &.cases-hero-hr {
+      padding: 0 100px;
     }
 
     &.services-business-psy--section {

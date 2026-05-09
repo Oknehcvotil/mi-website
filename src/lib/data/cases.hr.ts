@@ -12,7 +12,7 @@ export const hrCasesConfig: CasesHeroConfig = {
     { hash: "hr-consulting/other", labelKey: "Other" },
   ],
   image: {
-    basePath: "hr-consulting",
+    basePath: "hr-cases",
   },
 };
 

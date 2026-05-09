@@ -14,7 +14,7 @@ export const recruitmentCasesConfig: CasesHeroConfig = {
     { hash: "recruitment/other", labelKey: "Other" },
   ],
   image: {
-    basePath: "services-hero-for-clients",
+    basePath: "recruitment-cases",
   },
 };
 

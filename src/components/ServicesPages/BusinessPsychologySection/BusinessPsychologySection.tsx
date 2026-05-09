@@ -32,18 +32,18 @@ const BusinessPsychologySection = () => {
             <picture>
               <source
                 media="(min-width: 1920px)"
-                srcSet="/images/desktop/services-pages/business-psy.webp 1x, /images/desktop/services-pages/business-psy@2x.webp 2x, /images/desktop/services-pages/business-psy@3x.webp 3x"
+                srcSet="/images/desktop/services-pages/users.webp 1x, /images/desktop/services-pages/users@2x.webp 2x, /images/desktop/services-pages/users@3x.webp 3x"
               />
 
               <source
                 media="(min-width: 1024px)"
-                srcSet="/images/laptop/services-pages/business-psy.png 1x, /images/laptop/services-pages/business-psy@2x.png 2x, /images/laptop/services-pages/business-psy@3x.png 3x"
+                srcSet="/images/laptop/services-pages/users.webp 1x, /images/laptop/services-pages/users@2x.webp 2x, /images/laptop/services-pages/users@3x.webp 3x"
               />
 
               <motion.img
                 variants={imgAppear}
-                src="/images/mob/services-pages/business-psy.webp"
-                srcSet="/images/mob/services-pages/business-psy.webp 1x, /images/mob/services-pages/business-psy@2x.webp 2x, /images/mob/services-pages/business-psy@3x.webp 3x"
+                src="/images/mob/services-pages/users.webp"
+                srcSet="/images/mob/services-pages/users.webp 1x, /images/mob/services-pages/users@2x.webp 2x, /images/mob/services-pages/users@3x.webp 3x"
                 alt={t("psyhology.alt")}
                 loading="lazy"
               />

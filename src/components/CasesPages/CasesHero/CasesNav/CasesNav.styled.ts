@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 
 export const CasesHeroNavWrap = styled.nav`
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 
   @media (min-width: 768px) {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
   }
 
   @media (min-width: 1920px) {

@@ -47,7 +47,7 @@ const CasesReviewsSection = () => {
       <CasesTitle variants={titleV}>
         <Trans t={t} i18nKey="casesTitle" components={{ 1: <span /> }} />
       </CasesTitle>
-      <SliderCont variants={blockV} >
+      <SliderCont variants={blockV}>
         <AppSlider>
           {groupedSlides.map((group, slideIndex) => (
             <CardsWrapper key={slideIndex}>
@@ -74,6 +74,7 @@ const CasesReviewsSection = () => {
                   <CaseInfoCard
                     key={i}
                     logos={slide.logos}
+                    logoTitle={slide.logoTitle}
                     keyPrefix={slide.keyPrefix}
                   />
                 ),

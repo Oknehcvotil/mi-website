@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export const PsyhologyWrap = styled(motion.section)`
   background: rgba(255, 255, 255, 0.4);
-  padding: 40px 0;
+  padding: 40px 0 0 0;
   position: relative;
 
   &::before {
@@ -15,6 +15,10 @@ export const PsyhologyWrap = styled(motion.section)`
     background: #8a38f5;
   }
 
+  @media (min-width: 1024px) {
+    padding-bottom: 0px;
+  }
+
   @media (min-width: 1280px) {
     padding-bottom: 0px;
     &::before {
@@ -24,7 +28,7 @@ export const PsyhologyWrap = styled(motion.section)`
   }
 
   @media (min-width: 1920px) {
-    padding: 110px 0 80px;
+    padding: 110px 0 0px;
     &::before {
       content: "";
       height: 36px;
@@ -111,8 +115,7 @@ export const PsyhologyImgCont = styled.div`
 
   @media (min-width: 768px) {
     display: block;
-    flex: 0 0 280px;
-    width: 280px;
+    width: 220px;
     margin-left: auto;
 
     picture {
@@ -128,12 +131,17 @@ export const PsyhologyImgCont = styled.div`
   }
 
   @media (min-width: 1024px) {
-    flex-basis: 374px;
-    width: 374px;
+    width: 252px;
+    margin-right: 30px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-right: 100px;
+    width: 300px;
   }
 
   @media (min-width: 1920px) {
-    flex-basis: 672px;
-    width: 672px;
+    margin-right: 170px;
+    width: 508px;
   }
 `;

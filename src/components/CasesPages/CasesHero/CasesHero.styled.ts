@@ -107,21 +107,40 @@ export const CasesHeroLead = styled.p`
     margin-bottom: 15px;
 
     &.cases-hero-hr--lead {
+      font-size: 15px;
       max-width: 475px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &.cases-hero-hr--lead {
+      font-size: 20px;
+      max-width: 730px;
+    }
+
+    &.cases-hero-recruitment--lead {
+      max-width: 725px;
+    }
+
+    &.cases-hero-business--lead {
+      max-width: 650px;
       font-size: 20px;
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1280px) {
     &.cases-hero-hr--lead {
-      max-width: 730px;
+      font-size: 23px;
+      max-width: 845px;
     }
-  }
 
-  @media (min-width: 1024px) {
-    max-width: 730px;
-    &.cases-hero-hr--lead {
-      max-width: 750px;
+    &.cases-hero-recruitment--lead {
+      max-width: 840px;
+    }
+
+    &.cases-hero-business--lead {
+      max-width: 710px;
+      font-size: 23px;
     }
   }
 
@@ -135,6 +154,11 @@ export const CasesHeroLead = styled.p`
       max-width: 1115px;
       font-size: 35px;
     }
+
+    &.cases-hero-business--lead {
+      max-width: 810px;
+      font-size: 30px;
+    }
   }
 `;
 
@@ -145,72 +169,52 @@ export const CasesHeroImgCont = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 0;
-    overflow: hidden;
     position: relative;
 
     &.cases-hero-recruitment-img--cont {
-      img {
-        max-width: 267px;
-      }
     }
 
     &.cases-hero-business-img--cont {
-      position: absolute;
-      top: 85px;
-      right: -30px;
-      padding: 0;
-      height: 175px;
-      width: 291px;
     }
 
     &.cases-hero-hr-img--cont {
-      padding: 0;
-
-      img {
-        max-width: 245px;
-      }
     }
   }
 
   @media (min-width: 1024px) {
-    &.cases-hero-business-img--cont {
-      position: static;
-      top: 0;
-      right: 0;
-      flex-basis: 318px;
-      width: 318px;
-      height: auto;
+    &.cases-hero-recruitment-img--cont {
+    }
 
-      img {
-        max-width: 318px;
-      }
+    &.cases-hero-business-img--cont {
+      padding-right: 20px;
+    }
+
+    &.cases-hero-hr-img--cont {
+      padding-bottom: 35px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    &.cases-hero-recruitment-img--cont {
+      margin-right: 60px;
+    }
+
+    &.cases-hero-business-img--cont {
+      padding-right: 65px;
+    }
+
+    &.cases-hero-hr-img--cont {
     }
   }
 
   @media (min-width: 1920px) {
     &.cases-hero-recruitment-img--cont {
-      img {
-        max-width: 425px;
-      }
     }
 
     &.cases-hero-business-img--cont {
-      padding: 0;
-      flex-basis: 586px;
-      width: 586px;
-
-      img {
-        max-width: 586px;
-      }
     }
 
     &.cases-hero-hr-img--cont {
-      padding: 0;
-
-      img {
-        max-width: 452px;
-      }
     }
   }
 `;
