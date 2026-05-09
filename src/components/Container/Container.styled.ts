@@ -66,6 +66,11 @@ export const Wrapper = styled(motion.div)`
     &.cases-hero-hr {
       padding: 0 60px;
     }
+
+    &.cases-message {
+      max-width: 360px;
+      margin: 0;
+    }
   }
 
   @media (min-width: 1920px) {
@@ -95,6 +100,11 @@ export const Wrapper = styled(motion.div)`
     &.phd-eligibility {
       max-width: 1920px;
       padding: 0 45px;
+    }
+
+    &.cases-message {
+      max-width: unset;
+      margin: 0 auto;
     }
   }
 `;

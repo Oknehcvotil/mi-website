@@ -87,9 +87,19 @@ export const CardsWrapper = styled.div`
     justify-content: space-around;
   }
 
+  @media (min-width: 1280px) {
+    display: flex;
+    gap: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+  }
+
   @media (min-width: 1920px) {
     max-width: 1920px;
     gap: 110px;
+    justify-content: space-around;
   }
 `;
 

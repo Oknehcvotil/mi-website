@@ -31,6 +31,10 @@ export const CasesMessageTitle = styled.h3`
   color: #a066ff;
   margin-bottom: 10px;
 
+  @media (min-width: 1280px) {
+    font-size: 20px;
+  }
+
   @media (min-width: 1920px) {
     font-size: 30px;
     margin-bottom: 15px;
