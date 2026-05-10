@@ -162,6 +162,7 @@ export const Meta = styled.div`
   }
 
   @media (min-width: 1920px) {
+    max-width: 485px;
     font-size: 35px;
     white-space: normal;
   }

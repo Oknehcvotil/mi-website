@@ -19,6 +19,13 @@ export const Wrapper = styled(motion.div)`
     width: 100%;
   }
 
+  @media (min-width: 1280px) {
+    max-width: 580px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
   @media (min-width: 1920px) {
     max-width: 925px;
     margin: 0;
@@ -88,7 +95,7 @@ export const SubTitle = styled(motion.p)`
   }
 
   @media (min-width: 1280px) {
-    max-width: 610px;
+    max-width: 570px;
   }
 
   @media (min-width: 1920px) {
