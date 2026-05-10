@@ -246,6 +246,45 @@ export const marketingItems: CasesItem[] = [
     logos: [{ src: "/images/clients-logos/frgmnt", width: 140, height: 40 }],
     keyPrefix: "marketing.frgmnt",
   },
+  {
+    type: "video",
+    props: {
+      youtubeUrl: "https://youtu.be/HVRd0PENPDY?is=aEnJJzvxw6T4DoI4",
+      author: "marketing.annaKutsenko.name",
+      position: "marketing.annaKutsenko.position",
+    },
+  },
+  {
+    type: "case",
+    logoTitle: "marketing.annaKutsenko.logo",
+    keyPrefix: "marketing.annaKutsenko",
+  },
+  {
+    type: "msg",
+    titleKey: "marketing.miko.title",
+    textKey: "marketing.miko.items",
+    imgSrc: "/images/cases-pages/recruiment/miko-person",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    logos: [{ src: "/images/clients-logos/miko", width: 140, height: 40 }],
+    keyPrefix: "marketing.miko",
+  },
+  {
+    type: "msg",
+    titleKey: "marketing.hornsHacks.title",
+    textKey: "marketing.hornsHacks.items",
+    imgSrc: "/images/cases-pages/recruiment/hornsHacks-person",
+    className: ["not-list", "gap"],
+  },
+  {
+    type: "case",
+    logos: [
+      { src: "/images/clients-logos/hornsHacks", width: 90, height: 70 },
+    ],
+    keyPrefix: "marketing.hornsHacks",
+  },
 ];
 
 export const fintechItems: NoVideoCasesItem[] = [

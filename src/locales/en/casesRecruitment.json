@@ -272,6 +272,19 @@
         "text": "2 years"
       }
     },
+    "annaKutsenko": {
+      "name": "Anna Kutsenko",
+      "position": "Coach and Influencer",
+      "logo": "Anna Kutsenko",
+      "vacancies": {
+        "title": "Vacancies:",
+        "items": ["SMM Manager", "Assistant"]
+      },
+      "terms": {
+        "title": "Closing date:",
+        "text": "Up to 4 weeks"
+      }
+    },
     "frgmnt": {
       "title": "FRGMNT review",
       "items": [
@@ -316,18 +329,6 @@
       "vacancies": {
         "title": "Vacancies:",
         "items": ["YouTube Marketing Manager"]
-      },
-      "terms": {
-        "title": "Closing date:",
-        "text": "Up to 4 weeks"
-      }
-    },
-    "annaKutsenko": {
-      "name": "Anna Kutsenko",
-      "position": "Coach and Influencer",
-      "vacancies": {
-        "title": "Vacancies:",
-        "items": ["SMM Manager", "Assistant"]
       },
       "terms": {
         "title": "Closing date:",
