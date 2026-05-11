@@ -60,6 +60,10 @@ export const CasesNavLink = styled(NavLink)`
     color: #fff;
   }
 
+  @media (min-width: 1280px) {
+    font-size: 20px;
+  }
+
   @media (min-width: 1920px) {
     font-weight: 500;
     font-size: 25px;
