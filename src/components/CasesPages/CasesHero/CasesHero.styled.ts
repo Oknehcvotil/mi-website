@@ -80,6 +80,10 @@ export const CasesHeroSubtitle = styled.h2`
     font-size: 40px;
   }
 
+  @media (min-width: 1280px) {
+    font-size: 45px;
+  }
+
   @media (min-width: 1920px) {
     font-size: 60px;
   }
