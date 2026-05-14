@@ -61,11 +61,13 @@ export const HrLeadCont = styled.div`
   @media (min-width: 1280px) {
     max-width: 1280px;
     padding: 0 65px;
+    padding-bottom: 30px;
   }
 
   @media (min-width: 1920px) {
     max-width: 1920px;
     padding: 0 100px;
+    padding-bottom: 80px;
   }
 `;
 
@@ -186,7 +188,7 @@ export const HrAdditionalCont = styled.div`
   padding: 20px 0 30px;
 
   @media (min-width: 1280px) {
-    padding: 20px 0 50px;
+    padding: 40px 0 50px;
   }
 
   @media (min-width: 1920px) {
@@ -198,7 +200,7 @@ export const HrAdditionalTitle = styled.h3`
   font-family: "Unbounded";
   font-weight: 500;
   font-size: 25px;
-  line-height: 31px;
+  line-height: 130%;
   text-transform: uppercase;
   text-align: center;
   color: #020202;
