@@ -35,6 +35,14 @@ export const CasesHeroNavList = styled(motion.ul)`
     justify-content: center;
     gap: 15px;
   }
+
+  @media (min-width: 1280px) {
+    gap: 10px;
+  }
+
+  @media (min-width: 11920px) {
+    gap: 15px;
+  }
 `;
 
 export const CasesNavLink = styled(NavLink)`

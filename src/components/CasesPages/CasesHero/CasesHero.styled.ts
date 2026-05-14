@@ -207,7 +207,7 @@ export const CasesHeroImgCont = styled.div`
 
   @media (min-width: 1280px) {
     &.cases-hero-recruitment-img--cont {
-      margin-right: 60px;
+    
     }
 
     &.cases-hero-business-img--cont {
