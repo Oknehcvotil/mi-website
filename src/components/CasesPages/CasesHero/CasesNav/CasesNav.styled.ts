@@ -61,7 +61,9 @@ export const CasesNavLink = styled(NavLink)`
   }
 
   @media (min-width: 1280px) {
+    padding: 13px 18px;
     font-size: 20px;
+    border-radius: 8px;
   }
 
   @media (min-width: 1920px) {

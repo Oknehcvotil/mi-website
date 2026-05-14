@@ -22,6 +22,10 @@ export const CasesHeroWrap = styled.div`
     align-items: center;
     justify-content: space-between;
   }
+
+  @media (min-width: 1280px) {
+    justify-content: center;
+  }
 `;
 
 export const CasesHeroTitle = styled(motion.h1)`
@@ -139,7 +143,10 @@ export const CasesHeroLead = styled.p`
     }
 
     &.cases-hero-recruitment--lead {
-      max-width: 840px;
+      max-width: 845px;
+      font-size: 23px;
+      margin-right: 65px;
+      margin-bottom: 30px;
     }
 
     &.cases-hero-business--lead {
