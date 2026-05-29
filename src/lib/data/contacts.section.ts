@@ -3,7 +3,7 @@ import type { ContactSectionSocial } from "../types/contacts.types";
 export const socials: ContactSectionSocial[] = [
   {
     id: "telegram",
-    href: "https://t.me/maria_cco_mi",
+    href: "https://t.me/Maria_MI_agency",
     labelKey: "socials.telegram",
     width: "15px",
     height: "13px",

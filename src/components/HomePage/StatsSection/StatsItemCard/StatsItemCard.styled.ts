@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-export const StatsItem = styled(motion.li)`
+export const StatsItem = styled(motion.li)<{ lang: string }>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -79,6 +79,12 @@ export const StatsItem = styled(motion.li)`
     &:last-of-type {
       h3 {
         margin-left: 95px;
+
+        ${({ lang }) =>
+          lang === "en" &&
+          `
+      margin-left: 120px;
+    `}
       }
       align-items: center;
       margin-bottom: 0;
@@ -104,6 +110,12 @@ export const StatsItem = styled(motion.li)`
     &:last-of-type {
       h3 {
         margin-left: 185px;
+
+        ${({ lang }) =>
+          lang === "en" &&
+          `
+      margin-left: 210px;
+    `}
       }
       align-items: baseline;
       margin-bottom: 0;

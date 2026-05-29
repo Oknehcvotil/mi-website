@@ -16,10 +16,12 @@ export const StatsItemCard = ({
   variants = itemIn,
   useOwnViewportAnimation = true,
 }: StatsItemCardProps) => {
-  const { t } = useTranslation("home");
+  const { t, i18n } = useTranslation("home");
+  const lang = i18n.language;
 
   return (
     <StatsItem
+      lang={lang}
       variants={variants}
       initial={useOwnViewportAnimation ? { opacity: 0, y: 16 } : undefined}
       whileInView={useOwnViewportAnimation ? { opacity: 1, y: 0 } : undefined}
