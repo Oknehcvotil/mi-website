@@ -12,6 +12,10 @@ export const CardContainer = styled.div`
     padding: 0;
   }
 
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    max-width: 500px;
+  }
+
   @media (min-width: 1920px) {
     max-width: 740px;
   }
@@ -27,6 +31,10 @@ export const PhdReviewCont = styled.div`
   align-items: flex-start;
   gap: 10px;
   box-sizing: border-box;
+
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    padding: 15px;
+  }
 
   @media (min-width: 1920px) {
     padding: 25px;
@@ -72,6 +80,31 @@ export const PhdReviewTextCont = styled.div`
 
     margin-bottom: 20px;
     white-space: pre-line;
+  }
+
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    ul {
+      margin: 0;
+      padding-left: 0px;
+    }
+
+    h3 {
+      padding-top: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #a066ff;
+      margin-bottom: 5px;
+    }
+
+    li {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      color: #000000;
+
+      margin-bottom: 20px;
+      white-space: pre-line;
+    }
   }
 
   @media (min-width: 1920px) {

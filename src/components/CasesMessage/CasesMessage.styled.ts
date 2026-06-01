@@ -32,7 +32,7 @@ export const CasesMessageTitle = styled.h3`
   margin-bottom: 10px;
 
   @media (min-width: 1280px) {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   @media (min-width: 1920px) {
@@ -74,6 +74,10 @@ export const CasesMessageList = styled.ul`
     span {
       font-weight: 700;
     }
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 14px;
   }
 
   @media (min-width: 1920px) {

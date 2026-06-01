@@ -134,6 +134,20 @@ export const SliderPair = styled.div`
       justify-content: center;
     }
   }
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 24px;
+    width: 100%;
+
+    &.single {
+      justify-content: center;
+    }
+  }
+
+ 
 `;
 
 export const SliderButton = styled.button`

@@ -12,6 +12,14 @@ export const PhdCasesWrapper = styled(motion.section)`
     box-sizing: border-box;
   }
 
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box;
+  }
+
   @media (min-width: 1920px) {
     max-width: 1920px;
     padding-top: 80px;
@@ -57,10 +65,41 @@ export const PhdSliderPair = styled.div`
     }
   }
 
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+    max-width: 1280px;
+    margin: 0 auto;
+    justify-content: center;
+
+    > .phd-slider-card {
+      display: flex;
+      height: auto;
+    }
+
+    &.last-pair {
+      align-items: center;
+
+      > div {
+        display: flex;
+      }
+
+      .last-pair-card {
+        display: flex;
+      }
+
+      .last-pair-card > div {
+        width: 100%;
+      }
+    }
+  }
+
   @media (min-width: 1920px) {
     justify-content: space-around;
     max-width: 1920px;
-    gap:30px;
+    gap: 30px;
 
     > .phd-slider-card.review {
       flex: 0 0 740px;

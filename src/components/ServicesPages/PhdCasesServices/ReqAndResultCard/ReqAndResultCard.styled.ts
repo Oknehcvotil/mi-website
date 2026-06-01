@@ -24,6 +24,10 @@ export const ReqAndResultCardWrap = styled.div`
     pointer-events: none;
   }
 
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    max-width: 500px;
+  }
+
   @media (min-width: 1920px) {
     max-width: 980px;
   }
@@ -49,6 +53,10 @@ export const ReqAndResultCardCont = styled.div`
     font-size: 20px;
     line-height: 190%;
     text-transform: uppercase;
+  }
+
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    max-width: 500px;
   }
 
   @media (min-width: 1920px) {
@@ -81,6 +89,12 @@ export const ReqCont = styled.div`
     -webkit-text-fill-color: transparent;
   }
 
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    p {
+      font-size: 14px;
+    }
+  }
+
   @media (min-width: 1920px) {
     padding: 10px 20px;
     p {
@@ -102,6 +116,12 @@ export const ResultCont = styled.div`
     font-size: 12px;
     line-height: 130%;
     color: #020202;
+  }
+
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    p {
+      font-size: 14px;
+    }
   }
 
   @media (min-width: 1920px) {

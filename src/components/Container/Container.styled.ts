@@ -68,7 +68,7 @@ export const Wrapper = styled(motion.div)`
     }
 
     &.cases-message {
-      max-width: 360px;
+      max-width: 505px;
       margin: 0;
     }
   }
