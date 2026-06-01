@@ -69,7 +69,9 @@
   "teamContact": {
     "overline": "Always in touch with you:",
     "title": "IRINA MI",
-    "subtitle": "CEO & Founder"
+    "subtitle": "CEO & Founder",
+    "yearsInBiz": "years in business psychology",
+    "yearsInHR": "years in HR & Recruiting"
   },
   "constructor": {
     "title": "CONSTRUCTOR",

@@ -4,6 +4,12 @@ import { motion } from "framer-motion";
 export const HeroSectionWrap = styled.section`
   padding-top: 105px;
 
+  padding-bottom: 40px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 0px;
+  }
+
   @media (min-width: 1024px) {
     padding-top: 40px;
   }
@@ -112,7 +118,7 @@ export const LeadCont = styled(motion.div)`
 
   @media (min-width: 768px) {
     margin-right: auto;
-    max-width: 460px;
+    max-width: 465px;
 
     h2 {
       font-family: "Unbounded";
@@ -172,7 +178,7 @@ export const LeadCont = styled(motion.div)`
 `;
 
 export const HeroImgCont = styled(motion.div)`
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
@@ -212,6 +218,7 @@ export const HeroImgCont = styled(motion.div)`
   }
 
   @media (min-width: 768px) {
+    display: flex;
     padding: 0;
   }
 `;

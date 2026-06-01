@@ -69,7 +69,10 @@ const ServicesHero = ({ content }: ServicesHeroProps) => {
         {nav && <HeroNav translationNs={translationNs} nav={nav} />}
 
         <HeroWrap>
-          <LeadCont variants={reduce ? undefined : fadeUp}>
+          <LeadCont
+            variants={reduce ? undefined : fadeUp}
+            className={`hero-${className}--lead`}
+          >
             <h2>{t(sectionTitleKey)}</h2>
             {leadKey && <p>{t(leadKey)}</p>}
             <ConsultBtn variant="primary" className={`hero-services--btn`} />
