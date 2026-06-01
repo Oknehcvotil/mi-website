@@ -29,8 +29,17 @@ type TeamCardProps = {
   data: TeamCardData;
 };
 
+const imageDimensions: Record<string, { width: number; height: number }> = {
+  irina: { width: 508, height: 522 },
+  anastasia: { width: 553, height: 551 },
+  maria: { width: 507, height: 551 },
+  daria: { width: 611, height: 490 },
+};
+
 export const TeamCard: React.FC<TeamCardProps> = ({ data }) => {
   const { t } = useTranslation("home");
+  const isInitiallyVisible = data.id === "irina" || data.id === "anastasia";
+  const dimensions = imageDimensions[data.id];
 
   return (
     <>
@@ -59,7 +68,11 @@ export const TeamCard: React.FC<TeamCardProps> = ({ data }) => {
             srcSet={`/images/mob/team/${data.imgBase}.webp 1x, /images/mob/team/${data.imgBase}@2x.webp 2x, /images/mob/team/${data.imgBase}@3x.webp 3x
     `}
             alt={`${data.name} photo`}
-            loading="lazy"
+            width={dimensions?.width}
+            height={dimensions?.height}
+            loading={isInitiallyVisible ? "eager" : "lazy"}
+            fetchPriority={isInitiallyVisible ? "high" : "auto"}
+            decoding="async"
             className={`photo-${data.id}`}
           />
         </picture>

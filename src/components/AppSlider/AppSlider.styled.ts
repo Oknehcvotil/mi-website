@@ -39,6 +39,10 @@ export const SliderCont = styled.div`
       margin-bottom: 0px;
     }
 
+    .swiper-slide {
+      overflow: visible;
+    }
+
     .swiper-pagination-bullet,
     .swiper-pagination-bullet.swiper-pagination-bullet-active {
       background-color: #fff;
