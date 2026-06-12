@@ -48,21 +48,45 @@ export const statsCards = [
   },
 ];
 
-export const clientsLogos = [
-  "reelly",
-  "kitrum",
-  "forbes",
-  "whitebit",
-  "winner",
-  "kse",
-  "input",
-  "cbet",
-  "novaPoshta",
-  "neatpeak",
-  "nauda",
-  "aroma",
-  "flint",
-  "crypto",
+export type ClientLogo = {
+  slug: string;
+  name: string;
+  href?: string;
+};
+
+export const clientsLogos: ClientLogo[] = [
+  { slug: "reelly", name: "Reelly", href: "https://www.reelly.ai/" },
+  {
+    slug: "aroma",
+    name: "Sister's Aroma",
+    href: "https://sistersaroma.com/ru/",
+  },
+  { slug: "kitrum", name: "Kitrum", href: "https://kitrum.com/" },
+  { slug: "forbes", name: "Forbes.ua", href: "https://forbes.ua/magazine" },
+  { slug: "whitebit", name: "WhiteBIT", href: "https://whitebit.com/" },
+  { slug: "novaPoshta", name: "Nova Poshta", href: "https://novaposhta.ua/" },
+  {
+    slug: "kse",
+    name: "Kyiv School of Economics",
+    href: "https://kse.ua/ua/",
+  },
+  { slug: "input", name: "Input", href: "https://input.global/" },
+  { slug: "flint", name: "Flint Group", href: "https://andflint.com/ru/" },
+  { slug: "superludi", name: "Superludi", href: "https://superludi.com/" },
+  { slug: "luc", name: "LUC", href: "https://lucelectric.com/" },
+  { slug: "gq", name: "GQ", href: "https://0g.ai/" },
+  { slug: "gambeatwhite", name: "Gambeat", href: "https://gambeat.io/" },
+  { slug: "monolith", name: "Monolith", href: "https://monolith.vc/" },
+  { slug: "boosta", name: "Boosta", href: "https://boosta.biz/" },
+  { slug: "solus", name: "Solus", href: "https://solusgroup.io/" },
+  { slug: "ftd", name: "100 FTD", href: "https://100ftd.com/" },
+  { slug: "whitetech", name: "WhiteTech", href: "https://whitetech.com/" },
+  { slug: "neatpeakn", name: "Netpeak", href: "https://netpeak.ua/" },
+  { slug: "miko", name: "MIKO" },
+  { slug: "chi", name: "CHI Software", href: "https://chisw.com/" },
+  { slug: "obmify", name: "Obmify", href: "https://obmify.com/ru" },
+  { slug: "redduck", name: "RedDuck", href: "https://redduck.io/" },
+  { slug: "fidel", name: "Fidel Group", href: "https://fidel.team/" },
 ];
 
 export const servicesLinks = [
