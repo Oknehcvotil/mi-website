@@ -25,13 +25,10 @@ export const List = styled(motion.ul)`
   }
 
   @media (min-width: 1920px) {
+    width: 100%;
+    max-width: 1690px;
     margin-bottom: 0;
-
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
     gap: 16px;
-    justify-items: center;
-    align-items: center;
   }
 `;
 
@@ -63,6 +60,10 @@ export const ListItem = styled(motion.li)`
     width: auto;
     height: auto;
     object-fit: contain;
+
+    @media (min-width: 1920px) {
+      max-height: 100%;
+    }
   }
 
   @media (min-width: 768px) {
@@ -80,39 +81,8 @@ export const ListItem = styled(motion.li)`
   }
 
   @media (min-width: 1920px) {
-    flex-basis: auto;
-    width: 100%;
-    min-height: 97px;
-    grid-column: span 2;
-
-    img {
-      max-height: 52px;
-    }
-
-    &:nth-of-type(7) {
-      grid-column: 2 / span 2;
-    }
-    &:nth-of-type(8) {
-      grid-column: 4 / span 2;
-    }
-    &:nth-of-type(9) {
-      grid-column: 6 / span 2;
-    }
-    &:nth-of-type(10) {
-      grid-column: 8 / span 2;
-    }
-    &:nth-of-type(11) {
-      grid-column: 10 / span 2;
-    }
-
-    &:nth-of-type(12) {
-      grid-column: 4 / span 2;
-    }
-    &:nth-of-type(13) {
-      grid-column: 6 / span 2;
-    }
-    &:nth-of-type(14) {
-      grid-column: 8 / span 2;
-    }
+    flex-basis: calc((100% - 80px) / 6);
+    width: calc((100% - 80px) / 6);
+    min-height: 95px;
   }
 `;

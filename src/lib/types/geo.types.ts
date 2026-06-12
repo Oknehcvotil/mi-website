@@ -1,7 +1,9 @@
 export type CountryId =
   | "ukraine"
   | "britain"
+  | "israel"
   | "canada"
+  | "cyprus"
   | "latvia"
   | "uae"
   | "poland"
