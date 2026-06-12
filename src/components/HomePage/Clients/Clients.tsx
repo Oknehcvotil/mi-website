@@ -1,5 +1,5 @@
 import { Trans, useTranslation } from "react-i18next";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Container from "../../Container/Container";
 import { CollapsBtn, SectionWrap, Title } from "./Clients.styled";
@@ -16,16 +16,40 @@ const MOB_COLLAPSED_COUNT = 6;
 const TAB_COLLAPSED_COUNT = 8;
 const DESKTOP_COLLAPSED_COUNT = 10;
 const WIDE_DESKTOP_COLLAPSED_COUNT = 12;
+const DESKTOP_WIDE_BREAKPOINT = 1920;
+
+const getIsWideDesktopWindow = () =>
+  typeof window !== "undefined"
+    ? Math.max(window.innerWidth, window.outerWidth) >=
+      DESKTOP_WIDE_BREAKPOINT
+    : false;
 
 const Clients = () => {
   const { t } = useTranslation("home");
   const [expanded, setExpanded] = useState(false);
+  const [isWideDesktopWindow, setIsWideDesktopWindow] = useState(
+    getIsWideDesktopWindow
+  );
   const reduce = !!useReducedMotion();
 
-  const isDesk = useMediaQuery("(min-width: 1920px)");
+  const isDeskViewport = useMediaQuery("(min-width: 1920px)");
   const isWideDesktop = useMediaQuery("(min-width: 1280px)");
   const isSmallDesktop = useMediaQuery("(min-width: 1024px)");
   const isTablet = useMediaQuery("(min-width: 768px)");
+  const isDesk = isDeskViewport || isWideDesktopWindow;
+  const isExpandedView = expanded || isDesk;
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const handleResize = () =>
+      setIsWideDesktopWindow(getIsWideDesktopWindow());
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const collapsedCount = isDesk
     ? clientsLogos.length
@@ -54,7 +78,10 @@ const Clients = () => {
           <Trans t={t} i18nKey="clientsTitle" components={{ 1: <span /> }} />
         </Title>
 
-        <ClientsList expanded={expanded} collapsedCount={collapsedCount} />
+        <ClientsList
+          expanded={isExpandedView}
+          collapsedCount={collapsedCount}
+        />
 
         {canToggle && (
           <CollapsBtn

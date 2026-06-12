@@ -45,6 +45,16 @@ export const ListItem = styled(motion.li)`
   justify-content: center;
   align-items: center;
   padding: 6px 10px;
+  cursor: pointer;
+
+  a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
 
   img {
     display: block;

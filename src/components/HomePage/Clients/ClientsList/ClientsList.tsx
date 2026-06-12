@@ -31,29 +31,46 @@ const ClientsList = ({ expanded, collapsedCount }: ClientsListProps) => {
       animate={reduce ? undefined : isInView ? "show" : "hidden"}
     >
       <AnimatePresence mode="popLayout" initial={false}>
-        {visible.map((logo, i) => (
-          <ListItem
-            layout
-            transition={reduce ? undefined : { layout: layoutTransition }}
-            key={logo}
-            variants={reduce ? undefined : itemVariants}
-            initial={reduce ? undefined : "hidden"}
-            animate={reduce ? undefined : isInView ? "show" : "hidden"}
-            exit={reduce ? undefined : "exit"}
-            custom={i}
-          >
+        {visible.map(({ slug, name, href }, i) => {
+          const image = (
             <img
-              src={`/images/clients-logos/${logo}.webp`}
+              src={`/images/clients-logos/${slug}.webp`}
               srcSet={`
-                /images/clients-logos/${logo}.webp 1x,
-                /images/clients-logos/${logo}@2x.webp 2x,
-                /images/clients-logos/${logo}@3x.webp 3x
+                /images/clients-logos/${slug}.webp 1x,
+                /images/clients-logos/${slug}@2x.webp 2x,
+                /images/clients-logos/${slug}@3x.webp 3x
               `}
-              alt={logo}
+              alt={name}
               loading="lazy"
             />
-          </ListItem>
-        ))}
+          );
+
+          return (
+            <ListItem
+              layout
+              transition={reduce ? undefined : { layout: layoutTransition }}
+              key={slug}
+              variants={reduce ? undefined : itemVariants}
+              initial={reduce ? undefined : "hidden"}
+              animate={reduce ? undefined : isInView ? "show" : "hidden"}
+              exit={reduce ? undefined : "exit"}
+              custom={i}
+            >
+              {href ? (
+                <a
+                  href={href}
+                  aria-label={name}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {image}
+                </a>
+              ) : (
+                image
+              )}
+            </ListItem>
+          );
+        })}
       </AnimatePresence>
     </List>
   );
