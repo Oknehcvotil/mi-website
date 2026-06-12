@@ -134,7 +134,7 @@ export const teamCards = [
     imgBase: "daria-recruiting",
     stats: [
       {
-        value: "2500+",
+        value: "2700+",
         labelKey: "teamStats.closedVacancy",
       },
     ],
