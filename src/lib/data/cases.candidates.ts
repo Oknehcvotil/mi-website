@@ -23,14 +23,8 @@ export const casesCandidatesList: CasesCandidatesItem[] = [
     },
   },
   {
-    kind: "pair",
-    left: {
-      img: "/images/cases-pages/candidates/anna-assistant",
-      title: "reviews.annaAssistant.title",
-      items: "reviews.annaAssistant.items",
-      className: "not-list",
-    },
-    right: {
+    kind: "single",
+    card: {
       img: "/images/cases-pages/candidates/julia-assistant",
       title: "reviews.juliaAssistant.title",
       items: "reviews.juliaAssistant.items",
@@ -69,13 +63,6 @@ export const casesCandidatesList: CasesCandidatesItem[] = [
     url: "https://youtu.be/JptX7Q3Cg3w",
     author: "reviews.christina.name",
     position: "reviews.christina.position",
-  },
-  {
-    kind: "video",
-    url: "https://www.youtube.com/shorts/juZEyPHvqno",
-    posterOverride: "/images/youtube-posters/kyrylo-youtube-poster.webp",
-    author: "reviews.kyrylo.name",
-    position: "reviews.kyrylo.position",
   },
   {
     kind: "video",
