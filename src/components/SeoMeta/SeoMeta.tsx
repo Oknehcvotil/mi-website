@@ -18,7 +18,7 @@ type SeoBundle = {
 
 const SITE_NAME = "MI Agency";
 const FALLBACK_BASE_URL = "https://mi-website-gamma.vercel.app";
-const OG_IMAGE = "https://miagency.com.ua/img/opengraph.png";
+const OG_IMAGE_PATH = "/mi-preview.png";
 
 const getRouteLang = (pathname: string): RouteLang => {
   const lang = pathname.split("/").filter(Boolean)[0];
@@ -78,6 +78,7 @@ const SeoMeta = () => {
     const altLocale = lang === "ua" ? "en_US" : "uk_UA";
     const pathKey = getPathKey(pathname);
     const baseUrl = window.location.origin || FALLBACK_BASE_URL;
+    const ogImageUrl = `${baseUrl}${OG_IMAGE_PATH}`;
     const bundle = i18n.getResourceBundle(lang, "seo") as SeoBundle | undefined;
     const fallbackMeta = bundle?.fallback ?? {
       title: "MI Agency | HR & Recruiting Solutions",
@@ -103,7 +104,7 @@ const SeoMeta = () => {
     ensureMeta("name", "twitter:card").content = "summary_large_image";
     ensureMeta("name", "twitter:title").content = meta.title;
     ensureMeta("name", "twitter:description").content = meta.description;
-    ensureMeta("name", "twitter:image").content = OG_IMAGE;
+    ensureMeta("name", "twitter:image").content = ogImageUrl;
     ensureMeta("name", "twitter:image:alt").content = imageAlt;
 
     ensureMeta("property", "og:locale").content = locale;
@@ -113,8 +114,8 @@ const SeoMeta = () => {
     ensureMeta("property", "og:title").content = meta.title;
     ensureMeta("property", "og:description").content = meta.description;
     ensureMeta("property", "og:url").content = canonicalUrl;
-    ensureMeta("property", "og:image").content = OG_IMAGE;
-    ensureMeta("property", "og:image:secure_url").content = OG_IMAGE;
+    ensureMeta("property", "og:image").content = ogImageUrl;
+    ensureMeta("property", "og:image:secure_url").content = ogImageUrl;
     ensureMeta("property", "og:image:type").content = "image/png";
     ensureMeta("property", "og:image:width").content = "1200";
     ensureMeta("property", "og:image:height").content = "630";
