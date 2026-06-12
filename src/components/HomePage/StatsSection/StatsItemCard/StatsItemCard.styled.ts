@@ -29,7 +29,9 @@ export const StatsItem = styled(motion.li)<{ lang: string }>`
 
     &:last-of-type {
       bottom: 15px;
-      align-items: baseline;
+      p {
+        max-width: 130px;
+      }
     }
   }
 
@@ -51,11 +53,10 @@ export const StatsItem = styled(motion.li)<{ lang: string }>`
     }
 
     &:last-of-type {
-      h3 {
-        margin-left: 95px;
-      }
-      align-items: baseline;
       margin-bottom: 0;
+      p {
+        max-width: 152px;
+      }
     }
   }
 
@@ -77,16 +78,9 @@ export const StatsItem = styled(motion.li)<{ lang: string }>`
     }
 
     &:last-of-type {
-      h3 {
-        margin-left: 95px;
-
-        ${({ lang }) =>
-          lang === "en" &&
-          `
-      margin-left: 120px;
-    `}
+      p {
+        max-width: 220px;
       }
-      align-items: center;
       margin-bottom: 0;
     }
   }
@@ -108,16 +102,9 @@ export const StatsItem = styled(motion.li)<{ lang: string }>`
     }
 
     &:last-of-type {
-      h3 {
-        margin-left: 185px;
-
-        ${({ lang }) =>
-          lang === "en" &&
-          `
-      margin-left: 210px;
-    `}
+      p {
+        max-width: 400px;
       }
-      align-items: baseline;
       margin-bottom: 0;
     }
   }
@@ -153,11 +140,6 @@ export const LabelText = styled.p`
   font-size: 12px;
   line-height: 130%;
   color: #fff;
-
-  span {
-    position: absolute;
-    left: -70px;
-  }
 
   @media (min-width: 768px) {
     font-size: 15px;

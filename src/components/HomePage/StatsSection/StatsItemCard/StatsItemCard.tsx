@@ -36,7 +36,7 @@ export const StatsItemCard = ({
     >
       <ValueText>{value}</ValueText>
       <LabelText>
-        <Trans t={t} i18nKey={labelKey} components={{ 1: <span /> }} />
+        <Trans t={t} i18nKey={labelKey}  />
       </LabelText>
     </StatsItem>
   );
