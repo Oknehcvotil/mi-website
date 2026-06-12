@@ -31,15 +31,15 @@ export const advantagesCards = [
 
 export const statsCards = [
   {
-    value: "2500+",
+    value: "2700+",
     label: "stats.labels.0",
   },
   {
-    value: "70+",
+    value: "85+",
     label: "stats.labels.1",
   },
   {
-    value: "9+",
+    value: "10+",
     label: "stats.labels.2",
   },
   {
@@ -86,7 +86,7 @@ export const teamCards = [
         className: "badge-left",
       },
       {
-        value: "9+",
+        value: "10+",
         labelKey: "teamStats.yearsInHR",
         className: "badge-right",
       },
