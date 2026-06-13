@@ -27,10 +27,8 @@ const GeographySection = () => {
     countries,
     selected,
     onSelect: setSelected,
-    delay: 5000000000000000,
-    pauseAfterManual: 7000000000000000,
-    // delay: 5000,
-    // pauseAfterManual: 7000,
+    delay: 6000,
+    pauseAfterManual: 7000,
   });
 
   return (
