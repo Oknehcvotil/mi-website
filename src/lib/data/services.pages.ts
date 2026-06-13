@@ -252,7 +252,7 @@ export const teamForClientsConfig: TeamContactConfig = {
       className: "badge-left",
     },
     {
-      value: "9+",
+      value: "10+",
       labelKey: "teamContact.yearsInHR",
       className: "badge-right",
     },
