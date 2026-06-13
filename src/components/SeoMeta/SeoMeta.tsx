@@ -17,7 +17,7 @@ type SeoBundle = {
 };
 
 const SITE_NAME = "MI Agency";
-const FALLBACK_BASE_URL = "https://mi-website-gamma.vercel.app";
+const FALLBACK_BASE_URL = "https://miagency.com.ua";
 const OG_IMAGE_PATH = "/mi-preview.png";
 
 const getRouteLang = (pathname: string): RouteLang => {
