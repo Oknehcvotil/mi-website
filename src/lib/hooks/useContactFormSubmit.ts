@@ -22,6 +22,16 @@ type ContactApiResponse = {
   success?: boolean;
 };
 
+type MetaPixelWindow = Window & {
+  fbq?: (...args: unknown[]) => void;
+};
+
+const trackMetaPixelLead = () => {
+  const metaPixelWindow = window as MetaPixelWindow;
+
+  metaPixelWindow.fbq?.("track", "Lead");
+};
+
 const getErrorMessage = (
   error: unknown,
   fallbackMessage: string,
@@ -114,6 +124,7 @@ export function useContactFormSubmit() {
         }
 
         resetForm();
+        trackMetaPixelLead();
         showSubmitStatus({
           message: t("form.successMessage"),
           type: "success",
